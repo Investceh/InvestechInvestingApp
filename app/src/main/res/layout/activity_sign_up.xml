@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                                   xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                   xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+                                                   android:layout_height="match_parent"
+                                                   android:background="@drawable/background">
+
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="392dp"
+            android:layout_height="326dp"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            android:gravity="center" android:id="@+id/linearLayout"
+            app:layout_constraintVertical_bias="0.654" app:layout_constraintHorizontal_bias="0.473">
+        <EditText
+                android:id="@+id/firstName"
+                android:translationZ="100dp"
+                android:layout_width="322dp"
+                android:layout_height="49dp"
+                android:background="@drawable/edit_text_view"
+                android:inputType="text" android:autofillHints="Ad" android:hint="@string/name"
+                android:textColorHint="#80000000" android:paddingStart="20dp" tools:ignore="RtlSymmetry"
+                android:fontFamily="@font/inter"/>
+
+        <EditText
+                android:id="@+id/lastName"
+                android:translationZ="100dp"
+                android:layout_width="322dp"
+                android:layout_height="49dp"
+                android:background="@drawable/edit_text_view"
+                android:inputType="text" android:autofillHints="Soyad" android:hint="@string/lastname"
+                android:textColorHint="#80000000" android:paddingStart="20dp" android:layout_marginTop="10dp"
+                tools:ignore="RtlSymmetry" android:fontFamily="@font/inter"/>
+
+        <EditText
+                android:id="@+id/tckn"
+                android:translationZ="100dp"
+                android:layout_width="322dp"
+                android:layout_height="49dp"
+                android:background="@drawable/edit_text_view"
+                android:inputType="text" android:autofillHints="TC Kimlik No" android:hint="@string/tckn"
+                android:textColorHint="#80000000" android:paddingStart="20dp" android:layout_marginTop="10dp"
+                tools:ignore="RtlSymmetry" android:fontFamily="@font/inter"/>
+
+        <EditText
+                android:id="@+id/phoneNum"
+                android:translationZ="100dp"
+                android:layout_width="322dp"
+                android:layout_height="49dp"
+                android:background="@drawable/edit_text_view"
+                android:inputType="number" android:autofillHints="Telefon" android:hint="@string/phone"
+                android:textColorHint="#80000000" android:paddingStart="20dp" android:layout_marginTop="10dp"
+                tools:ignore="RtlSymmetry,TextFields" android:fontFamily="@font/inter"/>
+
+        <EditText
+                android:id="@+id/password"
+                android:translationZ="100dp"
+                android:layout_width="322dp"
+                android:layout_height="49dp"
+                android:background="@drawable/edit_text_view"
+                android:inputType="textPassword" android:autofillHints="Şifre" android:hint="@string/password"
+                android:textColorHint="#80000000" android:paddingStart="20dp" android:layout_marginTop="10dp"
+                tools:ignore="RtlSymmetry" android:fontFamily="@font/inter"/>
+    </LinearLayout>
+    <RelativeLayout android:layout_width="357dp" android:layout_height="79dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/linearLayout" app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" android:translationZ="100dp"
+                    app:layout_constraintVertical_bias="0.0"
+                    android:gravity="center" android:id="@+id/relativeLayout2">
+        <Button android:id="@+id/registerBtn"
+                android:layout_width="351dp"
+                android:layout_height="57dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:background="@drawable/button" android:text="@string/kayitol" android:textColor="#F5F5F5"
+                android:textAllCaps="false" android:textStyle="bold" android:textSize="20sp"
+                android:fontFamily="@font/inter"/>
+    </RelativeLayout>
+
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+              android:text="@string/haveAccount" android:textSize="14sp"
+              android:textColor="#B3000000"
+              app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@+id/relativeLayout2"
+              app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"
+              android:id="@+id/textView2" app:layout_constraintHorizontal_bias="0.324"
+              app:layout_constraintVertical_bias="0.495" android:fontFamily="@font/inter"/>
+    <Button android:layout_width="73dp" android:layout_height="21dp"
+            android:text="@string/girisYap" android:textSize="14sp" android:textAllCaps="false"
+            android:textColor="#B3233E5E" android:textStyle="bold" android:id="@+id/girisYap"
+            android:background="#00FFFFFF"
+            app:layout_constraintStart_toEndOf="@+id/textView2" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="@+id/textView2" app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintTop_toTopOf="@+id/textView2" android:fontFamily="@font/inter"
+            android:onClick="signin_OnClick"/>
+    <ImageView
+            android:layout_width="241dp"
+            android:layout_height="160dp" app:srcCompat="@drawable/header_logo" android:id="@+id/imageView"
+            app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintVertical_bias="0.704"
+            android:contentDescription="@string/investech"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
