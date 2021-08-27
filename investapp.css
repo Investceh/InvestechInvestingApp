@@ -1,0 +1,10 @@
+TextView{
+    position: absolute;
+    width: 322px;
+    height: 49px;
+    left: 45px;
+    top: 355px;
+    
+    background: #FFFFFF;
+    border-radius: 100px;
+}

@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="textview">TextView</string>
+    <string name="image">" "</string>
+    <string name="hint_tckn">Müşteri Numarası / TCKN-YKN</string>
+    <string name="hintpassword">Şifre</string>
+    <string name="login">Login</string>
+    <string name="forget_pasw">
+
+        Forget Pasword
+    </string>
+    <string name="name">Ad</string>
+    <string name="lastname">Soyad</string>
+    <string name="tckn">TC Kimlik No</string>
+    <string name="phone">Telefon</string>
+    <string name="password">Şifre</string>
+    <string name="register">Register</string>
+
+</resources>
