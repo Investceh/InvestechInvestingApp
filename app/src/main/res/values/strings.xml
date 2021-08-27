@@ -21,5 +21,7 @@
     <string name="uploadphoto">upload photo</string>
     <string name="haveAccount">Zaten bir hesabın var mı?</string>
     <string name="investech">Investech</string>
+    <string name="vades_z_hesaplarim">VADESİZ HESAPLARIM</string>
+    <string name="yatirim_hesaplarim">YATIRIM HESAPLARIM</string>
 
 </resources>
