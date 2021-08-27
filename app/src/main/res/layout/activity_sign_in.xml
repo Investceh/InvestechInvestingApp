@@ -25,6 +25,7 @@
                     app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
                     android:translationZ="130dp"
                     android:id="@+id/relativeLayout">
+
         <Button
                 android:id="@+id/loginButton"
                 android:layout_width="337dp"
@@ -32,11 +33,14 @@
                 android:translationZ="140dp"
                 android:background="@drawable/button"
                 app:rippleColor="#FFFFFF"
-                android:text="@string/girisYap" android:textAllCaps="false" android:textSize="18sp"
+                android:text="@string/girisYap"
+                android:textAllCaps="false"
+                android:textSize="18sp"
                 android:textColor="#f5f5f5"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                android:textStyle="bold" android:fontFamily="@font/inter"/>
+                android:textStyle="bold"
+                android:fontFamily="@font/inter" />
     </RelativeLayout>
     <EditText
             android:id="@+id/textViewPassw"
