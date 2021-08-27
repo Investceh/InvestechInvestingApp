@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet href="investapp.css" type="text/css" ?>
 <androidx.constraintlayout.widget.ConstraintLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -8,48 +7,61 @@
     <EditText
             android:id="@+id/textViewTckn"
             android:fontFamily="@font/inter"
-            android:textSize="13dp"
+            android:textSize="13sp"
             android:paddingStart="15dp"
             android:layout_width="322dp"
             android:layout_height="49dp"
-            android:background="@drawable/signin_textview"
-            android:translationZ="110dp"
+            android:background="@drawable/edit_text_view"
+            android:translationZ="120dp"
             android:hint="@string/hint_tckn" android:gravity="center|left"
             android:textColorHint="#80000000" tools:ignore="RtlHardcoded,RtlSymmetry"
             android:shadowDx="0"
             app:layout_constraintTop_toTopOf="@+id/bottomBox" android:layout_marginTop="160dp"
             app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
-            android:autofillHints="Müşteri Numarası / TCKN-YKN" android:inputType="number"/>
-    <Button
-            android:id="@+id/loginButton"
-            android:layout_width="322dp"
-            android:layout_height="49dp"
-            android:background="@drawable/button" android:translationZ="300dp"
-            app:rippleColor="#FFFFFF"
-            android:text="@string/login" android:textAllCaps="false" android:textSize="18sp"
-            android:textColor="#f5f5f5"
-            app:layout_constraintTop_toBottomOf="@+id/textViewPassw" app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginTop="80dp" android:textStyle="bold" android:fontFamily="@font/inter"/>
+            android:autofillHints="Müşteri Numarası / TCKN-YKN" android:inputType="number" android:textColor="#000000"/>
+    <RelativeLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@+id/textViewPassw"
+                    app:layout_constraintBottom_toBottomOf="@+id/bottomBox"
+                    app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
+                    android:translationZ="130dp"
+                    android:id="@+id/relativeLayout">
+
+        <Button
+                android:id="@+id/loginButton"
+                android:layout_width="337dp"
+                android:layout_height="49dp"
+                android:translationZ="140dp"
+                android:background="@drawable/button"
+                app:rippleColor="#FFFFFF"
+                android:text="@string/girisYap"
+                android:textAllCaps="false"
+                android:textSize="18sp"
+                android:textColor="#f5f5f5"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:textStyle="bold"
+                android:fontFamily="@font/inter" />
+    </RelativeLayout>
     <EditText
             android:id="@+id/textViewPassw"
             android:paddingStart="15dp"
             android:fontFamily="@font/inter"
-            android:textSize="13dp"
+            android:textSize="13sp"
             android:inputType="numberPassword"
             android:layout_width="322dp"
             android:layout_height="49dp"
-            android:background="@drawable/signin_textview"
+            android:background="@drawable/edit_text_view"
             android:translationZ="120dp"
             android:hint="@string/hintpassword"
             android:textColorHint="#80000000" android:gravity="center|left" tools:ignore="RtlHardcoded,RtlSymmetry"
             app:layout_constraintTop_toBottomOf="@+id/textViewTckn" app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" android:layout_marginTop="32dp" android:autofillHints="Şifre"/>
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginTop="32dp" android:autofillHints="Şifre"
+            android:textColor="#000000"/>
     <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" app:srcCompat="@drawable/passwordeyeicon"
             android:id="@+id/imageButton"
-            android:translationZ="120dp"
+            android:translationZ="130dp"
             android:contentDescription="@string/image"
             android:background="#00FFFFFF" tools:ignore="MissingConstraints" android:layout_marginEnd="20dp" app:layout_constraintTop_toTopOf="@+id/textViewPassw"
             app:layout_constraintBottom_toBottomOf="@+id/textViewPassw"
@@ -60,15 +72,14 @@
             android:layout_width="match_parent"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:background="@drawable/rounded_views"
+            android:background="@drawable/rounded_bottom_box"
             android:elevation="8dp"
             android:translationZ="100dp"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintVertical_bias="1.0"
             android:layout_height="500dp" app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.0"
     />
-    app:layout_constraintBottom_toTopOf="@+id/textViewTckn" app:layout_constraintVertical_bias="0.342"
     <ImageView
             android:translationZ="120dp"
             android:layout_width="74dp"
@@ -84,7 +95,7 @@
             android:background="#00FFFFFF"
             app:layout_constraintBottom_toTopOf="@+id/imageView3"
             app:layout_constraintEnd_toEndOf="parent"
-            android:contentDescription="@string/image"
+            android:contentDescription="@string/uploadphoto"
             app:layout_constraintTop_toTopOf="parent" app:layout_constraintVertical_bias="0.449"
             app:layout_constraintStart_toStartOf="@+id/headerImageView" app:layout_constraintHorizontal_bias="0.527"/>
     <ImageView
@@ -96,13 +107,9 @@
             app:layout_constraintVertical_bias="0.283" android:contentDescription="@string/image"
             app:layout_constraintHorizontal_bias="1.0"/>
 
-    <!--
-      Font family: Inter
-      Line height: 22sp
-    -->
-    <!-- styles.xml -->
+
     <TextView
-            android:translationZ="400dp"
+            android:translationZ="110dp"
             android:id="@+id/forget_pasw"
             android:layout_width="137dp"
             android:layout_height="24dp"
@@ -112,21 +119,40 @@
             android:textAppearance="@style/forget_pasw"
             android:lineSpacingExtra="7sp"
             android:gravity="center_horizontal|center_vertical"
-            app:layout_constraintBottom_toTopOf="@+id/loginButton"
             app:layout_constraintTop_toBottomOf="@+id/textViewPassw" app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.192"
             app:layout_constraintVertical_bias="0.491" android:fontFamily="@font/inter"
-            android:textAlignment="viewStart" android:textStyle="bold" tools:ignore="RtlCompat"/><![CDATA[
+            android:textAlignment="viewStart" android:textStyle="bold" tools:ignore="RtlCompat"
+            app:layout_constraintBottom_toTopOf="@+id/relativeLayout"/>
 
-
-
-
-
-
-
-
-
-    />
-    ]]><!--suppress AndroidDomInspection -->
+    <RelativeLayout android:layout_width="377dp" android:layout_height="48dp"
+                    android:translationZ="130dp"
+                    app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toBottomOf="@+id/bottomBox"
+                    app:layout_constraintTop_toBottomOf="@+id/relativeLayout"
+                    android:gravity="center|clip_vertical|center_horizontal|center_vertical"
+                    app:layout_constraintHorizontal_bias="1.0" app:layout_constraintVertical_bias="0.218">
+        <Button android:layout_width="73dp" android:layout_height="21dp"
+                android:text="@string/kayitol" android:textSize="14sp" android:textAllCaps="false"
+                android:textColor="#B3233E5E" android:textStyle="bold" android:id="@+id/kayitOl"
+                android:background="#00FFFFFF"
+                app:layout_constraintStart_toEndOf="@+id/donthave" app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="@+id/donthave" app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintTop_toTopOf="@+id/donthave" android:fontFamily="@font/inter"
+                android:onClick="signup_OnClick"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="75dp" android:layout_alignParentBottom="true"
+                android:layout_marginBottom="11dp"/>
+        <TextView android:layout_width="198dp" android:layout_height="20dp"
+                  android:text="@string/donthaveaccount" android:textSize="14sp"
+                  android:textColor="#B3000000" android:translationZ="130dp"
+                  android:id="@+id/donthave"
+                  android:fontFamily="@font/inter"
+                  tools:layout_editor_absoluteY="602dp" tools:layout_editor_absoluteX="38dp"
+                  android:layout_marginTop="16dp" android:layout_alignParentTop="true"
+                  android:layout_alignParentBottom="true" android:layout_marginBottom="12dp"
+                  android:layout_alignParentStart="true" android:layout_marginStart="51dp"
+                  android:layout_alignParentEnd="true" android:layout_marginEnd="128dp"/>
+    </RelativeLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

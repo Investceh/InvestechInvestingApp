@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".Accounts"
+android:background="#F5F5F5">
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="545dp"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" android:gravity="center_horizontal"
+            android:id="@+id/linearLayout2">
+        <TextView
+                android:text="@string/vades_z_hesaplarim"
+                android:id="@+id/vadesizHesaplarim"
+                android:layout_width="410dp"
+                android:layout_height="34dp"
+                android:background="@drawable/account_title"
+                android:elevation="8dp"
+                android:gravity="center" android:fontFamily="@font/inter" android:textStyle="bold"
+        />
+        <TextView
+                android:id="@+id/vadesizHesapInfo"
+                android:layout_width="331dp"
+                android:layout_height="162dp"
+                android:background="@drawable/account_info_box" android:layout_marginTop="15dp"
+                android:textColor="#000000" android:textAlignment="textStart"/>
+        <TextView
+                android:text="@string/yatirim_hesaplarim"
+                android:id="@+id/yatirimHesaplarim"
+                android:layout_width="410dp"
+                android:layout_height="34dp"
+                android:background="@drawable/account_title"
+                android:elevation="8dp"
+                android:gravity="center" android:fontFamily="@font/inter" android:textStyle="bold"
+                android:layout_marginTop="15dp"/>
+        <TextView
+                android:id="@+id/yatirimHesapInfo"
+                android:layout_width="331dp"
+                android:layout_height="162dp"
+                android:background="@drawable/account_info_box" android:layout_marginTop="15dp"/>
+    </LinearLayout>
+    <RelativeLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toTopOf="@+id/linearLayout2" app:layout_constraintTop_toTopOf="parent">
+        <ImageView
+                android:layout_width="153dp"
+                android:layout_height="100dp" app:srcCompat="@drawable/header_logo" android:id="@+id/imageView2"
+                tools:layout_editor_absoluteX="129dp" tools:layout_editor_absoluteY="52dp"
+                android:contentDescription="@string/investech"/>
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
