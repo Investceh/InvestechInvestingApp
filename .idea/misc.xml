@@ -1,5 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/erdi7/Documents/GitHub/MyApplication/app/src/main/res/drawable/ic_hesabim_logo.xml" value="0.2755208333333333" />
+        <entry key="..\:/Users/erdi7/Documents/GitHub/MyApplication/app/src/main/res/drawable/ic_marketgraph.xml" value="0.2755208333333333" />
+        <entry key="..\:/Users/erdi7/Documents/GitHub/MyApplication/app/src/main/res/layout/activity_accounts.xml" value="0.176" />
+        <entry key="..\:/Users/erdi7/Documents/GitHub/MyApplication/app/src/main/res/layout/activity_main.xml" value="0.10663627152988855" />
+        <entry key="..\:/Users/erdi7/Documents/GitHub/MyApplication/app/src/main/res/layout/activity_navbar.xml" value="0.2" />
+        <entry key="..\:/Users/erdi7/Documents/GitHub/MyApplication/app/src/main/res/layout/activity_sign_in.xml" value="0.152" />
+        <entry key="..\:/Users/erdi7/Documents/GitHub/MyApplication/app/src/main/res/layout/fragment_karsilama.xml" value="0.1743659420289855" />
+        <entry key="..\:/Users/erdi7/Documents/GitHub/MyApplication/app/src/main/res/layout/fragment_piyasa.xml" value="0.1743659420289855" />
+        <entry key="..\:/Users/erdi7/Documents/GitHub/MyApplication/app/src/main/res/layout/sign_in.xml" value="0.10280797101449275" />
+        <entry key="..\:/Users/erdi7/Documents/GitHub/MyApplication/app/src/main/res/menu/nav_menu.xml" value="0.2111111111111111" />
+      </map>
+    </option>
+  </component>
   <component name="FrameworkDetectionExcludesConfiguration">
     <file type="web" url="file://$PROJECT_DIR$" />
   </component>
