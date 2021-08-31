@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                                                   xmlns:app="http://schemas.android.com/apk/res-auto"
                                                    xmlns:tools="http://schemas.android.com/tools"
                                                    android:layout_width="match_parent"
                                                    android:layout_height="match_parent"
@@ -10,34 +9,34 @@
     <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-
         <TextView
                 android:id="@+id/hisseler_alsat"
-                android:text="HİSSELER AL/SAT"
-                android:gravity="center"
-                android:textStyle="bold"
+                android:text="@string/hisseler_alsat"
+                android:gravity="center" android:textStyle="bold"
                 android:layout_width="match_parent"
                 android:layout_height="34dp"
-                android:background="@drawable/screen_title" />
+                android:background="@drawable/screen_title"
+        />
         <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="48dp" android:layout_marginTop="0dp"
                 android:layout_below="@+id/hisseler_alsat" android:id="@+id/linlayout_1">
-            <Button
+            <RadioButton
                     android:id="@+id/alisbtn"
-                    android:text="ALIŞ" android:gravity="center"
+                    android:text="@string/alis"
                     android:layout_width="206dp"
                     android:layout_height="49dp"
                     android:background="@drawable/button_green"
                     android:layout_marginBottom="646dp"
-                    android:layout_marginTop="0dp"/>
-            <Button
+                    android:layout_marginTop="0dp" android:checked="true"
+            />
+            <RadioButton
                     android:id="@+id/satisbtn"
-                    android:text="SATIŞ" android:gravity="center"
+                    android:text="@string/satis"
                     android:layout_width="206dp"
                     android:layout_height="49dp"
-                    android:background="@drawable/button_blue"
+                    android:background="@drawable/button_red"
                     android:layout_marginBottom="645dp"
                     android:layout_marginTop="0dp"
                     android:layout_marginEnd="0dp"
@@ -48,23 +47,25 @@
         <LinearLayout
                 android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="505dp"
-                android:layout_alignParentBottom="true" android:layout_marginBottom="145dp"
+                android:layout_height="479dp" android:background="#80D7E9FF"
+                android:layout_alignParentBottom="true" android:layout_marginBottom="171dp"
                 android:layout_marginTop="-1dp" android:layout_below="@+id/linlayout_1" android:id="@+id/linlayout2">
             <LinearLayout
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/linlayout2_1" android:layout_below="@+id/linlayout_1">
+                    android:id="@+id/linlayout2_1">
 
                 <TextView android:id="@+id/islemlimiti" android:layout_width="206dp"
                           android:layout_height="wrap_content"
-                          android:text="İşlem Limiti" android:textColor="#BF000000"
-                          android:paddingLeft="10dp" android:paddingBottom="15dp" android:paddingTop="15dp"/>
+                          android:text="@string/islem_limiti" android:textColor="#BF000000"
+                          android:paddingStart="10dp" android:paddingBottom="15dp" android:paddingTop="15dp"
+                          tools:ignore="RtlSymmetry"/>
                 <TextView android:id="@+id/val_islemlimiti" android:layout_width="206dp"
                           android:layout_height="wrap_content" android:textAlignment="viewEnd"
                           android:text="-378.92" android:textColor="#BF000000"
-                          android:paddingRight="10dp" android:paddingBottom="15dp" android:paddingTop="15dp"/>
+                          android:paddingEnd="10dp" android:paddingBottom="15dp" android:paddingTop="15dp"
+                          tools:ignore="RtlSymmetry"/>
 
             </LinearLayout>
             <View android:id="@+id/line1" android:layout_width="match_parent" android:layout_height="5dp"
@@ -73,24 +74,26 @@
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
-                    android:id="@+id/linlayout_3" android:layout_below="@+id/linlayout_1">
+                    android:id="@+id/linlayout_3">
 
                 <TextView android:id="@+id/hisse" android:layout_width="206dp" android:layout_height="wrap_content"
-                          android:text="Hisse" android:textColor="#BF000000"
-                          android:paddingLeft="10dp" android:paddingBottom="15dp" android:paddingTop="15dp"/>
+                          android:text="@string/hisse" android:textColor="#BF000000"
+                          android:paddingStart="10dp" android:paddingBottom="15dp" android:paddingTop="15dp"
+                          tools:ignore="RtlSymmetry"/>
                 <RelativeLayout android:layout_width="204dp" android:layout_height="match_parent"
-                                android:gravity="center" android:paddingRight="10dp">
-                    <TextView android:id="@+id/clck_hisse" android:layout_width="171dp"
+                                android:gravity="center" android:paddingEnd="10dp" tools:ignore="RtlSymmetry">
+                    <TextView android:id="@+id/val_hisse" android:layout_width="171dp"
                               android:layout_height="match_parent" android:clickable="false" android:text="EREGL"
                               android:textColor="#BF000000" android:gravity="right|center_vertical"
                               android:paddingBottom="15dp"
                               android:paddingTop="15dp" android:textSize="14sp" android:layout_alignParentEnd="true"
-                              android:layout_marginEnd="15dp"/>
+                              android:layout_marginEnd="15dp" tools:ignore="RtlHardcoded"/>
                     <TextView android:layout_width="204dp" android:layout_height="match_parent"
-                              android:text=">" android:textColor="#BF000000"
+                              android:text="@string/devam_sign" android:textColor="#BF000000"
                               android:gravity="right|center_vertical" android:clickable="true" android:textSize="20sp"
                               android:layout_alignParentBottom="true" android:layout_marginBottom="1dp"
-                              android:layout_marginTop="0dp" android:layout_alignParentTop="true"/>
+                              android:layout_marginTop="0dp" android:layout_alignParentTop="true"
+                              android:id="@+id/click_hisse" android:focusable="true" tools:ignore="RtlHardcoded"/>
                 </RelativeLayout>
             </LinearLayout>
             <LinearLayout android:orientation="vertical" android:layout_width="wrap_content"
@@ -100,33 +103,40 @@
                 <LinearLayout
                         android:orientation="vertical"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent" android:id="@+id/linlayout4_1">
+                        android:layout_height="match_parent" android:id="@+id/linlayout4_1"
+                        tools:ignore="UselessParent">
                     <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
                                   android:orientation="horizontal" android:gravity="center" android:paddingTop="10dp">
                         <TextView android:id="@+id/miktar1" android:layout_width="wrap_content"
                                   android:layout_height="wrap_content"
-                                  android:text="MİKTAR" android:textColor="#BF000000" android:paddingRight="75dp"/>
+                                  android:text="@string/miktar" android:textColor="#BF000000" android:paddingEnd="75dp"
+                                  tools:ignore="RtlSymmetry"/>
                         <TextView android:id="@+id/alis" android:layout_width="wrap_content"
                                   android:layout_height="wrap_content"
-                                  android:text="ALIŞ" android:textColor="#BF000000" android:paddingRight="75dp"/>
+                                  android:text="@string/alis" android:textColor="#BF000000" android:paddingEnd="75dp"
+                                  tools:ignore="RtlSymmetry"/>
                         <TextView android:id="@+id/satis" android:layout_width="wrap_content"
                                   android:layout_height="wrap_content"
-                                  android:text="SATIŞ" android:textColor="#BF000000" android:paddingRight="75dp"/>
+                                  android:text="@string/satis" android:textColor="#BF000000" android:paddingEnd="75dp"
+                                  tools:ignore="RtlSymmetry"/>
                         <TextView android:id="@+id/miktar2" android:layout_width="wrap_content"
-                                  android:layout_height="wrap_content" android:text="MİKTAR"
+                                  android:layout_height="wrap_content" android:text="@string/miktar"
                                   android:textColor="#BF000000"/>
                     </LinearLayout>
                     <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
                                   android:orientation="horizontal" android:gravity="center" android:paddingTop="20dp">
                         <TextView android:id="@+id/val_miktar1" android:layout_width="wrap_content"
                                   android:layout_height="wrap_content"
-                                  android:text="10,542" android:textColor="#BF000000" android:paddingRight="75dp"/>
+                                  android:text="10,542" android:textColor="#BF000000" android:paddingEnd="75dp"
+                                  tools:ignore="RtlSymmetry"/>
                         <TextView android:id="@+id/val_alis" android:layout_width="wrap_content"
                                   android:layout_height="wrap_content"
-                                  android:text="18.56" android:textColor="#BF000000" android:paddingRight="75dp"/>
+                                  android:text="18.56" android:textColor="#BF000000" android:paddingEnd="75dp"
+                                  tools:ignore="RtlSymmetry"/>
                         <TextView android:id="@+id/val_satis" android:layout_width="wrap_content"
                                   android:layout_height="wrap_content"
-                                  android:text="18.66" android:textColor="#BF000000" android:paddingRight="75dp"/>
+                                  android:text="18.66" android:textColor="#BF000000" android:paddingEnd="75dp"
+                                  tools:ignore="RtlSymmetry"/>
                         <TextView android:id="@+id/val_miktar2" android:layout_width="wrap_content"
                                   android:layout_height="wrap_content" android:text="56,088"
                                   android:textColor="#BF000000"/>
@@ -139,26 +149,27 @@
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
-                    android:id="@+id/linlayout_5" android:layout_below="@+id/linlayout_1">
+                    android:id="@+id/linlayout_5">
 
                 <TextView android:id="@+id/fiyattipi" android:layout_width="206dp" android:layout_height="wrap_content"
-                          android:text="Fiyat Tipi" android:textColor="#BF000000"
-                          android:paddingLeft="10dp" android:paddingBottom="15dp" android:paddingTop="15dp"/>
+                          android:text="@string/fiyat_tipi" android:textColor="#BF000000"
+                          android:paddingStart="10dp" android:paddingBottom="15dp" android:paddingTop="15dp"
+                          tools:ignore="RtlSymmetry"/>
                 <RelativeLayout android:layout_width="204dp" android:layout_height="match_parent"
-                                android:gravity="center" android:paddingRight="10dp">
-                    <TextView android:id="@+id/clck_fiyattipi" android:layout_width="171dp"
+                                android:gravity="center" android:paddingEnd="10dp" tools:ignore="RtlSymmetry">
+                    <TextView android:id="@+id/val_fiyattipi" android:layout_width="171dp"
                               android:layout_height="match_parent"
-                              android:clickable="false" android:text="Limit" android:textColor="#BF000000"
+                              android:clickable="false" android:text="@string/limit" android:textColor="#BF000000"
                               android:gravity="right|center_vertical" android:paddingBottom="15dp"
                               android:paddingTop="15dp"
                               android:textSize="14sp" android:layout_alignParentEnd="true"
-                              android:layout_marginEnd="15dp"/>
+                              android:layout_marginEnd="15dp" tools:ignore="RtlHardcoded"/>
                     <TextView android:layout_width="204dp" android:layout_height="match_parent"
-                              android:text=">" android:textColor="#BF000000"
+                              android:text="@string/devam_sign" android:textColor="#BF000000"
                               android:gravity="right|center_vertical" android:clickable="true" android:textSize="20sp"
                               android:layout_alignParentBottom="true" android:layout_marginBottom="1dp"
                               android:layout_marginTop="0dp" android:layout_alignParentTop="true"
-                    />
+                              android:id="@+id/click_fiyattipi" tools:ignore="RtlHardcoded" android:focusable="true"/>
                 </RelativeLayout>
             </LinearLayout>
             <View android:id="@+id/line3" android:layout_width="match_parent" android:layout_height="5dp"
@@ -167,19 +178,20 @@
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
-                    android:id="@+id/linlayout_6" android:layout_below="@+id/linlayout_1">
+                    android:id="@+id/linlayout_6">
 
                 <TextView android:id="@+id/adet" android:layout_width="206dp" android:layout_height="wrap_content"
-                          android:text="Adet" android:textColor="#BF000000"
-                          android:paddingLeft="10dp" android:paddingBottom="15dp" android:paddingTop="15dp"/>
+                          android:text="@string/adet" android:textColor="#BF000000"
+                          android:paddingStart="10dp" android:paddingBottom="15dp" android:paddingTop="15dp"
+                          tools:ignore="RtlSymmetry"/>
                 <RelativeLayout android:layout_width="204dp" android:layout_height="match_parent"
-                                android:gravity="center" android:paddingRight="10dp">
-                    <TextView android:layout_width="204dp" android:layout_height="match_parent"
-                              android:text=">" android:textColor="#BF000000"
-                              android:gravity="right|center_vertical" android:clickable="true" android:textSize="20sp"
-                              android:layout_alignParentBottom="true" android:layout_marginBottom="1dp"
-                              android:layout_marginTop="0dp" android:layout_alignParentTop="true"
-                    />
+                                android:gravity="right|center_vertical" android:paddingRight="10dp"
+                                tools:ignore="RtlHardcoded,RtlSymmetry">
+                    <EditText android:layout_width="155dp" android:layout_height="40dp"
+                              android:textColor="#BF000000" android:id="@+id/editxt_adet"
+                              android:background="@drawable/edit_text_view" android:paddingLeft="15dp"
+                              android:hint="@string/adet_giriniz" android:textColorHint="#40000000" android:textSize="14sp"
+                              android:autofillHints="" android:inputType="number"/>
                 </RelativeLayout>
             </LinearLayout>
             <View android:id="@+id/line4" android:layout_width="match_parent" android:layout_height="5dp"
@@ -188,24 +200,26 @@
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
-                    android:id="@+id/linlayout_7" android:layout_below="@+id/linlayout_1">
+                    android:id="@+id/linlayout_7">
 
                 <TextView android:id="@+id/suretipi" android:layout_width="206dp" android:layout_height="wrap_content"
-                          android:text="Süre Tipi" android:textColor="#BF000000"
-                          android:paddingLeft="10dp" android:paddingBottom="15dp" android:paddingTop="15dp"/>
+                          android:text="@string/sure_tipi" android:textColor="#BF000000"
+                          android:paddingStart="10dp" android:paddingBottom="15dp" android:paddingTop="15dp"
+                          tools:ignore="RtlSymmetry"/>
                 <RelativeLayout android:layout_width="204dp" android:layout_height="match_parent"
-                                android:gravity="center" android:paddingRight="10dp">
-                    <TextView android:id="@+id/suretipi_clck" android:layout_width="171dp"
+                                android:gravity="center" android:paddingEnd="10dp" tools:ignore="RtlSymmetry">
+                    <TextView android:id="@+id/val_suretipi" android:layout_width="171dp"
                               android:layout_height="match_parent" android:clickable="false" android:text="Günlük"
                               android:textColor="#BF000000" android:gravity="right|center_vertical"
                               android:paddingBottom="15dp"
                               android:paddingTop="15dp" android:textSize="14sp" android:layout_alignParentEnd="true"
-                              android:layout_marginEnd="15dp"/>
+                              android:layout_marginEnd="15dp" tools:ignore="RtlHardcoded"/>
                     <TextView android:layout_width="204dp" android:layout_height="match_parent"
-                              android:text=">" android:textColor="#BF000000"
+                              android:text="@string/devam_sign" android:textColor="#BF000000"
                               android:gravity="right|center_vertical" android:clickable="true" android:textSize="20sp"
                               android:layout_alignParentBottom="true" android:layout_marginBottom="1dp"
-                              android:layout_marginTop="0dp" android:layout_alignParentTop="true"/>
+                              android:layout_marginTop="0dp" android:layout_alignParentTop="true"
+                              android:id="@+id/click_suretipi" android:focusable="true" tools:ignore="RtlHardcoded"/>
                 </RelativeLayout>
             </LinearLayout>
             <View android:id="@+id/line5" android:layout_width="match_parent" android:layout_height="5dp"
@@ -214,26 +228,31 @@
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
-                    android:id="@+id/linlayout_8" android:layout_below="@+id/linlayout_1">
+                    android:id="@+id/linlayout_8">
 
                 <TextView android:id="@+id/fiyat" android:layout_width="206dp" android:layout_height="wrap_content"
-                          android:text="Fyat" android:textColor="#BF000000"
-                          android:paddingLeft="10dp" android:paddingBottom="15dp" android:paddingTop="15dp"/>
+                          android:text="@string/fiyat" android:textColor="#BF000000"
+                          android:paddingStart="10dp" android:paddingBottom="15dp" android:paddingTop="15dp"
+                          tools:ignore="RtlSymmetry"/>
                 <RelativeLayout android:layout_width="204dp" android:layout_height="match_parent"
-                                android:gravity="center" android:paddingRight="10dp">
-
+                                android:gravity="center" android:paddingEnd="10dp" tools:ignore="RtlSymmetry">
+                    <EditText android:layout_width="206dp" android:layout_height="40dp"
+                              android:textColor="#BF000000" android:id="@+id/editxt_fiyat"
+                              android:background="@drawable/edit_text_view" android:paddingStart="15dp"
+                              android:hint="@string/fiyat_giriniz" android:textColorHint="#40000000" android:textSize="14sp"
+                              android:autofillHints="" android:inputType="number"/>
                 </RelativeLayout>
             </LinearLayout>
             <View android:id="@+id/line6" android:layout_width="match_parent" android:layout_height="5dp"
                   android:background="@drawable/line"/>
             <CheckBox android:layout_width="wrap_content" android:layout_height="wrap_content"
-                      android:text="Emir gerçekleştiğinde bilgilendir."
+                      android:text="@string/emir_bilgilendirme"
                       android:textColor="#BF000000" android:buttonTint="#3E6490" android:paddingTop="15dp"
-                      android:paddingBottom="15dp">
+                      android:paddingBottom="15dp" android:checked="true">
             </CheckBox>
         </LinearLayout>
         <Button android:layout_width="wrap_content" android:layout_height="wrap_content"
-                android:background="@drawable/button" android:text="Tamam"
+                android:background="@drawable/button" android:text="@string/tamam"
                 android:layout_alignParentBottom="true" android:layout_marginBottom="68dp"
                 android:layout_alignParentEnd="true" android:layout_marginEnd="132dp"
                 android:layout_alignParentStart="true" android:layout_marginStart="129dp" android:textAllCaps="false"
@@ -242,8 +261,5 @@
     </RelativeLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-
 
 
