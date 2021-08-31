@@ -26,4 +26,21 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
+    <string name="hisseler_alsat">HİSSELER AL/SAT</string>
+    <string name="alis">ALIŞ</string>
+    <string name="satis">SATIŞ</string>
+    <string name="islem_limiti">İşlem Limiti</string>
+    <string name="hisse">Hisse</string>
+    <string name="devam_sign"><![CDATA[>]]></string>
+    <string name="miktar">MİKTAR</string>
+    <string name="fiyat_tipi">Fiyat Tipi</string>
+    <string name="limit">Limit</string>
+    <string name="adet">Adet</string>
+    <string name="adet_giriniz">Adet Giriniz</string>
+    <string name="sure_tipi">Süre Tipi</string>
+    <string name="fiyat">Fiyat</string>
+    <string name="fiyat_giriniz">Fiyat Giriniz</string>
+    <string name="emir_bilgilendirme">Emir gerçekleştiğinde bilgilendir.</string>
+    <string name="tamam">Tamam</string>
+
 </resources>

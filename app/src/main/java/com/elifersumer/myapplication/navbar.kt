@@ -5,6 +5,8 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import com.elifersumer.myapplication.fragments.*
 import kotlinx.android.synthetic.main.activity_navbar.*
+import kotlinx.serialization.ExperimentalSerializationApi
+
 
 class navbar : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
