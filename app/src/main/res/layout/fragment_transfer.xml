@@ -123,5 +123,4 @@
                 tools:layout_editor_absoluteY="52dp"
                 android:contentDescription="@string/investech" />
     </RelativeLayout>
-
 </androidx.constraintlayout.widget.ConstraintLayout>
