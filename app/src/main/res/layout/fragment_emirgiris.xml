@@ -10,14 +10,15 @@
     <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
+
         <TextView
                 android:id="@+id/hisseler_alsat"
                 android:text="HİSSELER AL/SAT"
-                android:gravity="center" android:textStyle="bold"
+                android:gravity="center"
+                android:textStyle="bold"
                 android:layout_width="match_parent"
                 android:layout_height="34dp"
-                android:background="@drawable/screen_title"
-        />
+                android:background="@drawable/screen_title" />
         <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
