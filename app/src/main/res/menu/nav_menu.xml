@@ -3,7 +3,7 @@
     <item
         android:id="@+id/home"
         android:icon="@drawable/logo_nav"
-        android:title="Home"/>
+        android:title="Portföyüm"/>
     <item
             android:id="@+id/piyasa"
             android:icon="@drawable/ic_piyasa_logo"
