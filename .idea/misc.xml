@@ -3,6 +3,30 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/MSI/Documents/GitHub/MyApplication/app/src/main/res/drawable/account_info_box.xml" value="0.38229166666666664" />
+        <entry key="..\:/Users/MSI/Documents/GitHub/MyApplication/app/src/main/res/drawable/button.xml" value="0.38229166666666664" />
+        <entry key="..\:/Users/MSI/Documents/GitHub/MyApplication/app/src/main/res/drawable/button_green.xml" value="0.3828125" />
+        <entry key="..\:/Users/MSI/Documents/GitHub/MyApplication/app/src/main/res/drawable/button_red.xml" value="0.3828125" />
+        <entry key="..\:/Users/MSI/Documents/GitHub/MyApplication/app/src/main/res/drawable/edit_text_view.xml" value="0.3828125" />
+        <entry key="..\:/Users/MSI/Documents/GitHub/MyApplication/app/src/main/res/drawable/ic_hesabim_logo.xml" value="0.38229166666666664" />
+        <entry key="..\:/Users/MSI/Documents/GitHub/MyApplication/app/src/main/res/drawable/ic_launcher_background.xml" value="0.38229166666666664" />
+        <entry key="..\:/Users/MSI/Documents/GitHub/MyApplication/app/src/main/res/drawable/my_border.xml" value="0.3828125" />
+        <entry key="..\:/Users/MSI/Documents/GitHub/MyApplication/app/src/main/res/drawable/rounded_bottom_box.xml" value="0.3828125" />
+        <entry key="..\:/Users/MSI/Documents/GitHub/MyApplication/app/src/main/res/drawable/rounded_views.xml" value="0.3828125" />
+        <entry key="..\:/Users/MSI/Documents/GitHub/MyApplication/app/src/main/res/drawable/screen_title.xml" value="0.3828125" />
+        <entry key="..\:/Users/MSI/Documents/GitHub/MyApplication/app/src/main/res/drawable/signin_textview.xml" value="0.3828125" />
+        <entry key="..\:/Users/MSI/Documents/GitHub/MyApplication/app/src/main/res/drawable/title_box.xml" value="0.3828125" />
+        <entry key="..\:/Users/MSI/Documents/GitHub/MyApplication/app/src/main/res/layout/activity_accounts.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/MSI/Documents/GitHub/MyApplication/app/src/main/res/layout/activity_emirlerim.xml" value="0.25" />
+        <entry key="..\:/Users/MSI/Documents/GitHub/MyApplication/app/src/main/res/layout/activity_emirlerim2.xml" value="0.35260416666666666" />
+        <entry key="..\:/Users/MSI/Documents/GitHub/MyApplication/app/src/main/res/layout/activity_navbar.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/MSI/Documents/GitHub/MyApplication/app/src/main/res/layout/activity_sign_in.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/MSI/Documents/GitHub/MyApplication/app/src/main/res/layout/activity_sign_up.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/MSI/Documents/GitHub/MyApplication/app/src/main/res/layout/fragment_diger.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/MSI/Documents/GitHub/MyApplication/app/src/main/res/layout/fragment_emirgiris.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/MSI/Documents/GitHub/MyApplication/app/src/main/res/layout/fragment_karsilama.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/MSI/Documents/GitHub/MyApplication/app/src/main/res/layout/fragment_piyasa.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/MSI/Documents/GitHub/MyApplication/app/src/main/res/layout/fragment_transfer.xml" value="0.36614583333333334" />
         <entry key="..\:/Users/erdi7/Documents/GitHub/MyApplication/app/src/main/res/drawable/ic_hesabim_logo.xml" value="0.2755208333333333" />
         <entry key="..\:/Users/erdi7/Documents/GitHub/MyApplication/app/src/main/res/drawable/ic_marketgraph.xml" value="0.2755208333333333" />
         <entry key="..\:/Users/erdi7/Documents/GitHub/MyApplication/app/src/main/res/layout/activity_accounts.xml" value="0.176" />
@@ -11,9 +35,10 @@
         <entry key="..\:/Users/erdi7/Documents/GitHub/MyApplication/app/src/main/res/layout/activity_sign_in.xml" value="0.152" />
         <entry key="..\:/Users/erdi7/Documents/GitHub/MyApplication/app/src/main/res/layout/fragment_diger.xml" value="0.136" />
         <entry key="..\:/Users/erdi7/Documents/GitHub/MyApplication/app/src/main/res/layout/fragment_emir.xml" value="0.1743659420289855" />
+        <entry key="..\:/Users/erdi7/Documents/GitHub/MyApplication/app/src/main/res/layout/fragment_emirgiris.xml" value="0.4" />
         <entry key="..\:/Users/erdi7/Documents/GitHub/MyApplication/app/src/main/res/layout/fragment_karsilama.xml" value="0.1743659420289855" />
         <entry key="..\:/Users/erdi7/Documents/GitHub/MyApplication/app/src/main/res/layout/fragment_piyasa.xml" value="0.1743659420289855" />
-        <entry key="..\:/Users/erdi7/Documents/GitHub/MyApplication/app/src/main/res/layout/fragment_transfer.xml" value="0.1743659420289855" />
+        <entry key="..\:/Users/erdi7/Documents/GitHub/MyApplication/app/src/main/res/layout/fragment_transfer.xml" value="0.4" />
         <entry key="..\:/Users/erdi7/Documents/GitHub/MyApplication/app/src/main/res/layout/sign_in.xml" value="0.10280797101449275" />
         <entry key="..\:/Users/erdi7/Documents/GitHub/MyApplication/app/src/main/res/menu/nav_menu.xml" value="0.2111111111111111" />
       </map>
