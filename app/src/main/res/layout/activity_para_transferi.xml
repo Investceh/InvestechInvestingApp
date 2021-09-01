@@ -10,81 +10,175 @@
 
     <TextView
             android:id="@+id/para_transfer"
-            android:text="PARA TRANSFER"
+            android:text="PARA TRANSFERİ"
             android:gravity="center"
             android:textStyle="bold"
             android:layout_width="match_parent"
             android:layout_height="34dp"
-            android:background="@drawable/screen_title" />
+            android:background="@drawable/screen_title"
+            />
 
-        <LinearLayout
-                android:id="@+id/options"
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:orientation="horizontal"
-                android:layout_below="@+id/para_transfer"
-                android:background="#f5f5f5"
-                android:paddingTop="30dp">
-
-            <TextView
-                    android:id="@+id/arama"
-                    android:layout_width="130dp"
-                    android:layout_height="wrap_content"
-                    android:text="Transfer seçeneği"
-                    android:textColorHint="@color/black"
-                    android:textColor="#BF000000"
-                    android:paddingLeft="10dp"
-                    android:paddingBottom="15dp"
-                    android:paddingTop="15dp" />
-
-
-            <Spinner
-                    android:id="@+id/spin"
-                    android:layout_width="wrap_content"
-                    android:layout_height="50dp"
-                    android:entries="@array/options"
-                    android:background="#b3b1b2">
-
-            </Spinner>
-
-        </LinearLayout>
 
     <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="vertical">
 
-    <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
 
-        <com.google.android.material.textfield.TextInputEditText
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:orientation="horizontal"
+                android:background="#81A9D6"
+                android:paddingLeft="10dp"
+                android:layout_marginBottom="15dp"
+                >
+
+            <TextView
+                    android:text="Vadesiz Hesabım"
+                    android:gravity="left"
+                    android:layout_width="160dp"
+                    android:layout_height="24dp"
+                    android:textColor="@color/black"
+                    android:layout_marginTop="13dp"/>
+
+            <TextView
+                    android:text="123.456,00"
+                    android:gravity="left"
+                    android:layout_width="match_parent"
+                    android:layout_height="24dp"
+                    android:textColor="@color/black"
+                    android:layout_marginTop="13dp"
+                    android:textStyle="bold"
+                    />
+
+
+        </LinearLayout>
+
+
+        <TextView
+                android:text="İşlem Seçiniz"
+                android:gravity="left"
+                android:layout_marginLeft="16.5dp"
+                android:textStyle="bold"
+                android:layout_width="match_parent"
+                android:layout_height="24dp"
+                android:textColor="@color/black"
+                android:layout_marginBottom="20sp"
+                android:textSize="18sp"
+                />
+
+
+        <RadioGroup
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Miktar"
-                android:textColor="@color/black">
+                android:layout_marginBottom="30dp"
+                android:layout_gravity="center">
+        <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Vadesiz -> Yatırım"
+                android:textColor="@color/black"
+                app:buttonTint="#293E57"
+                android:layout_marginLeft="10dp"
+                >
 
-        </com.google.android.material.textfield.TextInputEditText>
-    </com.google.android.material.textfield.TextInputLayout>
+        </RadioButton>
+        <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Yatırım  -> Vadesiz"
+                android:textColor="@color/black"
+                app:buttonTint="#293E57"
+                android:layout_marginLeft="10dp">
+        </RadioButton>
 
-    <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/button"
-            android:text="Tamam"
-            android:layout_alignParentBottom="false"
-            android:layout_marginTop="25dp"
-            android:layout_marginBottom="71dp"
-            android:layout_alignParentEnd="true"
-            android:layout_marginEnd="131dp"
-            android:layout_alignParentStart="true"
-            android:layout_marginStart="130dp"
-            android:textAllCaps="false"
-            android:textSize="18sp"
-            android:fontFamily="@font/inter"
-            android:textStyle="bold"
-            android:layout_below="@+id/layout_form"
-            android:layout_centerInParent="true" />
+
+        </RadioGroup>
+
+
+
+
+        <EditText
+                android:id="@+id/miktar"
+                android:translationZ="100dp"
+                android:layout_width="400dp"
+                android:layout_height="49dp"
+                android:textSize="13sp"
+                android:background="@drawable/edit_text_view"
+                android:inputType="numberDecimal"
+                android:autofillHints="Ad"
+                android:hint="Miktar"
+                android:textColor="@color/black"
+                android:textColorHint="#80000000"
+                android:paddingStart="20dp"
+                tools:ignore="RtlSymmetry"
+                android:fontFamily="@font/inter"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp" />
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingLeft="165dp">
+
+            <RadioGroup
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:buttonTint="#293E57"
+                        android:text="25%"
+                        android:textColor="@color/black">
+                </RadioButton>
+
+                <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:buttonTint="#293E57"
+                        android:text="50%"
+                        android:textColor="@color/black">
+                </RadioButton>
+
+                <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:buttonTint="#293E57"
+                        android:text="75%"
+                        android:textColor="@color/black">
+                </RadioButton>
+
+                <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:buttonTint="#293E57"
+                        android:text="100%"
+                        android:textColor="@color/black">
+                </RadioButton>
+            </RadioGroup>
+        </LinearLayout>
+
+        <Button
+                android:id="@+id/btn_tamam"
+                android:layout_width="150dp"
+                android:layout_height="47dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:background="@drawable/button"
+                android:text="Tamam"
+                android:textColor="#F5F5F5"
+                android:textAllCaps="false"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:fontFamily="@font/inter"
+                android:layout_gravity="center"
+                android:layout_marginTop="210dp"
+                />
 
     </LinearLayout>
 
