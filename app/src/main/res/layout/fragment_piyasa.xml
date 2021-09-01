@@ -1,12 +1,226 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".fragments.PiyasaFragment">
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".fragments.PiyasaFragment"
+        android:background="#F5F5F5">
 
     <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent"
+            android:background="#F5F5F5">
+
+        <TextView
+                android:id="@+id/hisseler_alsat"
+                android:text="HİSSELER"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:background="@drawable/screen_title" />
+
+        <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="615dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="0dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="81dp"
+                android:background="#F5F5F5">
+
+            <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#3E6490">
+
+                <TextView
+                        android:text="Hisseler"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/tabloRow1"
+                        android:padding="18sp"
+                        android:textColor="@color/black" />
+
+                <TextView
+                        android:text="Alış"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/tabloRow2"
+                        android:padding="18sp"
+                        android:textColor="@color/black" />
+
+                <TextView
+                        android:text="Satış"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/tabloRow3"
+                        android:padding="18sp"
+                        android:textColor="@color/black" />
+
+                <TextView
+                        android:text="Değişim"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/tabloRow4"
+                        android:padding="18sp"
+                        android:textColor="@color/black" />
+
+                <TextView
+                        android:text="Satın Al"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/tabloRow5"
+                        android:padding="18sp"
+                        android:textColor="@color/black" />
+            </TableRow>
+
+            <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#C7D3E1">
+
+                <TextView
+                        android:text="AGHOL"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/tableRow6"
+                        android:padding="18sp"
+                        android:textColor="@color/black" />
+
+                <TextView
+                        android:text="24.12"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/textView7"
+                        android:padding="18sp"
+                        android:textColor="@color/black" />
+
+                <TextView
+                        android:text="24.1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/textView8"
+                        android:padding="18sp"
+                        android:textColor="@color/black" />
+
+                <TextView
+                        android:text="0,67"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/textView9"
+                        android:padding="18sp"
+                        android:textColor="#536DFE" />
+
+                <Button
+                        android:text="Satın Al"
+                        android:textSize="10dp"
+                        android:layout_width="15dp"
+                        android:layout_height="44dp"
+                        android:id="@+id/button1"
+                        android:background="@drawable/button"
+                        android:padding="15sp" />
+
+            </TableRow>
+
+            <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#F5F5F5 ">
+
+                <TextView
+                        android:text="AKCNS"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/textView10"
+                        android:padding="18sp"
+                        android:textColor="@color/black" />
+
+                <TextView
+                        android:text="15.3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/textView11"
+                        android:padding="18sp"
+                        android:textColor="@color/black" />
+
+                <TextView
+                        android:text="15.29"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/textView12"
+                        android:padding="18sp"
+                        android:textColor="@color/black" />
+
+                <TextView
+                        android:text="-0,20"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/textView13"
+                        android:padding="18sp"
+                        android:textColor="#FF0000" />
+
+                <Button
+                        android:text="Satın Al"
+                        android:textSize="10dp"
+                        android:layout_width="15dp"
+                        android:layout_height="44dp"
+                        android:id="@+id/button2"
+                        android:background="@drawable/button"
+                        android:padding="15sp" />
+
+            </TableRow>
+
+            <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#C7D3E1">
+
+                <TextView
+                        android:text="ALKIM"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/tableRow14"
+                        android:padding="18sp"
+                        android:textColor="@color/black" />
+
+                <TextView
+                        android:text="15.04"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/textView15"
+                        android:padding="18sp"
+                        android:textColor="@color/black" />
+
+                <TextView
+                        android:text="15.03"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/textView16"
+                        android:padding="18sp"
+                        android:textColor="@color/black" />
+
+                <TextView
+                        android:text="1,48"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/textView17"
+                        android:padding="18sp"
+                        android:textColor="#536DFE" />
+
+                <Button
+                        android:text="Satın Al"
+                        android:textSize="10dp"
+                        android:layout_width="15dp"
+                        android:layout_height="44dp"
+                        android:id="@+id/button"
+                        android:background="@drawable/button"
+                        android:padding="15sp" />
+
+            </TableRow>
+
+        </TableLayout>
+
+    </RelativeLayout>
 
 </FrameLayout>

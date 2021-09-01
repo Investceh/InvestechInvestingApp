@@ -5,12 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.lifecycle.lifecycleScope
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.elifersumer.myapplication.R
-import kotlinx.android.synthetic.main.fragment_piyasa.*
-import kotlinx.coroutines.launch
-import kotlinx.serialization.ExperimentalSerializationApi
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
