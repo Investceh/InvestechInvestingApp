@@ -22,7 +22,7 @@
 
         <TableLayout
                 android:layout_width="match_parent"
-                android:layout_height="507dp"
+                android:layout_height="496dp"
                 android:layout_alignParentEnd="true"
                 android:layout_marginEnd="0dp"
                 android:layout_alignParentBottom="true"
@@ -32,7 +32,7 @@
             <TableRow
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="#7BDAD1">
+                    android:background="#3E6490">
 
                 <TextView
                         android:text="Hisseler"
@@ -220,27 +220,6 @@
             </TableRow>
 
         </TableLayout>
-
-        <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="49dp"
-                android:layout_alignParentStart="true"
-                android:layout_marginStart="0dp"
-                android:layout_alignParentTop="true"
-                android:layout_marginTop="35dp">
-
-            <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="textPersonName"
-                    android:text="FILTRELEME"
-                    android:ems="10"
-                    android:id="@+id/filtreText"
-                    android:layout_weight="1"
-                    android:textAlignment="viewStart"
-                    android:textColor="@color/black" />
-        </LinearLayout>
 
     </RelativeLayout>
 
