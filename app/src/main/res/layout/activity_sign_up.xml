@@ -18,6 +18,7 @@
                 android:translationZ="100dp"
                 android:layout_width="322dp"
                 android:layout_height="49dp"
+                android:textSize="13sp"
                 android:background="@drawable/edit_text_view"
                 android:inputType="text" android:autofillHints="Ad" android:hint="@string/name"
                 android:textColorHint="#80000000" android:paddingStart="20dp" tools:ignore="RtlSymmetry"
@@ -28,6 +29,7 @@
                 android:translationZ="100dp"
                 android:layout_width="322dp"
                 android:layout_height="49dp"
+                android:textSize="13sp"
                 android:background="@drawable/edit_text_view"
                 android:inputType="text" android:autofillHints="Soyad" android:hint="@string/lastname"
                 android:textColorHint="#80000000" android:paddingStart="20dp" android:layout_marginTop="10dp"
@@ -38,6 +40,7 @@
                 android:translationZ="100dp"
                 android:layout_width="322dp"
                 android:layout_height="49dp"
+                android:textSize="13sp"
                 android:background="@drawable/edit_text_view"
                 android:inputType="text" android:autofillHints="TC Kimlik No" android:hint="@string/tckn"
                 android:textColorHint="#80000000" android:paddingStart="20dp" android:layout_marginTop="10dp"
@@ -48,6 +51,7 @@
                 android:translationZ="100dp"
                 android:layout_width="322dp"
                 android:layout_height="49dp"
+                android:textSize="13sp"
                 android:background="@drawable/edit_text_view"
                 android:inputType="number" android:autofillHints="Telefon" android:hint="@string/phone"
                 android:textColorHint="#80000000" android:paddingStart="20dp" android:layout_marginTop="10dp"
@@ -58,6 +62,7 @@
                 android:translationZ="100dp"
                 android:layout_width="322dp"
                 android:layout_height="49dp"
+                android:textSize="13sp"
                 android:background="@drawable/edit_text_view"
                 android:inputType="textPassword" android:autofillHints="Şifre" android:hint="@string/password"
                 android:textColorHint="#80000000" android:paddingStart="20dp" android:layout_marginTop="10dp"
@@ -69,14 +74,20 @@
                     app:layout_constraintStart_toStartOf="parent" android:translationZ="100dp"
                     app:layout_constraintVertical_bias="0.0"
                     android:gravity="center" android:id="@+id/relativeLayout2">
-        <Button android:id="@+id/registerBtn"
+
+        <Button
+                android:id="@+id/registerBtn"
                 android:layout_width="351dp"
                 android:layout_height="57dp"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
-                android:background="@drawable/button" android:text="@string/kayitol" android:textColor="#F5F5F5"
-                android:textAllCaps="false" android:textStyle="bold" android:textSize="20sp"
-                android:fontFamily="@font/inter"/>
+                android:background="@drawable/button"
+                android:text="@string/kayitol"
+                android:textColor="#F5F5F5"
+                android:textAllCaps="false"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:fontFamily="@font/inter" />
     </RelativeLayout>
 
     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
