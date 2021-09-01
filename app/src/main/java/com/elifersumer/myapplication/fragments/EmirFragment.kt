@@ -35,7 +35,7 @@ class EmirFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_emir, container, false)
+        return inflater.inflate(R.layout.fragment_emirgiris, container, false)
     }
 
     companion object {

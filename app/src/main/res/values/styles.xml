@@ -23,4 +23,15 @@
         </item>
 
     </style>
+    <style name="hisseler">
+
+        <item name="android:textSize">
+            18sp
+        </item>
+
+        <item name="android:textColor">
+            #BF000000
+        </item>
+
+    </style>
 </resources>
