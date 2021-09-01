@@ -2,14 +2,10 @@ package com.elifersumer.myapplication
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
-import android.widget.Button
 
-class Emirlerim : AppCompatActivity() {
-
+class ParaTransferi : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_emirlerim)
-
+        setContentView(R.layout.activity_para_transferi)
     }
 }

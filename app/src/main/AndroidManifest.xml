@@ -11,9 +11,11 @@
             android:supportsRtl="true"
             android:theme="@style/Theme.MyApplication">
         <activity
+                android:name=".ParaTransferi"
+                android:exported="true" />
+        <activity
                 android:name=".Emirlerim"
                 android:exported="true" />
-
         <activity android:name=".Accounts" />
         <activity
                 android:name=".navbar"
