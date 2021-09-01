@@ -38,7 +38,7 @@
             <Button
                     android:id="@+id/emirler_gerceklesen"
                     android:text="GERÇEKLEŞEN"
-                    android:layout_width="103dp"
+                    android:layout_width="102dp"
                     android:layout_height="49dp"
                     android:background="@drawable/my_border"
                     android:layout_marginBottom="645dp"
@@ -48,7 +48,7 @@
             <Button
                     android:id="@+id/emirler_bekleyen"
                     android:text="BEKLEYEN"
-                    android:layout_width="103dp"
+                    android:layout_width="102dp"
                     android:layout_height="49dp"
                     android:background="@drawable/my_border"
                     android:layout_marginBottom="645dp"
@@ -76,16 +76,56 @@
                     android:id="@+id/layout_islem"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="#C7D3E1">
+                    android:background="#C7D3E1"
+                    android:layout_marginBottom="10dp">
                 <TextView
-                        android:id="@+id/filtreleme"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Filtreleme falan filannn"
+                        android:id="@+id/arama"
+                        android:layout_width="308dp"
+                        android:layout_height="match_parent"
+                        android:hint="Hisse ismine göre ara"
+                        android:textColorHint="@color/black"
                         android:textColor="#BF000000"
                         android:paddingLeft="10dp"
                         android:paddingBottom="15dp"
                         android:paddingTop="15dp"/>
+
+                <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#8C7AA9"
+                        android:text="Emir İptal"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+
+        <LinearLayout
+                android:id="@+id/layout_form2"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/layout_form"
+                android:layout_marginTop="0dp">
+
+            <LinearLayout
+                    android:id="@+id/layout_islem2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#C7D3E1"
+                    android:layout_marginBottom="10dp">
+
+                <TextView
+                        android:id="@+id/filtreleme"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:hint="filtemele/sıralama işlemleri"
+                        android:textColorHint="@color/black"
+                        android:textColor="#BF000000"
+                        android:paddingLeft="10dp"
+                        android:paddingBottom="15dp"
+                        android:paddingTop="15dp" />
+
             </LinearLayout>
 
         </LinearLayout>
@@ -95,7 +135,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:background="#f5f5f5"
-                    android:layout_below="@+id/layout_form">
+                    android:layout_below="@+id/layout_form2">
 
                 <TableLayout
                         android:layout_width="match_parent"
@@ -109,15 +149,17 @@
                     <TableRow
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:background="#3E6490">
+                            android:background="#3E6490"
+                            android:layout_marginBottom="10dp">
+
                         <TextView
                                 android:id="@+id/hisseler"
                                 android:text="Hisseler"
                                 android:layout_width="103dp"
                                 android:layout_height="wrap_content"
                                 android:padding="18sp"
-                                android:textColor="@color/black"
-                                />
+                                android:textColor="@color/black" />
+
                         <TextView
                                 android:id="@+id/adet"
                                 android:text="Adet"
@@ -125,6 +167,7 @@
                                 android:layout_height="wrap_content"
                                 android:padding="18sp"
                                 android:textColor="@color/black" />
+
                         <TextView
                                 android:id="@+id/fiyat"
                                 android:text="Fiyat"
@@ -132,6 +175,7 @@
                                 android:layout_height="wrap_content"
                                 android:padding="18sp"
                                 android:textColor="@color/black" />
+
                         <TextView
                                 android:id="@+id/alıs_satıs"
                                 android:text="Alış/Satış"
@@ -145,6 +189,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:background="@drawable/button_green">
+
                         <TextView
                                 android:id="@+id/hisse1"
                                 android:text="AGHOL"
@@ -152,6 +197,7 @@
                                 android:layout_height="wrap_content"
                                 android:padding="18sp"
                                 android:textColor="@color/black" />
+
                         <TextView
                                 android:id="@+id/adet1"
                                 android:text="4"
@@ -159,6 +205,7 @@
                                 android:layout_height="wrap_content"
                                 android:padding="18sp"
                                 android:textColor="@color/black" />
+
                         <TextView
                                 android:id="@+id/fiyat1"
                                 android:text="124.12"
@@ -166,6 +213,7 @@
                                 android:layout_height="wrap_content"
                                 android:padding="18sp"
                                 android:textColor="@color/black" />
+
                         <TextView
                                 android:id="@+id/alıs_satıs1"
                                 android:text="Alış"
@@ -179,6 +227,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:background="@drawable/button_red">
+
                         <TextView
                                 android:id="@+id/hisse2"
                                 android:text="AKCNS"
@@ -186,6 +235,7 @@
                                 android:layout_height="wrap_content"
                                 android:padding="18sp"
                                 android:textColor="@color/black" />
+
                         <TextView
                                 android:text="220"
                                 android:layout_width="wrap_content"
@@ -193,6 +243,7 @@
                                 android:id="@+id/adet2"
                                 android:padding="18sp"
                                 android:textColor="@color/black" />
+
                         <TextView
                                 android:text="15.29"
                                 android:layout_width="wrap_content"
@@ -200,6 +251,7 @@
                                 android:id="@+id/fiyat2"
                                 android:padding="18sp"
                                 android:textColor="@color/black" />
+
                         <TextView
                                 android:text="Satış"
                                 android:layout_width="wrap_content"
@@ -213,6 +265,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:background="@drawable/button_green">
+
                         <TextView
                                 android:id="@+id/hisse3"
                                 android:text="AGYO"
@@ -220,6 +273,7 @@
                                 android:layout_height="wrap_content"
                                 android:padding="18sp"
                                 android:textColor="@color/black" />
+
                         <TextView
                                 android:id="@+id/adet3"
                                 android:text="18"
@@ -227,6 +281,7 @@
                                 android:layout_height="wrap_content"
                                 android:padding="18sp"
                                 android:textColor="@color/black" />
+
                         <TextView
                                 android:id="@+id/fiyat3"
                                 android:text="420.51"
@@ -234,6 +289,7 @@
                                 android:layout_height="wrap_content"
                                 android:padding="18sp"
                                 android:textColor="@color/black" />
+
                         <TextView
                                 android:id="@+id/alıs_satıs3"
                                 android:text="Alış"
