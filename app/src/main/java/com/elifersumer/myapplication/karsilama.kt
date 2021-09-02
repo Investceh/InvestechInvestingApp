@@ -41,12 +41,10 @@ class karsilama : AppCompatActivity() {
             R.drawable.euro,
             R.drawable.dolar
         )
-
         heading = arrayOf(
             "Turkish Liras",
             "Euro",
             "Dolar"
-
         )
         newRecyclerView = findViewById(R.id.recycle)
         newRecyclerView.layoutManager = LinearLayoutManager(this)
