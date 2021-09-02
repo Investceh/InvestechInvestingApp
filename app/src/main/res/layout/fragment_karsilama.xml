@@ -4,42 +4,72 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools" android:layout_width="412dp"
         android:layout_height="match_parent" tools:ignore="ExtraText">
-    <ImageView
-            android:layout_width="411dp"
-            android:layout_height="330dp"
-            app:srcCompat="@drawable/headerimage"
-            android:id="@+id/headerImageView"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.283"
-            android:contentDescription="@string/image"
-            app:layout_constraintHorizontal_bias="1.0"
-            tools:ignore="UnknownIdInLayout"
-            android:layout_marginBottom="401dp" />
+
+    <RelativeLayout
+            android:id="@+id/relativeLayout3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+        <ImageView
+                android:layout_width="411dp"
+                android:layout_height="330dp" app:srcCompat="@drawable/headerimage" android:id="@+id/headerImageView"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" app:layout_constraintBottom_toTopOf="@+id/portfoyum"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.283" android:contentDescription="@string/image"
+                app:layout_constraintHorizontal_bias="1.0"/>
+        <TextView
+                android:id="@+id/portfoyum"
+                android:text="@string/Portföyüm"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:layout_width="match_parent"
+                android:layout_height="34dp"
+                android:background="@drawable/screen_title" />
+
+        <com.github.mikephil.charting.charts.PieChart
+                android:id="@+id/pieChart"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginStart="120dp"
+                android:layout_marginEnd="50dp"
+                android:layout_marginBottom="50dp">
+        </com.github.mikephil.charting.charts.PieChart>
+
+    </RelativeLayout>
+
     <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_below="@id/headerImageView">
+            android:layout_below="@id/headerImageView"
+            tools:ignore="NotSibling"
+            app:layout_constraintTop_toTopOf="parent">
+
         <RelativeLayout
                 android:layout_marginTop="250dp"
                 android:layout_width="match_parent"
                 android:background="@drawable/rounded_bottom_box"
-                android:layout_height="800dp">
+                android:layout_height="800dp"
+                >
+            <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/hisse"
+                    android:id="@+id/hisseImage"
+                    android:contentDescription="@string/image"
+                    tools:ignore="MissingConstraints"
+                    android:layout_marginTop="0dp">
+            </ImageView>
 
-            <ListView
-                    android:id="@+id/listView"
+            <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycle"
+                    android:layout_below="@id/hisseImage"
                     android:layout_width="match_parent"
-                    android:layout_height="fill_parent"
-                    android:layout_marginTop="250dp"
-                    android:textColor="#000000"
+                    android:layout_height="match_parent">
 
-                    >
-
-
-            </ListView>
-
-
+            </androidx.recyclerview.widget.RecyclerView>
 
 
         </RelativeLayout>
