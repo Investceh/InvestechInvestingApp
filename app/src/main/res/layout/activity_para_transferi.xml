@@ -4,7 +4,7 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".fragments.TransferFragment"
+        tools:context=".ParaTransferi"
         android:orientation="vertical"
         android:background="#f5f5f5">
 
@@ -31,7 +31,7 @@
                 android:orientation="horizontal"
                 android:background="#81A9D6"
                 android:paddingLeft="10dp"
-                android:layout_marginBottom="5dp"
+                android:layout_marginBottom="15dp"
                 >
 
             <TextView
@@ -43,7 +43,7 @@
                     android:layout_marginTop="13dp"/>
 
             <TextView
-                    android:id="@+id/hesap_bilgi"
+                    android:text="123.456,00"
                     android:gravity="left"
                     android:layout_width="match_parent"
                     android:layout_height="24dp"
@@ -52,38 +52,8 @@
                     android:textStyle="bold"
                     />
 
-        </LinearLayout>
-
-        <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:orientation="horizontal"
-                android:background="#81A9D6"
-                android:paddingLeft="10dp"
-                android:layout_marginBottom="15dp"
-                >
-
-            <TextView
-                    android:text="Yatırım Hesabım"
-                    android:gravity="left"
-                    android:layout_width="160dp"
-                    android:layout_height="24dp"
-                    android:textColor="@color/black"
-                    android:layout_marginTop="13dp"/>
-
-            <TextView
-                    android:id="@+id/yatırım_bilgi"
-                    android:gravity="left"
-                    android:layout_width="match_parent"
-                    android:layout_height="24dp"
-                    android:textColor="@color/black"
-                    android:layout_marginTop="13dp"
-                    android:textStyle="bold"
-                    />
 
         </LinearLayout>
-
-
 
 
         <TextView
@@ -100,34 +70,34 @@
 
 
         <RadioGroup
-                android:id="@+id/islem"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="30dp"
                 android:layout_gravity="center">
+        <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Vadesiz -> Yatırım"
+                android:textColor="@color/black"
+                app:buttonTint="#293E57"
+                android:layout_marginLeft="10dp"
+                >
 
-            <RadioButton
-                    android:id="@+id/vadesiz_yatırım"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Vadesiz -> Yatırım"
-                    android:textColor="@color/black"
-                    app:buttonTint="#293E57"
-                    android:layout_marginLeft="10dp">
-
-            </RadioButton>
-
-            <RadioButton
-                    android:id="@+id/yatırım_vadesiz"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Yatırım  -> Vadesiz"
-                    android:textColor="@color/black"
-                    app:buttonTint="#293E57"
-                    android:layout_marginLeft="10dp"></RadioButton>
+        </RadioButton>
+        <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Yatırım  -> Vadesiz"
+                android:textColor="@color/black"
+                app:buttonTint="#293E57"
+                android:layout_marginLeft="10dp">
+        </RadioButton>
 
 
         </RadioGroup>
+
+
+
 
         <EditText
                 android:id="@+id/miktar"
@@ -155,13 +125,11 @@
                 android:paddingLeft="165dp">
 
             <RadioGroup
-                    android:id="@+id/oranlar"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
 
                 <RadioButton
-                        android:id="@+id/rg_25"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         app:buttonTint="#293E57"
@@ -170,7 +138,6 @@
                 </RadioButton>
 
                 <RadioButton
-                        android:id="@+id/rg_50"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         app:buttonTint="#293E57"
@@ -179,15 +146,14 @@
                 </RadioButton>
 
                 <RadioButton
-                        android:id="@+id/rg_75"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         app:buttonTint="#293E57"
                         android:text="75%"
-                        android:textColor="@color/black"></RadioButton>
+                        android:textColor="@color/black">
+                </RadioButton>
 
                 <RadioButton
-                        android:id="@+id/rg_100"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         app:buttonTint="#293E57"
@@ -211,7 +177,7 @@
                 android:textSize="18sp"
                 android:fontFamily="@font/inter"
                 android:layout_gravity="center"
-                android:layout_marginTop="120dp"
+                android:layout_marginTop="210dp"
                 />
 
     </LinearLayout>
