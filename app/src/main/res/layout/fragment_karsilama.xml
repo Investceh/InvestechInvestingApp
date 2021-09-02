@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout        xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools" android:layout_width="412dp"
-        android:layout_height="match_parent" tools:ignore="ExtraText">
+        android:layout_height="match_parent" tools:ignore="ExtraText"
+        android:id="@+id/frameLayout"
+        >
 
     <RelativeLayout
             android:id="@+id/relativeLayout3"
@@ -13,12 +14,16 @@
 
         <ImageView
                 android:layout_width="411dp"
-                android:layout_height="330dp" app:srcCompat="@drawable/headerimage" android:id="@+id/headerImageView"
+                android:layout_height="330dp"
+                app:srcCompat="@drawable/headerimage"
+                android:id="@+id/headerImageView"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" app:layout_constraintBottom_toTopOf="@+id/portfoyum"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/portfoyum"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.283" android:contentDescription="@string/image"
-                app:layout_constraintHorizontal_bias="1.0"/>
+                app:layout_constraintVertical_bias="0.283"
+                android:contentDescription="@string/image"
+                app:layout_constraintHorizontal_bias="1.0" />
         <TextView
                 android:id="@+id/portfoyum"
                 android:text="@string/Portföyüm"
@@ -36,6 +41,7 @@
                 android:layout_marginStart="120dp"
                 android:layout_marginEnd="50dp"
                 android:layout_marginBottom="50dp">
+
         </com.github.mikephil.charting.charts.PieChart>
 
     </RelativeLayout>
@@ -62,19 +68,45 @@
                     tools:ignore="MissingConstraints"
                     android:layout_marginTop="0dp">
             </ImageView>
+            <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/a"
+                    android:id="@+id/a"
+                    android:contentDescription="@string/image"
+                    tools:ignore="MissingConstraints"
+                    android:layout_marginTop="50dp">
 
-            <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/recycler_view"
-                    android:layout_below="@id/hisseImage"
-                    android:layout_width="match_parent"
-                    android:background="@color/purple_200"
-                    android:layout_height="match_parent">
+            </ImageView>
+            <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/b"
+                    android:id="@+id/b"
+                    android:contentDescription="@string/image"
+                    tools:ignore="MissingConstraints"
+                    android:layout_marginTop="250dp">
+            </ImageView>
+            <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/c"
+                    android:id="@+id/c"
+                    android:contentDescription="@string/image"
+                    tools:ignore="MissingConstraints"
+                    android:layout_marginTop="300dp">
 
-            </androidx.recyclerview.widget.RecyclerView>
+            </ImageView>
+            <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/d"
+                    android:id="@+id/d"
+                    android:contentDescription="@string/image"
+                    tools:ignore="MissingConstraints"
+                    android:layout_marginTop="360dp">
 
-
+            </ImageView>
         </RelativeLayout>
     </ScrollView>
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>
