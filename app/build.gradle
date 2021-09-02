@@ -36,7 +36,6 @@ android {
         viewBinding true
     }
 }
-
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation platform('com.google.firebase:firebase-bom:28.4.0')
