@@ -18,7 +18,6 @@ class SignIn : AppCompatActivity() {
             startActivity(intent)
         }
     }
-
     fun signup_OnClick(view:View){
         val intent = Intent(this,SignUp::class.java)
         startActivity(intent)
