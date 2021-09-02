@@ -7,55 +7,168 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.elifersumer.myapplication.R
-
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [TransferFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
+import androidx.appcompat.app.AppCompatActivity
+import android.widget.*
 class TransferFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+    var cüzdan_yatırım = 1254.0
+    var cüzdan_vadesiz = 5000.0
+    var secilen_miktar_double = 0.0
+    lateinit var hesap_bilgi: TextView
+    lateinit var yatırım_bilgi: TextView
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    lateinit var miktar: EditText
 
+    lateinit var  islem: RadioGroup
+    lateinit var vadesiz_yatırım: RadioButton
+    lateinit var yatırım_vadesiz: RadioButton
+
+    lateinit var oranlar: RadioGroup
+    lateinit var rg_25: RadioButton
+    lateinit var rg_50: RadioButton
+    lateinit var rg_75: RadioButton
+    lateinit var rg_100: RadioButton
+
+    //lateinit var btn_devam: Button
+    lateinit var btn_tamam: Button
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_transfer, container, false)
-    }
+        val view =  inflater.inflate(R.layout.fragment_transfer, container, false)
+        hesap_bilgi = view.findViewById(R.id.hesap_bilgi) as TextView
+        yatırım_bilgi = view.findViewById(R.id.yatırım_bilgi) as TextView
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment TransferFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            TransferFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+        islem = view.findViewById(R.id.islem) as RadioGroup
+        vadesiz_yatırım = view.findViewById(R.id.vadesiz_yatırım) as RadioButton
+        yatırım_vadesiz = view.findViewById(R.id.yatırım_vadesiz) as RadioButton
+
+        oranlar = view.findViewById(R.id.oranlar) as RadioGroup
+        rg_25 = view.findViewById(R.id.rg_25) as RadioButton
+        rg_50 = view.findViewById(R.id.rg_50) as RadioButton
+        rg_75 = view.findViewById(R.id.rg_75) as RadioButton
+        rg_100 = view.findViewById(R.id.rg_100) as RadioButton
+
+        //btn_devam = findViewById(R.id.btn_devam) as Button
+        btn_tamam = view.findViewById(R.id.btn_tamam) as Button
+
+        hesap_bilgi.text = cüzdan_vadesiz.toString()
+        yatırım_bilgi.text = cüzdan_yatırım.toString()
+
+        miktar = view.findViewById(R.id.miktar) as EditText
+        rg_25.setOnClickListener(View.OnClickListener {
+            secilen_miktar_double = 0.0
+            if(!vadesiz_yatırım.isChecked && !yatırım_vadesiz.isChecked){
+                Toast.makeText(this@TransferFragment.requireActivity(),"Lütfen işlem seçiniz!",Toast.LENGTH_LONG).show()
+            }else {
+                if (oranlar.checkedRadioButtonId != -1) {
+                    if (rg_25.isChecked && vadesiz_yatırım.isChecked)
+                        miktar.setText((cüzdan_vadesiz * 0.25).toString())
+                    else if (rg_25.isChecked && yatırım_vadesiz.isChecked)
+                        miktar.setText((cüzdan_yatırım * 0.25).toString())
+                }
+                /*var secilen_miktar = miktar.getText().toString()
+                secilen_miktar_double += secilen_miktar.toDouble()*/
+            }
+        })
+        rg_50.setOnClickListener(View.OnClickListener {
+            secilen_miktar_double = 0.0
+            if(!vadesiz_yatırım.isChecked && !yatırım_vadesiz.isChecked){
+                Toast.makeText(this@TransferFragment.requireActivity(),"Lütfen işlem seçiniz!",Toast.LENGTH_LONG).show()
+            }else {
+                if (oranlar.checkedRadioButtonId != -1) {
+                    if (rg_50.isChecked && vadesiz_yatırım.isChecked)
+                        miktar.setText((cüzdan_vadesiz * 0.50).toString())
+                    else if (rg_50.isChecked && yatırım_vadesiz.isChecked)
+                        miktar.setText((cüzdan_yatırım * 0.50).toString())
+                }
+                /*var secilen_miktar = miktar.getText().toString()
+                secilen_miktar_double += secilen_miktar.toDouble()*/
+            }
+        })
+
+        rg_75.setOnClickListener(View.OnClickListener {
+            secilen_miktar_double = 0.0
+            if(!vadesiz_yatırım.isChecked && !yatırım_vadesiz.isChecked){
+                Toast.makeText(this@TransferFragment.requireActivity(),"Lütfen işlem seçiniz!",Toast.LENGTH_LONG).show()
+            }else {
+                if (oranlar.checkedRadioButtonId != -1) {
+                    if (rg_75.isChecked && vadesiz_yatırım.isChecked)
+                        miktar.setText((cüzdan_vadesiz * 0.75).toString())
+                    else if (rg_75.isChecked && yatırım_vadesiz.isChecked)
+                        miktar.setText((cüzdan_yatırım * 0.75).toString())
+                }
+                /* var secilen_miktar = miktar.getText().toString()
+                 secilen_miktar_double += secilen_miktar.toDouble()*/
+            }
+        })
+
+        rg_100.setOnClickListener(View.OnClickListener {
+            secilen_miktar_double = 0.0
+            if(!vadesiz_yatırım.isChecked && !yatırım_vadesiz.isChecked){
+                Toast.makeText(this@TransferFragment.requireActivity(),"Lütfen işlem seçiniz!",Toast.LENGTH_LONG).show()
+            }else {
+                if (oranlar.checkedRadioButtonId != -1) {
+                    if (rg_100.isChecked && vadesiz_yatırım.isChecked)
+                        miktar.setText((cüzdan_vadesiz).toString())
+                    else if (rg_100.isChecked && yatırım_vadesiz.isChecked)
+                        miktar.setText((cüzdan_yatırım).toString())
+                }
+                /* var secilen_miktar = miktar.getText().toString()
+                 secilen_miktar_double += secilen_miktar.toDouble()*/
+            }
+        })
+        btn_tamam.setOnClickListener(View.OnClickListener {
+            if(!vadesiz_yatırım.isChecked && !yatırım_vadesiz.isChecked)
+                Toast.makeText(this@TransferFragment.requireActivity(),"Lütfen işlem seçiniz!",Toast.LENGTH_LONG).show()
+            else{
+                if(miktar.getText().toString() == ""){
+                    Toast.makeText(this@TransferFragment.requireActivity(),"Lütfen miktar giriniz..",Toast.LENGTH_LONG).show()
+                }else{
+                    var secilen_miktar = miktar.getText().toString()
+                    secilen_miktar_double += secilen_miktar.toDouble()
+                    if(islem.checkedRadioButtonId != -1) {
+                        if (vadesiz_yatırım.isChecked) {
+                            if(cüzdan_vadesiz >= secilen_miktar_double){
+                                cüzdan_vadesiz -= secilen_miktar_double
+                                cüzdan_yatırım += secilen_miktar_double
+                                hesap_bilgi.setText(cüzdan_vadesiz.toString())
+                                yatırım_bilgi.setText(cüzdan_yatırım.toString())
+                                clearInputs()
+                            }else{
+                                Toast.makeText(this@TransferFragment.requireActivity(),"Yetersiz bakiye..",Toast.LENGTH_SHORT).show()
+                                oranlar.clearCheck()
+                                miktar.setText("")
+                            }
+
+                        } else if (yatırım_vadesiz.isChecked) {
+                            if(cüzdan_yatırım >= secilen_miktar_double){
+                                cüzdan_vadesiz += secilen_miktar_double
+                                cüzdan_yatırım -= secilen_miktar_double
+                                hesap_bilgi.setText(cüzdan_vadesiz.toString())
+                                yatırım_bilgi.setText(cüzdan_yatırım.toString())
+                                clearInputs()
+                            }
+                            else{
+                                Toast.makeText(this@TransferFragment.requireActivity(),"Yetersiz bakiye..",Toast.LENGTH_LONG).show()
+                                oranlar.clearCheck()
+                                miktar.setText("")
+                            }
+                        }
+                    }
                 }
             }
+        })
+
+
+
+        // Inflate the layout for this fragment
+        return view
     }
+
+    private fun clearInputs() {
+        miktar.setText("")
+        oranlar.clearCheck()
+        islem.clearCheck()
+    }
+
 }
