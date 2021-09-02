@@ -4,32 +4,20 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/erdi7/Documents/GitHub/MyApplication/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2755208333333333" />
-        <entry key="..\:/Users/erdi7/Documents/GitHub/MyApplication/app/src/main/res/drawable/button_green.xml" value="0.2755208333333333" />
-        <entry key="..\:/Users/erdi7/Documents/GitHub/MyApplication/app/src/main/res/drawable/button_vadesiz.xml" value="0.2755208333333333" />
         <entry key="..\:/Users/erdi7/Documents/GitHub/MyApplication/app/src/main/res/drawable/ic_hesabim_logo.xml" value="0.2755208333333333" />
         <entry key="..\:/Users/erdi7/Documents/GitHub/MyApplication/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2755208333333333" />
         <entry key="..\:/Users/erdi7/Documents/GitHub/MyApplication/app/src/main/res/drawable/ic_marketgraph.xml" value="0.2755208333333333" />
         <entry key="..\:/Users/erdi7/Documents/GitHub/MyApplication/app/src/main/res/layout/activity_accounts.xml" value="0.176" />
-        <entry key="..\:/Users/erdi7/Documents/GitHub/MyApplication/app/src/main/res/layout/activity_emir_tablayout.xml" value="0.2558876811594203" />
         <entry key="..\:/Users/erdi7/Documents/GitHub/MyApplication/app/src/main/res/layout/activity_emirlerim.xml" value="0.19021739130434784" />
-        <entry key="..\:/Users/erdi7/Documents/GitHub/MyApplication/app/src/main/res/layout/activity_emirlerim_tab.xml" value="0.2339622641509434" />
         <entry key="..\:/Users/erdi7/Documents/GitHub/MyApplication/app/src/main/res/layout/activity_main.xml" value="0.10663627152988855" />
         <entry key="..\:/Users/erdi7/Documents/GitHub/MyApplication/app/src/main/res/layout/activity_navbar.xml" value="0.2" />
         <entry key="..\:/Users/erdi7/Documents/GitHub/MyApplication/app/src/main/res/layout/activity_sign_in.xml" value="0.2" />
-        <entry key="..\:/Users/erdi7/Documents/GitHub/MyApplication/app/src/main/res/layout/fragment_bekleyen_emir.xml" value="0.2453125" />
-        <entry key="..\:/Users/erdi7/Documents/GitHub/MyApplication/app/src/main/res/layout/fragment_bekleyen_emirlerim.xml" value="0.2558876811594203" />
         <entry key="..\:/Users/erdi7/Documents/GitHub/MyApplication/app/src/main/res/layout/fragment_diger.xml" value="0.264" />
         <entry key="..\:/Users/erdi7/Documents/GitHub/MyApplication/app/src/main/res/layout/fragment_emir.xml" value="0.1743659420289855" />
-        <entry key="..\:/Users/erdi7/Documents/GitHub/MyApplication/app/src/main/res/layout/fragment_emirgiris.xml" value="0.176" />
-        <entry key="..\:/Users/erdi7/Documents/GitHub/MyApplication/app/src/main/res/layout/fragment_emirlerim_tabbed.xml" value="0.2453125" />
-        <entry key="..\:/Users/erdi7/Documents/GitHub/MyApplication/app/src/main/res/layout/fragment_gerceklesen_emir.xml" value="0.25226449275362317" />
-        <entry key="..\:/Users/erdi7/Documents/GitHub/MyApplication/app/src/main/res/layout/fragment_grcklesen_emirlerim.xml" value="0.2558876811594203" />
-        <entry key="..\:/Users/erdi7/Documents/GitHub/MyApplication/app/src/main/res/layout/fragment_iptal_emir.xml" value="0.1" />
-        <entry key="..\:/Users/erdi7/Documents/GitHub/MyApplication/app/src/main/res/layout/fragment_iptal_emirlerim.xml" value="0.2558876811594203" />
+        <entry key="..\:/Users/erdi7/Documents/GitHub/MyApplication/app/src/main/res/layout/fragment_emirgiris.xml" value="0.4" />
         <entry key="..\:/Users/erdi7/Documents/GitHub/MyApplication/app/src/main/res/layout/fragment_karsilama.xml" value="0.1743659420289855" />
         <entry key="..\:/Users/erdi7/Documents/GitHub/MyApplication/app/src/main/res/layout/fragment_piyasa.xml" value="0.264" />
-        <entry key="..\:/Users/erdi7/Documents/GitHub/MyApplication/app/src/main/res/layout/fragment_transfer.xml" value="0.2" />
-        <entry key="..\:/Users/erdi7/Documents/GitHub/MyApplication/app/src/main/res/layout/fragment_transfer2.xml" value="0.2453125" />
+        <entry key="..\:/Users/erdi7/Documents/GitHub/MyApplication/app/src/main/res/layout/fragment_transfer.xml" value="0.4" />
         <entry key="..\:/Users/erdi7/Documents/GitHub/MyApplication/app/src/main/res/layout/sign_in.xml" value="0.10280797101449275" />
         <entry key="..\:/Users/erdi7/Documents/GitHub/MyApplication/app/src/main/res/menu/nav_menu.xml" value="0.2111111111111111" />
         <entry key="..\:/Users/ozaro/AndroidStudioProjects/MyApplication/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.3828125" />
@@ -56,10 +44,13 @@
         <entry key="..\:/Users/ozaro/AndroidStudioProjects/MyApplication/app/src/main/res/layout/desing_language_card.xml" value="0.67" />
         <entry key="..\:/Users/ozaro/AndroidStudioProjects/MyApplication/app/src/main/res/layout/fragment_diger.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/ozaro/AndroidStudioProjects/MyApplication/app/src/main/res/layout/fragment_emir.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/ozaro/AndroidStudioProjects/MyApplication/app/src/main/res/layout/fragment_hisse.xml" value="0.25" />
         <entry key="..\:/Users/ozaro/AndroidStudioProjects/MyApplication/app/src/main/res/layout/fragment_karsilama.xml" value="0.33" />
+        <entry key="..\:/Users/ozaro/AndroidStudioProjects/MyApplication/app/src/main/res/layout/fragment_pertanyaan.xml" value="0.2" />
         <entry key="..\:/Users/ozaro/AndroidStudioProjects/MyApplication/app/src/main/res/layout/fragment_piyasa.xml" value="0.1" />
         <entry key="..\:/Users/ozaro/AndroidStudioProjects/MyApplication/app/src/main/res/layout/fragment_transfer.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/ozaro/AndroidStudioProjects/MyApplication/app/src/main/res/layout/list_item.xml" value="0.5" />
+        <entry key="..\:/Users/ozaro/AndroidStudioProjects/MyApplication/app/src/main/res/layout/framedeneme.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/ozaro/AndroidStudioProjects/MyApplication/app/src/main/res/layout/list_item.xml" value="0.33" />
       </map>
     </option>
   </component>

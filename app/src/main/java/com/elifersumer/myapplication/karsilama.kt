@@ -46,23 +46,23 @@ class karsilama : AppCompatActivity() {
             "Euro",
             "Dolar"
         )
-        newRecyclerView = findViewById(R.id.recycle)
+        newRecyclerView = findViewById(R.id.recycler_view)
         newRecyclerView.layoutManager = LinearLayoutManager(this)
         newRecyclerView.setHasFixedSize(true)
         newArrayList = arrayListOf<hisseler>()
-        getUserData()
-
+  //      getUserData()
+        initPieChart()
+        setDataToPieChart()
     }
 
-    private fun getUserData() {
+  /*  private fun getUserData() {
         for (i in imageId.indices){
             val  news = hisseler(imageId[i],heading[i])
             newArrayList.add(news)
         }
-        newRecyclerView.adapter = MyAdapter(newArrayList)
 
     }
-
+*/
     private fun initPieChart() {
         pieChart.setUsePercentValues(true)
         pieChart.description.text = "Portfoy"
@@ -113,32 +113,5 @@ class karsilama : AppCompatActivity() {
     }
 
 
-    private class customAdaptor(context: Context): BaseAdapter() {
-        private val mContext : Context
 
-        init{
-            this.mContext = context
-        }
-        override fun getCount(): Int {
-            TODO("Not yet implemented")
-            return 5
-        }
-
-        override fun getItem(p0: Int): Any {
-            TODO("Not yet implemented")
-            return "Test String"
-        }
-
-        override fun getItemId(p0: Int): Long {
-            TODO("Not yet implemented")
-            return p0.toLong()
-        }
-
-        override fun getView(p0: Int, p1: View?, p2: ViewGroup?): View {
-            TODO("Not yet implemented")
-            val text = TextView(mContext)
-            text.text = "Here is there"
-            return text
-        }
-    }
 }
