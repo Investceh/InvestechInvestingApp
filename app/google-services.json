@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "387954983261",
+    "project_id": "investech-6ff7d",
+    "storage_bucket": "investech-6ff7d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:387954983261:android:0e0f155e7d6b611c02e8b4",
+        "android_client_info": {
+          "package_name": "com.elifersumer.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "387954983261-2ta0paqgvi85a200hr9lro7odthsau1g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDqk9nKLNX3ZaXwO_x29r51GF4T-Qd8YXY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "387954983261-2ta0paqgvi85a200hr9lro7odthsau1g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
