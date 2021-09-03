@@ -30,35 +30,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="48dp" android:layout_marginTop="0dp"
                     android:layout_below="@+id/hisseler_alsat" android:id="@+id/layout_button">
-                <RadioGroup
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
-                <RadioButton
-                        android:id="@+id/alisbtn"
-                        android:text="ALIŞ"
-                        android:layout_width="206dp"
-                        android:layout_height="49dp"
-                        android:background="@drawable/button_green"
-                        android:layout_marginBottom="646dp"
-                        android:layout_marginTop="0dp"
-                        android:gravity="center"
-                        android:clickable="true"
-                        />
-
-                <RadioButton
-                        android:id="@+id/satisbtn"
-                        android:text="SATIŞ"
-                        android:layout_width="206dp"
-                        android:layout_height="49dp"
-                        android:background="@drawable/button_red"
-                        android:layout_marginBottom="645dp"
-                        android:layout_marginTop="0dp"
-                        android:layout_marginEnd="0dp"
-                        android:layout_marginStart="-1dp"/>
-            </RadioGroup>
--->
 
                 <RadioGroup
                         android:id="@+id/daily_weekly_button_view"
