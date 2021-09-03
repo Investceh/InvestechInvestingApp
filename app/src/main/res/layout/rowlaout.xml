@@ -62,7 +62,7 @@
                 android:id="@+id/exp_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Alayinizin mk"
+                android:text="DENEMEDENEMEDENEM"
                 android:layout_marginStart="8dp"
                 android:layout_marginLeft="8dp"
                 android:layout_marginEnd="16dp"
