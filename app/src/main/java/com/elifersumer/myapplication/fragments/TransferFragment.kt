@@ -1,6 +1,7 @@
 
 package com.elifersumer.myapplication.fragments
 
+import android.graphics.drawable.Drawable
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -9,6 +10,8 @@ import android.view.ViewGroup
 import com.elifersumer.myapplication.R
 import androidx.appcompat.app.AppCompatActivity
 import android.widget.*
+import androidx.core.content.res.ResourcesCompat
+
 class TransferFragment : Fragment() {
     var cüzdan_yatırım = 1254.0
     var cüzdan_vadesiz = 5000.0
@@ -108,6 +111,14 @@ class TransferFragment : Fragment() {
             }
         })
         btn_tamam.setOnClickListener(View.OnClickListener {
+
+            //val drawable: Drawable?= ResourcesCompat.getDrawable(resources,R.drawable.button, null)
+            //val drawable_selected: Drawable?= ResourcesCompat.getDrawable(resources,R.drawable.button_selected, null)
+
+            //btn_tamam.setBackground(drawable_selected)
+
+            //
+            //btn_tamam.setBackgroundResource(android.R.drawable.btn_default)
             if(!vadesiz_yatırım.isChecked && !yatırım_vadesiz.isChecked)
                 Toast.makeText(this@TransferFragment.requireActivity(),"Lütfen işlem seçiniz!",Toast.LENGTH_SHORT).show()
             else{
@@ -123,6 +134,7 @@ class TransferFragment : Fragment() {
                                 cüzdan_yatırım += secilen_miktar_double
                                 hesap_bilgi.setText(cüzdan_vadesiz.toString())
                                 yatırım_bilgi.setText(cüzdan_yatırım.toString())
+                                //btn_tamam.setBackground(drawable)
                                 clearInputs()
                             }else{
                                 Toast.makeText(this@TransferFragment.requireActivity(),"Yetersiz bakiye..",Toast.LENGTH_SHORT).show()

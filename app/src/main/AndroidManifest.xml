@@ -14,9 +14,6 @@
                 android:name=".Sorular"
                 android:exported="true" />
         <activity
-                android:name=".ParaTransferi"
-                android:exported="true" />
-        <activity
                 android:name=".Emirlerim"
                 android:exported="true" />
         <activity android:name=".Accounts" />

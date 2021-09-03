@@ -30,12 +30,13 @@
 
 
                         <TextView
+                                android:id="@+id/soru1"
                                 android:layout_width="match_parent"
                                 android:layout_height="100dp"
                                 android:text="Bu bir sorudur, Bu bir sorudur, Bu bir sorudur, Bu bir sorudur, Bu bir sorudur, Bu bir sorudur, Bu bir sorudur?"
                                 android:textColor="@color/black"
                                 android:gravity="center"
-                                android:layout_margin="25dp"
+                                android:layout_marginTop="25dp"
                                 android:fontFamily="@font/inter"
                                 android:textSize="14sp"
                                 >
@@ -51,11 +52,10 @@
                                         android:layout_width="320dp"
                                         android:layout_height="40dp"
                                         android:layout_gravity="center"
-                                        android:background="#6A8AB0"
+                                        android:background="@drawable/button"
                                         android:layout_marginBottom="8dp"
                                         android:text="A şıkkı"
-                                        android:gravity="left"
-                                        android:paddingTop="9dp"
+                                        android:gravity="center"
                                         android:paddingLeft="10dp"
                                         android:button="@android:color/transparent"
                                         >
@@ -66,11 +66,10 @@
                                         android:layout_width="320dp"
                                         android:layout_height="40dp"
                                         android:layout_gravity="center"
-                                        android:background="#6A8AB0"
+                                        android:background="@drawable/button"
                                         android:layout_marginBottom="8dp"
                                         android:text="B şıkkı"
-                                        android:gravity="left"
-                                        android:paddingTop="9dp"
+                                        android:gravity="center"
                                         android:paddingLeft="10dp"
                                         android:button="@android:color/transparent" >
                                 </RadioButton>
@@ -80,11 +79,10 @@
                                         android:layout_width="320dp"
                                         android:layout_height="40dp"
                                         android:layout_gravity="center"
-                                        android:background="#6A8AB0"
+                                        android:background="@drawable/button"
                                         android:layout_marginBottom="8dp"
                                         android:text="C şıkkı"
-                                        android:gravity="left"
-                                        android:paddingTop="9dp"
+                                        android:gravity="center"
                                         android:paddingLeft="10dp"
                                         android:button="@android:color/transparent" >
                                 </RadioButton>
@@ -94,11 +92,10 @@
                                         android:layout_width="320dp"
                                         android:layout_height="40dp"
                                         android:layout_gravity="center"
-                                        android:background="#6A8AB0"
+                                        android:background="@drawable/button"
                                         android:layout_marginBottom="8dp"
                                         android:text="D şıkkı"
-                                        android:gravity="left"
-                                        android:paddingTop="9dp"
+                                        android:gravity="center"
                                         android:paddingLeft="10dp"
                                         android:button="@android:color/transparent" >
                                 </RadioButton>
@@ -108,11 +105,10 @@
                                         android:layout_width="320dp"
                                         android:layout_height="40dp"
                                         android:layout_gravity="center"
-                                        android:background="#6A8AB0"
+                                        android:background="@drawable/button"
                                         android:layout_marginBottom="8dp"
                                         android:text="E şıkkı"
-                                        android:gravity="left"
-                                        android:paddingTop="9dp"
+                                        android:gravity="center"
                                         android:paddingLeft="10dp"
                                         android:button="@android:color/transparent" >
                                 </RadioButton>
@@ -132,12 +128,13 @@
 
 
                         <TextView
+                                android:id="@+id/soru2"
                                 android:layout_width="match_parent"
                                 android:layout_height="100dp"
                                 android:text="Bu bir sorudur, Bu bir sorudur, Bu bir sorudur, Bu bir sorudur, Bu bir sorudur, Bu bir sorudur, Bu bir sorudur?"
                                 android:textColor="@color/black"
                                 android:gravity="center"
-                                android:layout_margin="25dp"
+                                android:layout_marginTop="25dp"
                                 android:fontFamily="@font/inter"
                                 android:textSize="14sp"
                                 >
@@ -153,11 +150,10 @@
                                         android:layout_width="320dp"
                                         android:layout_height="40dp"
                                         android:layout_gravity="center"
-                                        android:background="#6A8AB0"
+                                        android:background="@drawable/button"
                                         android:layout_marginBottom="8dp"
                                         android:text="A şıkkı"
-                                        android:gravity="left"
-                                        android:paddingTop="9dp"
+                                        android:gravity="center"
                                         android:paddingLeft="10dp"
                                         android:button="@android:color/transparent"
                                         >
@@ -168,11 +164,10 @@
                                         android:layout_width="320dp"
                                         android:layout_height="40dp"
                                         android:layout_gravity="center"
-                                        android:background="#6A8AB0"
+                                        android:background="@drawable/button"
                                         android:layout_marginBottom="8dp"
                                         android:text="B şıkkı"
-                                        android:gravity="left"
-                                        android:paddingTop="9dp"
+                                        android:gravity="center"
                                         android:paddingLeft="10dp"
                                         android:button="@android:color/transparent" >
                                 </RadioButton>
@@ -182,11 +177,10 @@
                                         android:layout_width="320dp"
                                         android:layout_height="40dp"
                                         android:layout_gravity="center"
-                                        android:background="#6A8AB0"
+                                        android:background="@drawable/button"
                                         android:layout_marginBottom="8dp"
                                         android:text="C şıkkı"
-                                        android:gravity="left"
-                                        android:paddingTop="9dp"
+                                        android:gravity="center"
                                         android:paddingLeft="10dp"
                                         android:button="@android:color/transparent" >
                                 </RadioButton>
@@ -196,11 +190,10 @@
                                         android:layout_width="320dp"
                                         android:layout_height="40dp"
                                         android:layout_gravity="center"
-                                        android:background="#6A8AB0"
+                                        android:background="@drawable/button"
                                         android:layout_marginBottom="8dp"
                                         android:text="D şıkkı"
-                                        android:gravity="left"
-                                        android:paddingTop="9dp"
+                                        android:gravity="center"
                                         android:paddingLeft="10dp"
                                         android:button="@android:color/transparent" >
                                 </RadioButton>
@@ -210,11 +203,10 @@
                                         android:layout_width="320dp"
                                         android:layout_height="40dp"
                                         android:layout_gravity="center"
-                                        android:background="#6A8AB0"
+                                        android:background="@drawable/button"
                                         android:layout_marginBottom="8dp"
                                         android:text="E şıkkı"
-                                        android:gravity="left"
-                                        android:paddingTop="9dp"
+                                        android:gravity="center"
                                         android:paddingLeft="10dp"
                                         android:button="@android:color/transparent" >
                                 </RadioButton>
@@ -233,14 +225,17 @@
 
 
                         <TextView
+                                android:id="@+id/soru3"
                                 android:layout_width="match_parent"
                                 android:layout_height="100dp"
                                 android:text="Bu bir sorudur, Bu bir sorudur, Bu bir sorudur, Bu bir sorudur, Bu bir sorudur, Bu bir sorudur, Bu bir sorudur?"
                                 android:textColor="@color/black"
                                 android:gravity="center"
-                                android:layout_margin="25dp"
+                                android:layout_marginTop="25dp"
                                 android:fontFamily="@font/inter"
                                 android:textSize="14sp"
+                                android:paddingLeft="20dp"
+                                android:paddingRight="20dp"
                                 >
                         </TextView>
 
@@ -254,11 +249,10 @@
                                         android:layout_width="320dp"
                                         android:layout_height="40dp"
                                         android:layout_gravity="center"
-                                        android:background="#6A8AB0"
+                                        android:background="@drawable/button"
                                         android:layout_marginBottom="8dp"
                                         android:text="A şıkkı"
-                                        android:gravity="left"
-                                        android:paddingTop="9dp"
+                                        android:gravity="center"
                                         android:paddingLeft="10dp"
                                         android:button="@android:color/transparent"></RadioButton>
 
@@ -268,11 +262,10 @@
                                         android:layout_width="320dp"
                                         android:layout_height="40dp"
                                         android:layout_gravity="center"
-                                        android:background="#6A8AB0"
+                                        android:background="@drawable/button"
                                         android:layout_marginBottom="8dp"
                                         android:text="B şıkkı"
-                                        android:gravity="left"
-                                        android:paddingTop="9dp"
+                                        android:gravity="center"
                                         android:paddingLeft="10dp"
                                         android:button="@android:color/transparent" >
                                 </RadioButton>
@@ -282,11 +275,10 @@
                                         android:layout_width="320dp"
                                         android:layout_height="40dp"
                                         android:layout_gravity="center"
-                                        android:background="#6A8AB0"
+                                        android:background="@drawable/button"
                                         android:layout_marginBottom="8dp"
                                         android:text="C şıkkı"
-                                        android:gravity="left"
-                                        android:paddingTop="9dp"
+                                        android:gravity="center"
                                         android:paddingLeft="10dp"
                                         android:button="@android:color/transparent" >
                                 </RadioButton>
@@ -296,11 +288,10 @@
                                         android:layout_width="320dp"
                                         android:layout_height="40dp"
                                         android:layout_gravity="center"
-                                        android:background="#6A8AB0"
+                                        android:background="@drawable/button"
                                         android:layout_marginBottom="8dp"
                                         android:text="D şıkkı"
-                                        android:gravity="left"
-                                        android:paddingTop="9dp"
+                                        android:gravity="center"
                                         android:paddingLeft="10dp"
                                         android:button="@android:color/transparent" >
                                 </RadioButton>
@@ -310,11 +301,10 @@
                                         android:layout_width="320dp"
                                         android:layout_height="40dp"
                                         android:layout_gravity="center"
-                                        android:background="#6A8AB0"
+                                        android:background="@drawable/button"
                                         android:layout_marginBottom="8dp"
                                         android:text="E şıkkı"
-                                        android:gravity="left"
-                                        android:paddingTop="9dp"
+                                        android:gravity="center"
                                         android:paddingLeft="10dp"
                                         android:button="@android:color/transparent" >
                                 </RadioButton>
@@ -335,14 +325,17 @@
 
 
                         <TextView
+                                android:id="@+id/soru4"
                                 android:layout_width="match_parent"
                                 android:layout_height="100dp"
                                 android:text="Bu bir sorudur, Bu bir sorudur, Bu bir sorudur, Bu bir sorudur, Bu bir sorudur, Bu bir sorudur, Bu bir sorudur?"
                                 android:textColor="@color/black"
                                 android:gravity="center"
-                                android:layout_margin="25dp"
+                                android:layout_marginTop="25dp"
                                 android:fontFamily="@font/inter"
                                 android:textSize="14sp"
+                                android:paddingLeft="20dp"
+                                android:paddingRight="20dp"
                                 >
                         </TextView>
 
@@ -356,11 +349,10 @@
                                         android:layout_width="320dp"
                                         android:layout_height="40dp"
                                         android:layout_gravity="center"
-                                        android:background="#6A8AB0"
+                                        android:background="@drawable/button"
                                         android:layout_marginBottom="8dp"
                                         android:text="A şıkkı"
-                                        android:gravity="left"
-                                        android:paddingTop="9dp"
+                                        android:gravity="center"
                                         android:paddingLeft="10dp"
                                         android:button="@android:color/transparent"
                                         >
@@ -371,11 +363,10 @@
                                         android:layout_width="320dp"
                                         android:layout_height="40dp"
                                         android:layout_gravity="center"
-                                        android:background="#6A8AB0"
+                                        android:background="@drawable/button"
                                         android:layout_marginBottom="8dp"
                                         android:text="B şıkkı"
-                                        android:gravity="left"
-                                        android:paddingTop="9dp"
+                                        android:gravity="center"
                                         android:paddingLeft="10dp"
                                         android:button="@android:color/transparent" >
                                 </RadioButton>
@@ -385,11 +376,10 @@
                                         android:layout_width="320dp"
                                         android:layout_height="40dp"
                                         android:layout_gravity="center"
-                                        android:background="#6A8AB0"
+                                        android:background="@drawable/button"
                                         android:layout_marginBottom="8dp"
                                         android:text="C şıkkı"
-                                        android:gravity="left"
-                                        android:paddingTop="9dp"
+                                        android:gravity="center"
                                         android:paddingLeft="10dp"
                                         android:button="@android:color/transparent" >
                                 </RadioButton>
@@ -399,11 +389,10 @@
                                         android:layout_width="320dp"
                                         android:layout_height="40dp"
                                         android:layout_gravity="center"
-                                        android:background="#6A8AB0"
+                                        android:background="@drawable/button"
                                         android:layout_marginBottom="8dp"
                                         android:text="D şıkkı"
-                                        android:gravity="left"
-                                        android:paddingTop="9dp"
+                                        android:gravity="center"
                                         android:paddingLeft="10dp"
                                         android:button="@android:color/transparent" >
                                 </RadioButton>
@@ -413,11 +402,10 @@
                                         android:layout_width="320dp"
                                         android:layout_height="40dp"
                                         android:layout_gravity="center"
-                                        android:background="#6A8AB0"
+                                        android:background="@drawable/button"
                                         android:layout_marginBottom="8dp"
                                         android:text="E şıkkı"
-                                        android:gravity="left"
-                                        android:paddingTop="9dp"
+                                        android:gravity="center"
                                         android:paddingLeft="10dp"
                                         android:button="@android:color/transparent" >
                                 </RadioButton>
@@ -437,14 +425,16 @@
 
 
                         <TextView
+                                android:id="@+id/soru5"
                                 android:layout_width="match_parent"
                                 android:layout_height="100dp"
                                 android:text="Bu bir sorudur, Bu bir sorudur, Bu bir sorudur, Bu bir sorudur, Bu bir sorudur, Bu bir sorudur, Bu bir sorudur?"
                                 android:textColor="@color/black"
                                 android:gravity="center"
-                                android:layout_margin="25dp"
+                                android:layout_marginTop="25dp"
                                 android:fontFamily="@font/inter"
                                 android:textSize="14sp"
+
                                 >
                         </TextView>
 
@@ -458,11 +448,10 @@
                                         android:layout_width="320dp"
                                         android:layout_height="40dp"
                                         android:layout_gravity="center"
-                                        android:background="#6A8AB0"
+                                        android:background="@drawable/button"
                                         android:layout_marginBottom="8dp"
                                         android:text="A şıkkı"
-                                        android:gravity="left"
-                                        android:paddingTop="9dp"
+                                        android:gravity="center"
                                         android:paddingLeft="10dp"
                                         android:button="@android:color/transparent"
                                         >
@@ -473,11 +462,10 @@
                                         android:layout_width="320dp"
                                         android:layout_height="40dp"
                                         android:layout_gravity="center"
-                                        android:background="#6A8AB0"
+                                        android:background="@drawable/button"
                                         android:layout_marginBottom="8dp"
                                         android:text="B şıkkı"
-                                        android:gravity="left"
-                                        android:paddingTop="9dp"
+                                        android:gravity="center"
                                         android:paddingLeft="10dp"
                                         android:button="@android:color/transparent" >
                                 </RadioButton>
@@ -487,11 +475,10 @@
                                         android:layout_width="320dp"
                                         android:layout_height="40dp"
                                         android:layout_gravity="center"
-                                        android:background="#6A8AB0"
+                                        android:background="@drawable/button"
                                         android:layout_marginBottom="8dp"
                                         android:text="C şıkkı"
-                                        android:gravity="left"
-                                        android:paddingTop="9dp"
+                                        android:gravity="center"
                                         android:paddingLeft="10dp"
                                         android:button="@android:color/transparent" >
                                 </RadioButton>
@@ -501,11 +488,10 @@
                                         android:layout_width="320dp"
                                         android:layout_height="40dp"
                                         android:layout_gravity="center"
-                                        android:background="#6A8AB0"
+                                        android:background="@drawable/button"
                                         android:layout_marginBottom="8dp"
                                         android:text="D şıkkı"
-                                        android:gravity="left"
-                                        android:paddingTop="9dp"
+                                        android:gravity="center"
                                         android:paddingLeft="10dp"
                                         android:button="@android:color/transparent" >
                                 </RadioButton>
@@ -515,16 +501,291 @@
                                         android:layout_width="320dp"
                                         android:layout_height="40dp"
                                         android:layout_gravity="center"
-                                        android:background="#6A8AB0"
+                                        android:background="@drawable/button"
                                         android:layout_marginBottom="8dp"
                                         android:text="E şıkkı"
-                                        android:gravity="left"
-                                        android:paddingTop="9dp"
+                                        android:gravity="center"
                                         android:paddingLeft="10dp"
                                         android:button="@android:color/transparent" >
                                 </RadioButton>
 
                         </RadioGroup>
+
+
+
+
+
+                        <TextView
+                                android:id="@+id/soru6"
+                                android:layout_width="match_parent"
+                                android:layout_height="100dp"
+                                android:text="Bu bir sorudur, Bu bir sorudur, Bu bir sorudur, Bu bir sorudur, Bu bir sorudur, Bu bir sorudur, Bu bir sorudur?"
+                                android:textColor="@color/black"
+                                android:gravity="center"
+                                android:layout_marginTop="25dp"
+                                android:fontFamily="@font/inter"
+                                android:textSize="14sp"
+                                android:paddingLeft="20dp"
+                                android:paddingRight="20dp"
+                                >
+                        </TextView>
+
+                        <RadioGroup
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:id="@+id/radio_group6">
+
+                                <RadioButton
+                                        android:id="@+id/soru6_sık1"
+                                        android:layout_width="320dp"
+                                        android:layout_height="40dp"
+                                        android:layout_gravity="center"
+                                        android:background="@drawable/button"
+                                        android:layout_marginBottom="8dp"
+                                        android:text="A şıkkı"
+                                        android:gravity="center"
+                                        android:paddingLeft="10dp"
+                                        android:button="@android:color/transparent"
+                                        >
+                                </RadioButton>
+
+                                <RadioButton
+                                        android:id="@+id/soru6_sık2"
+                                        android:layout_width="320dp"
+                                        android:layout_height="40dp"
+                                        android:layout_gravity="center"
+                                        android:background="@drawable/button"
+                                        android:layout_marginBottom="8dp"
+                                        android:text="B şıkkı"
+                                        android:gravity="center"
+                                        android:paddingLeft="10dp"
+                                        android:button="@android:color/transparent" >
+                                </RadioButton>
+
+                                <RadioButton
+                                        android:id="@+id/soru6_sık3"
+                                        android:layout_width="320dp"
+                                        android:layout_height="40dp"
+                                        android:layout_gravity="center"
+                                        android:background="@drawable/button"
+                                        android:layout_marginBottom="8dp"
+                                        android:text="C şıkkı"
+                                        android:gravity="center"
+                                        android:paddingLeft="10dp"
+                                        android:button="@android:color/transparent" >
+                                </RadioButton>
+
+                                <RadioButton
+                                        android:id="@+id/soru6_sık4"
+                                        android:layout_width="320dp"
+                                        android:layout_height="40dp"
+                                        android:layout_gravity="center"
+                                        android:background="@drawable/button"
+                                        android:layout_marginBottom="8dp"
+                                        android:text="D şıkkı"
+                                        android:gravity="center"
+                                        android:paddingLeft="10dp"
+                                        android:button="@android:color/transparent" >
+                                </RadioButton>
+
+                                <RadioButton
+                                        android:id="@+id/soru6_sık5"
+                                        android:layout_width="320dp"
+                                        android:layout_height="40dp"
+                                        android:layout_gravity="center"
+                                        android:background="@drawable/button"
+                                        android:layout_marginBottom="8dp"
+                                        android:text="E şıkkı"
+                                        android:gravity="center"
+                                        android:paddingLeft="10dp"
+                                        android:button="@android:color/transparent" >
+                                </RadioButton>
+
+                        </RadioGroup>
+
+
+
+                        <TextView
+                                android:id="@+id/soru7"
+                                android:layout_width="match_parent"
+                                android:layout_height="100dp"
+                                android:text="Bu bir sorudur, Bu bir sorudur, Bu bir sorudur, Bu bir sorudur, Bu bir sorudur, Bu bir sorudur, Bu bir sorudur?"
+                                android:textColor="@color/black"
+                                android:gravity="center"
+                                android:layout_marginTop="25dp"
+                                android:fontFamily="@font/inter"
+                                android:textSize="14sp"
+                                android:paddingLeft="20dp"
+                                android:paddingRight="20dp"
+                                >
+                        </TextView>
+
+                        <RadioGroup
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:id="@+id/radio_group7">
+
+                                <RadioButton
+                                        android:id="@+id/soru7_sık1"
+                                        android:layout_width="320dp"
+                                        android:layout_height="40dp"
+                                        android:layout_gravity="center"
+                                        android:background="@drawable/button"
+                                        android:layout_marginBottom="8dp"
+                                        android:text="A şıkkı"
+                                        android:gravity="center"
+                                        android:paddingLeft="10dp"
+                                        android:button="@android:color/transparent"
+                                        >
+                                </RadioButton>
+
+                                <RadioButton
+                                        android:id="@+id/soru7_sık2"
+                                        android:layout_width="320dp"
+                                        android:layout_height="40dp"
+                                        android:layout_gravity="center"
+                                        android:background="@drawable/button"
+                                        android:layout_marginBottom="8dp"
+                                        android:text="B şıkkı"
+                                        android:gravity="center"
+                                        android:paddingLeft="10dp"
+                                        android:button="@android:color/transparent" >
+                                </RadioButton>
+
+                                <RadioButton
+                                        android:id="@+id/soru7_sık3"
+                                        android:layout_width="320dp"
+                                        android:layout_height="40dp"
+                                        android:layout_gravity="center"
+                                        android:background="@drawable/button"
+                                        android:layout_marginBottom="8dp"
+                                        android:text="C şıkkı"
+                                        android:gravity="center"
+                                        android:paddingLeft="10dp"
+                                        android:button="@android:color/transparent" >
+                                </RadioButton>
+
+                                <RadioButton
+                                        android:id="@+id/soru7_sık4"
+                                        android:layout_width="320dp"
+                                        android:layout_height="40dp"
+                                        android:layout_gravity="center"
+                                        android:background="@drawable/button"
+                                        android:layout_marginBottom="8dp"
+                                        android:text="D şıkkı"
+                                        android:gravity="center"
+                                        android:paddingLeft="10dp"
+                                        android:button="@android:color/transparent" >
+                                </RadioButton>
+
+                                <RadioButton
+                                        android:id="@+id/soru7_sık5"
+                                        android:layout_width="320dp"
+                                        android:layout_height="40dp"
+                                        android:layout_gravity="center"
+                                        android:background="@drawable/button"
+                                        android:layout_marginBottom="8dp"
+                                        android:text="E şıkkı"
+                                        android:gravity="center"
+                                        android:paddingLeft="10dp"
+                                        android:button="@android:color/transparent" >
+                                </RadioButton>
+
+                        </RadioGroup>
+
+
+
+
+
+                        <TextView
+                                android:id="@+id/soru8"
+                                android:layout_width="match_parent"
+                                android:layout_height="100dp"
+                                android:text="Bu bir sorudur, Bu bir sorudur, Bu bir sorudur, Bu bir sorudur, Bu bir sorudur, Bu bir sorudur, Bu bir sorudur?"
+                                android:textColor="@color/black"
+                                android:gravity="center"
+                                android:layout_marginTop="25dp"
+                                android:fontFamily="@font/inter"
+                                android:textSize="14sp"
+                                android:paddingLeft="24dp"
+                                android:paddingRight="24dp"
+                                >
+                        </TextView>
+
+                        <RadioGroup
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:id="@+id/radio_group8">
+
+                                <RadioButton
+                                        android:id="@+id/soru8_sık1"
+                                        android:layout_width="320dp"
+                                        android:layout_height="40dp"
+                                        android:layout_gravity="center"
+                                        android:background="@drawable/button"
+                                        android:layout_marginBottom="8dp"
+                                        android:text="A şıkkı"
+                                        android:gravity="center"
+                                        android:paddingLeft="10dp"
+                                        android:button="@android:color/transparent"
+                                        >
+                                </RadioButton>
+
+                                <RadioButton
+                                        android:id="@+id/soru8_sık2"
+                                        android:layout_width="320dp"
+                                        android:layout_height="40dp"
+                                        android:layout_gravity="center"
+                                        android:background="@drawable/button"
+                                        android:layout_marginBottom="8dp"
+                                        android:text="B şıkkı"
+                                        android:gravity="center"
+                                        android:paddingLeft="10dp"
+                                        android:button="@android:color/transparent" >
+                                </RadioButton>
+
+                                <RadioButton
+                                        android:id="@+id/soru8_sık3"
+                                        android:layout_width="320dp"
+                                        android:layout_height="40dp"
+                                        android:layout_gravity="center"
+                                        android:background="@drawable/button"
+                                        android:layout_marginBottom="8dp"
+                                        android:text="C şıkkı"
+                                        android:gravity="center"
+                                        android:paddingLeft="10dp"
+                                        android:button="@android:color/transparent" >
+                                </RadioButton>
+
+                                <RadioButton
+                                        android:id="@+id/soru8_sık4"
+                                        android:layout_width="320dp"
+                                        android:layout_height="40dp"
+                                        android:layout_gravity="center"
+                                        android:background="@drawable/button"
+                                        android:layout_marginBottom="8dp"
+                                        android:text="D şıkkı"
+                                        android:gravity="center"
+                                        android:paddingLeft="10dp"
+                                        android:button="@android:color/transparent" >
+                                </RadioButton>
+
+                                <RadioButton
+                                        android:id="@+id/soru8_sık5"
+                                        android:layout_width="320dp"
+                                        android:layout_height="40dp"
+                                        android:layout_gravity="center"
+                                        android:background="@drawable/button"
+                                        android:layout_marginBottom="8dp"
+                                        android:text="E şıkkı"
+                                        android:gravity="center"
+                                        android:paddingLeft="10dp"
+                                        android:button="@android:color/transparent" >
+                                </RadioButton>
+
+                        </RadioGroup>
+
+
 
                         <Button
                                 android:layout_width="230dp"
@@ -533,8 +794,13 @@
                                 android:background="@drawable/button"
                                 android:id="@+id/btn_bitir"
                                 android:layout_gravity="center"
-                                android:layout_margin="25dp">
+                                android:layout_margin="25dp"
+                                android:layout_marginTop="15dp">
                         </Button>
+
+
+
+
 
                 </LinearLayout>
 
