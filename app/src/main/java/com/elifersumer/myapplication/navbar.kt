@@ -1,14 +1,11 @@
 package com.elifersumer.myapplication
 
-import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
 import com.elifersumer.myapplication.fragments.*
 import kotlinx.android.synthetic.main.activity_navbar.*
-import kotlinx.serialization.ExperimentalSerializationApi
 
 
 class navbar : AppCompatActivity() {
