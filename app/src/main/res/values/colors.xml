@@ -10,5 +10,8 @@
     <color name="colorPrimary">#00BCD4</color>
     <color name="colorPrimaryDark">#0097A7</color>
     <color name="colorAccent">#009688</color>
+    <color name="buttonRed">#C37171</color>
+    <color name="buttonGreen">#87C471</color>
+    <color name="blackText">#BF000000</color>
 
 </resources>

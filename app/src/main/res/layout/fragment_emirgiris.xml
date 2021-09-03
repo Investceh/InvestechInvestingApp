@@ -29,7 +29,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="48dp" android:layout_marginTop="0dp"
                     android:layout_below="@+id/hisseler_alsat" android:id="@+id/layout_button">
-
+<!--
             <RadioGroup
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -54,8 +54,59 @@
                         android:layout_marginTop="0dp"
                         android:layout_marginEnd="0dp"
                         android:layout_marginStart="-1dp"/>
+            </RadioGroup>
+-->
+
+                <RadioGroup
+                        android:id="@+id/daily_weekly_button_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginEnd="0dp"
+                        android:layout_marginRight="0dp"
+                        android:gravity="center_horizontal"
+                        android:orientation="horizontal"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+
+                    <RadioButton
+                            android:id="@+id/alisbtn"
+                            android:layout_width="206dp"
+                            android:gravity="center"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/radio_flat_selector_alis"
+                            android:button="@android:color/transparent"
+                            android:checked="true"
+                            android:paddingLeft="@dimen/_16sdp"
+                            android:paddingTop="@dimen/_3sdp"
+                            android:paddingRight="@dimen/_16sdp"
+                            android:paddingBottom="@dimen/_3sdp"
+                            android:text="ALIŞ"
+                            android:textColor="@color/radio_flat_text_selector" />
+
+                    <RadioButton
+                            android:id="@+id/satisbtn"
+                            android:gravity="center"
+                            android:layout_width="206dp"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/radio_flat_selector_satis"
+                            android:button="@android:color/transparent"
+                            android:paddingLeft="@dimen/_16sdp"
+                            android:paddingTop="@dimen/_3sdp"
+                            android:paddingRight="@dimen/_16sdp"
+                            android:paddingBottom="@dimen/_3sdp"
+                            android:text="SATIŞ"
+                            android:textColor="@color/radio_flat_text_selector" />
 
                 </RadioGroup>
+
+
+
+
             </LinearLayout>
 
             <LinearLayout
