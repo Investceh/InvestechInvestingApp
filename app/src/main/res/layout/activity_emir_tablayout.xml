@@ -16,14 +16,16 @@
             android:layout_width="match_parent"
             android:layout_height="34dp"
             android:background="@drawable/screen_title" />
+
     <com.google.android.material.tabs.TabLayout
             android:id="@+id/emir_tablayout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="32dp"
             app:tabIndicatorColor="@color/purple_500"
             app:tabSelectedTextColor="@color/purple_700"
             app:tabTextColor="@color/black"
-            app:tabTextAppearance="@style/TableLayoutTextStyle">
+            app:tabTextAppearance="@style/TableLayoutTextStyle"
+            android:background="#2C18FFFF">
 
         <com.google.android.material.tabs.TabItem
                 android:layout_width="wrap_content"
