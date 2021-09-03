@@ -99,10 +99,14 @@ class Sorular : AppCompatActivity() {
 
     lateinit var btn_bitir: Button
 
+    lateinit var lalala: TextView
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sorular)
+
+        lalala = findViewById(R.id.lalala) as TextView
 
         soru1 = findViewById(R.id.soru1) as TextView
         soru1.text = "Yatırımlarınızın ana amacı nedir ?"
@@ -659,32 +663,128 @@ class Sorular : AppCompatActivity() {
 
 
 
-
-
-
-
         btn_bitir.setOnClickListener(View.OnClickListener {
-            var secilen_button1 = radio_group1.checkedRadioButtonId
-            var secilen1_string = resources.getResourceEntryName(secilen_button1)
+            var kullanıcı_profili: String = ""
+
+            val rg1 = radio_group1.checkedRadioButtonId
+            val rg2 = radio_group2.checkedRadioButtonId
+            val rg3 = radio_group3.checkedRadioButtonId
+            val rg4 = radio_group4.checkedRadioButtonId
+            val rg5 = radio_group5.checkedRadioButtonId
+            val rg6 = radio_group6.checkedRadioButtonId
+            val rg7 = radio_group7.checkedRadioButtonId
+            val rg8 = radio_group8.checkedRadioButtonId
+
+            if(rg1 == -1 || rg2 == -1 || rg3 == -1 || rg4 == -1 || rg5 == -1 || rg6 == -1 || rg7 == -1 || rg8 == -1){
+                Toast.makeText(this,"Lütfen tüm soruları cevaplayınız",Toast.LENGTH_SHORT).show()
+            }else{
+
+                var secilen_button1 = radio_group1.checkedRadioButtonId
+                var secilen1_string = resources.getResourceEntryName(secilen_button1)
+
+                var secilen_button2 = radio_group2.checkedRadioButtonId
+                var secilen2_string = resources.getResourceEntryName(secilen_button2)
+
+                var secilen_button3 = radio_group3.checkedRadioButtonId
+                var secilen3_string = resources.getResourceEntryName(secilen_button3)
+
+                var secilen_button4 = radio_group4.checkedRadioButtonId
+                var secilen4_string = resources.getResourceEntryName(secilen_button4)
+
+                var secilen_button5 = radio_group5.checkedRadioButtonId
+                var secilen5_string = resources.getResourceEntryName(secilen_button5)
+
+                var secilen_button6 = radio_group6.checkedRadioButtonId
+                var secilen6_string = resources.getResourceEntryName(secilen_button6)
+
+                var secilen_button7 = radio_group7.checkedRadioButtonId
+                var secilen7_string = resources.getResourceEntryName(secilen_button7)
+
+                var secilen_button8 = radio_group8.checkedRadioButtonId
+                var secilen8_string = resources.getResourceEntryName(secilen_button8)
+
+                var secilen_sıklar = ArrayList<String>()
+                secilen_sıklar.add(secilen1_string)
+                secilen_sıklar.add(secilen2_string)
+                secilen_sıklar.add(secilen3_string)
+                secilen_sıklar.add(secilen4_string)
+                secilen_sıklar.add(secilen5_string)
+                secilen_sıklar.add(secilen6_string)
+                secilen_sıklar.add(secilen7_string)
+                secilen_sıklar.add(secilen8_string)
 
 
-            var secilen_button2 = radio_group2.checkedRadioButtonId
-            var secilen2_string = resources.getResourceEntryName(secilen_button2)
+                var sıklar_degerler = HashMap<String, Double>()
+                sıklar_degerler[""]
+
+                sıklar_degerler["soru1_sık1"] = 2.5
+                sıklar_degerler["soru1_sık2"] = 5.0
+                sıklar_degerler["soru1_sık3"] = 7.5
+                sıklar_degerler["soru1_sık4"] = 10.0
+                sıklar_degerler["soru1_sık5"] = 12.5
+
+                sıklar_degerler["soru2_sık1"] = 2.5
+                sıklar_degerler["soru2_sık2"] = 5.0
+                sıklar_degerler["soru2_sık3"] = 7.5
+                sıklar_degerler["soru2_sık4"] = 10.0
+                sıklar_degerler["soru2_sık5"] = 12.5
+
+                sıklar_degerler["soru3_sık1"] = 2.5
+                sıklar_degerler["soru3_sık2"] = 5.0
+                sıklar_degerler["soru3_sık3"] = 7.5
+                sıklar_degerler["soru3_sık4"] = 10.0
+                sıklar_degerler["soru3_sık5"] = 12.5
+
+                sıklar_degerler["soru4_sık1"] = 3.125
+                sıklar_degerler["soru4_sık2"] = 6.25
+                sıklar_degerler["soru4_sık3"] = 9.375
+                sıklar_degerler["soru4_sık4"] = 12.5
+                sıklar_degerler["soru4_sık5"] = 0.0
+
+                sıklar_degerler["soru5_sık1"] = 2.5
+                sıklar_degerler["soru5_sık2"] = 5.0
+                sıklar_degerler["soru5_sık3"] = 7.5
+                sıklar_degerler["soru5_sık4"] = 10.0
+                sıklar_degerler["soru5_sık5"] = 12.5
+
+                sıklar_degerler["soru6_sık1"] = 2.5
+                sıklar_degerler["soru6_sık2"] = 5.0
+                sıklar_degerler["soru6_sık3"] = 7.5
+                sıklar_degerler["soru6_sık4"] = 10.0
+                sıklar_degerler["soru6_sık5"] = 12.5
+
+                sıklar_degerler["soru7_sık1"] = 2.0
+                sıklar_degerler["soru7_sık2"] = 5.0
+                sıklar_degerler["soru7_sık3"] = 7.5
+                sıklar_degerler["soru7_sık4"] = 10.0
+                sıklar_degerler["soru7_sık5"] = 12.5
+
+                sıklar_degerler["soru8_sık1"] = 2.0
+                sıklar_degerler["soru8_sık2"] = 5.0
+                sıklar_degerler["soru8_sık3"] = 7.5
+                sıklar_degerler["soru8_sık4"] = 10.0
+                sıklar_degerler["soru8_sık5"] = 12.5
 
 
-            var secilen_button3 = radio_group3.checkedRadioButtonId
-            var secilen3_string = resources.getResourceEntryName(secilen_button3)
+                var toplam_deger = 0.0
+                for (i in secilen_sıklar){
+                    toplam_deger += sıklar_degerler[i]!!
+                }
+
+                if(toplam_deger >= 0.0 && toplam_deger <= 40.0){
+                    kullanıcı_profili = "RiskSevmez"
+                }else if(toplam_deger >= 40.1 && toplam_deger <= 60.0){
+                    kullanıcı_profili = "Temkinli"
+                }else if(toplam_deger >= 60.1 && toplam_deger <= 80.0){
+                    kullanıcı_profili = "RiskSever"
+                }else if(toplam_deger >= 80.1 && toplam_deger <= 100.0){
+                    kullanıcı_profili = "Korkusuz"
+                }
+
+                lalala.text = kullanıcı_profili
+            }
 
 
-            var secilen_button4 = radio_group4.checkedRadioButtonId
-            var secilen4_string = resources.getResourceEntryName(secilen_button4)
-
-
-            var secilen_button5 = radio_group5.checkedRadioButtonId
-            var secilen5_string = resources.getResourceEntryName(secilen_button5)
-
-            //format --> soru#_sık#
-            //
         })
     }
 }
