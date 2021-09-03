@@ -11,7 +11,7 @@
             android:supportsRtl="true"
             android:theme="@style/Theme.MyApplication">
         <activity
-                android:name=".emir_tablayout"
+                android:name=".Sorular"
                 android:exported="true" />
         <activity
                 android:name=".Emirlerim"

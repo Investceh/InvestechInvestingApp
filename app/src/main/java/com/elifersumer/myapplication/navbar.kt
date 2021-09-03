@@ -19,6 +19,7 @@ class navbar : AppCompatActivity() {
         val piyasaFragment = PiyasaFragment()
         val transferFragment = TransferFragment()
         val emirFragment = EmirFragment()
+
         val digerFragment = DigerFragment()
         val emirTablayout = emir_tablayout()
         val intent = Intent(this,emir_tablayout::class.java)
@@ -31,7 +32,7 @@ class navbar : AppCompatActivity() {
                 R.id.piyasa -> makeCurrentFragment(piyasaFragment)
                 R.id.transfer -> makeCurrentFragment(transferFragment)
                 R.id.emir -> makeCurrentFragment(emirFragment)
-                R.id.diger  -> startActivity(intent)
+                R.id.diger  -> makeCurrentFragment(BlankFragment())
             }
             true
         }
