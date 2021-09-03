@@ -31,6 +31,7 @@
                     android:layout_height="48dp" android:layout_marginTop="0dp"
                     android:layout_below="@+id/hisseler_alsat" android:id="@+id/layout_button">
 
+
                 <RadioGroup
                         android:id="@+id/daily_weekly_button_view"
                         android:layout_width="match_parent"

@@ -30,24 +30,26 @@
 
         <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="320dp"
+                android:layout_height="278dp"
                 android:orientation="vertical"
                 android:background="#f5f5f5"
-                android:paddingLeft="10dp"
+                android:paddingLeft="20dp"
                 android:layout_marginBottom="5dp">
 
             <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
-                    android:layout_height="150dp"
+                    android:layout_height="120dp"
                     android:layout_marginRight="30dp"
                     android:layout_marginTop="10dp"
-                    android:layout_marginLeft="30dp"
+                    android:layout_marginLeft="10dp"
                     app:cardCornerRadius="8dp">
-                    <LinearLayout
-                            android:orientation="vertical"
-                            android:background="@drawable/bg1"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent">
+
+                <LinearLayout
+                        android:orientation="vertical"
+                        android:background="@drawable/bg1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        >
 
 
                     <LinearLayout
@@ -57,23 +59,28 @@
                             android:layout_marginTop="20dp"
                             android:layout_marginRight="30dp"
                             android:layout_height="wrap_content">
+
                         <LinearLayout
                                 android:orientation="vertical"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content">
+
                             <TextView
-                                    android:textSize="24dp"
-                                    android:textColor="#ffff"
+                                    android:textSize="20dp"
+                                    android:textColor="#f5f5f5"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="Ad Soyad"/>
+                                    android:text="Göksel Önal"
+                                    android:fontFamily="@font/inter"/>
+
                             <TextView
                                     android:textSize="16dp"
                                     android:textColor="#90ffffff"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="Vadesiz Hesabım"/>
+                                    android:text="Vadesiz Hesabım" />
                         </LinearLayout>
+
                         <RelativeLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent">
@@ -85,30 +92,34 @@
                                     android:src="@drawable/appicon" />
                         </RelativeLayout>
                     </LinearLayout>
+
                     <LinearLayout
                             android:orientation="horizontal"
                             android:layout_marginLeft="30dp"
-                            android:layout_marginTop="30dp"
+                            android:layout_marginTop="10dp"
                             android:layout_marginRight="30dp"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent">
+
                         <TextView
                                 android:id="@+id/hesap_bilgi"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:textSize="30dp"
+                                android:textSize="20dp"
                                 android:textColor="#ffff" />
                     </LinearLayout>
 
-                    </LinearLayout>
+                </LinearLayout>
             </androidx.cardview.widget.CardView>
+
             <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
-                    android:layout_height="150dp"
+                    android:layout_height="120dp"
                     android:layout_marginRight="30dp"
                     android:layout_marginTop="10dp"
-                    android:layout_marginLeft="30dp"
+                    android:layout_marginLeft="10dp"
                     app:cardCornerRadius="8dp">
+
                 <LinearLayout
                         android:orientation="vertical"
                         android:background="@drawable/bg1"
@@ -123,23 +134,27 @@
                             android:layout_marginTop="20dp"
                             android:layout_marginRight="30dp"
                             android:layout_height="wrap_content">
+
                         <LinearLayout
                                 android:orientation="vertical"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content">
+
                             <TextView
-                                    android:textSize="24dp"
-                                    android:textColor="#ffff"
+                                    android:textSize="20dp"
+                                    android:textColor="#f5f5f5"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="Ad Soyad"/>
+                                    android:text="Göksel Önal" />
+
                             <TextView
                                     android:textSize="16dp"
                                     android:textColor="#90ffffff"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="Yatırım Hesabım"/>
+                                    android:text="Yatırım Hesabım" />
                         </LinearLayout>
+
                         <RelativeLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent">
@@ -151,18 +166,20 @@
                                     android:src="@drawable/appicon" />
                         </RelativeLayout>
                     </LinearLayout>
+
                     <LinearLayout
                             android:orientation="horizontal"
                             android:layout_marginLeft="30dp"
-                            android:layout_marginTop="30dp"
+                            android:layout_marginTop="10dp"
                             android:layout_marginRight="30dp"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent">
+
                         <TextView
                                 android:id="@+id/yatırım_bilgi"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:textSize="30dp"
+                                android:textSize="20dp"
                                 android:textColor="#ffff" />
                     </LinearLayout>
 
@@ -174,15 +191,14 @@
         <TextView
                 android:text="İşlem Seçiniz"
                 android:gravity="left"
-                android:layout_gravity="center"
-
+                android:layout_marginLeft="16.5dp"
                 android:textStyle="bold"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="24dp"
                 android:textColor="@color/black"
-                android:layout_marginTop="20sp"
-                android:layout_marginBottom="10sp"
-                android:textSize="18sp" />
+                android:layout_marginBottom="20sp"
+                android:textSize="16sp"
+                android:fontFamily="@font/inter"/>
 
 
         <RadioGroup
@@ -190,41 +206,29 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="30dp"
-                android:orientation="horizontal"
-                android:layout_marginLeft="50dp"
-                android:layout_marginRight="50dp"
                 android:layout_gravity="center">
 
             <RadioButton
                     android:id="@+id/vadesiz_yatırım"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/radio_flat_selector_test"
-                    android:button="@android:color/transparent"
                     android:text="Vadesiz -> Yatırım"
-                    android:paddingLeft="@dimen/_16sdp"
-                    android:paddingTop="@dimen/_3sdp"
-                    android:paddingRight="@dimen/_16sdp"
-                    android:paddingBottom="@dimen/_3sdp"
                     android:textColor="@color/black"
                     app:buttonTint="#293E57"
-                    android:layout_marginStart="10dp"/>
+                    android:layout_marginLeft="10dp"
+                    android:fontFamily="@font/inter">
 
+            </RadioButton>
 
             <RadioButton
                     android:id="@+id/yatırım_vadesiz"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Yatırım  -> Vadesiz"
-                    android:background="@drawable/radio_flat_selector_test"
-                    android:button="@android:color/transparent"
-                    android:paddingLeft="@dimen/_16sdp"
-                    android:paddingTop="@dimen/_3sdp"
-                    android:paddingRight="@dimen/_16sdp"
-                    android:paddingBottom="@dimen/_3sdp"
                     android:textColor="@color/black"
                     app:buttonTint="#293E57"
-                    android:layout_marginStart="10dp"/>
+                    android:layout_marginLeft="10dp"
+                    android:fontFamily="@font/inter"></RadioButton>
 
 
         </RadioGroup>
@@ -244,17 +248,33 @@
                 android:paddingStart="20dp"
                 tools:ignore="RtlSymmetry"
                 android:fontFamily="@font/inter"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="0dp"
                 android:layout_gravity="center"
-                android:layout_marginBottom="10dp" />
+                android:layout_marginBottom="25dp" />
 
         <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:paddingLeft="165dp">
+                android:paddingLeft="25dp">
+
+            <Button
+                    android:layout_marginRight="20dp"
+                    android:id="@+id/btn_tamam"
+                    android:layout_width="120dp"
+                    android:layout_height="47dp"
+                    android:background="@drawable/button"
+                    android:text="Tamam"
+                    android:textColor="#F5F5F5"
+                    android:textAllCaps="false"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/inter"
+                    android:layout_gravity="left"
+                    android:layout_marginTop="70dp" />
 
             <RadioGroup
+                    android:layout_marginTop="7dp"
                     android:id="@+id/oranlar"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -294,21 +314,6 @@
             </RadioGroup>
         </LinearLayout>
 
-        <Button
-                android:id="@+id/btn_tamam"
-                android:layout_width="150dp"
-                android:layout_height="47dp"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:background="@drawable/button"
-                android:text="Tamam"
-                android:textColor="#F5F5F5"
-                android:textAllCaps="false"
-                android:textStyle="bold"
-                android:textSize="18sp"
-                android:fontFamily="@font/inter"
-                android:layout_gravity="center"
-                android:layout_marginTop="120dp" />
 
     </LinearLayout>
     </ScrollView>
