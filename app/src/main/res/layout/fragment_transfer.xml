@@ -41,7 +41,7 @@
                     android:layout_height="150dp"
                     android:layout_marginRight="30dp"
                     android:layout_marginTop="10dp"
-                    android:layout_marginLeft="10dp"
+                    android:layout_marginLeft="30dp"
                     app:cardCornerRadius="8dp">
                     <LinearLayout
                             android:orientation="vertical"
@@ -107,7 +107,7 @@
                     android:layout_height="150dp"
                     android:layout_marginRight="30dp"
                     android:layout_marginTop="10dp"
-                    android:layout_marginLeft="10dp"
+                    android:layout_marginLeft="30dp"
                     app:cardCornerRadius="8dp">
                 <LinearLayout
                         android:orientation="vertical"
@@ -174,12 +174,14 @@
         <TextView
                 android:text="İşlem Seçiniz"
                 android:gravity="left"
-                android:layout_marginLeft="16.5dp"
+                android:layout_gravity="center"
+
                 android:textStyle="bold"
-                android:layout_width="match_parent"
-                android:layout_height="24dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:textColor="@color/black"
-                android:layout_marginBottom="20sp"
+                android:layout_marginTop="20sp"
+                android:layout_marginBottom="10sp"
                 android:textSize="18sp" />
 
 
@@ -188,27 +190,41 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="30dp"
+                android:orientation="horizontal"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
                 android:layout_gravity="center">
 
             <RadioButton
                     android:id="@+id/vadesiz_yatırım"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:background="@drawable/radio_flat_selector_test"
+                    android:button="@android:color/transparent"
                     android:text="Vadesiz -> Yatırım"
+                    android:paddingLeft="@dimen/_16sdp"
+                    android:paddingTop="@dimen/_3sdp"
+                    android:paddingRight="@dimen/_16sdp"
+                    android:paddingBottom="@dimen/_3sdp"
                     android:textColor="@color/black"
                     app:buttonTint="#293E57"
-                    android:layout_marginLeft="10dp">
+                    android:layout_marginStart="10dp"/>
 
-            </RadioButton>
 
             <RadioButton
                     android:id="@+id/yatırım_vadesiz"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Yatırım  -> Vadesiz"
+                    android:background="@drawable/radio_flat_selector_test"
+                    android:button="@android:color/transparent"
+                    android:paddingLeft="@dimen/_16sdp"
+                    android:paddingTop="@dimen/_3sdp"
+                    android:paddingRight="@dimen/_16sdp"
+                    android:paddingBottom="@dimen/_3sdp"
                     android:textColor="@color/black"
                     app:buttonTint="#293E57"
-                    android:layout_marginLeft="10dp"></RadioButton>
+                    android:layout_marginStart="10dp"/>
 
 
         </RadioGroup>
