@@ -21,9 +21,9 @@ class BlankFragment : Fragment() {
         var viewPager = view.findViewById(R.id.emir_viewpager) as ViewPager
         var tablayout = view.findViewById(R.id.emir_tablayout) as TabLayout
         val fragmentAdapter = FragmentAdapterEmir(childFragmentManager)
-        fragmentAdapter.addFragment(BekleyenEmirFragment(),title = "Bekleyen")
-        fragmentAdapter.addFragment(GerceklesenEmirFragment(),title = "Gerceklesen")
-        fragmentAdapter.addFragment(IptalEmirFragment(),title = "Iptal")
+        fragmentAdapter.addFragment(BekleyenEmirFragment(),title = "BEKLEYEN")
+        fragmentAdapter.addFragment(GerceklesenEmirFragment(),title = "GERÇEKLEŞEN")
+        fragmentAdapter.addFragment(IptalEmirFragment(),title = "İPTAL")
         viewPager.adapter = fragmentAdapter
         tablayout.setupWithViewPager(viewPager)
         // Inflate the layout for this fragment
