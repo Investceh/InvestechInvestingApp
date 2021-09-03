@@ -38,7 +38,7 @@ class SignUp : AppCompatActivity() {
             Toast.makeText(this,"Kayıt olmak için boş alanları doldurunuz.",Toast.LENGTH_LONG).show()
         }else{
             auth.createUserWithEmailAndPassword(email,password).addOnSuccessListener {
-                val intent = Intent(this@SignUp , SignIn::class.java)
+                val intent = Intent(this@SignUp , Sorular::class.java)
                 startActivity(intent)
                 finish()
 
