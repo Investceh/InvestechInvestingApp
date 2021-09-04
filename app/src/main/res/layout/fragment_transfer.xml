@@ -190,13 +190,12 @@
 
         <TextView
                 android:text="İşlem Seçiniz"
-                android:gravity="left"
-                android:layout_marginLeft="16.5dp"
+                android:gravity="center_horizontal"
                 android:textStyle="bold"
                 android:layout_width="match_parent"
                 android:layout_height="24dp"
                 android:textColor="@color/black"
-                android:layout_marginBottom="20sp"
+                android:layout_marginBottom="10sp"
                 android:textSize="16sp"
                 android:fontFamily="@font/inter"/>
 
@@ -205,30 +204,40 @@
                 android:id="@+id/islem"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="30dp"
+                android:layout_marginBottom="50dp"
+                android:orientation="horizontal"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
                 android:layout_gravity="center">
 
             <RadioButton
                     android:id="@+id/vadesiz_yatırım"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="150dp"
+                    android:layout_height="30dp"
+                    android:gravity="center"
+                    android:background="@drawable/radio_flat_selector_test"
+                    android:button="@android:color/transparent"
                     android:text="Vadesiz -> Yatırım"
+                    android:paddingTop="@dimen/_3sdp"
+                    android:paddingBottom="@dimen/_3sdp"
                     android:textColor="@color/black"
                     app:buttonTint="#293E57"
-                    android:layout_marginLeft="10dp"
-                    android:fontFamily="@font/inter">
+                    android:layout_marginEnd="40dp"/>
 
-            </RadioButton>
 
             <RadioButton
                     android:id="@+id/yatırım_vadesiz"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Yatırım  -> Vadesiz"
+                    android:layout_width="150dp"
+                    android:layout_height="30dp"
+                    android:gravity="center"
+                    android:text="Yatırım -> Vadesiz"
+                    android:background="@drawable/radio_flat_selector_test"
+                    android:button="@android:color/transparent"
+                    android:paddingTop="@dimen/_3sdp"
+                    android:paddingBottom="@dimen/_3sdp"
                     android:textColor="@color/black"
                     app:buttonTint="#293E57"
-                    android:layout_marginLeft="10dp"
-                    android:fontFamily="@font/inter"></RadioButton>
+                    android:layout_marginStart="10dp" />
 
 
         </RadioGroup>
@@ -236,7 +245,7 @@
         <EditText
                 android:id="@+id/miktar"
                 android:translationZ="100dp"
-                android:layout_width="400dp"
+                android:layout_width="380dp"
                 android:layout_height="49dp"
                 android:textSize="13sp"
                 android:background="@drawable/edit_text_view"
@@ -256,7 +265,51 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:paddingLeft="25dp">
+                android:paddingTop="10dp"
+                android:paddingLeft="10dp">
+
+
+
+            <RadioGroup
+                    android:layout_marginTop="7dp"
+                    android:id="@+id/oranlar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="20dp"
+                    android:orientation="horizontal">
+
+                <RadioButton
+                        android:id="@+id/rg_25"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:buttonTint="#293E57"
+                        android:text="25%"
+                        android:textColor="@color/black"/>
+
+                <RadioButton
+                        android:id="@+id/rg_50"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:buttonTint="#293E57"
+                        android:text="50%"
+                        android:textColor="@color/black"/>
+
+                <RadioButton
+                        android:id="@+id/rg_75"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:buttonTint="#293E57"
+                        android:text="75%"
+                        android:textColor="@color/black"/>
+
+                <RadioButton
+                        android:id="@+id/rg_100"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:buttonTint="#293E57"
+                        android:text="100%"
+                        android:textColor="@color/black"/>
+            </RadioGroup>
 
             <Button
                     android:layout_marginRight="20dp"
@@ -271,47 +324,8 @@
                     android:textSize="16sp"
                     android:fontFamily="@font/inter"
                     android:layout_gravity="left"
-                    android:layout_marginTop="70dp" />
-
-            <RadioGroup
-                    android:layout_marginTop="7dp"
-                    android:id="@+id/oranlar"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                <RadioButton
-                        android:id="@+id/rg_25"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        app:buttonTint="#293E57"
-                        android:text="25%"
-                        android:textColor="@color/black"></RadioButton>
-
-                <RadioButton
-                        android:id="@+id/rg_50"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        app:buttonTint="#293E57"
-                        android:text="50%"
-                        android:textColor="@color/black"></RadioButton>
-
-                <RadioButton
-                        android:id="@+id/rg_75"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        app:buttonTint="#293E57"
-                        android:text="75%"
-                        android:textColor="@color/black"></RadioButton>
-
-                <RadioButton
-                        android:id="@+id/rg_100"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        app:buttonTint="#293E57"
-                        android:text="100%"
-                        android:textColor="@color/black"></RadioButton>
-            </RadioGroup>
+                    android:layout_marginTop="70dp"
+                    android:layout_marginEnd="30dp"/>
         </LinearLayout>
 
 
