@@ -13,14 +13,14 @@ import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_sign_in.*
 import kotlinx.android.synthetic.main.activity_sign_up.*
 import kotlinx.serialization.ExperimentalSerializationApi
-
+import java.sql.Connection
+import java.sql.DriverManager
 
 
 class SignIn : AppCompatActivity() {
     private lateinit var binding:ActivitySignInBinding
-    private lateinit var auth: FirebaseAuth
-    private lateinit var firestore:FirebaseFirestore
-
+    //private lateinit var auth: FirebaseAuth
+    //private lateinit var firestore:FirebaseFirestore
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -29,34 +29,27 @@ class SignIn : AppCompatActivity() {
         val view=binding.root
         setContentView(view)
 
-        auth = FirebaseAuth.getInstance()
-        firestore = Firebase.firestore
-
-
-
-
+       // auth = FirebaseAuth.getInstance()
+        //firestore = Firebase.firestore
 
     }
 
     fun signInClicked(view: View){
-        val email=binding.txtEmail.text.toString()
+        val tckn=binding.txtTckn.text.toString()
         val password=binding.textViewPassw.text.toString()
 
-        if( email.equals("") || password.equals("")){
-            Toast.makeText(this,"Lütfen email ve şifre giriniz.", Toast.LENGTH_LONG).show()
+        if( tckn.equals("") || password.equals("")){
+            Toast.makeText(this,"Lütfen TCKN ve şifre giriniz.", Toast.LENGTH_LONG).show()
         }else{
-            auth.signInWithEmailAndPassword(email,password).addOnSuccessListener {
+            //auth.signInWithEmailAndPassword(email,password).addOnSuccessListener {
                 val intent = Intent(this,navbar::class.java)
                 startActivity(intent)
 
 
 
-
-
-
-            }.addOnFailureListener {
+           /* }.addOnFailureListener {
                 Toast.makeText(this,it.localizedMessage, Toast.LENGTH_LONG).show()
-            }
+            }*/
         }
     }
     fun signup_OnClick(view:View){

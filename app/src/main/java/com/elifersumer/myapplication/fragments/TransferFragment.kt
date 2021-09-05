@@ -1,20 +1,20 @@
-
 package com.elifersumer.myapplication.fragments
 
-import android.graphics.drawable.Drawable
+
+import java.sql.*
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.elifersumer.myapplication.R
-import androidx.appcompat.app.AppCompatActivity
 import android.widget.*
-import androidx.core.content.res.ResourcesCompat
+import com.elifersumer.myapplication.data.DbConnection
 
 class TransferFragment : Fragment() {
-    var cüzdan_yatırım = 1254.0
-    var cüzdan_vadesiz = 5000.0
+
+
     var secilen_miktar_double = 0.0
     lateinit var hesap_bilgi: TextView
     lateinit var yatırım_bilgi: TextView
@@ -31,12 +31,34 @@ class TransferFragment : Fragment() {
     lateinit var rg_75: RadioButton
     lateinit var rg_100: RadioButton
 
+    var balance : Double = 0.0
     lateinit var btn_tamam: Button
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         val view =  inflater.inflate(R.layout.fragment_transfer, container, false)
+
+        val id : String = view.findViewById<View?>(R.id.txtTckn).toString()
+        var dbConnection:DbConnection ?=null
+        val con : Connection? = dbConnection?.Conn()
+
+        if(con==null){
+            val error : String ="Error in sql connection"
+        }else {
+            try{
+                val statement = con.createStatement()
+
+                balance=statement.executeQuery("Select balance from customers where customer_id = ('"+id+"') ") as Double
+            }catch (ex : SQLException){
+                Log.e("error", ex.message.toString())
+            }
+        }
+
+        var cüzdan_yatırım = balance
+        var cüzdan_vadesiz = 5000.0
+
+
         hesap_bilgi = view.findViewById(R.id.hesap_bilgi) as TextView
         yatırım_bilgi = view.findViewById(R.id.yatırım_bilgi) as TextView
 
@@ -168,5 +190,7 @@ class TransferFragment : Fragment() {
         miktar.setText("")
         oranlar.clearCheck()
         islem.clearCheck()
+
+
     }
 }
