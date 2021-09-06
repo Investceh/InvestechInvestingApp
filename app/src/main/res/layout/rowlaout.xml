@@ -9,41 +9,50 @@
         android:elevation="10dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="432dp"
+            android:layout_height="match_parent"
             android:background="@drawable/bg1"
             android:padding="5dp">
 
         <TextView
                 android:id="@+id/title_tv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginTop="24dp"
+                android:layout_width="183dp"
+                android:layout_height="23dp"
                 tools:text="Android Studio Cardview"
-                android:textSize="18sp"
+                android:textSize="10sp"
                 android:textStyle="bold"
                 android:textColor="#000000"
-                app:layout_constraintBottom_toTopOf="@+id/imagev"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.0" />
+                tools:layout_editor_absoluteY="16dp"
+                app:layout_constraintEnd_toEndOf="@+id/exp_tv"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+                android:id="@+id/exp_tv"
+                android:layout_width="128dp"
+                android:layout_height="22dp"
+                android:text="DENEMEDENEMEDENEM"
+                android:textSize="10sp"
+                android:layout_marginStart="14dp"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.023"
+                app:layout_constraintStart_toEndOf="@+id/imagev"
+                app:layout_constraintTop_toBottomOf="@+id/title_tv"
+                app:layout_constraintVertical_bias="1.0"
+                tools:ignore="MissingConstraints" />
+
         <ImageView
                 android:id="@+id/imagev"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="46dp"
+                android:layout_height="31dp"
                 tools:src="@drawable/euro"
-                android:layout_marginStart="4dp"
-                android:layout_marginLeft="4dp"
 
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="20dp"
-                app:layout_constraintBottom_toBottomOf="parent"
+                tools:ignore="MissingConstraints"
                 app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="8dp"
                 app:layout_constraintTop_toBottomOf="@+id/title_tv"
-                tools:ignore="MissingConstraints" />
+                android:layout_marginStart="12dp" />
 
         <ImageButton
                 android:id="@+id/imageButton"
@@ -57,41 +66,18 @@
                 tools:ignore="MissingConstraints,VectorDrawableCompat" />
 
         <TextView
-                android:id="@+id/exp_tv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="DENEMEDENEMEDENEM"
-                android:layout_marginStart="8dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginRight="16dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toEndOf="@+id/imagev"
-                app:layout_constraintTop_toBottomOf="@+id/title_tv"
-                app:layout_constraintVertical_bias="0.319"
-                tools:ignore="MissingConstraints" />
-
-        <TextView
                 android:id="@+id/cost"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
-                android:layout_marginRight="8dp"
                 tools:text="$ 725"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 android:textColor="#000000"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.844"
-                app:layout_constraintStart_toEndOf="@+id/imagev"
-                app:layout_constraintTop_toBottomOf="@+id/exp_tv"
-                app:layout_constraintVertical_bias="0.666"
-                tools:ignore="MissingConstraints" />
-
-
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteY="35dp"
+                app:layout_constraintStart_toEndOf="@+id/exp_tv"
+                android:layout_marginStart="60dp"
+                app:layout_constraintEnd_toStartOf="@+id/imageButton" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
