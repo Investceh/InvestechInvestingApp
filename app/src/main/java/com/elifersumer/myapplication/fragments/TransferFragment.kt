@@ -125,6 +125,7 @@ class TransferFragment : Fragment() {
                     }
                 }
             }
+            secilen_miktar_double = 0.0
         })
 
         // Inflate the layout for this fragment
