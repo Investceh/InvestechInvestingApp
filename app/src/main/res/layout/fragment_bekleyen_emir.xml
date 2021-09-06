@@ -17,6 +17,13 @@
                 android:background="#8F1F1F"
                 android:layout_below="@+id/layout_form2">
 
+            <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/black">
+
+            </View>
+
             <TableLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -30,7 +37,7 @@
                 <TableRow
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:background="@drawable/bg5">
+                        android:background="@drawable/bg6">
 
                     <TextView
                             android:id="@+id/hisseler"
@@ -38,7 +45,7 @@
                             android:layout_width="100dp"
                             android:layout_height="match_parent"
                             android:padding="12sp"
-                            android:textColor="#F5F5F5"
+                            android:textColor="#F21E2E42"
                             android:gravity="center_vertical" />
 
                     <TextView
@@ -47,7 +54,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:padding="12sp"
-                            android:textColor="#F5F5F5"
+                            android:textColor="#F21E2E42"
                             android:layout_marginTop="8sp"
                             android:gravity="center_vertical" />
 
@@ -57,7 +64,7 @@
                             android:layout_width="87dp"
                             android:layout_height="wrap_content"
                             android:padding="12sp"
-                            android:textColor="#F5F5F5"
+                            android:textColor="#F21E2E42"
                             android:layout_marginTop="7sp"
                             android:layout_marginLeft="17sp"
                             android:gravity="center_vertical" />
@@ -68,7 +75,7 @@
                             android:layout_width="74dp"
                             android:layout_height="wrap_content"
                             android:padding="12sp"
-                            android:textColor="#F5F5F5"
+                            android:textColor="#F21E2E42"
                             android:gravity="center_vertical" />
 
                     <TextView
@@ -77,12 +84,18 @@
                             android:layout_width="103dp"
                             android:layout_height="wrap_content"
                             android:padding="12sp"
-                            android:textColor="#F5F5F5"
+                            android:textColor="#F21E2E42"
                             android:layout_marginTop="7sp"
                             android:layout_marginLeft="9sp"
                             android:gravity="center_vertical" />
 
                 </TableRow>
+                <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/black">
+
+                </View>
 
 
             </TableLayout>
@@ -97,7 +110,7 @@
 
         <Button
                 android:text="Tüm Emirleri İptal Et"
-                android:layout_width="294dp"
+                android:layout_width="214dp"
                 android:layout_height="48dp"
                 android:id="@+id/button5"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -106,7 +119,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintHorizontal_bias="0.495"
                 app:layout_constraintVertical_bias="0.965"
-                android:background="@drawable/button" />
+                android:background="@drawable/tumu_iptal" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>

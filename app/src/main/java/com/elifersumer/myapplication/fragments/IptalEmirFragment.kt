@@ -23,6 +23,10 @@ class IptalEmirFragment : Fragment() {
     ): View? {
         val drawable: Drawable?= ResourcesCompat.getDrawable(resources,R.drawable.button_green, null)
         val drawable2: Drawable?= ResourcesCompat.getDrawable(resources,R.drawable.button_red, null)
+        val drawable_al: Drawable?= ResourcesCompat.getDrawable(resources,R.drawable.alll, null)
+        val drawable_al2: Drawable?= ResourcesCompat.getDrawable(resources,R.drawable.al_2, null)
+        val drawable_sat2: Drawable?= ResourcesCompat.getDrawable(resources,R.drawable.sat_2, null)
+
         val drawable3: Drawable?= ResourcesCompat.getDrawable(resources,R.drawable.bg3, null)
         val drawable4: Drawable?= ResourcesCompat.getDrawable(resources,R.drawable.bg1, null)
         val drawable5: Drawable?= ResourcesCompat.getDrawable(resources,R.drawable.button_gradient, null)
@@ -69,9 +73,9 @@ class IptalEmirFragment : Fragment() {
             tbr2.addView(txt8)
 
             if(alisOrSatis == "Alış")
-                tbr2.setBackground(drawable)
+                tbr2.setBackground(drawable_al2)
             else
-                tbr2.setBackground(drawable2)
+                tbr2.setBackground(drawable_sat2)
             tbr2.setPadding(25,15,25,15)
             tabLay.addView(tbr2)
         }

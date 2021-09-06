@@ -11,7 +11,11 @@
             android:supportsRtl="true"
             android:theme="@style/Theme.MyApplication">
         <activity
+<<<<<<< Updated upstream
                 android:name=".HisseActivity"
+=======
+                android:name=".popUp"
+>>>>>>> Stashed changes
                 android:exported="true" />
         <activity
                 android:name=".Sorular"
