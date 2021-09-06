@@ -1,21 +1,22 @@
 package com.elifersumer.myapplication.fragments
 
-
-import android.content.Context
+import android.graphics.drawable.Drawable
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.elifersumer.myapplication.R
+import androidx.appcompat.app.AppCompatActivity
 import android.widget.*
-import com.elifersumer.myapplication.data.Customer
-import com.elifersumer.myapplication.data.DataManager
+import androidx.core.content.res.ResourcesCompat
+import java.text.DecimalFormat
 
 class TransferFragment : Fragment() {
-
-
+    var cüzdan_yatırım = 1254.0
+    var cüzdan_vadesiz = 5230.3
     var secilen_miktar_double = 0.0
+    val df = DecimalFormat("#,##0.00")
     lateinit var hesap_bilgi: TextView
     lateinit var yatırım_bilgi: TextView
 
@@ -26,34 +27,14 @@ class TransferFragment : Fragment() {
     lateinit var yatırım_vadesiz: RadioButton
 
     lateinit var oranlar: RadioGroup
-    lateinit var rg_25: RadioButton
-    lateinit var rg_50: RadioButton
-    lateinit var rg_75: RadioButton
     lateinit var rg_100: RadioButton
 
-    lateinit var customer : Customer
-    lateinit var dbManager : DataManager
-
     lateinit var btn_tamam: Button
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         val view =  inflater.inflate(R.layout.fragment_transfer, container, false)
-
-        val ed_Tckn=view.findViewById(R.id.txtTckn) as EditText
-        val tckn = ed_Tckn.text.toString().toInt()
-        val cntxt:Context=this@TransferFragment.requireActivity()
-
-        customer=dbManager.getData(tckn, cntxt)
-
-
-
-        var cüzdan_yatırım = customer.balanceInv
-        var cüzdan_vadesiz = customer.balanceAcc
-
-
         hesap_bilgi = view.findViewById(R.id.hesap_bilgi) as TextView
         yatırım_bilgi = view.findViewById(R.id.yatırım_bilgi) as TextView
 
@@ -62,57 +43,32 @@ class TransferFragment : Fragment() {
         yatırım_vadesiz = view.findViewById(R.id.yatırım_vadesiz) as RadioButton
 
         oranlar = view.findViewById(R.id.oranlar) as RadioGroup
-        rg_25 = view.findViewById(R.id.rg_25) as RadioButton
-        rg_50 = view.findViewById(R.id.rg_50) as RadioButton
-        rg_75 = view.findViewById(R.id.rg_75) as RadioButton
         rg_100 = view.findViewById(R.id.rg_100) as RadioButton
 
         btn_tamam = view.findViewById(R.id.btn_tamam) as Button
 
-        hesap_bilgi.text = cüzdan_vadesiz.toString()
-        yatırım_bilgi.text = cüzdan_yatırım.toString()
+        var hesapBilgi = df.format(cüzdan_vadesiz).replace(',','.').reversed().replaceFirst('.',',').reversed()
+        var yatirimBilgi = df.format(cüzdan_yatırım).replace(',','.').reversed().replaceFirst('.',',').reversed()
+
+        hesap_bilgi.text = hesapBilgi.toString() + "₺"
+        yatırım_bilgi.text = yatirimBilgi.toString() + "₺"
 
         miktar = view.findViewById(R.id.miktar) as EditText
-        rg_25.setOnClickListener(View.OnClickListener {
-            secilen_miktar_double = 0.0
-            if(!vadesiz_yatırım.isChecked && !yatırım_vadesiz.isChecked){
-                Toast.makeText(this@TransferFragment.requireActivity(),"Lütfen işlem seçiniz!",Toast.LENGTH_SHORT).show()
-            }else {
-                if (oranlar.checkedRadioButtonId != -1) {
-                    if (rg_25.isChecked && vadesiz_yatırım.isChecked)
-                        miktar.setText((cüzdan_vadesiz * 0.25).toString())
-                    else if (rg_25.isChecked && yatırım_vadesiz.isChecked)
-                        miktar.setText((cüzdan_yatırım * 0.25).toString())
-                }
-            }
-        })
-        rg_50.setOnClickListener(View.OnClickListener {
-            secilen_miktar_double = 0.0
-            if(!vadesiz_yatırım.isChecked && !yatırım_vadesiz.isChecked){
-                Toast.makeText(this@TransferFragment.requireActivity(),"Lütfen işlem seçiniz!",Toast.LENGTH_SHORT).show()
-            }else {
-                if (oranlar.checkedRadioButtonId != -1) {
-                    if (rg_50.isChecked && vadesiz_yatırım.isChecked)
-                        miktar.setText((cüzdan_vadesiz * 0.50).toString())
-                    else if (rg_50.isChecked && yatırım_vadesiz.isChecked)
-                        miktar.setText((cüzdan_yatırım * 0.50).toString())
-                }
-            }
-        })
 
-        rg_75.setOnClickListener(View.OnClickListener {
-            secilen_miktar_double = 0.0
-            if(!vadesiz_yatırım.isChecked && !yatırım_vadesiz.isChecked){
-                Toast.makeText(this@TransferFragment.requireActivity(),"Lütfen işlem seçiniz!",Toast.LENGTH_SHORT).show()
-            }else {
-                if (oranlar.checkedRadioButtonId != -1) {
-                    if (rg_75.isChecked && vadesiz_yatırım.isChecked)
-                        miktar.setText((cüzdan_vadesiz * 0.75).toString())
-                    else if (rg_75.isChecked && yatırım_vadesiz.isChecked)
-                        miktar.setText((cüzdan_yatırım * 0.75).toString())
+        fun string_fix(inputstr : String): String {
+            var var1 = ""
+            for (i in inputstr){
+                if (i == ','){
+                    var1 += '.'
                 }
+                else if (i != '.'){
+                    var1 += i
+                }
+
             }
-        })
+            return var1
+        }
+
 
         rg_100.setOnClickListener(View.OnClickListener {
             secilen_miktar_double = 0.0
@@ -120,15 +76,30 @@ class TransferFragment : Fragment() {
                 Toast.makeText(this@TransferFragment.requireActivity(),"Lütfen işlem seçiniz!",Toast.LENGTH_SHORT).show()
             }else {
                 if (oranlar.checkedRadioButtonId != -1) {
-                    if (rg_100.isChecked && vadesiz_yatırım.isChecked)
-                        miktar.setText((cüzdan_vadesiz).toString())
-                    else if (rg_100.isChecked && yatırım_vadesiz.isChecked)
-                        miktar.setText((cüzdan_yatırım).toString())
+                    if (rg_100.isChecked && vadesiz_yatırım.isChecked) {
+                        var test1 = df.format(cüzdan_vadesiz).toString().replace(',','.').reversed().replaceFirst('.',',').reversed()
+                        miktar.setText(test1)
+                    }
+                    else if (rg_100.isChecked && yatırım_vadesiz.isChecked) {
+                        var test2 = df.format(cüzdan_yatırım).toString().replace(',','.').reversed().replaceFirst('.',',').reversed()
+                        miktar.setText(test2)
+                    }
                 }
             }
         })
-        btn_tamam.setOnClickListener(View.OnClickListener {
 
+        vadesiz_yatırım.setOnClickListener(View.OnClickListener {
+            oranlar.clearCheck()
+            miktar.setText("")
+        })
+
+        yatırım_vadesiz.setOnClickListener(View.OnClickListener {
+            oranlar.clearCheck()
+            miktar.setText("")
+        })
+
+        btn_tamam.setOnClickListener(View.OnClickListener {
+            //Toast.makeText(this@TransferFragment.requireActivity(),"ahahahahahaha",Toast.LENGTH_SHORT).show()
             //val drawable: Drawable?= ResourcesCompat.getDrawable(resources,R.drawable.button, null)
             //val drawable_selected: Drawable?= ResourcesCompat.getDrawable(resources,R.drawable.button_selected, null)
 
@@ -143,14 +114,16 @@ class TransferFragment : Fragment() {
                     Toast.makeText(this@TransferFragment.requireActivity(),"Lütfen miktar giriniz..",Toast.LENGTH_SHORT).show()
                 }else{
                     var secilen_miktar = miktar.getText().toString()
-                    secilen_miktar_double += secilen_miktar.toDouble()
+                    secilen_miktar_double += string_fix(secilen_miktar).toDouble()
+
+                    //secilen_miktar_double += secilen_miktar.toDouble()
                     if(islem.checkedRadioButtonId != -1) {
                         if (vadesiz_yatırım.isChecked) {
                             if(cüzdan_vadesiz >= secilen_miktar_double){
                                 cüzdan_vadesiz -= secilen_miktar_double
                                 cüzdan_yatırım += secilen_miktar_double
-                                hesap_bilgi.setText(cüzdan_vadesiz.toString())
-                                yatırım_bilgi.setText(cüzdan_yatırım.toString())
+                                hesap_bilgi.setText(df.format(cüzdan_vadesiz).toString().replace(',','.').reversed().replaceFirst('.',',').reversed())
+                                yatırım_bilgi.setText(df.format(cüzdan_yatırım).toString().replace(',','.').reversed().replaceFirst('.',',').reversed())
                                 //btn_tamam.setBackground(drawable)
                                 clearInputs()
                             }else{
@@ -163,8 +136,8 @@ class TransferFragment : Fragment() {
                             if(cüzdan_yatırım >= secilen_miktar_double){
                                 cüzdan_vadesiz += secilen_miktar_double
                                 cüzdan_yatırım -= secilen_miktar_double
-                                hesap_bilgi.setText(cüzdan_vadesiz.toString())
-                                yatırım_bilgi.setText(cüzdan_yatırım.toString())
+                                hesap_bilgi.setText(df.format(cüzdan_vadesiz).toString().replace(',','.').reversed().replaceFirst('.',',').reversed() + "₺")
+                                yatırım_bilgi.setText(df.format(cüzdan_yatırım).toString().replace(',','.').reversed().replaceFirst('.',',').reversed() + "₺")
                                 clearInputs()
                             }
                             else{
@@ -176,7 +149,9 @@ class TransferFragment : Fragment() {
                     }
                 }
             }
+            secilen_miktar_double = 0.0
         })
+
         // Inflate the layout for this fragment
         return view
     }
@@ -185,7 +160,5 @@ class TransferFragment : Fragment() {
         miktar.setText("")
         oranlar.clearCheck()
         islem.clearCheck()
-
-
     }
 }
