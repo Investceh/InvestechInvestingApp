@@ -1,16 +1,16 @@
 package com.elifersumer.myapplication.fragments
 
 
-import java.sql.*
+import android.content.Context
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.elifersumer.myapplication.R
 import android.widget.*
-import com.elifersumer.myapplication.data.DbConnection
+import com.elifersumer.myapplication.data.Customer
+import com.elifersumer.myapplication.data.DataManager
 
 class TransferFragment : Fragment() {
 
@@ -31,32 +31,27 @@ class TransferFragment : Fragment() {
     lateinit var rg_75: RadioButton
     lateinit var rg_100: RadioButton
 
-    var balance : Double = 0.0
+    lateinit var customer : Customer
+    lateinit var dbManager : DataManager
+
     lateinit var btn_tamam: Button
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         val view =  inflater.inflate(R.layout.fragment_transfer, container, false)
 
-        val id : String = view.findViewById<View?>(R.id.txtTckn).toString()
-        var dbConnection:DbConnection ?=null
-        val con : Connection? = dbConnection?.Conn()
+        val ed_Tckn=view.findViewById(R.id.txtTckn) as EditText
+        val tckn = ed_Tckn.text.toString().toInt()
+        val cntxt:Context=this@TransferFragment.requireActivity()
 
-        if(con==null){
-            val error : String ="Error in sql connection"
-        }else {
-            try{
-                val statement = con.createStatement()
+        customer=dbManager.getData(tckn, cntxt)
 
-                balance=statement.executeQuery("Select balance from customers where customer_id = ('"+id+"') ") as Double
-            }catch (ex : SQLException){
-                Log.e("error", ex.message.toString())
-            }
-        }
 
-        var cüzdan_yatırım = balance
-        var cüzdan_vadesiz = 5000.0
+
+        var cüzdan_yatırım = customer.balanceInv
+        var cüzdan_vadesiz = customer.balanceAcc
 
 
         hesap_bilgi = view.findViewById(R.id.hesap_bilgi) as TextView
