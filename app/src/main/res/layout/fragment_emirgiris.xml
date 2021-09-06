@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                                                   xmlns:app="http://schemas.android.com/apk/res-auto"
-                                                   xmlns:tools="http://schemas.android.com/tools"
-                                                   android:layout_width="match_parent"
-                                                   android:layout_height="match_parent"
-                                                   tools:context=".fragments.EmirFragment"
-                                                   android:background="#F5F5F5">
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#F5F5F5">
+    <!--tools:context=".fragment"-->
+
 
     <ScrollView
             android:layout_width="match_parent"
@@ -61,7 +62,7 @@
                             android:paddingRight="@dimen/_16sdp"
                             android:paddingBottom="@dimen/_3sdp"
                             android:text="ALIŞ"
-                            android:textColor="@color/radio_flat_text_selector" />
+                            android:textColor="@color/black" />
 
                     <RadioButton
                             android:id="@+id/satisbtn"
@@ -75,7 +76,7 @@
                             android:paddingRight="@dimen/_16sdp"
                             android:paddingBottom="@dimen/_3sdp"
                             android:text="SATIŞ"
-                            android:textColor="@color/radio_flat_text_selector" />
+                            android:textColor="@color/black" />
 
                 </RadioGroup>
 
@@ -87,7 +88,7 @@
             <LinearLayout
                     android:orientation="vertical"
                     android:layout_width="match_parent"
-                    android:layout_height="484dp"
+                    android:layout_height="454dp"
                     android:background="#80D7E9FF"
                     android:id="@+id/layout_form"
                     android:layout_below="@+id/layout_button"
@@ -115,7 +116,7 @@
                             android:layout_width="206dp"
                             android:layout_height="wrap_content"
                             android:textAlignment="viewEnd"
-                            android:text="-378.92"
+                            android:text="200.00"
                             android:textColor="#BF000000"
                             android:paddingRight="10dp"
                             android:paddingBottom="15dp"
@@ -126,7 +127,7 @@
                 <View
                         android:id="@+id/line1"
                         android:layout_width="match_parent"
-                        android:layout_height="5dp"
+                        android:layout_height="2dp"
                         android:background="@drawable/line" />
 
                 <LinearLayout
@@ -136,53 +137,50 @@
                         android:id="@+id/layout_hisse"
                         android:layout_below="@+id/linlayout_1">
 
-                    <TextView
-                            android:id="@+id/hisse"
-                            android:layout_width="206dp"
-                            android:layout_height="wrap_content"
-                            android:text="Hisse"
-                            android:textColor="#BF000000"
-                            android:paddingLeft="10dp"
-                            android:paddingBottom="15dp"
-                            android:paddingTop="15dp" />
+                    <RelativeLayout
+                            android:layout_width="204dp"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:paddingRight="15dp">
+
+                        <TextView
+                                android:id="@+id/hisse"
+                                android:layout_width="206dp"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="10dp"
+                                android:paddingTop="20dp"
+                                android:paddingBottom="15dp"
+                                android:text="Hisse"
+                                android:textColor="#BF000000" />
+                    </RelativeLayout>
 
                     <RelativeLayout
                             android:layout_width="204dp"
                             android:layout_height="match_parent"
                             android:gravity="center"
-                            android:paddingRight="10dp">
+                            android:paddingRight="1dp">
 
-                        <TextView
-                                android:id="@+id/val_hisse"
-                                android:layout_width="171dp"
-                                android:layout_height="match_parent"
-                                android:clickable="false"
-                                android:text="EREGL"
-                                android:textColor="#BF000000"
-                                android:gravity="right|center_vertical"
-                                android:paddingBottom="15dp"
-                                android:paddingTop="15dp"
-                                android:textSize="14sp"
-                                android:layout_alignParentEnd="true"
-                                android:layout_marginEnd="15dp" />
+                        <com.google.android.material.textfield.TextInputLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu">
 
-                        <TextView
-                                android:layout_width="204dp"
-                                android:layout_height="match_parent"
-                                android:text=">"
-                                android:textColor="#BF000000"
-                                android:gravity="right|center_vertical"
-                                android:clickable="true"
-                                android:textSize="20sp"
-                                android:layout_alignParentBottom="true"
-                                android:layout_marginBottom="1dp"
-                                android:layout_marginTop="0dp"
-                                android:layout_alignParentTop="true"
-                                android:id="@+id/click_hisse" />
+                            <AutoCompleteTextView
+                                    android:text="EREGL"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:id="@+id/autoCompleteTextView"
+                                    android:layout_weight="1"
+                                    android:textColor="@color/black"
+                                    android:textAlignment="textEnd" />
+
+
+                        </com.google.android.material.textfield.TextInputLayout>
                     </RelativeLayout>
                 </LinearLayout>
 
                 <LinearLayout
+
                         android:orientation="vertical"
                         android:layout_width="wrap_content"
                         android:layout_height="100dp"
@@ -278,7 +276,7 @@
                 <View
                         android:id="@+id/line2"
                         android:layout_width="match_parent"
-                        android:layout_height="5dp"
+                        android:layout_height="2dp"
                         android:background="@drawable/line" />
 
                 <LinearLayout
@@ -292,52 +290,44 @@
                             android:id="@+id/fiyattipi"
                             android:layout_width="206dp"
                             android:layout_height="wrap_content"
-                            android:text="Fiyat Tipi"
-                            android:textColor="#BF000000"
                             android:paddingLeft="10dp"
                             android:paddingBottom="15dp"
-                            android:paddingTop="15dp" />
+                            android:paddingTop="15dp"
+                            android:text="Fiyat Tipi"
+                            android:textColor="#BF000000" />
 
                     <RelativeLayout
                             android:layout_width="204dp"
                             android:layout_height="match_parent"
                             android:gravity="center"
-                            android:paddingRight="10dp">
+                            android:paddingRight="1dp"
+                            android:paddingBottom="1dp">
 
-                        <TextView
-                                android:id="@+id/val_fiyattipi"
-                                android:layout_width="171dp"
-                                android:layout_height="match_parent"
-                                android:clickable="false"
-                                android:text="Limit"
-                                android:textColor="#BF000000"
-                                android:gravity="right|center_vertical"
-                                android:paddingBottom="15dp"
-                                android:paddingTop="15dp"
-                                android:textSize="14sp"
-                                android:layout_alignParentEnd="true"
-                                android:layout_marginEnd="15dp" />
+                        <com.google.android.material.textfield.TextInputLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu">
 
-                        <TextView
-                                android:layout_width="204dp"
-                                android:layout_height="match_parent"
-                                android:text=">"
-                                android:textColor="#BF000000"
-                                android:gravity="right|center_vertical"
-                                android:clickable="true"
-                                android:textSize="20sp"
-                                android:layout_alignParentBottom="true"
-                                android:layout_marginBottom="1dp"
-                                android:layout_marginTop="0dp"
-                                android:layout_alignParentTop="true"
-                                android:id="@+id/click_fiyattipi" />
+                            <AutoCompleteTextView
+                                    android:text="Limit"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:id="@+id/autoCompleteTextViewFiyatTipi"
+                                    android:layout_weight="1"
+                                    android:textColor="@color/black"
+                                    android:textAlignment="textEnd"
+                                    android:inputType="none" />
+
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
                     </RelativeLayout>
                 </LinearLayout>
 
                 <View
                         android:id="@+id/line3"
                         android:layout_width="match_parent"
-                        android:layout_height="5dp"
+                        android:layout_height="2dp"
                         android:background="@drawable/line" />
 
                 <LinearLayout
@@ -367,20 +357,20 @@
                                 android:id="@+id/edtxt_adet"
                                 android:layout_width="155dp"
                                 android:layout_height="40dp"
-                                android:inputType="number"
+                                android:background="@drawable/edit_text_view"
                                 android:hint="Adet Giriniz"
-                                android:textColorHint="#40000000"
-                                android:textSize="14sp"
-                                android:textColor="@color/black"
+                                android:inputType="number"
                                 android:paddingLeft="15dp"
-                                android:background="@drawable/edit_text_view" />
+                                android:textColor="@color/black"
+                                android:textColorHint="#40000000"
+                                android:textSize="14sp" />
                     </RelativeLayout>
                 </LinearLayout>
 
                 <View
                         android:id="@+id/line4"
                         android:layout_width="match_parent"
-                        android:layout_height="5dp"
+                        android:layout_height="2dp"
                         android:background="@drawable/line" />
 
                 <LinearLayout
@@ -404,42 +394,34 @@
                             android:layout_width="204dp"
                             android:layout_height="match_parent"
                             android:gravity="center"
-                            android:paddingRight="10dp">
+                            android:paddingRight="1dp"
+                            android:paddingBottom="1dp">
 
-                        <TextView
-                                android:id="@+id/val_suretipi"
-                                android:layout_width="171dp"
-                                android:layout_height="match_parent"
-                                android:clickable="false"
-                                android:text="Günlük"
-                                android:textColor="#BF000000"
-                                android:gravity="right|center_vertical"
-                                android:paddingBottom="15dp"
-                                android:paddingTop="15dp"
-                                android:textSize="14sp"
-                                android:layout_alignParentEnd="true"
-                                android:layout_marginEnd="15dp" />
+                        <com.google.android.material.textfield.TextInputLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu">
 
-                        <TextView
-                                android:layout_width="204dp"
-                                android:layout_height="match_parent"
-                                android:text=">"
-                                android:textColor="#BF000000"
-                                android:gravity="right|center_vertical"
-                                android:clickable="true"
-                                android:textSize="20sp"
-                                android:layout_alignParentBottom="true"
-                                android:layout_marginBottom="1dp"
-                                android:layout_marginTop="0dp"
-                                android:layout_alignParentTop="true"
-                                android:id="@+id/click_suretipi" />
+                            <AutoCompleteTextView
+                                    android:text="Günlük"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:id="@+id/autoCompleteTextViewSureTipi"
+                                    android:layout_weight="1"
+                                    android:textColor="@color/black"
+                                    android:textAlignment="textEnd"
+                                    android:inputType="none" />
+
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
                     </RelativeLayout>
                 </LinearLayout>
 
                 <View
                         android:id="@+id/line5"
                         android:layout_width="match_parent"
-                        android:layout_height="5dp"
+                        android:layout_height="2dp"
                         android:background="@drawable/line" />
 
                 <LinearLayout
@@ -453,7 +435,7 @@
                             android:id="@+id/fiyat"
                             android:layout_width="206dp"
                             android:layout_height="wrap_content"
-                            android:text="Fyat"
+                            android:text="Fiyat"
                             android:textColor="#BF000000"
                             android:paddingLeft="10dp"
                             android:paddingBottom="15dp"
@@ -466,6 +448,7 @@
                             android:paddingRight="10dp">
 
                         <EditText
+                                android:text="232.00"
                                 android:id="@+id/edtxt_fiyat"
                                 android:layout_width="206dp"
                                 android:layout_height="40dp"
@@ -482,7 +465,7 @@
                 <View
                         android:id="@+id/line6"
                         android:layout_width="match_parent"
-                        android:layout_height="5dp"
+                        android:layout_height="2dp"
                         android:background="@drawable/line" />
 
                 <CheckBox
@@ -491,27 +474,27 @@
                         android:text="Emir gerçekleştiğinde bilgilendir."
                         android:textColor="#BF000000"
                         android:buttonTint="#3E6490"
-                        android:paddingTop="15dp"
+                        android:paddingTop="10dp"
                         android:paddingBottom="15dp"></CheckBox>
             </LinearLayout>
 
             <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/button"
-                    android:text="Tamam"
-                    android:layout_alignParentBottom="false"
-                    android:layout_marginTop="25dp"
-                    android:layout_marginBottom="71dp"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginEnd="131dp"
+                    android:layout_below="@+id/layout_form"
                     android:layout_alignParentStart="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="false"
                     android:layout_marginStart="130dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="131dp"
+                    android:layout_marginBottom="71dp"
+                    android:background="@drawable/button_emir_tamam"
+                    android:fontFamily="@font/inter"
+                    android:text="Tamam"
                     android:textAllCaps="false"
                     android:textSize="18sp"
-                    android:fontFamily="@font/inter"
                     android:textStyle="bold"
-                    android:layout_below="@+id/layout_form"
                     android:layout_centerInParent="true" />
 
         </RelativeLayout>
