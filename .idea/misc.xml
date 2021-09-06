@@ -3,27 +3,6 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/Zahit/Documents/GitHub/MyApplication/app/src/main/res/layout/activity_accounts.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/Zahit/Documents/GitHub/MyApplication/app/src/main/res/layout/activity_emir_tablayout.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/Zahit/Documents/GitHub/MyApplication/app/src/main/res/layout/activity_emirlerim.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/Zahit/Documents/GitHub/MyApplication/app/src/main/res/layout/activity_navbar.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/Zahit/Documents/GitHub/MyApplication/app/src/main/res/layout/activity_sign_in.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/Zahit/Documents/GitHub/MyApplication/app/src/main/res/layout/activity_sign_up.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/Zahit/Documents/GitHub/MyApplication/app/src/main/res/layout/activity_sorular.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/Zahit/Documents/GitHub/MyApplication/app/src/main/res/layout/dropdown_item.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/Zahit/Documents/GitHub/MyApplication/app/src/main/res/layout/fragment_bekleyen_emir.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/Zahit/Documents/GitHub/MyApplication/app/src/main/res/layout/fragment_blank.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/Zahit/Documents/GitHub/MyApplication/app/src/main/res/layout/fragment_diger.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/Zahit/Documents/GitHub/MyApplication/app/src/main/res/layout/fragment_emirgiris.xml" value="0.1" />
-        <entry key="..\:/Users/Zahit/Documents/GitHub/MyApplication/app/src/main/res/layout/fragment_gerceklesen_emir.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/Zahit/Documents/GitHub/MyApplication/app/src/main/res/layout/fragment_iptal_emir.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/Zahit/Documents/GitHub/MyApplication/app/src/main/res/layout/fragment_karsilama.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/Zahit/Documents/GitHub/MyApplication/app/src/main/res/layout/fragment_liste_menu.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/Zahit/Documents/GitHub/MyApplication/app/src/main/res/layout/fragment_piyasa.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/Zahit/Documents/GitHub/MyApplication/app/src/main/res/layout/fragment_transfer.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/Zahit/Documents/GitHub/MyApplication/app/src/main/res/layout/framedeneme.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/Zahit/Documents/GitHub/MyApplication/app/src/main/res/layout/menu_list_item.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/Zahit/Documents/GitHub/MyApplication/app/src/main/res/layout/rowlaout.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/aos_5/Documents/GitHub/MyApplication-ozgur/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.3828125" />
         <entry key="..\:/Users/aos_5/Documents/GitHub/MyApplication-ozgur/app/src/main/res/drawable/bg1.xml" value="0.22135416666666666" />
         <entry key="..\:/Users/aos_5/Documents/GitHub/MyApplication-ozgur/app/src/main/res/drawable/button.xml" value="0.22135416666666666" />
@@ -65,6 +44,7 @@
         <entry key="..\:/Users/erdi7/Documents/GitHub/MyApplication/app/src/main/res/drawable/ic_hesabim_logo.xml" value="0.2755208333333333" />
         <entry key="..\:/Users/erdi7/Documents/GitHub/MyApplication/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2755208333333333" />
         <entry key="..\:/Users/erdi7/Documents/GitHub/MyApplication/app/src/main/res/drawable/ic_marketgraph.xml" value="0.2755208333333333" />
+        <entry key="..\:/Users/erdi7/Documents/GitHub/MyApplication/app/src/main/res/drawable/ic_rise_up_green.xml" value="0.2755208333333333" />
         <entry key="..\:/Users/erdi7/Documents/GitHub/MyApplication/app/src/main/res/layout/activity_accounts.xml" value="0.176" />
         <entry key="..\:/Users/erdi7/Documents/GitHub/MyApplication/app/src/main/res/layout/activity_emirlerim.xml" value="0.19021739130434784" />
         <entry key="..\:/Users/erdi7/Documents/GitHub/MyApplication/app/src/main/res/layout/activity_main.xml" value="0.10663627152988855" />
@@ -77,8 +57,12 @@
         <entry key="..\:/Users/erdi7/Documents/GitHub/MyApplication/app/src/main/res/layout/fragment_gerceklesen_emir.xml" value="0.259375" />
         <entry key="..\:/Users/erdi7/Documents/GitHub/MyApplication/app/src/main/res/layout/fragment_iptal_emir.xml" value="0.4" />
         <entry key="..\:/Users/erdi7/Documents/GitHub/MyApplication/app/src/main/res/layout/fragment_karsilama.xml" value="0.1743659420289855" />
+        <entry key="..\:/Users/erdi7/Documents/GitHub/MyApplication/app/src/main/res/layout/fragment_liste_menu.xml" value="0.25317028985507245" />
         <entry key="..\:/Users/erdi7/Documents/GitHub/MyApplication/app/src/main/res/layout/fragment_piyasa.xml" value="0.33126934984520123" />
         <entry key="..\:/Users/erdi7/Documents/GitHub/MyApplication/app/src/main/res/layout/fragment_transfer.xml" value="0.4" />
+        <entry key="..\:/Users/erdi7/Documents/GitHub/MyApplication/app/src/main/res/layout/menu_list_item.xml" value="0.25317028985507245" />
+        <entry key="..\:/Users/erdi7/Documents/GitHub/MyApplication/app/src/main/res/layout/row_layout_piyasa.xml" value="0.4" />
+        <entry key="..\:/Users/erdi7/Documents/GitHub/MyApplication/app/src/main/res/layout/rowlaout.xml" value="0.20520833333333333" />
         <entry key="..\:/Users/erdi7/Documents/GitHub/MyApplication/app/src/main/res/layout/sign_in.xml" value="0.10280797101449275" />
         <entry key="..\:/Users/erdi7/Documents/GitHub/MyApplication/app/src/main/res/menu/nav_menu.xml" value="0.2111111111111111" />
         <entry key="..\:/Users/ozaro/AndroidStudioProjects/MyApplication/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.3828125" />
