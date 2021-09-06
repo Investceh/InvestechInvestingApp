@@ -15,34 +15,21 @@
         <entry key="..\:/Users/aos_5/Documents/GitHub/MyApplication-ozgur/app/src/main/res/drawable/radio_flat_selected.xml" value="0.3828125" />
         <entry key="..\:/Users/aos_5/Documents/GitHub/MyApplication-ozgur/app/src/main/res/drawable/radio_flat_selected_alis.xml" value="0.3828125" />
         <entry key="..\:/Users/aos_5/Documents/GitHub/MyApplication-ozgur/app/src/main/res/drawable/radio_flat_selected_satis.xml" value="0.3828125" />
-        <entry key="..\:/Users/aos_5/Documents/GitHub/MyApplication-ozgur/app/src/main/res/drawable/radio_flat_selected_test.xml" value="0.22135416666666666" />
         <entry key="..\:/Users/aos_5/Documents/GitHub/MyApplication-ozgur/app/src/main/res/drawable/radio_flat_selector.xml" value="0.3828125" />
         <entry key="..\:/Users/aos_5/Documents/GitHub/MyApplication-ozgur/app/src/main/res/drawable/radio_flat_selector_alis.xml" value="0.3828125" />
         <entry key="..\:/Users/aos_5/Documents/GitHub/MyApplication-ozgur/app/src/main/res/drawable/radio_flat_selector_satis.xml" value="0.3828125" />
-        <entry key="..\:/Users/aos_5/Documents/GitHub/MyApplication-ozgur/app/src/main/res/drawable/radio_flat_test.xml" value="0.22135416666666666" />
-        <entry key="..\:/Users/aos_5/Documents/GitHub/MyApplication-ozgur/app/src/main/res/drawable/radio_flat_test2.xml" value="0.22135416666666666" />
         <entry key="..\:/Users/aos_5/Documents/GitHub/MyApplication-ozgur/app/src/main/res/drawable/rounded_bottom_box.xml" value="0.3828125" />
         <entry key="..\:/Users/aos_5/Documents/GitHub/MyApplication-ozgur/app/src/main/res/drawable/rounded_views.xml" value="0.3828125" />
         <entry key="..\:/Users/aos_5/Documents/GitHub/MyApplication-ozgur/app/src/main/res/drawable/screen_title.xml" value="0.3828125" />
         <entry key="..\:/Users/aos_5/Documents/GitHub/MyApplication-ozgur/app/src/main/res/drawable/signin_textview.xml" value="0.3828125" />
         <entry key="..\:/Users/aos_5/Documents/GitHub/MyApplication-ozgur/app/src/main/res/drawable/title_box.xml" value="0.3828125" />
         <entry key="..\:/Users/aos_5/Documents/GitHub/MyApplication-ozgur/app/src/main/res/layout/activity_emir_tablayout.xml" value="0.276268115942029" />
-        <entry key="..\:/Users/aos_5/Documents/GitHub/MyApplication-ozgur/app/src/main/res/layout/activity_emirlerim.xml" value="0.20520833333333333" />
         <entry key="..\:/Users/aos_5/Documents/GitHub/MyApplication-ozgur/app/src/main/res/layout/activity_navbar.xml" value="0.20520833333333333" />
         <entry key="..\:/Users/aos_5/Documents/GitHub/MyApplication-ozgur/app/src/main/res/layout/activity_para_transferi.xml" value="0.20520833333333333" />
         <entry key="..\:/Users/aos_5/Documents/GitHub/MyApplication-ozgur/app/src/main/res/layout/fragment_emirgiris.xml" value="0.25" />
-        <entry key="..\:/Users/aos_5/Documents/GitHub/MyApplication-ozgur/app/src/main/res/layout/fragment_gerceklesen_emir.xml" value="0.20520833333333333" />
         <entry key="..\:/Users/aos_5/Documents/GitHub/MyApplication-ozgur/app/src/main/res/layout/fragment_karsilama.xml" value="0.276268115942029" />
         <entry key="..\:/Users/aos_5/Documents/GitHub/MyApplication-ozgur/app/src/main/res/layout/fragment_pertanyaan.xml" value="0.276268115942029" />
-        <entry key="..\:/Users/aos_5/Documents/GitHub/MyApplication-ozgur/app/src/main/res/layout/fragment_piyasa.xml" value="0.20520833333333333" />
-        <entry key="..\:/Users/aos_5/Documents/GitHub/MyApplication-ozgur/app/src/main/res/layout/fragment_transfer.xml" value="0.25" />
         <entry key="..\:/Users/erdi7/Documents/GitHub/MyApplication/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2755208333333333" />
-        <entry key="..\:/Users/erdi7/Documents/GitHub/MyApplication/app/src/main/res/drawable-v24/radio_flat_selected_alis.xml" value="0.2598958333333333" />
-        <entry key="..\:/Users/erdi7/Documents/GitHub/MyApplication/app/src/main/res/drawable-v24/transfer_button.xml" value="0.2598958333333333" />
-        <entry key="..\:/Users/erdi7/Documents/GitHub/MyApplication/app/src/main/res/drawable/bg1.xml" value="0.2755208333333333" />
-        <entry key="..\:/Users/erdi7/Documents/GitHub/MyApplication/app/src/main/res/drawable/bg5.xml" value="0.2755208333333333" />
-        <entry key="..\:/Users/erdi7/Documents/GitHub/MyApplication/app/src/main/res/drawable/button_gradient.xml" value="0.2755208333333333" />
-        <entry key="..\:/Users/erdi7/Documents/GitHub/MyApplication/app/src/main/res/drawable/button_red.xml" value="0.2755208333333333" />
         <entry key="..\:/Users/erdi7/Documents/GitHub/MyApplication/app/src/main/res/drawable/ic_hesabim_logo.xml" value="0.2755208333333333" />
         <entry key="..\:/Users/erdi7/Documents/GitHub/MyApplication/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2755208333333333" />
         <entry key="..\:/Users/erdi7/Documents/GitHub/MyApplication/app/src/main/res/drawable/ic_marketgraph.xml" value="0.2755208333333333" />
@@ -72,8 +59,11 @@
         <entry key="..\:/Users/ozaro/AndroidStudioProjects/MyApplication/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.3828125" />
         <entry key="..\:/Users/ozaro/AndroidStudioProjects/MyApplication/app/src/main/res/drawable/account_info_box.xml" value="0.1" />
         <entry key="..\:/Users/ozaro/AndroidStudioProjects/MyApplication/app/src/main/res/drawable/account_title.xml" value="0.1" />
+        <entry key="..\:/Users/ozaro/AndroidStudioProjects/MyApplication/app/src/main/res/drawable/bg1.xml" value="0.3828125" />
+        <entry key="..\:/Users/ozaro/AndroidStudioProjects/MyApplication/app/src/main/res/drawable/bg2.xml" value="0.3828125" />
         <entry key="..\:/Users/ozaro/AndroidStudioProjects/MyApplication/app/src/main/res/drawable/button.xml" value="0.3828125" />
         <entry key="..\:/Users/ozaro/AndroidStudioProjects/MyApplication/app/src/main/res/drawable/button_red.xml" value="0.3828125" />
+        <entry key="..\:/Users/ozaro/AndroidStudioProjects/MyApplication/app/src/main/res/drawable/button_selected.xml" value="0.3828125" />
         <entry key="..\:/Users/ozaro/AndroidStudioProjects/MyApplication/app/src/main/res/drawable/edit_text_view.xml" value="0.3828125" />
         <entry key="..\:/Users/ozaro/AndroidStudioProjects/MyApplication/app/src/main/res/drawable/hisse_senet.xml" value="0.2989583333333333" />
         <entry key="..\:/Users/ozaro/AndroidStudioProjects/MyApplication/app/src/main/res/drawable/ic_emir_logo.xml" value="0.3828125" />
@@ -86,20 +76,26 @@
         <entry key="..\:/Users/ozaro/AndroidStudioProjects/MyApplication/app/src/main/res/drawable/rounded_views.xml" value="0.3828125" />
         <entry key="..\:/Users/ozaro/AndroidStudioProjects/MyApplication/app/src/main/res/drawable/signin_textview.xml" value="0.3828125" />
         <entry key="..\:/Users/ozaro/AndroidStudioProjects/MyApplication/app/src/main/res/layout/activity_accounts.xml" value="0.22" />
+        <entry key="..\:/Users/ozaro/AndroidStudioProjects/MyApplication/app/src/main/res/layout/activity_emir_tablayout.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/ozaro/AndroidStudioProjects/MyApplication/app/src/main/res/layout/activity_emirlerim.xml" value="0.28489583333333335" />
+        <entry key="..\:/Users/ozaro/AndroidStudioProjects/MyApplication/app/src/main/res/layout/activity_hisse.xml" value="0.259375" />
         <entry key="..\:/Users/ozaro/AndroidStudioProjects/MyApplication/app/src/main/res/layout/activity_navbar.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/ozaro/AndroidStudioProjects/MyApplication/app/src/main/res/layout/activity_sign_in.xml" value="0.1" />
         <entry key="..\:/Users/ozaro/AndroidStudioProjects/MyApplication/app/src/main/res/layout/activity_sign_up.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/ozaro/AndroidStudioProjects/MyApplication/app/src/main/res/layout/desing_language_card.xml" value="0.67" />
         <entry key="..\:/Users/ozaro/AndroidStudioProjects/MyApplication/app/src/main/res/layout/fragment_diger.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/ozaro/AndroidStudioProjects/MyApplication/app/src/main/res/layout/fragment_emir.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/ozaro/AndroidStudioProjects/MyApplication/app/src/main/res/layout/fragment_emirgiris.xml" value="0.26145833333333335" />
+        <entry key="..\:/Users/ozaro/AndroidStudioProjects/MyApplication/app/src/main/res/layout/fragment_gerceklesen_emir.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/ozaro/AndroidStudioProjects/MyApplication/app/src/main/res/layout/fragment_hisse.xml" value="0.25" />
+        <entry key="..\:/Users/ozaro/AndroidStudioProjects/MyApplication/app/src/main/res/layout/fragment_iptal_emir.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/ozaro/AndroidStudioProjects/MyApplication/app/src/main/res/layout/fragment_karsilama.xml" value="0.33" />
         <entry key="..\:/Users/ozaro/AndroidStudioProjects/MyApplication/app/src/main/res/layout/fragment_pertanyaan.xml" value="0.2" />
-        <entry key="..\:/Users/ozaro/AndroidStudioProjects/MyApplication/app/src/main/res/layout/fragment_piyasa.xml" value="0.1" />
+        <entry key="..\:/Users/ozaro/AndroidStudioProjects/MyApplication/app/src/main/res/layout/fragment_piyasa.xml" value="0.25" />
         <entry key="..\:/Users/ozaro/AndroidStudioProjects/MyApplication/app/src/main/res/layout/fragment_transfer.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/ozaro/AndroidStudioProjects/MyApplication/app/src/main/res/layout/framedeneme.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/ozaro/AndroidStudioProjects/MyApplication/app/src/main/res/layout/list_item.xml" value="0.33" />
+        <entry key="..\:/Users/ozaro/AndroidStudioProjects/MyApplication/app/src/main/res/layout/rowlaout.xml" value="0.654524089306698" />
       </map>
     </option>
   </component>
