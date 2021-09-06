@@ -117,6 +117,7 @@
             android:textSize="14sp" />
 
     <TextView
+            android:background="@color/buttonRed"
             android:textColor="@color/black"
             android:paddingHorizontal="6dp"
             android:paddingVertical="12dp"
