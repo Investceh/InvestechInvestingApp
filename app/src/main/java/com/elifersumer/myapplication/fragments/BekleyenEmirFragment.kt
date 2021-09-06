@@ -1,5 +1,6 @@
 package com.elifersumer.myapplication.fragments
 
+import android.R.attr
 import android.graphics.Color
 import android.graphics.drawable.Drawable
 import android.os.Bundle
@@ -8,12 +9,13 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.TableRow
-import android.widget.TextView
 import androidx.core.content.res.ResourcesCompat
 import com.elifersumer.myapplication.R
 import kotlinx.android.synthetic.main.fragment_gerceklesen_emir.view.*
+import android.R.attr.button
+import android.app.ActionBar
+import android.widget.*
+import kotlinx.coroutines.delay
 
 
 class BekleyenEmirFragment : Fragment() {
@@ -25,7 +27,7 @@ class BekleyenEmirFragment : Fragment() {
         val drawable2: Drawable?= ResourcesCompat.getDrawable(resources,R.drawable.button_red, null)
         val drawable3: Drawable?= ResourcesCompat.getDrawable(resources,R.drawable.bg3, null)
         val drawable4: Drawable?= ResourcesCompat.getDrawable(resources,R.drawable.bg1, null)
-        val drawable5: Drawable?= ResourcesCompat.getDrawable(resources,R.drawable.button_gradient, null)
+        val drawable5: Drawable?= ResourcesCompat.getDrawable(resources,R.drawable.button, null)
         val view = inflater.inflate(R.layout.fragment_bekleyen_emir, container, false)
         val tabLay = view.table_layout_g
         var alisOrSatis = "Alis"
@@ -69,10 +71,10 @@ class BekleyenEmirFragment : Fragment() {
             tbr2.addView(txt8)
 
             val btn1 = Button(this.context)
-            btn1.setText("İptal")
+            btn1.setText("\tİptal")
             btn1.setTextColor(Color.WHITE)
-            btn1.setBackground(drawable5)
-
+            btn1.gravity = Gravity.CENTER_VERTICAL
+            btn1.setBackgroundColor(Color.RED)
             tbr2.addView(btn1)
             if(alisOrSatis == "Alış")
                 tbr2.setBackground(drawable)
