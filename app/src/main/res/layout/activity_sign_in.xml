@@ -5,7 +5,7 @@
         xmlns:tools="http://schemas.android.com/tools" android:layout_width="412dp"
         android:layout_height="match_parent" tools:ignore="ExtraText">
     <EditText
-            android:id="@+id/txt_email"
+            android:id="@+id/txtTckn"
             android:fontFamily="@font/inter"
             android:textSize="13sp"
             android:paddingStart="15dp"
@@ -13,12 +13,12 @@
             android:layout_height="49dp"
             android:background="@drawable/edit_text_view"
             android:translationZ="120dp"
-            android:hint="Email" android:gravity="center|left"
+            android:hint="TCKN" android:gravity="center|left"
             android:textColorHint="#80000000" tools:ignore="RtlHardcoded,RtlSymmetry"
             android:shadowDx="0"
             app:layout_constraintTop_toTopOf="@+id/bottomBox" android:layout_marginTop="160dp"
             app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
-            android:inputType="textEmailAddress" android:textColor="#000000"/>
+            android:inputType="number" android:textColor="#000000"/>
     <RelativeLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
                     app:layout_constraintTop_toBottomOf="@+id/textViewPassw"
                     app:layout_constraintBottom_toBottomOf="@+id/bottomBox"
@@ -54,7 +54,7 @@
             android:translationZ="120dp"
             android:hint="@string/hintpassword"
             android:textColorHint="#80000000" android:gravity="center|left" tools:ignore="RtlHardcoded,RtlSymmetry"
-            app:layout_constraintTop_toBottomOf="@+id/txt_email" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtTckn" app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" android:layout_marginTop="32dp" android:autofillHints="Şifre"
             android:textColor="#000000"/>
     <ImageButton
@@ -87,7 +87,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="@+id/bottomBox"
             android:contentDescription="@string/image" android:layout_marginTop="32dp"
-            app:layout_constraintBottom_toTopOf="@+id/txt_email" app:layout_constraintVertical_bias="0.229"/>
+            app:layout_constraintBottom_toTopOf="@+id/txtTckn" app:layout_constraintVertical_bias="0.229"/>
     <ImageButton
             android:translationZ="100dp"
             android:layout_width="wrap_content"

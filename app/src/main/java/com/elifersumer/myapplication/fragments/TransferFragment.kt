@@ -1,20 +1,20 @@
-
 package com.elifersumer.myapplication.fragments
 
-import android.graphics.drawable.Drawable
+
+import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.elifersumer.myapplication.R
-import androidx.appcompat.app.AppCompatActivity
 import android.widget.*
-import androidx.core.content.res.ResourcesCompat
+import com.elifersumer.myapplication.data.Customer
+import com.elifersumer.myapplication.data.DataManager
 
 class TransferFragment : Fragment() {
-    var cüzdan_yatırım = 1254.0
-    var cüzdan_vadesiz = 5000.0
+
+
     var secilen_miktar_double = 0.0
     lateinit var hesap_bilgi: TextView
     lateinit var yatırım_bilgi: TextView
@@ -31,12 +31,29 @@ class TransferFragment : Fragment() {
     lateinit var rg_75: RadioButton
     lateinit var rg_100: RadioButton
 
+    lateinit var customer : Customer
+    lateinit var dbManager : DataManager
+
     lateinit var btn_tamam: Button
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         val view =  inflater.inflate(R.layout.fragment_transfer, container, false)
+
+        val ed_Tckn=view.findViewById(R.id.txtTckn) as EditText
+        val tckn = ed_Tckn.text.toString().toInt()
+        val cntxt:Context=this@TransferFragment.requireActivity()
+
+        customer=dbManager.getData(tckn, cntxt)
+
+
+
+        var cüzdan_yatırım = customer.balanceInv
+        var cüzdan_vadesiz = customer.balanceAcc
+
+
         hesap_bilgi = view.findViewById(R.id.hesap_bilgi) as TextView
         yatırım_bilgi = view.findViewById(R.id.yatırım_bilgi) as TextView
 
@@ -168,5 +185,7 @@ class TransferFragment : Fragment() {
         miktar.setText("")
         oranlar.clearCheck()
         islem.clearCheck()
+
+
     }
 }
