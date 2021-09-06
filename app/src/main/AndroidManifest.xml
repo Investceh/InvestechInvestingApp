@@ -14,7 +14,7 @@
                 android:name=".Advisor_agresif"
                 android:exported="true" />
         <activity
-                android:name=".fragments.Advisor_muhafakazar"
+                android:name=".Advisor_muhafakazar"
                 android:exported="true" />
         <activity
                 android:name=".Advisor_risk_sevmez"

@@ -1,4 +1,4 @@
-package com.elifersumer.myapplication.fragments
+package com.elifersumer.myapplication
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
