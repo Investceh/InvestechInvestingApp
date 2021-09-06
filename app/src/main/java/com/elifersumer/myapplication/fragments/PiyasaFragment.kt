@@ -29,12 +29,16 @@ class PiyasaFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        val drawable1: Drawable?= ResourcesCompat.getDrawable(resources,R.drawable.ic_rise_up_green, null)
+        val textView = TextView(this.context)
+        textView.setBackground(drawable1)
         super.onViewCreated(view, savedInstanceState)
         val all_hisse = arrayListOf(
-            PiyasaData("Deg","ALKIM","15.04","15.03",
+            PiyasaData(
+                "deg","ALKIM","15.04","15.03",
                                             "1.48","Sat","Al"),
-            PiyasaData("Deg","AKCNS","15.03","15.29",
-                "-0.20","Sat","Al")
+            PiyasaData("deg","AKCNS","15.03","15.29",
+                "0.20","Sat","Al")
         )
         piyasa_recyclerView.layoutManager= LinearLayoutManager(context)
         piyasa_recyclerView.adapter= RecyclerViewAdapterPiyasa(all_hisse)

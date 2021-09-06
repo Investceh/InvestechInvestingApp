@@ -4,6 +4,16 @@
         <item>AKBNK</item>
         <item>EREGL</item>
     </string-array>
+    <string-array name="fiyatTipleri">
+        <item>Limit</item>
+        <item>----</item>
+    </string-array>
+
+    <string-array name="sureTipleri">
+        <item>Günlük</item>
+        <item>Haftalık</item>
+        <item>Aylık</item>
+    </string-array>
     <string name="app_name">My Application</string>
     <string name="textview">TextView</string>
     <string name="image">" "</string>
