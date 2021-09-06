@@ -1,14 +1,20 @@
 
 package com.elifersumer.myapplication.fragments
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
+import android.transition.AutoTransition
+import android.transition.TransitionManager
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.LinearLayout
 import android.widget.Toast
+import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.elifersumer.myapplication.HisseActivity
@@ -23,10 +29,11 @@ import com.github.mikephil.charting.data.PieDataSet
 import com.github.mikephil.charting.data.PieEntry
 import com.github.mikephil.charting.formatter.PercentFormatter
 import kotlinx.android.synthetic.main.fragment_karsilama.*
+import kotlinx.android.synthetic.main.rowlaout.*
 
 class KarsilamaFragment : Fragment() , OnRecyclerItemClickListner {
     private lateinit var pieChart: PieChart
-
+    private lateinit var expanderr: Button
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -34,7 +41,6 @@ class KarsilamaFragment : Fragment() , OnRecyclerItemClickListner {
 
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_karsilama, container, false)
-
         return view
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -49,22 +55,28 @@ class KarsilamaFragment : Fragment() , OnRecyclerItemClickListner {
             hisseler("TÜRKİYE GARANTİ BANKASI A.Ş\n", "GARAN",R.drawable.header_logo, "2000₺")
         )
 
+
         recyclerview.layoutManager=LinearLayoutManager(context)
         recyclerview.adapter= RecyclerViewAdapter(tourList,this)
 
+
     }
 
+    @SuppressLint("SetTextI18n")
+    //Dönüs yapmıyor tek giriş ama ekran aynı zamanda acılmıyor sormayı unutma
     override fun onItemClick(item: hisseler, position: Int) {
-        println("aaaaaaaaaaaaa")
-        val text = "Hisse senedi adi :"+ item.name + "\nDeğeri :" + item.cost
-        Toast.makeText(context, text , Toast.LENGTH_LONG).show()
-/*
-        val intent = Intent(context, HisseActivity::class.java)
-        intent.putExtra("Hisse Adi",item.name)
-        intent.putExtra("Hisse Cost",item.cost)
-        intent.putExtra("Hisse Logo",item.photo.toString())
-        startActivity(intent)
-*/
+        if(expandableView.visibility == View.GONE){
+            println("aaaaaaaaaaaaa")
+                TransitionManager.beginDelayedTransition(expandableView, AutoTransition())
+                expandableView.visibility == View.VISIBLE
+                expander.text = "Colapse"
+            }
+            else{
+            println("bfsabfdbfdfdbbfd")
+            TransitionManager.beginDelayedTransition(expandableView, AutoTransition())
+                expandableView.visibility == View.GONE
+                expander.text = "Expand"
+            }
     }
 
 

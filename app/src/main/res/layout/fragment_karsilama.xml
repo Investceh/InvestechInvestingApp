@@ -47,16 +47,15 @@
     <ScrollView
 
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_below="@id/headerImageView"
             tools:ignore="NotSibling"
             app:layout_constraintTop_toTopOf="parent">
         <RelativeLayout
-
                 android:layout_marginTop="250dp"
                 android:layout_width="match_parent"
                 android:background="@drawable/rounded_bottom_box"
-                android:layout_height="800dp"
+                android:layout_height="1000dp"
                 tools:context=".PertanyaanFragment"
                 >
             <ImageView

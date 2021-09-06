@@ -11,7 +11,9 @@ import com.elifersumer.myapplication.fragments.hisseler
 
 class RecyclerViewAdapter(var hisse_list : ArrayList<hisseler>,
     var clickListner: OnRecyclerItemClickListner):
+
     RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>() {
+
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view)
     {
         val tourName=view.findViewById<TextView>(R.id.title_tv)
@@ -24,7 +26,6 @@ class RecyclerViewAdapter(var hisse_list : ArrayList<hisseler>,
             shrName.text = item.sh_name
             cost.text = item.cost
             photo.setImageResource(item.photo)
-
             itemView.setOnClickListener{
                 action.onItemClick(item, adapterPosition)
             }
@@ -45,6 +46,7 @@ class RecyclerViewAdapter(var hisse_list : ArrayList<hisseler>,
         holder.photo.setImageResource(hisse_list[position].photo)
         holder.cost.text= hisse_list[position].cost
         holder.initialize(hisse_list.get(position),clickListner)
+
     }
 
     override fun getItemCount(): Int {
