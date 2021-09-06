@@ -92,7 +92,7 @@ class KarsilamaFragment : Fragment() {
         pieChart.invalidate()
         data.setValueTextSize(15f)
         pieChart.setExtraOffsets(5f, 10f, 5f, 5f)
-        pieChart.animateY(4000, Easing.EaseInOutQuad)
+        pieChart.animateY(2000, Easing.EaseInOutQuad)
         //create hole in center
         pieChart.holeRadius = 58f
         pieChart.transparentCircleRadius = 61f
