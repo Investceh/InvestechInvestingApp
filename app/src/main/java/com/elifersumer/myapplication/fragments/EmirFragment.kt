@@ -11,6 +11,8 @@ import android.widget.*
 import androidx.core.content.res.ResourcesCompat
 import androidx.core.view.ViewCompat.setBackground
 import com.elifersumer.myapplication.R
+import kotlinx.android.synthetic.main.fragment_emirgiris.view.*
+import kotlinx.android.synthetic.main.fragment_piyasa.view.*
 
 
 class EmirFragment : Fragment() {
@@ -25,7 +27,6 @@ class EmirFragment : Fragment() {
     ): View? {
 
         val view =  inflater.inflate(R.layout.fragment_emirgiris, container, false)
-
         alisbtn = view.findViewById(R.id.alisbtn) as RadioButton
         satisbtn = view.findViewById(R.id.satisbtn) as RadioButton
 
@@ -36,6 +37,9 @@ class EmirFragment : Fragment() {
         })
 
 
+        val hisseler = resources.getStringArray(R.array.hisseler)
+        var arrayAdapter = ArrayAdapter(requireContext(),R.layout.dropdown_item, hisseler)
+        view.autoCompleteTextView.setAdapter(arrayAdapter)
 
 
         // Inflate the layout for this fragment

@@ -314,10 +314,6 @@ class Sorular : AppCompatActivity() {
                     soru1_sık5.setBackground(drawable_selected)
                 }
             }
-
-            var secilen_button1 = radio_group1.checkedRadioButtonId
-            var secilen1_string = resources.getResourceEntryName(secilen_button1)
-            Toast.makeText(this,secilen1_string,Toast.LENGTH_SHORT).show()
         })
 
 
@@ -364,9 +360,6 @@ class Sorular : AppCompatActivity() {
                     soru2_sık5.setBackground(drawable_selected)
                 }
             }
-            var secilen_button1 = radio_group2.checkedRadioButtonId
-            var secilen1_string = resources.getResourceEntryName(secilen_button1)
-            Toast.makeText(this,secilen1_string,Toast.LENGTH_SHORT).show()
         })
 
 
@@ -412,9 +405,6 @@ class Sorular : AppCompatActivity() {
                     soru3_sık5.setBackground(drawable_selected)
                 }
             }
-            var secilen_button1 = radio_group3.checkedRadioButtonId
-            var secilen1_string = resources.getResourceEntryName(secilen_button1)
-            Toast.makeText(this,secilen1_string,Toast.LENGTH_SHORT).show()
         })
 
 
@@ -460,9 +450,6 @@ class Sorular : AppCompatActivity() {
                     soru4_sık5.setBackground(drawable_selected)
                 }
             }
-            var secilen_button1 = radio_group4.checkedRadioButtonId
-            var secilen1_string = resources.getResourceEntryName(secilen_button1)
-            Toast.makeText(this,secilen1_string,Toast.LENGTH_SHORT).show()
         })
 
 
@@ -509,9 +496,6 @@ class Sorular : AppCompatActivity() {
                     soru5_sık5.setBackground(drawable_selected)
                 }
             }
-            var secilen_button1 = radio_group5.checkedRadioButtonId
-            var secilen1_string = resources.getResourceEntryName(secilen_button1)
-            Toast.makeText(this,secilen1_string,Toast.LENGTH_SHORT).show()
         })
 
 
@@ -557,9 +541,6 @@ class Sorular : AppCompatActivity() {
                     soru6_sık5.setBackground(drawable_selected)
                 }
             }
-            var secilen_button1 = radio_group6.checkedRadioButtonId
-            var secilen1_string = resources.getResourceEntryName(secilen_button1)
-            Toast.makeText(this,secilen1_string,Toast.LENGTH_SHORT).show()
         })
 
 
@@ -606,9 +587,6 @@ class Sorular : AppCompatActivity() {
                     soru7_sık5.setBackground(drawable_selected)
                 }
             }
-            var secilen_button1 = radio_group7.checkedRadioButtonId
-            var secilen1_string = resources.getResourceEntryName(secilen_button1)
-            Toast.makeText(this,secilen1_string,Toast.LENGTH_SHORT).show()
         })
 
 
@@ -655,9 +633,6 @@ class Sorular : AppCompatActivity() {
                     soru8_sık5.setBackground(drawable_selected)
                 }
             }
-            var secilen_button1 = radio_group8.checkedRadioButtonId
-            var secilen1_string = resources.getResourceEntryName(secilen_button1)
-            Toast.makeText(this,secilen1_string,Toast.LENGTH_SHORT).show()
         })
 
 
@@ -772,13 +747,13 @@ class Sorular : AppCompatActivity() {
                 }
 
                 if(toplam_deger >= 0.0 && toplam_deger <= 40.0){
-                    kullanıcı_profili = "RiskSevmez"
+                    kullanıcı_profili = "Korumacı"
                 }else if(toplam_deger >= 40.1 && toplam_deger <= 60.0){
                     kullanıcı_profili = "Temkinli"
                 }else if(toplam_deger >= 60.1 && toplam_deger <= 80.0){
-                    kullanıcı_profili = "RiskSever"
+                    kullanıcı_profili = "Risk Sever"
                 }else if(toplam_deger >= 80.1 && toplam_deger <= 100.0){
-                    kullanıcı_profili = "Korkusuz"
+                    kullanıcı_profili = "Agresif"
                 }
 
                 lalala.text = kullanıcı_profili
