@@ -1,22 +1,15 @@
 package com.elifersumer.myapplication.fragments
 
 import android.graphics.Color
-import android.graphics.ImageDecoder
-import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.TextView
-import androidx.appcompat.view.menu.ActionMenuItemView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.elifersumer.myapplication.Event
-import com.elifersumer.myapplication.MyAdapter
 import com.elifersumer.myapplication.R
-import com.elifersumer.myapplication.hisseler
+import com.elifersumer.myapplication.RecyclerViewAdapter
 import com.github.mikephil.charting.animation.Easing
 import com.github.mikephil.charting.charts.PieChart
 import com.github.mikephil.charting.components.Legend
@@ -28,27 +21,36 @@ import kotlinx.android.synthetic.main.fragment_karsilama.*
 
 class KarsilamaFragment : Fragment() {
     private lateinit var pieChart: PieChart
-    private lateinit var newRecyclerView: RecyclerView
-    private lateinit var newArrayList: ArrayList<hisseler>
-    lateinit var imageId: Array<Int>
-    lateinit var heading: Array<String>
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
 
-
-
-
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_karsilama, container, false)
+
+        return view
+    }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         pieChart = view.findViewById(R.id.pieChart)
         initPieChart()
         setDataToPieChart()
-        //RecyclerView.hasFixedSize()
-        return view
+
+        val tourList = arrayListOf(
+            hisseler("Turkish Liras", R.drawable.tl, "2000₺"),
+            hisseler("Euro", R.drawable.euro, "3000₺"),
+            hisseler("Dolar", R.drawable.dolar, "2000₺")
+        )
+
+        recyclerview.layoutManager=LinearLayoutManager(context)
+        recyclerview.adapter= RecyclerViewAdapter(tourList)
+
     }
+
+
+
 
     private fun initPieChart() {
 
@@ -101,37 +103,4 @@ class KarsilamaFragment : Fragment() {
         pieChart.centerText = "Hisselerim"
 
     }
-  /*  inner class EventsAdapter(val events : List<Event>, val itemLayout: Int) : RecyclerView.Adapter<KarsilamaFragment.EventViewHolder>() {
-        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): EventViewHolder {
-            val view = LayoutInflater.from(parent.context).inflate(itemLayout, parent, false)
-            return EventViewHolder(view)
-        }
-
-        override fun onBindViewHolder(holder: EventViewHolder, position: Int) {
-            val event = events.get(position)
-            holder.updateEvent(event)
-        }
-
-        override fun getItemCount(): Int {
-            return events.size
-        }
-    }
-
-    inner class EventViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
-        private var imgEventThumbnail : ImageView = itemView.findViewById(R.id.imgEventThumbnail)
-        private var lblEventInfo : TextView = itemView.findViewById(R.id.IblEventInfo)
-
-        fun updateEvent (event : Event){
-            lblEventInfo.text = event.toString()
-            if(event.localPhotoUri != null && event.localPhotoUri != "null"){
-                val source = ImageDecoder.createSource(activity!!.contentResolver, Uri.parse(event.localPhotoUri))
-                val bitmap = ImageDecoder.decodeBitmap(source)
-
-                imgEventThumbnail.setImageBitmap(bitmap)
-
-
-            }
-        }
-    }*/
-
 }

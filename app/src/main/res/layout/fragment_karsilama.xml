@@ -41,7 +41,6 @@
                 android:layout_marginStart="120dp"
                 android:layout_marginEnd="50dp"
                 android:layout_marginBottom="50dp">
-
         </com.github.mikephil.charting.charts.PieChart>
 
     </RelativeLayout>
@@ -59,7 +58,6 @@
                 android:layout_height="800dp"
                 tools:context=".PertanyaanFragment"
                 >
-
             <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -68,45 +66,13 @@
                     android:contentDescription="@string/image"
                     tools:ignore="MissingConstraints"
                     android:layout_marginTop="0dp"/>
-            <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/a"
-                    android:id="@+id/a"
-                    android:contentDescription="@string/image"
-                    tools:ignore="MissingConstraints"
-                    android:layout_marginTop="50dp">
+            <androidx.recyclerview.widget.RecyclerView
+                    app:layout_constraintBottom_toTopOf="@+id/hisseImage"
+                    android:id="@+id/recyclerview"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
 
-            </ImageView>
-            <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/b"
-                    android:id="@+id/b"
-                    android:contentDescription="@string/image"
-                    tools:ignore="MissingConstraints"
-                    android:layout_marginTop="250dp">
-            </ImageView>
-            <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/c"
-                    android:id="@+id/c"
-                    android:contentDescription="@string/image"
-                    tools:ignore="MissingConstraints"
-                    android:layout_marginTop="300dp">
 
-            </ImageView>
-            <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/d"
-                    android:id="@+id/d"
-                    android:contentDescription="@string/image"
-                    tools:ignore="MissingConstraints"
-                    android:layout_marginTop="360dp">
-
-            </ImageView>
         </RelativeLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
