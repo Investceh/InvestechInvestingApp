@@ -7,198 +7,88 @@
         tools:context=".fragments.BekleyenEmirFragment"
         android:background="#F5F5F5">
 
-    <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="221dp"
-            android:background="#f5f5f5"
-            android:layout_below="@+id/layout_form2">
+    <ScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
 
-        <TableLayout
-                android:layout_width="match_parent"
+        <RelativeLayout
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_alignParentEnd="true"
-                android:layout_marginEnd="0dp"
-                android:layout_alignParentBottom="true"
-                android:background="#F5F5F5"
-                android:layout_marginTop="0dp">
+                android:background="#8F1F1F"
+                android:layout_below="@+id/layout_form2">
 
-            <TableRow
+            <TableLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@drawable/bg1"
-                    android:keepScreenOn="false"
-                    android:hapticFeedbackEnabled="false">
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="0dp"
+                    android:layout_alignParentBottom="true"
+                    android:background="#F5F5F5"
+                    android:layout_marginTop="0dp"
+                    android:id="@+id/table_layout_g">
 
-                <TextView
-                        android:textSize="15sp"
-                        android:id="@+id/hisseler"
-                        android:text="Hisseler"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:padding="10sp"
-                        android:textColor="@color/black"
-                        android:gravity="center_horizontal|center_vertical" />
+                <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/bg5">
 
-                <TextView
-                        android:id="@+id/adet"
-                        android:text="Adet"
-                        android:layout_width="103dp"
-                        android:layout_height="wrap_content"
-                        android:padding="18sp"
-                        android:textColor="@color/black"
-                        android:textSize="15sp"
-                        android:gravity="center_horizontal|center_vertical" />
+                    <TextView
+                            android:id="@+id/hisseler"
+                            android:text="Hisseler"
+                            android:layout_width="100dp"
+                            android:layout_height="match_parent"
+                            android:padding="12sp"
+                            android:textColor="#F5F5F5"
+                            android:gravity="center_vertical" />
 
-                <TextView
-                        android:id="@+id/fiyat"
-                        android:text="Fiyat"
-                        android:layout_width="103dp"
-                        android:layout_height="wrap_content"
-                        android:padding="18sp"
-                        android:textColor="@color/black"
-                        android:textSize="15sp"
-                        android:gravity="center_horizontal|center_vertical" />
+                    <TextView
+                            android:id="@+id/adet"
+                            android:text="Adet"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="12sp"
+                            android:textColor="#F5F5F5"
+                            android:layout_marginTop="8sp"
+                            android:gravity="center_vertical" />
 
-                <TextView
-                        android:id="@+id/alıs_satıs"
-                        android:text="Alış/Satış"
-                        android:layout_width="103dp"
-                        android:layout_height="wrap_content"
-                        android:padding="18sp"
-                        android:textColor="@color/black"
-                        android:textSize="15sp"
-                        android:gravity="center_horizontal|center_vertical" />
-            </TableRow>
+                    <TextView
+                            android:id="@+id/fiyat"
+                            android:text="Fiyat"
+                            android:layout_width="87dp"
+                            android:layout_height="wrap_content"
+                            android:padding="12sp"
+                            android:textColor="#F5F5F5"
+                            android:layout_marginTop="7sp"
+                            android:layout_marginLeft="17sp"
+                            android:gravity="center_vertical" />
 
-            <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/button_green">
+                    <TextView
+                            android:id="@+id/alıs_satıs"
+                            android:text="Alış/Satış"
+                            android:layout_width="74dp"
+                            android:layout_height="wrap_content"
+                            android:padding="12sp"
+                            android:textColor="#F5F5F5"
+                            android:gravity="center_vertical" />
 
-                <TextView
-                        android:id="@+id/hisse1"
-                        android:text="AGHOL"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:padding="18sp"
-                        android:textColor="@color/black"
-                        android:gravity="center_horizontal|center_vertical" />
+                    <TextView
+                            android:id="@+id/iptal"
+                            android:text="İptal"
+                            android:layout_width="103dp"
+                            android:layout_height="wrap_content"
+                            android:padding="12sp"
+                            android:textColor="#F5F5F5"
+                            android:layout_marginTop="7sp"
+                            android:layout_marginLeft="9sp"
+                            android:gravity="center_vertical" />
 
-                <TextView
-                        android:id="@+id/adet1"
-                        android:text="4"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:padding="18sp"
-                        android:textColor="@color/black"
-                        android:gravity="center_horizontal|center_vertical" />
+                </TableRow>
 
-                <TextView
-                        android:id="@+id/fiyat1"
-                        android:text="124.11"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:padding="18sp"
-                        android:textColor="@color/black"
-                        android:gravity="center_horizontal|center_vertical" />
 
-                <TextView
-                        android:id="@+id/alıs_satıs1"
-                        android:text="Alış"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:padding="18sp"
-                        android:textColor="@color/black"
-                        android:gravity="center_horizontal|center_vertical" />
-            </TableRow>
+            </TableLayout>
 
-            <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/button_red">
-
-                <TextView
-                        android:id="@+id/hisse2"
-                        android:text="AKCNS"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:padding="18sp"
-                        android:textColor="@color/black"
-                        android:gravity="center_horizontal|center_vertical" />
-
-                <TextView
-                        android:text="220"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/adet2"
-                        android:padding="18sp"
-                        android:textColor="@color/black"
-                        android:gravity="center_horizontal|center_vertical" />
-
-                <TextView
-                        android:text="15.29"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/fiyat2"
-                        android:padding="18sp"
-                        android:textColor="@color/black"
-                        android:gravity="center_horizontal|center_vertical" />
-
-                <TextView
-                        android:text="Satış"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/alıs_satıs2"
-                        android:padding="18sp"
-                        android:textColor="@color/black"
-                        android:gravity="center_horizontal|center_vertical" />
-            </TableRow>
-
-            <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/button_green">
-
-                <TextView
-                        android:id="@+id/hisse3"
-                        android:text="AGYO"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:padding="18sp"
-                        android:textColor="@color/black"
-                        android:gravity="center_horizontal|center_vertical" />
-
-                <TextView
-                        android:id="@+id/adet3"
-                        android:text="18"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:padding="18sp"
-                        android:textColor="@color/black"
-                        android:gravity="center_horizontal|center_vertical" />
-
-                <TextView
-                        android:id="@+id/fiyat3"
-                        android:text="420.51"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:padding="18sp"
-                        android:textColor="@color/black"
-                        android:gravity="center_horizontal|center_vertical" />
-
-                <TextView
-                        android:id="@+id/alıs_satıs3"
-                        android:text="Alış"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:padding="18sp"
-                        android:textColor="@color/black"
-                        android:gravity="center_horizontal|center_vertical" />
-            </TableRow>
-
-        </TableLayout>
-    </RelativeLayout>
-
+        </RelativeLayout>
+    </ScrollView>
     <androidx.constraintlayout.widget.ConstraintLayout
             android:orientation="vertical"
             android:layout_width="match_parent"

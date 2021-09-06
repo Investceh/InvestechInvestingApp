@@ -747,13 +747,13 @@ class Sorular : AppCompatActivity() {
                 }
 
                 if(toplam_deger >= 0.0 && toplam_deger <= 40.0){
-                    kullanıcı_profili = "RiskSevmez"
+                    kullanıcı_profili = "Korumacı"
                 }else if(toplam_deger >= 40.1 && toplam_deger <= 60.0){
                     kullanıcı_profili = "Temkinli"
                 }else if(toplam_deger >= 60.1 && toplam_deger <= 80.0){
-                    kullanıcı_profili = "RiskSever"
+                    kullanıcı_profili = "Risk Sever"
                 }else if(toplam_deger >= 80.1 && toplam_deger <= 100.0){
-                    kullanıcı_profili = "Korkusuz"
+                    kullanıcı_profili = "Agresif"
                 }
 
                 lalala.text = kullanıcı_profili
