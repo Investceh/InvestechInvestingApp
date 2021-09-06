@@ -1,13 +1,18 @@
+
 package com.elifersumer.myapplication.fragments
 
+import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.elifersumer.myapplication.HisseActivity
+import com.elifersumer.myapplication.OnRecyclerItemClickListner
 import com.elifersumer.myapplication.R
 import com.elifersumer.myapplication.RecyclerViewAdapter
 import com.github.mikephil.charting.animation.Easing
@@ -19,7 +24,7 @@ import com.github.mikephil.charting.data.PieEntry
 import com.github.mikephil.charting.formatter.PercentFormatter
 import kotlinx.android.synthetic.main.fragment_karsilama.*
 
-class KarsilamaFragment : Fragment() {
+class KarsilamaFragment : Fragment() , OnRecyclerItemClickListner {
     private lateinit var pieChart: PieChart
 
     override fun onCreateView(
@@ -39,16 +44,28 @@ class KarsilamaFragment : Fragment() {
         setDataToPieChart()
 
         val tourList = arrayListOf(
-            hisseler("Turkish Liras", R.drawable.tl, "2000₺"),
-            hisseler("Euro", R.drawable.euro, "3000₺"),
-            hisseler("Dolar", R.drawable.dolar, "2000₺")
+            hisseler("YAPI VE KREDİ BANKASI A.Ş", "YKBNK" ,R.drawable.header_logo, "2000₺"),
+            hisseler("İHLAS HOLDİNG A.Ş", "IHLAS" ,R.drawable.header_logo, "3000₺"),
+            hisseler("TÜRKİYE GARANTİ BANKASI A.Ş\n", "GARAN",R.drawable.header_logo, "2000₺")
         )
 
         recyclerview.layoutManager=LinearLayoutManager(context)
-        recyclerview.adapter= RecyclerViewAdapter(tourList)
+        recyclerview.adapter= RecyclerViewAdapter(tourList,this)
 
     }
 
+    override fun onItemClick(item: hisseler, position: Int) {
+        println("aaaaaaaaaaaaa")
+        val text = "Hisse senedi adi :"+ item.name + "\nDeğeri :" + item.cost
+        Toast.makeText(context, text , Toast.LENGTH_LONG).show()
+/*
+        val intent = Intent(context, HisseActivity::class.java)
+        intent.putExtra("Hisse Adi",item.name)
+        intent.putExtra("Hisse Cost",item.cost)
+        intent.putExtra("Hisse Logo",item.photo.toString())
+        startActivity(intent)
+*/
+    }
 
 
 
@@ -103,4 +120,5 @@ class KarsilamaFragment : Fragment() {
         pieChart.centerText = "Hisselerim"
 
     }
+
 }
