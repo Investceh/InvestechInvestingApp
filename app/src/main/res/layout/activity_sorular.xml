@@ -84,7 +84,8 @@
                                         android:text="C şıkkı"
                                         android:gravity="center"
                                         android:paddingLeft="10dp"
-                                        android:button="@android:color/transparent"></RadioButton>
+                                        android:button="@android:color/transparent" >
+                                </RadioButton>
 
                                 <RadioButton
                                         android:id="@+id/soru1_sık4"
