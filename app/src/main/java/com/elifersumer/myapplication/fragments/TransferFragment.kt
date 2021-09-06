@@ -50,8 +50,8 @@ class TransferFragment : Fragment() {
         var hesapBilgi = df.format(cüzdan_vadesiz).replace(',','.').reversed().replaceFirst('.',',').reversed()
         var yatirimBilgi = df.format(cüzdan_yatırım).replace(',','.').reversed().replaceFirst('.',',').reversed()
 
-        hesap_bilgi.text = hesapBilgi.toString()
-        yatırım_bilgi.text = yatirimBilgi.toString()
+        hesap_bilgi.text = hesapBilgi.toString() + "₺"
+        yatırım_bilgi.text = yatirimBilgi.toString() + "₺"
 
         miktar = view.findViewById(R.id.miktar) as EditText
 
@@ -136,8 +136,8 @@ class TransferFragment : Fragment() {
                             if(cüzdan_yatırım >= secilen_miktar_double){
                                 cüzdan_vadesiz += secilen_miktar_double
                                 cüzdan_yatırım -= secilen_miktar_double
-                                hesap_bilgi.setText(df.format(cüzdan_vadesiz).toString().replace(',','.').reversed().replaceFirst('.',',').reversed())
-                                yatırım_bilgi.setText(df.format(cüzdan_yatırım).toString().replace(',','.').reversed().replaceFirst('.',',').reversed())
+                                hesap_bilgi.setText(df.format(cüzdan_vadesiz).toString().replace(',','.').reversed().replaceFirst('.',',').reversed() + "₺")
+                                yatırım_bilgi.setText(df.format(cüzdan_yatırım).toString().replace(',','.').reversed().replaceFirst('.',',').reversed() + "₺")
                                 clearInputs()
                             }
                             else{
