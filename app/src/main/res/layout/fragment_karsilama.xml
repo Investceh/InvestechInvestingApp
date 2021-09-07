@@ -27,7 +27,9 @@
                 app:layout_constraintVertical_bias="0.283"
                 android:contentDescription="@string/image"
                 app:layout_constraintHorizontal_bias="1.0" />
+
         <TextView
+                android:textColor="#F5F5F5"
                 android:id="@+id/portfoyum"
                 android:text="@string/Portföyüm"
                 android:gravity="center"
@@ -61,6 +63,7 @@
                 android:layout_height="1000dp"
                 tools:context=".PertanyaanFragment"
                 >
+
             <ImageView
                     android:layout_width="wrap_content"
                     app:layout_constraintTop_toBottomOf="@+id/pieChart"
@@ -69,7 +72,7 @@
                     android:id="@+id/hisseImage"
                     android:contentDescription="@string/image"
                     tools:ignore="MissingConstraints"
-                    android:layout_marginTop="0dp"/>
+                    android:layout_marginTop="0dp" />
 
             <androidx.recyclerview.widget.RecyclerView
                     android:layout_below="@+id/hisseImage"
