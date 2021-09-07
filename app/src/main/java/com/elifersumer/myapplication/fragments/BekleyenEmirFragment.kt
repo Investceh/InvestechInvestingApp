@@ -26,20 +26,21 @@ import kotlinx.coroutines.delay
 
 class BekleyenEmirFragment : Fragment() {
 
+    lateinit var tumu_sil: Button
+    lateinit var bekleyenEmirler: MutableList<BekleyenEmirlerimData>
+
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_bekleyen_emir, container, false)
-        return view
-    }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        tumu_sil = view.findViewById(R.id.bekleyen_emir) as Button
 
-        super.onViewCreated(view, savedInstanceState)
-        val bekleyenEmirler = listOf(
+        bekleyenEmirler = mutableListOf(
             BekleyenEmirlerimData("AGHOL","15","24.12","Alış","İptal","Değiş"),
-                    BekleyenEmirlerimData("ALKIM","20","15.04","Satış","İptal","Değiş"),
+            BekleyenEmirlerimData("ALKIM","20","15.04","Satış","İptal","Değiş"),
             BekleyenEmirlerimData("AGHOL","15","24.12","Alış","İptal","Değiş"),
             BekleyenEmirlerimData("AGHOL","15","24.12","Alış","İptal","Değiş"),
             BekleyenEmirlerimData("AGHOL","15","24.12","Alış","İptal","Değiş"),
@@ -64,6 +65,24 @@ class BekleyenEmirFragment : Fragment() {
             BekleyenEmirlerimData("AGHOL","15","24.12","Alış","İptal","Değiş"),
             BekleyenEmirlerimData("AGHOL","15","24.12","Alış","İptal","Değiş"),
         )
+
+        return view
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+
+        super.onViewCreated(view, savedInstanceState)
+
+
+        tumu_sil.setOnClickListener(View.OnClickListener {
+
+            bekleyenEmirler.clear()
+
+            bkl_emir_recyclerView.layoutManager= LinearLayoutManager(context)
+            bkl_emir_recyclerView.adapter= RecyclerViewAdapterBekEmirlerim(bekleyenEmirler)
+        })
+
+
         bkl_emir_recyclerView.layoutManager= LinearLayoutManager(context)
         bkl_emir_recyclerView.adapter= RecyclerViewAdapterBekEmirlerim(bekleyenEmirler)
     }
