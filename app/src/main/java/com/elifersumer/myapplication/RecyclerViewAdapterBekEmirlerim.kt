@@ -34,7 +34,7 @@ class RecyclerViewAdapterBekEmirlerim(var hisse_list: ArrayList<BekleyenEmirleri
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        if(position % 2 == 0){
+        if(hisse_list[position].alisOrsatis == "Alış"){
             holder.isim.setBackgroundColor(Color.parseColor("#C7D3E1"))
             holder.adet.setBackgroundColor(Color.parseColor("#C7D3E1"))
             holder.fiyat.setBackgroundColor(Color.parseColor("#C7D3E1"))

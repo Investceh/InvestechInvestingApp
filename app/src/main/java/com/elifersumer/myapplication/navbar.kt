@@ -29,7 +29,7 @@ class navbar : AppCompatActivity() {
                 R.id.piyasa -> makeCurrentFragment(piyasaFragment)
                 R.id.transfer -> makeCurrentFragment(transferFragment)
                 R.id.emir -> makeCurrentFragment(emirFragment)
-                R.id.diger  -> makeCurrentFragment(BlankFragment())
+                R.id.diger  -> makeCurrentFragment(DigerFragment())
             }
             true
         }

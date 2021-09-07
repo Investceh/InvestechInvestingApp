@@ -36,7 +36,8 @@ class BekleyenEmirFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val bekleyenEmirler = arrayListOf(
-            BekleyenEmirlerimData("AGHOL","15","24.12","Alış","İptal","Değiş")
+            BekleyenEmirlerimData("AGHOL","15","24.12","Alış","İptal","Değiş"),
+                    BekleyenEmirlerimData("ALKIM","20","15.04","Satış","İptal","Değiş")
         )
         bkl_emir_recyclerView.layoutManager= LinearLayoutManager(context)
         bkl_emir_recyclerView.adapter= RecyclerViewAdapterBekEmirlerim(bekleyenEmirler)

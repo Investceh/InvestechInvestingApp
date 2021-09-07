@@ -8,6 +8,14 @@
         android:background="#F5F5F5">
 
     <androidx.constraintlayout.widget.Guideline
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/row_layout_guide_hor1"
+            app:layout_constraintGuide_percent="0.08" />
+
+
+    <androidx.constraintlayout.widget.Guideline
             android:orientation="vertical"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -50,8 +58,9 @@
             app:layout_constraintGuide_percent="1.0" />
 
     <TextView
-            android:paddingHorizontal="6dp"
-            android:paddingVertical="13dp"
+            app:layout_constraintBottom_toBottomOf="@id/row_layout_guide_hor1"
+            android:paddingHorizontal="15dp"
+            android:paddingVertical="20dp"
             android:textAlignment="viewStart"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -67,8 +76,9 @@
 
 
     <TextView
+            app:layout_constraintBottom_toBottomOf="@id/row_layout_guide_hor1"
+            android:paddingVertical="20dp"
             android:paddingHorizontal="6dp"
-            android:paddingVertical="12dp"
             android:textAlignment="center"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="@id/row_layout_guide1"
@@ -83,9 +93,9 @@
             android:fontFamily="@font/inter" />
 
     <TextView
-
+            app:layout_constraintBottom_toBottomOf="@id/row_layout_guide_hor1"
+            android:paddingVertical="20dp"
             android:paddingHorizontal="6dp"
-            android:paddingVertical="12dp"
             android:textAlignment="center"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="@id/row_layout_guide2"
@@ -101,7 +111,8 @@
 
     <TextView
             android:paddingHorizontal="6dp"
-            android:paddingVertical="14dp"
+            app:layout_constraintBottom_toBottomOf="@id/row_layout_guide_hor1"
+            android:paddingVertical="22dp"
             android:textAlignment="center"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="@id/row_layout_guide3"
@@ -116,9 +127,9 @@
             android:fontFamily="@font/inter" />
 
     <TextView
-
+            app:layout_constraintBottom_toBottomOf="@id/row_layout_guide_hor1"
+            android:paddingVertical="20dp"
             android:paddingHorizontal="6dp"
-            android:paddingVertical="12dp"
             android:textAlignment="center"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="@id/row_layout_guide4"
@@ -135,7 +146,8 @@
     <TextView
             android:textColor="@color/white"
             android:paddingHorizontal="6dp"
-            android:paddingVertical="12dp"
+            app:layout_constraintBottom_toBottomOf="@id/row_layout_guide_hor1"
+            android:paddingVertical="20dp"
             android:textAlignment="center"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="@id/row_layout_guide5"
@@ -151,10 +163,11 @@
 
     <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/bkl_emir_recyclerView"
-            android:layout_marginTop="43sp"
+            android:layout_marginTop="50sp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:layout_constraintTop_toTopOf="parent" />
+
+            app:layout_constraintBottom_toBottomOf="parent" />
 
 
 
