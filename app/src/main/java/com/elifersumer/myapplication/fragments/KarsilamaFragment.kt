@@ -44,9 +44,9 @@ class KarsilamaFragment : Fragment() , OnRecyclerItemClickListner {
         setDataToPieChart()
 
         val tourList = arrayListOf(
-            hisseler("YAPI VE KREDİ BANKASI A.Ş", "YKBNK" ,R.drawable.header_logo, "2000₺"),
-            hisseler("İHLAS HOLDİNG A.Ş", "IHLAS" ,R.drawable.header_logo, "3000₺"),
-            hisseler("TÜRKİYE GARANTİ BANKASI A.Ş\n", "GARAN",R.drawable.header_logo, "2000₺")
+            hisseler("YAPI VE KREDİ BANKASI A.Ş", "YKBNK" ,R.drawable.header_logo, "2.000,00₺"),
+            hisseler("İHLAS HOLDİNG A.Ş", "IHLAS" ,R.drawable.header_logo, "3.000,00₺"),
+            hisseler("TÜRKİYE GARANTİ BANKASI A.Ş\n", "GARAN",R.drawable.header_logo, "2.000,00₺")
         )
 
         recyclerview.layoutManager=LinearLayoutManager(context)

@@ -1,5 +1,6 @@
 package com.elifersumer.myapplication
 
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -33,6 +34,14 @@ class RecyclerViewAdapterPiyasa(var hisse_list: ArrayList<PiyasaData>) :
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        if(position % 2 == 0){
+            holder.degisim.setBackgroundColor(Color.parseColor("#C7D3E1"))
+            holder.isim.setBackgroundColor(Color.parseColor("#C7D3E1"))
+            holder.alis.setBackgroundColor(Color.parseColor("#C7D3E1"))
+            holder.satis.setBackgroundColor(Color.parseColor("#C7D3E1"))
+            holder.fark.setBackgroundColor(Color.parseColor("#C7D3E1"))
+
+        }
         if (hisse_list[position].fark.toFloat() >= 0) {
             holder.degisim.setImageResource(R.drawable.ic_rise_up_green)
         } else
@@ -43,7 +52,9 @@ class RecyclerViewAdapterPiyasa(var hisse_list: ArrayList<PiyasaData>) :
         holder.fark.text = hisse_list[position].fark
         holder.sat.text = hisse_list[position].sat_button
         holder.al.text = hisse_list[position].al_button
+
     }
+
 
     override fun getItemCount(): Int {
         return hisse_list.size

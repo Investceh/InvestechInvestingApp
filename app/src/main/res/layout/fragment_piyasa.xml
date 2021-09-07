@@ -7,7 +7,6 @@
         tools:context=".fragments.PiyasaFragment"
         android:background="#F5F5F5">
 
-    
     <androidx.constraintlayout.widget.Guideline
             android:orientation="vertical"
             android:layout_width="wrap_content"
@@ -49,13 +48,10 @@
             android:layout_height="wrap_content"
             android:id="@+id/row_layout_guide6"
             app:layout_constraintGuide_percent="0.9" />
-
-
-
     <TextView
             android:paddingHorizontal="6dp"
-            android:paddingVertical="12dp"
-            android:textAlignment="center"
+            android:paddingVertical="13dp"
+            android:textAlignment="viewStart"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="@id/row_layout_guide1"
@@ -63,8 +59,10 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:id="@+id/hisse_baslik"
-            android:textColor="@color/black"
-            android:textSize="13sp" />
+            android:textColor="@color/white"
+            android:textSize="13sp"
+            android:background="#293E57"
+            android:fontFamily="@font/inter" />
 
     <TextView
             android:paddingHorizontal="6dp"
@@ -77,8 +75,10 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:id="@+id/hisse_ismi"
-            android:textColor="@color/black"
-            android:textSize="14sp" />
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:background="#293E57"
+            android:fontFamily="@font/inter" />
 
     <TextView
 
@@ -92,8 +92,10 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:id="@+id/alis_fiyat"
-            android:textColor="@color/black"
-            android:textSize="14sp" />
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:background="#293E57"
+            android:fontFamily="@font/inter" />
 
     <TextView
             android:paddingHorizontal="6dp"
@@ -106,10 +108,13 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:id="@+id/satis_fiyat"
-            android:textColor="@color/black"
-            android:textSize="14sp" />
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:background="#293E57"
+            android:fontFamily="@font/inter" />
 
     <TextView
+
             android:paddingHorizontal="6dp"
             android:paddingVertical="12dp"
             android:textAlignment="center"
@@ -120,11 +125,13 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:id="@+id/hisse_fark"
-            android:textColor="#536DFE"
-            android:textSize="14sp" />
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:background="#293E57"
+            android:fontFamily="@font/inter" />
 
     <TextView
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:paddingHorizontal="6dp"
             android:paddingVertical="12dp"
             android:textAlignment="center"
@@ -135,10 +142,12 @@
             android:textSize="14sp"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:id="@+id/sat_button" />
+            android:id="@+id/sat_button"
+            android:background="#293E57"
+            android:fontFamily="@font/inter" />
 
     <TextView
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:paddingHorizontal="6dp"
             android:paddingVertical="12dp"
             android:textAlignment="center"
@@ -149,7 +158,9 @@
             android:textSize="14sp"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:id="@+id/al_button" />
+            android:id="@+id/al_button"
+            android:background="#293E57"
+            android:fontFamily="@font/inter" />
 
     <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/piyasa_recyclerView"

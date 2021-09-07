@@ -41,6 +41,8 @@
         <entry key="..\:/Users/erdi7/Documents/GitHub/MyApplication/app/src/main/res/drawable-v24/radio_flat_selected_alis.xml" value="0.2598958333333333" />
         <entry key="..\:/Users/erdi7/Documents/GitHub/MyApplication/app/src/main/res/drawable-v24/transfer_button.xml" value="0.2598958333333333" />
         <entry key="..\:/Users/erdi7/Documents/GitHub/MyApplication/app/src/main/res/drawable/account_info_box.xml" value="0.2755208333333333" />
+        <entry key="..\:/Users/erdi7/Documents/GitHub/MyApplication/app/src/main/res/drawable/al_2.xml" value="0.2755208333333333" />
+        <entry key="..\:/Users/erdi7/Documents/GitHub/MyApplication/app/src/main/res/drawable/alll.xml" value="0.2755208333333333" />
         <entry key="..\:/Users/erdi7/Documents/GitHub/MyApplication/app/src/main/res/drawable/bg1.xml" value="0.2755208333333333" />
         <entry key="..\:/Users/erdi7/Documents/GitHub/MyApplication/app/src/main/res/drawable/bg5.xml" value="0.2755208333333333" />
         <entry key="..\:/Users/erdi7/Documents/GitHub/MyApplication/app/src/main/res/drawable/button_gradient.xml" value="0.2755208333333333" />
@@ -52,13 +54,15 @@
         <entry key="..\:/Users/erdi7/Documents/GitHub/MyApplication/app/src/main/res/drawable/radio_flat_selected_alis.xml" value="0.2598958333333333" />
         <entry key="..\:/Users/erdi7/Documents/GitHub/MyApplication/app/src/main/res/drawable/radio_flat_selector_alis.xml" value="0.2598958333333333" />
         <entry key="..\:/Users/erdi7/Documents/GitHub/MyApplication/app/src/main/res/drawable/radio_flat_selector_satis.xml" value="0.2755208333333333" />
+        <entry key="..\:/Users/erdi7/Documents/GitHub/MyApplication/app/src/main/res/drawable/sat_2.xml" value="0.2755208333333333" />
+        <entry key="..\:/Users/erdi7/Documents/GitHub/MyApplication/app/src/main/res/drawable/tumu_iptal.xml" value="0.2755208333333333" />
         <entry key="..\:/Users/erdi7/Documents/GitHub/MyApplication/app/src/main/res/layout/activity_accounts.xml" value="0.176" />
         <entry key="..\:/Users/erdi7/Documents/GitHub/MyApplication/app/src/main/res/layout/activity_emirlerim.xml" value="0.19021739130434784" />
         <entry key="..\:/Users/erdi7/Documents/GitHub/MyApplication/app/src/main/res/layout/activity_main.xml" value="0.10663627152988855" />
         <entry key="..\:/Users/erdi7/Documents/GitHub/MyApplication/app/src/main/res/layout/activity_navbar.xml" value="0.2" />
         <entry key="..\:/Users/erdi7/Documents/GitHub/MyApplication/app/src/main/res/layout/activity_sign_in.xml" value="0.2" />
         <entry key="..\:/Users/erdi7/Documents/GitHub/MyApplication/app/src/main/res/layout/dropdown_item.xml" value="0.25317028985507245" />
-        <entry key="..\:/Users/erdi7/Documents/GitHub/MyApplication/app/src/main/res/layout/fragment_bekleyen_emir.xml" value="0.259375" />
+        <entry key="..\:/Users/erdi7/Documents/GitHub/MyApplication/app/src/main/res/layout/fragment_bekleyen_emir.xml" value="0.4" />
         <entry key="..\:/Users/erdi7/Documents/GitHub/MyApplication/app/src/main/res/layout/fragment_diger.xml" value="0.264" />
         <entry key="..\:/Users/erdi7/Documents/GitHub/MyApplication/app/src/main/res/layout/fragment_emir.xml" value="0.1743659420289855" />
         <entry key="..\:/Users/erdi7/Documents/GitHub/MyApplication/app/src/main/res/layout/fragment_emirgiris.xml" value="0.264" />
@@ -69,8 +73,9 @@
         <entry key="..\:/Users/erdi7/Documents/GitHub/MyApplication/app/src/main/res/layout/fragment_piyasa.xml" value="0.33126934984520123" />
         <entry key="..\:/Users/erdi7/Documents/GitHub/MyApplication/app/src/main/res/layout/fragment_transfer.xml" value="0.4" />
         <entry key="..\:/Users/erdi7/Documents/GitHub/MyApplication/app/src/main/res/layout/menu_list_item.xml" value="0.25317028985507245" />
-        <entry key="..\:/Users/erdi7/Documents/GitHub/MyApplication/app/src/main/res/layout/row_layout_piyasa.xml" value="0.264" />
-        <entry key="..\:/Users/erdi7/Documents/GitHub/MyApplication/app/src/main/res/layout/rowlaout.xml" value="0.20520833333333333" />
+        <entry key="..\:/Users/erdi7/Documents/GitHub/MyApplication/app/src/main/res/layout/row_layout_bekleyen.xml" value="0.4" />
+        <entry key="..\:/Users/erdi7/Documents/GitHub/MyApplication/app/src/main/res/layout/row_layout_piyasa.xml" value="0.4" />
+        <entry key="..\:/Users/erdi7/Documents/GitHub/MyApplication/app/src/main/res/layout/rowlaout.xml" value="0.4" />
         <entry key="..\:/Users/erdi7/Documents/GitHub/MyApplication/app/src/main/res/layout/sign_in.xml" value="0.10280797101449275" />
         <entry key="..\:/Users/erdi7/Documents/GitHub/MyApplication/app/src/main/res/menu/nav_menu.xml" value="0.2111111111111111" />
         <entry key="..\:/Users/ozaro/AndroidStudioProjects/MyApplication/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.3828125" />

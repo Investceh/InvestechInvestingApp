@@ -1,18 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
         xmlns:app="http://schemas.android.com/apk/res-auto"
-        tools:context=".fragments.BekleyenEmirFragment"
-        android:background="#F5F5F5">
-
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/cons2"
+        >
     <androidx.constraintlayout.widget.Guideline
             android:orientation="vertical"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/row_layout_guide1"
-            app:layout_constraintGuide_percent="0.2" />
+            app:layout_constraintGuide_percent="0.20" />
 
     <androidx.constraintlayout.widget.Guideline
             android:orientation="vertical"
@@ -47,24 +45,22 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/row_layout_guide6"
-            app:layout_constraintGuide_percent="1.0" />
+            app:layout_constraintGuide_percent="0.9" />
+
 
     <TextView
             android:paddingHorizontal="6dp"
-            android:paddingVertical="13dp"
+            android:paddingVertical="12dp"
             android:textAlignment="viewStart"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="@id/row_layout_guide1"
-            android:text="Hisseler"
+            android:text="AGHOL"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:id="@+id/hisse_baslik"
-            android:textColor="@color/white"
-            android:textSize="13sp"
-            android:background="#293E57"
-            android:fontFamily="@font/inter" />
-
+            android:id="@+id/BeHisse"
+            android:textColor="@color/black"
+            android:textSize="14sp" />
 
     <TextView
             android:paddingHorizontal="6dp"
@@ -73,50 +69,43 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="@id/row_layout_guide1"
             app:layout_constraintEnd_toEndOf="@id/row_layout_guide2"
-            android:text="Adet"
+            android:text="15"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:id="@+id/hisse_ismi"
-            android:textColor="@color/white"
-            android:textSize="14sp"
-            android:background="#293E57"
-            android:fontFamily="@font/inter" />
+            android:id="@+id/BeAdet"
+            android:textColor="@color/black"
+            android:textSize="14sp" />
 
     <TextView
-
             android:paddingHorizontal="6dp"
             android:paddingVertical="12dp"
             android:textAlignment="center"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="@id/row_layout_guide2"
             app:layout_constraintEnd_toEndOf="@id/row_layout_guide3"
-            android:text="Fiyat"
+            android:text="24.12"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:id="@+id/alis_fiyat"
-            android:textColor="@color/white"
-            android:textSize="14sp"
-            android:background="#293E57"
-            android:fontFamily="@font/inter" />
+            android:id="@+id/BeFiyat"
+            android:textColor="@color/black"
+            android:textSize="14sp" />
 
     <TextView
             android:paddingHorizontal="6dp"
-            android:paddingVertical="14dp"
+            android:paddingVertical="12dp"
             android:textAlignment="center"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="@id/row_layout_guide3"
             app:layout_constraintEnd_toEndOf="@id/row_layout_guide4"
-            android:text="Alış/Satış"
+            android:text="Alış"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:id="@+id/satis_fiyat"
-            android:textColor="@color/white"
-            android:textSize="11sp"
-            android:background="#293E57"
-            android:fontFamily="@font/inter" />
+            android:id="@+id/BeAlisOrSatis"
+            android:textColor="@color/black"
+            android:textSize="14sp" />
 
     <TextView
-
+            android:background="#E2FF2525"
             android:paddingHorizontal="6dp"
             android:paddingVertical="12dp"
             android:textAlignment="center"
@@ -126,36 +115,39 @@
             android:text="İptal"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:id="@+id/hisse_fark"
-            android:textColor="@color/white"
-            android:textSize="14sp"
-            android:background="#293E57"
-            android:fontFamily="@font/inter" />
+            android:id="@+id/Beİptal"
+            android:textColor="@color/black"
+            android:textSize="14sp" />
 
     <TextView
-            android:textColor="@color/white"
+            android:background="@drawable/alll"
+            android:textColor="@color/black"
             android:paddingHorizontal="6dp"
             android:paddingVertical="12dp"
             android:textAlignment="center"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="@id/row_layout_guide5"
-            app:layout_constraintEnd_toEndOf="@id/row_layout_guide6"
+            app:layout_constraintEnd_toEndOf="parent"
             android:text="Değiş"
             android:textSize="14sp"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:id="@+id/sat_button"
-            android:background="#293E57"
-            android:fontFamily="@font/inter" />
+            android:id="@+id/BeDegis"
+             />
 
 
-    <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/bkl_emir_recyclerView"
-            android:layout_marginTop="43sp"
+    <LinearLayout
+            app:layout_constraintBottom_toBottomOf="@id/cons2"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:layout_height="wrap_content">
+        <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#C3C3C3"
+                app:layout_constraintTop_toTopOf="@id/al_button">
 
+        </View>
+    </LinearLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
