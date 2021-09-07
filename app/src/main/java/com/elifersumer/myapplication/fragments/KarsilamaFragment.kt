@@ -1,24 +1,13 @@
 
 package com.elifersumer.myapplication.fragments
 
-import android.annotation.SuppressLint
-import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
-import android.transition.AutoTransition
-import android.transition.TransitionManager
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.LinearLayout
-import android.widget.Toast
-import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import com.elifersumer.myapplication.HisseActivity
-import com.elifersumer.myapplication.OnRecyclerItemClickListner
 import com.elifersumer.myapplication.R
 import com.elifersumer.myapplication.RecyclerViewAdapter
 import com.github.mikephil.charting.animation.Easing
@@ -29,9 +18,8 @@ import com.github.mikephil.charting.data.PieDataSet
 import com.github.mikephil.charting.data.PieEntry
 import com.github.mikephil.charting.formatter.PercentFormatter
 import kotlinx.android.synthetic.main.fragment_karsilama.*
-import kotlinx.android.synthetic.main.rowlaout.*
 
-class KarsilamaFragment : Fragment() , OnRecyclerItemClickListner {
+class KarsilamaFragment : Fragment()  {
     private lateinit var pieChart: PieChart
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -53,30 +41,9 @@ class KarsilamaFragment : Fragment() , OnRecyclerItemClickListner {
             hisseler("İHLAS HOLDİNG A.Ş", "IHLAS" ,R.drawable.header_logo, "3.000,00₺"),
             hisseler("TÜRKİYE GARANTİ BANKASI A.Ş\n", "GARAN",R.drawable.header_logo, "2.000,00₺")
         )
-
-
         recyclerview.layoutManager=LinearLayoutManager(context)
-        recyclerview.adapter= RecyclerViewAdapter(tourList,this)
-
-
-
+        recyclerview.adapter= RecyclerViewAdapter(tourList)
     }
-
-    @SuppressLint("SetTextI18n")
-    //Dönüs yapmıyor tek giriş ama ekran aynı zamanda acılmıyor sormayı unutma
-    override fun onItemClick(item: hisseler, position: Int) {
-        if(expandableView.visibility == View.GONE){
-                TransitionManager.beginDelayedTransition(expandableView, AutoTransition())
-                expandableView.visibility = View.VISIBLE
-                expander.text = "Colapse"
-            }
-            else{
-            TransitionManager.beginDelayedTransition(expandableView, AutoTransition())
-                expandableView.visibility = View.GONE
-                expander.text = "Expand"
-            }
-    }
-
 
 
     private fun initPieChart() {
