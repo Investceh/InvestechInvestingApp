@@ -52,7 +52,6 @@ class Sorular : AppCompatActivity() {
     lateinit var soru4_sık2: RadioButton
     lateinit var soru4_sık3: RadioButton
     lateinit var soru4_sık4: RadioButton
-    lateinit var soru4_sık5: RadioButton
 
 
     lateinit var soru5: TextView
@@ -179,8 +178,7 @@ class Sorular : AppCompatActivity() {
         soru4_sık3.text = "Yüksek kazanç beklersem yapabilirim"
         soru4_sık4 = findViewById(R.id.soru4_sık4) as RadioButton
         soru4_sık4.text = "Riske bakmaksızın yaparım"
-        soru4_sık5 = findViewById(R.id.soru4_sık5) as RadioButton
-        soru4_sık5.text = " "
+
 
 
 
@@ -274,8 +272,8 @@ class Sorular : AppCompatActivity() {
 
         radio_group1.setOnCheckedChangeListener(RadioGroup.OnCheckedChangeListener{ radioGroup, i ->
 
-            val drawable: Drawable?= ResourcesCompat.getDrawable(resources,R.drawable.button, null)
-            val drawable_selected: Drawable?= ResourcesCompat.getDrawable(resources,R.drawable.button_selected, null)
+            val drawable: Drawable?= ResourcesCompat.getDrawable(resources,R.drawable.bg7, null)
+            val drawable_selected: Drawable?= ResourcesCompat.getDrawable(resources,R.drawable.bg8, null)
             when(i){
                 R.id.soru1_sık1 -> {
                     soru1_sık1.setBackground(drawable_selected)
@@ -320,8 +318,8 @@ class Sorular : AppCompatActivity() {
 
         radio_group2.setOnCheckedChangeListener(RadioGroup.OnCheckedChangeListener{ radioGroup, i ->
 
-            val drawable: Drawable?= ResourcesCompat.getDrawable(resources,R.drawable.button, null)
-            val drawable_selected: Drawable?= ResourcesCompat.getDrawable(resources,R.drawable.button_selected, null)
+            val drawable: Drawable?= ResourcesCompat.getDrawable(resources,R.drawable.bg7, null)
+            val drawable_selected: Drawable?= ResourcesCompat.getDrawable(resources,R.drawable.bg8, null)
 
             when(i){
                 R.id.soru2_sık1 -> {
@@ -365,8 +363,8 @@ class Sorular : AppCompatActivity() {
 
         radio_group3.setOnCheckedChangeListener(RadioGroup.OnCheckedChangeListener{ radioGroup, i ->
 
-            val drawable: Drawable?= ResourcesCompat.getDrawable(resources,R.drawable.button, null)
-            val drawable_selected: Drawable?= ResourcesCompat.getDrawable(resources,R.drawable.button_selected, null)
+            val drawable: Drawable?= ResourcesCompat.getDrawable(resources,R.drawable.bg7, null)
+            val drawable_selected: Drawable?= ResourcesCompat.getDrawable(resources,R.drawable.bg8, null)
 
             when(i){
                 R.id.soru3_sık1 -> {
@@ -410,8 +408,8 @@ class Sorular : AppCompatActivity() {
 
         radio_group4.setOnCheckedChangeListener(RadioGroup.OnCheckedChangeListener{ radioGroup, i ->
 
-            val drawable: Drawable?= ResourcesCompat.getDrawable(resources,R.drawable.button, null)
-            val drawable_selected: Drawable?= ResourcesCompat.getDrawable(resources,R.drawable.button_selected, null)
+            val drawable: Drawable?= ResourcesCompat.getDrawable(resources,R.drawable.bg7, null)
+            val drawable_selected: Drawable?= ResourcesCompat.getDrawable(resources,R.drawable.bg8, null)
 
             when(i){
                 R.id.soru4_sık1 -> {
@@ -419,35 +417,24 @@ class Sorular : AppCompatActivity() {
                     soru4_sık2.setBackground(drawable)
                     soru4_sık3.setBackground(drawable)
                     soru4_sık4.setBackground(drawable)
-                    soru4_sık5.setBackground(drawable)
                 }
                 R.id.soru4_sık2 -> {
                     soru4_sık1.setBackground(drawable)
                     soru4_sık2.setBackground(drawable_selected)
                     soru4_sık3.setBackground(drawable)
                     soru4_sık4.setBackground(drawable)
-                    soru4_sık5.setBackground(drawable)
                 }
                 R.id.soru4_sık3 -> {
                     soru4_sık1.setBackground(drawable)
                     soru4_sık2.setBackground(drawable)
                     soru4_sık3.setBackground(drawable_selected)
                     soru4_sık4.setBackground(drawable)
-                    soru4_sık5.setBackground(drawable)
                 }
                 R.id.soru4_sık4 -> {
                     soru4_sık1.setBackground(drawable)
                     soru4_sık2.setBackground(drawable)
                     soru4_sık3.setBackground(drawable)
                     soru4_sık4.setBackground(drawable_selected)
-                    soru4_sık5.setBackground(drawable)
-                }
-                R.id.soru4_sık5 -> {
-                    soru4_sık1.setBackground(drawable)
-                    soru4_sık2.setBackground(drawable)
-                    soru4_sık3.setBackground(drawable)
-                    soru4_sık4.setBackground(drawable)
-                    soru4_sık5.setBackground(drawable_selected)
                 }
             }
         })
@@ -456,8 +443,8 @@ class Sorular : AppCompatActivity() {
 
         radio_group5.setOnCheckedChangeListener(RadioGroup.OnCheckedChangeListener{ radioGroup, i ->
 
-            val drawable: Drawable?= ResourcesCompat.getDrawable(resources,R.drawable.button, null)
-            val drawable_selected: Drawable?= ResourcesCompat.getDrawable(resources,R.drawable.button_selected, null)
+            val drawable: Drawable?= ResourcesCompat.getDrawable(resources,R.drawable.bg7, null)
+            val drawable_selected: Drawable?= ResourcesCompat.getDrawable(resources,R.drawable.bg8, null)
 
             when(i){
                 R.id.soru5_sık1 -> {
@@ -501,8 +488,8 @@ class Sorular : AppCompatActivity() {
 
         radio_group6.setOnCheckedChangeListener(RadioGroup.OnCheckedChangeListener{ radioGroup, i ->
 
-            val drawable: Drawable?= ResourcesCompat.getDrawable(resources,R.drawable.button, null)
-            val drawable_selected: Drawable?= ResourcesCompat.getDrawable(resources,R.drawable.button_selected, null)
+            val drawable: Drawable?= ResourcesCompat.getDrawable(resources,R.drawable.bg7, null)
+            val drawable_selected: Drawable?= ResourcesCompat.getDrawable(resources,R.drawable.bg8, null)
 
             when(i){
                 R.id.soru6_sık1 -> {
@@ -547,8 +534,8 @@ class Sorular : AppCompatActivity() {
 
         radio_group7.setOnCheckedChangeListener(RadioGroup.OnCheckedChangeListener{ radioGroup, i ->
 
-            val drawable: Drawable?= ResourcesCompat.getDrawable(resources,R.drawable.button, null)
-            val drawable_selected: Drawable?= ResourcesCompat.getDrawable(resources,R.drawable.button_selected, null)
+            val drawable: Drawable?= ResourcesCompat.getDrawable(resources,R.drawable.bg7, null)
+            val drawable_selected: Drawable?= ResourcesCompat.getDrawable(resources,R.drawable.bg8, null)
 
             when(i){
                 R.id.soru7_sık1 -> {
@@ -593,8 +580,8 @@ class Sorular : AppCompatActivity() {
 
         radio_group8.setOnCheckedChangeListener(RadioGroup.OnCheckedChangeListener{ radioGroup, i ->
 
-            val drawable: Drawable?= ResourcesCompat.getDrawable(resources,R.drawable.button, null)
-            val drawable_selected: Drawable?= ResourcesCompat.getDrawable(resources,R.drawable.button_selected, null)
+            val drawable: Drawable?= ResourcesCompat.getDrawable(resources,R.drawable.bg7, null)
+            val drawable_selected: Drawable?= ResourcesCompat.getDrawable(resources,R.drawable.bg8, null)
 
             when(i){
                 R.id.soru8_sık1 -> {
@@ -747,13 +734,13 @@ class Sorular : AppCompatActivity() {
                 }
 
                 if(toplam_deger >= 0.0 && toplam_deger <= 40.0){
-                    kullanıcı_profili = "Korumacı"
+                    kullanıcı_profili = "RiskSevmez"
                 }else if(toplam_deger >= 40.1 && toplam_deger <= 60.0){
                     kullanıcı_profili = "Temkinli"
                 }else if(toplam_deger >= 60.1 && toplam_deger <= 80.0){
-                    kullanıcı_profili = "Risk Sever"
+                    kullanıcı_profili = "RiskSever"
                 }else if(toplam_deger >= 80.1 && toplam_deger <= 100.0){
-                    kullanıcı_profili = "Agresif"
+                    kullanıcı_profili = "Korkusuz"
                 }
 
                 lalala.text = kullanıcı_profili

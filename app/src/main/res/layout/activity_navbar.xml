@@ -20,8 +20,10 @@
             android:background="#293E57"
             app:itemIconTint="#fff"
             app:itemTextColor="#fff"
-            app:menu="@menu/nav_menu"
-            android:layout_marginBottom="0dp" />
+            app:menu="@menu/nav_menu" />
+
+
+
 
 
 </RelativeLayout>

@@ -25,10 +25,17 @@
                     android:layout_marginTop="0dp"
                     android:id="@+id/table_layout_g">
 
+                <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/black">
+
+                </View>
+
                 <TableRow
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:background="@drawable/bg5">
+                        android:background="@drawable/bg6">
 
                     <TextView
                             android:id="@+id/hisseler"
@@ -36,7 +43,7 @@
                             android:layout_width="100dp"
                             android:layout_height="match_parent"
                             android:padding="12sp"
-                            android:textColor="#F5F5F5"
+                            android:textColor="#F20E1927"
                             android:gravity="center_vertical" />
 
                     <TextView
@@ -44,7 +51,7 @@
                             android:text="Adet"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textColor="#F5F5F5"
+                            android:textColor="#F20E1927"
                             android:layout_marginTop="6sp"
                             android:gravity="center_horizontal|center_vertical"
                             android:paddingLeft="12sp"
@@ -57,7 +64,7 @@
                             android:layout_width="87dp"
                             android:layout_height="wrap_content"
                             android:padding="12sp"
-                            android:textColor="#F5F5F5"
+                            android:textColor="#F20E1927"
                             android:gravity="center_vertical"
                             android:layout_marginTop="6sp"
                             android:layout_marginLeft="45sp"
@@ -68,12 +75,20 @@
                             android:text="Alış/Satış"
                             android:layout_width="71dp"
                             android:layout_height="wrap_content"
-                            android:textColor="#F5F5F5"
+                            android:textColor="#F20E1927"
                             android:gravity="center_vertical"
                             android:padding="12sp"
                             android:layout_marginLeft="25sp" />
 
                 </TableRow>
+
+                <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/black">
+
+                </View>
+
 
 
             </TableLayout>

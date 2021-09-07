@@ -11,6 +11,21 @@
             android:supportsRtl="true"
             android:theme="@style/Theme.MyApplication">
         <activity
+                android:name=".Advisor_agresif"
+                android:exported="true" />
+        <activity
+                android:name=".Advisor_muhafakazar"
+                android:exported="true" />
+        <activity
+                android:name=".Advisor_risk_sevmez"
+                android:exported="true" />
+        <activity
+                android:name=".Advisor_korkusuz"
+                android:exported="true" />
+        <activity
+                android:name=".HisseActivity"
+                android:exported="true" />
+        <activity
                 android:name=".Sorular"
                 android:exported="true" />
         <activity
