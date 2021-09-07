@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.elifersumer.myapplication.R
 import com.elifersumer.myapplication.fragments.hisseler
 
-class RecyclerViewAdapterBekEmirlerim(var hisse_list: ArrayList<BekleyenEmirlerimData>) :
+class RecyclerViewAdapterBekEmirlerim(var hisse_list: List<BekleyenEmirlerimData>) :
     RecyclerView.Adapter<RecyclerViewAdapterBekEmirlerim.ViewHolder>() {
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val isim = view.findViewById<TextView>(R.id.BeHisse)
@@ -20,7 +20,6 @@ class RecyclerViewAdapterBekEmirlerim(var hisse_list: ArrayList<BekleyenEmirleri
         val alisOrSatis = view.findViewById<TextView>(R.id.BeAlisOrSatis)
         val iptal = view.findViewById<TextView>(R.id.Beİptal)
         val degis = view.findViewById<TextView>(R.id.BeDegis)
-
 
     }
 

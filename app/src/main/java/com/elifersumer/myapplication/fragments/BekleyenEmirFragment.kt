@@ -35,7 +35,7 @@ class BekleyenEmirFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val bekleyenEmirler = arrayListOf(
+        val bekleyenEmirler = listOf(
             BekleyenEmirlerimData("AGHOL","15","24.12","Alış","İptal","Değiş"),
                     BekleyenEmirlerimData("ALKIM","20","15.04","Satış","İptal","Değiş")
         )
