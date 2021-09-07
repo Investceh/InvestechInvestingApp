@@ -23,8 +23,24 @@ import kotlinx.android.synthetic.main.fragment_bekleyen_emir.*
 import kotlinx.android.synthetic.main.fragment_piyasa.*
 import kotlinx.coroutines.delay
 
+class Header {
+
+    var AppKey:String?=null
+    var Channel:String?=null
+    var ChannelSessionId:String?=null
+    var ChannelRequestId:String?=null
+    constructor(AppKey:String,Channel:String,ChannelSessionId:String,ChannelRequestId:String):this(){
+        this.AppKey = AppKey
+        this.Channel = Channel
+        this.ChannelSessionId = Channel
+        this.ChannelRequestId = Channel
+    }
+
+    constructor()
+}
 
 class BekleyenEmirFragment : Fragment() {
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -34,6 +50,8 @@ class BekleyenEmirFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        val h1 = Header()
+
         super.onViewCreated(view, savedInstanceState)
         val bekleyenEmirler = listOf(
             BekleyenEmirlerimData("AGHOL","15","24.12","Alış","İptal","Değiş"),
@@ -42,6 +60,4 @@ class BekleyenEmirFragment : Fragment() {
         bkl_emir_recyclerView.layoutManager= LinearLayoutManager(context)
         bkl_emir_recyclerView.adapter= RecyclerViewAdapterBekEmirlerim(bekleyenEmirler)
     }
-
-
 }
