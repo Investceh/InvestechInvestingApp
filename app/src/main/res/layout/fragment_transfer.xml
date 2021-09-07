@@ -291,7 +291,6 @@
         </LinearLayout>
 
 
-
         <Button
                 android:layout_marginRight="20dp"
                 android:id="@+id/btn_tamam"
@@ -306,8 +305,7 @@
                 android:fontFamily="@font/inter"
                 android:layout_gravity="center"
                 android:layout_marginTop="20dp"
-                android:layout_marginLeft="22dp"/>
-
+                android:layout_marginLeft="22dp" />
 
 
     </LinearLayout>

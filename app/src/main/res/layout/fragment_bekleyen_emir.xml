@@ -162,6 +162,7 @@
 
 
     <androidx.recyclerview.widget.RecyclerView
+
             android:id="@+id/bkl_emir_recyclerView"
             android:layout_marginTop="50sp"
             android:layout_width="match_parent"
@@ -169,6 +170,30 @@
 
             app:layout_constraintBottom_toBottomOf="parent" />
 
+    <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:ignore="MissingConstraints">
 
+</ScrollView>
 
+    <Button
+
+            android:layout_marginBottom="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:id="@+id/bekleyen_emir"
+            android:layout_width="250dp"
+            android:layout_height="45dp"
+            android:background="@color/buttonRed"
+            android:text="Bütün Emirleri İptal Et"
+            android:textColor="#F5F5F5"
+            android:textAllCaps="false"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:layout_weight="1"
+            android:fontFamily="@font/inter"
+            android:layout_gravity="center"
+            app:layout_constraintStart_toStartOf="parent">
+    </Button>
 </androidx.constraintlayout.widget.ConstraintLayout>
