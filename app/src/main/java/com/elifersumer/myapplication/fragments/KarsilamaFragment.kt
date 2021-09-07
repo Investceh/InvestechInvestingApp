@@ -59,7 +59,6 @@ class KarsilamaFragment : Fragment() , OnRecyclerItemClickListner {
         recyclerview.layoutManager=LinearLayoutManager(context)
         recyclerview.adapter= RecyclerViewAdapter(tourList,this)
 
-
     }
 
     @SuppressLint("SetTextI18n")
@@ -68,13 +67,13 @@ class KarsilamaFragment : Fragment() , OnRecyclerItemClickListner {
         if(expandableView.visibility == View.GONE){
             println("aaaaaaaaaaaaa")
                 TransitionManager.beginDelayedTransition(expandableView, AutoTransition())
-                expandableView.visibility == View.VISIBLE
+                expandableView.visibility = View.VISIBLE
                 expander.text = "Colapse"
             }
             else{
             println("bfsabfdbfdfdbbfd")
             TransitionManager.beginDelayedTransition(expandableView, AutoTransition())
-                expandableView.visibility == View.GONE
+                expandableView.visibility = View.GONE
                 expander.text = "Expand"
             }
     }
