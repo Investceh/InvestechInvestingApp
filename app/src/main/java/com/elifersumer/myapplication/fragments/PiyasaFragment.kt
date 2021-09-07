@@ -38,7 +38,7 @@ class PiyasaFragment : Fragment() {
                 "deg","ALKIM","15.04","15.03",
                                             "1.48","Sat","Al"),
             PiyasaData("deg","AKCNS","15.03","15.29",
-                "0.20","Sat","Al")
+                "-0.20","Sat","Al")
         )
         piyasa_recyclerView.layoutManager= LinearLayoutManager(context)
         piyasa_recyclerView.adapter= RecyclerViewAdapterPiyasa(all_hisse)

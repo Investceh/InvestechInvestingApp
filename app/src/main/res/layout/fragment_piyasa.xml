@@ -3,97 +3,172 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
         tools:context=".fragments.PiyasaFragment"
         android:background="#F5F5F5">
 
-    <RelativeLayout
+    <androidx.constraintlayout.widget.Guideline
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/row_layout_guide1"
+            app:layout_constraintGuide_percent="0.15" />
+
+    <androidx.constraintlayout.widget.Guideline
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/row_layout_guide2"
+            app:layout_constraintGuide_percent="0.35" />
+
+    <androidx.constraintlayout.widget.Guideline
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/row_layout_guide3"
+            app:layout_constraintGuide_percent="0.5" />
+
+    <androidx.constraintlayout.widget.Guideline
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/row_layout_guide4"
+            app:layout_constraintGuide_percent="0.65" />
+
+    <androidx.constraintlayout.widget.Guideline
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/row_layout_guide5"
+            app:layout_constraintGuide_percent="0.8" />
+
+    <androidx.constraintlayout.widget.Guideline
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/row_layout_guide6"
+            app:layout_constraintGuide_percent="0.9" />
+    <TextView
+            android:paddingHorizontal="6dp"
+            android:paddingVertical="13dp"
+            android:textAlignment="viewStart"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/row_layout_guide1"
+            android:text="Değişim"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/hisse_baslik"
+            android:textColor="@color/white"
+            android:textSize="13sp"
+            android:background="#293E57"
+            android:fontFamily="@font/inter" />
+
+    <TextView
+            android:paddingHorizontal="6dp"
+            android:paddingVertical="12dp"
+            android:textAlignment="center"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="@id/row_layout_guide1"
+            app:layout_constraintEnd_toEndOf="@id/row_layout_guide2"
+            android:text="Hisse"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/hisse_ismi"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:background="#293E57"
+            android:fontFamily="@font/inter" />
+
+    <TextView
+
+            android:paddingHorizontal="6dp"
+            android:paddingVertical="12dp"
+            android:textAlignment="center"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="@id/row_layout_guide2"
+            app:layout_constraintEnd_toEndOf="@id/row_layout_guide3"
+            android:text="Alış"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/alis_fiyat"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:background="#293E57"
+            android:fontFamily="@font/inter" />
+
+    <TextView
+            android:paddingHorizontal="6dp"
+            android:paddingVertical="12dp"
+            android:textAlignment="center"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="@id/row_layout_guide3"
+            app:layout_constraintEnd_toEndOf="@id/row_layout_guide4"
+            android:text="Satış"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/satis_fiyat"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:background="#293E57"
+            android:fontFamily="@font/inter" />
+
+    <TextView
+
+            android:paddingHorizontal="6dp"
+            android:paddingVertical="12dp"
+            android:textAlignment="center"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="@id/row_layout_guide4"
+            app:layout_constraintEnd_toEndOf="@id/row_layout_guide5"
+            android:text="Fark"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/hisse_fark"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:background="#293E57"
+            android:fontFamily="@font/inter" />
+
+    <TextView
+            android:textColor="@color/white"
+            android:paddingHorizontal="6dp"
+            android:paddingVertical="12dp"
+            android:textAlignment="center"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="@id/row_layout_guide5"
+            app:layout_constraintEnd_toEndOf="@id/row_layout_guide6"
+            android:text="Sat"
+            android:textSize="14sp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/sat_button"
+            android:background="#293E57"
+            android:fontFamily="@font/inter" />
+
+    <TextView
+            android:textColor="@color/white"
+            android:paddingHorizontal="6dp"
+            android:paddingVertical="12dp"
+            android:textAlignment="center"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="@id/row_layout_guide6"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:text="Al"
+            android:textSize="14sp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/al_button"
+            android:background="#293E57"
+            android:fontFamily="@font/inter" />
+
+    <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/piyasa_recyclerView"
+            android:layout_marginTop="43sp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#F5F5F5">
+            app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-                android:id="@+id/hisseler_alsat"
-                android:text="HİSSELER"
-                android:gravity="center"
-                android:textStyle="bold"
-                android:layout_width="match_parent"
-                android:layout_height="36dp"
-                android:background="@drawable/screen_title" />
 
-        <TableLayout
-                android:id="@+id/table_layout_g"
-                android:layout_width="match_parent"
-                android:layout_height="694dp"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentBottom="true"
-                android:background="#F5F5F5">
-
-            <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="#C7D3E1">
-
-                <TextView
-                        android:id="@+id/greendegisim"
-                        android:layout_width="59dp"
-                        android:layout_height="match_parent"
-                        android:padding="12sp"
-                        android:text="Degisim" />
-
-                <TextView
-                        android:text="Hisseler"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/hisse_ismi"
-                        android:padding="12sp"
-                        android:textColor="@color/black" />
-
-                <TextView
-                        android:text="Alış"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/alis_fiyat"
-                        android:padding="12sp"
-                        android:textColor="@color/black" />
-
-                <TextView
-                        android:text="Satış"
-                        android:layout_width="62dp"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/satis_fiyat"
-                        android:padding="12sp"
-                        android:textColor="@color/black" />
-
-                <TextView
-                        android:text="Fark"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/hisse_fark"
-                        android:padding="12sp"
-                        android:textColor="#536DFE" />
-
-                <TextView
-                        android:text="Sat"
-                        android:layout_width="62dp"
-                        android:layout_height="wrap_content"
-                        android:padding="12sp"
-                        android:textColor="@color/black" />
-
-                <TextView
-                        android:text="Al"
-                        android:layout_width="62dp"
-                        android:layout_height="wrap_content"
-                        android:padding="12sp"
-                        android:textColor="@color/black" />
-
-            </TableRow>
-
-            <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/piyasa_recyclerView"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
-        </TableLayout>
-
-    </RelativeLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

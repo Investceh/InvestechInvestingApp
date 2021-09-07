@@ -11,11 +11,19 @@
             android:supportsRtl="true"
             android:theme="@style/Theme.MyApplication">
         <activity
-<<<<<<< Updated upstream
+                android:name=".Advisor_agresif"
+                android:exported="true" />
+        <activity
+                android:name=".fragments.Advisor_muhafakazar"
+                android:exported="true" />
+        <activity
+                android:name=".Advisor_risk_sevmez"
+                android:exported="true" />
+        <activity
+                android:name=".Advisor_korkusuz"
+                android:exported="true" />
+        <activity
                 android:name=".HisseActivity"
-=======
-                android:name=".popUp"
->>>>>>> Stashed changes
                 android:exported="true" />
         <activity
                 android:name=".Sorular"

@@ -32,7 +32,7 @@ class GerceklesenEmirFragment : Fragment() {
         val drawable_sat2: Drawable?= ResourcesCompat.getDrawable(resources,R.drawable.sat_2, null)
 
         val drawable4: Drawable?= ResourcesCompat.getDrawable(resources,R.drawable.bg1, null)
-        val drawable5: Drawable?= ResourcesCompat.getDrawable(resources,R.drawable.button_gradient, null)
+       // val drawable5: Drawable?= ResourcesCompat.getDrawable(resources,R.drawable.button_gradient, null)
         val view = inflater.inflate(R.layout.fragment_gerceklesen_emir, container, false)
         val tabLay = view.table_layout_g
         var alisOrSatis = "Alis"

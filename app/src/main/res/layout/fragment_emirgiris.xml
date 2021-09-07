@@ -448,7 +448,7 @@
                             android:paddingRight="10dp">
 
                         <EditText
-                                android:text="232.00"
+                                android:text="232,00"
                                 android:id="@+id/edtxt_fiyat"
                                 android:layout_width="206dp"
                                 android:layout_height="40dp"
