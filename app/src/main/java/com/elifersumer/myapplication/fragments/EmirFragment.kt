@@ -30,10 +30,47 @@ class EmirFragment : Fragment() {
         alisbtn = view.findViewById(R.id.alisbtn) as RadioButton
         satisbtn = view.findViewById(R.id.satisbtn) as RadioButton
 
+        val tamamBtn = view.findViewById(R.id.emirTamamButton) as Button
 
+        val incrementBtn = view.findViewById(R.id.incrementFiyat) as Button
+        val decrementBtn = view.findViewById(R.id.decrementFiyat) as Button
+
+        val alisFiyat = view.findViewById(R.id.val_alis) as TextView
+        val satisFiyat = view.findViewById(R.id.val_satis) as TextView
+        val fiyat = view.findViewById(R.id.edtxt_fiyat) as EditText
+
+        fiyat.setText(satisFiyat.text)
 
         alisbtn.setOnClickListener(View.OnClickListener {
-            Toast.makeText(this@EmirFragment.requireActivity(),"Lütfen işlem seçiniz!", Toast.LENGTH_SHORT).show()
+            //Toast.makeText(this@EmirFragment.requireActivity(),"Lütfen işlem seçiniz!", Toast.LENGTH_SHORT).show()
+
+            fiyat.setText(satisFiyat.text)
+        })
+
+        satisbtn.setOnClickListener(View.OnClickListener {
+
+            fiyat.setText(alisFiyat.text)
+        })
+
+        incrementBtn.setOnClickListener(View.OnClickListener {
+            fiyat.setText((fiyat.text.toString().toFloat() + 1).toString())
+        })
+
+        decrementBtn.setOnClickListener(View.OnClickListener {
+
+            if(fiyat.text.toString().toFloat() > 1){
+                fiyat.setText((fiyat.text.toString().toFloat() - 1).toString())
+            }
+            else{
+                val x = 0
+                fiyat.setText(x.toString())
+            }
+        })
+
+        tamamBtn.setOnClickListener(View.OnClickListener {
+            if(view.findViewById<EditText>(R.id.edtxt_adet).text.toString() == ""){
+                Toast.makeText(this@EmirFragment.requireActivity(),"Lütfen adet giriniz!", Toast.LENGTH_SHORT).show()
+            }
         })
 
 
