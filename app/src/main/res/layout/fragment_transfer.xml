@@ -68,7 +68,7 @@
                                     android:textColor="#f5f5f5"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="Göksel Önal"
+                                    android:text="Merih Yıldırım"
                                     android:fontFamily="@font/inter"/>
 
                             <TextView
@@ -143,14 +143,16 @@
                                     android:textColor="#f5f5f5"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="Göksel Önal" />
+                                    android:text="Merih Yıldırım"
+                                    android:fontFamily="@font/inter"/>
 
                             <TextView
                                     android:textSize="16dp"
                                     android:textColor="#90ffffff"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="Yatırım Hesabım" />
+                                    android:text="Yatırım Hesabım"
+                                    />
                         </LinearLayout>
 
                         <RelativeLayout
@@ -289,7 +291,6 @@
         </LinearLayout>
 
 
-
         <Button
                 android:layout_marginRight="20dp"
                 android:id="@+id/btn_tamam"
@@ -304,8 +305,7 @@
                 android:fontFamily="@font/inter"
                 android:layout_gravity="center"
                 android:layout_marginTop="20dp"
-                android:layout_marginLeft="22dp"/>
-
+                android:layout_marginLeft="22dp" />
 
 
     </LinearLayout>
