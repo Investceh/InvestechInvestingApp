@@ -15,7 +15,8 @@
             android:textStyle="bold"
             android:layout_width="match_parent"
             android:layout_height="34dp"
-            android:background="@drawable/screen_title" />
+            android:background="@drawable/screen_title"
+            android:textColor="#F5F5F5" />
 
     <com.google.android.material.tabs.TabLayout
             android:id="@+id/emir_tablayout"
