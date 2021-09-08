@@ -132,6 +132,7 @@
                         android:background="@drawable/line" />
 
                 <LinearLayout
+                        android:background="@drawable/bg6"
                         android:orientation="horizontal"
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
@@ -168,7 +169,8 @@
 
                             <AutoCompleteTextView
                                     android:text="EREGL"
-                                    android:layout_width="match_parent"
+                                    android:layout_gravity="end"
+                                    android:layout_width="140dp"
                                     android:layout_height="match_parent"
                                     android:id="@+id/autoCompleteTextView"
                                     android:layout_weight="1"
@@ -281,6 +283,7 @@
                         android:background="@drawable/line" />
 
                 <LinearLayout
+                        android:background="@drawable/bg6"
                         android:orientation="horizontal"
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
@@ -310,8 +313,9 @@
                                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu">
 
                             <AutoCompleteTextView
+                                    android:layout_gravity="end"
+                                    android:layout_width="140dp"
                                     android:text="Limit"
-                                    android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:id="@+id/autoCompleteTextViewFiyatTipi"
                                     android:layout_weight="1"
@@ -375,6 +379,7 @@
                         android:background="@drawable/line" />
 
                 <LinearLayout
+                        android:background="@drawable/bg6"
                         android:orientation="horizontal"
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
@@ -405,7 +410,8 @@
 
                             <AutoCompleteTextView
                                     android:text="Günlük"
-                                    android:layout_width="match_parent"
+                                    android:layout_gravity="end"
+                                    android:layout_width="140dp"
                                     android:layout_height="match_parent"
                                     android:id="@+id/autoCompleteTextViewSureTipi"
                                     android:layout_weight="1"
@@ -446,12 +452,12 @@
                             android:layout_width="204dp"
                             android:layout_height="match_parent"
                             android:gravity="center"
-                            android:paddingRight="10dp">
+                            >
 
                         <EditText
                                 android:text="232,00"
                                 android:id="@+id/edtxt_fiyat"
-                                android:layout_width="206dp"
+                                android:layout_width="130dp"
                                 android:layout_height="40dp"
                                 android:inputType="number"
                                 android:hint="Fiyat Giriniz"
@@ -460,6 +466,26 @@
                                 android:textSize="14sp"
                                 android:paddingLeft="15dp"
                                 android:background="@drawable/edit_text_view" />
+
+                        <Button
+                                android:id="@+id/incrementFiyat"
+                                android:background="@drawable/ic_baseline_add_24"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:textColor="@color/white"
+                                android:layout_toEndOf="@id/edtxt_fiyat"
+                                android:layout_marginLeft="3sp"
+                                android:layout_marginTop="7sp"/>
+
+                        <Button
+                                android:id="@+id/decrementFiyat"
+                                android:background="@drawable/ic_baseline_remove_24"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:layout_toEndOf="@id/incrementFiyat"
+                                android:layout_marginLeft="0sp"
+                                android:layout_marginTop="7sp"/>
+
                     </RelativeLayout>
                 </LinearLayout>
 
@@ -480,6 +506,7 @@
             </LinearLayout>
 
             <Button
+                    android:id="@+id/emirTamamButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/layout_form"

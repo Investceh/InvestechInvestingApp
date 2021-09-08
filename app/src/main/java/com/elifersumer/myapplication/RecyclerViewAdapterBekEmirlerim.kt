@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.elifersumer.myapplication.R
 import com.elifersumer.myapplication.fragments.hisseler
 
-class RecyclerViewAdapterBekEmirlerim(var hisse_list: List<BekleyenEmirlerimData>) :
+class RecyclerViewAdapterBekEmirlerim(var hisse_list: MutableList<BekleyenEmirlerimData>) :
     RecyclerView.Adapter<RecyclerViewAdapterBekEmirlerim.ViewHolder>() {
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val isim = view.findViewById<TextView>(R.id.BeHisse)
