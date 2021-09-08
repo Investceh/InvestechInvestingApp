@@ -32,6 +32,8 @@ import kotlinx.android.synthetic.main.fragment_karsilama.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.util.*
+import kotlin.collections.ArrayList
 import kotlin.collections.emptyList as emptyList
 
 class KarsilamaFragment : Fragment()  {
@@ -70,6 +72,8 @@ class KarsilamaFragment : Fragment()  {
                 val tourList = list1
                 recyclerview.layoutManager=LinearLayoutManager(context)
                 recyclerview.adapter= RecyclerViewAdapter(tourList)
+                initPieChart()
+                setDataToPieChart(list1)
 
             }
 
@@ -78,14 +82,14 @@ class KarsilamaFragment : Fragment()  {
 
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_karsilama, container, false)
+
         return view
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         pieChart = view.findViewById(R.id.pieChart)
-        initPieChart()
-        setDataToPieChart()
-  //      val tourList = list1
+
+        //      val tourList = list1
             /*arrayListOf(
             hisseler("YAPI VE KREDİ BANKASI A.Ş", "YKBNK" ,R.drawable.header_logo, 20000.0 , 5 , 20.2),
             hisseler("İHLAS HOLDİNG A.Ş", "IHLAS" ,R.drawable.header_logo, 300000.5 , 7 , 1.3),
@@ -116,19 +120,28 @@ class KarsilamaFragment : Fragment()  {
         pieChart.legend.isWordWrapEnabled = true
 
     }
-    private fun setDataToPieChart() {
+    private fun setDataToPieChart(mutableList: MutableList<hisseler>) {
         pieChart.setUsePercentValues(true)
         val dataEntries = ArrayList<PieEntry>()
+        var total = mutableList.size
+        val colors: ArrayList<Int> = ArrayList()
+        for(i in mutableList){
+            dataEntries.add(PieEntry(i.tane.toFloat(),i.sh_name))
+            val rnd = Random()
+            colors.add(Color.argb(255, rnd.nextInt(256), rnd.nextInt(256), rnd.nextInt(256)))
+        }
+
+/*
         dataEntries.add(PieEntry(55f, "THYAO"))
         dataEntries.add(PieEntry(25f, "TUPRAS"))
         dataEntries.add(PieEntry(20f, "SASA"))
         dataEntries.add(PieEntry(5f, "PEGASUS"))
 
-        val colors: ArrayList<Int> = ArrayList()
         colors.add(Color.parseColor("#4DD0E1"))
         colors.add(Color.parseColor("#FFF176"))
         colors.add(Color.parseColor("#FF8A65"))
         colors.add(Color.parseColor("#E6E6FA"))
+*/
         val dataSet = PieDataSet(dataEntries, "Results")
         val data = PieData(dataSet)
         // In Percentage
