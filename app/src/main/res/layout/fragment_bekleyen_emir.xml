@@ -57,6 +57,12 @@
             android:id="@+id/row_layout_guide6"
             app:layout_constraintGuide_percent="1.0" />
 
+    <View
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="61dp"
+            android:background="@drawable/bg6"/>
     <TextView
             app:layout_constraintBottom_toBottomOf="@id/row_layout_guide_hor1"
             android:paddingHorizontal="15dp"
@@ -69,9 +75,9 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:id="@+id/hisse_baslik"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:textSize="13sp"
-            android:background="#293E57"
+            android:background="@android:color/transparent"
             android:fontFamily="@font/inter" />
 
 
@@ -87,9 +93,9 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:id="@+id/hisse_ismi"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:textSize="14sp"
-            android:background="#293E57"
+            android:background="@android:color/transparent"
             android:fontFamily="@font/inter" />
 
     <TextView
@@ -104,9 +110,9 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:id="@+id/alis_fiyat"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:textSize="14sp"
-            android:background="#293E57"
+            android:background="@android:color/transparent"
             android:fontFamily="@font/inter" />
 
     <TextView
@@ -121,9 +127,9 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:id="@+id/satis_fiyat"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:textSize="11sp"
-            android:background="#293E57"
+            android:background="@android:color/transparent"
             android:fontFamily="@font/inter" />
 
     <TextView
@@ -138,13 +144,13 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:id="@+id/hisse_fark"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:textSize="14sp"
-            android:background="#293E57"
+            android:background="@android:color/transparent"
             android:fontFamily="@font/inter" />
 
     <TextView
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:paddingHorizontal="6dp"
             app:layout_constraintBottom_toBottomOf="@id/row_layout_guide_hor1"
             android:paddingVertical="20dp"
@@ -157,7 +163,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:id="@+id/sat_button"
-            android:background="#293E57"
+            android:background="@android:color/transparent"
             android:fontFamily="@font/inter" />
 
 

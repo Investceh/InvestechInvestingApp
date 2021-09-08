@@ -1,20 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
         xmlns:app="http://schemas.android.com/apk/res-auto"
-        tools:context=".fragments.IptalEmirFragment"
-        android:background="#F5F5F5">
-
-    <androidx.constraintlayout.widget.Guideline
-            android:orientation="horizontal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/row_layout_guide_hor1"
-            app:layout_constraintGuide_percent="0.08" />
-
-
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/cons3"
+        >
     <androidx.constraintlayout.widget.Guideline
             android:orientation="vertical"
             android:layout_width="wrap_content"
@@ -37,96 +27,76 @@
             app:layout_constraintGuide_percent="0.75" />
 
 
-    <View
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            android:layout_width="match_parent"
-            android:layout_height="61dp"
-            android:background="@drawable/bg6"/>
+
     <TextView
-            app:layout_constraintBottom_toBottomOf="@id/row_layout_guide_hor1"
             android:paddingHorizontal="15dp"
             android:paddingVertical="20dp"
             android:textAlignment="viewStart"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="@id/row_layout_guide1"
-            android:text="Hisseler"
+            android:text="AGHOL"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:id="@+id/hisse_baslik"
+            android:id="@+id/GeHisse"
             android:textColor="@color/black"
-            android:textSize="13sp"
-            android:background="@android:color/transparent"
-            android:fontFamily="@font/inter" />
-
+            android:textSize="14sp" />
 
     <TextView
-            app:layout_constraintBottom_toBottomOf="@id/row_layout_guide_hor1"
+            android:paddingHorizontal="15dp"
             android:paddingVertical="20dp"
-            android:paddingHorizontal="6dp"
             android:textAlignment="center"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="@id/row_layout_guide1"
             app:layout_constraintEnd_toEndOf="@id/row_layout_guide2"
-            android:text="Adet"
+            android:text="15"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:id="@+id/hisse_ismi"
+            android:id="@+id/GeAdet"
             android:textColor="@color/black"
-            android:textSize="14sp"
-            android:background="@android:color/transparent"
-            android:fontFamily="@font/inter" />
+            android:textSize="14sp" />
 
     <TextView
-            app:layout_constraintBottom_toBottomOf="@id/row_layout_guide_hor1"
+            android:paddingHorizontal="15dp"
             android:paddingVertical="20dp"
-            android:paddingHorizontal="6dp"
             android:textAlignment="center"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="@id/row_layout_guide2"
             app:layout_constraintEnd_toEndOf="@id/row_layout_guide3"
-            android:text="Fiyat"
+            android:text="24.12"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:id="@+id/alis_fiyat"
+            android:id="@+id/GeFiyat"
             android:textColor="@color/black"
-            android:textSize="14sp"
-            android:background="@android:color/transparent"
-            android:fontFamily="@font/inter" />
+            android:textSize="14sp" />
 
     <TextView
-            android:paddingHorizontal="6dp"
-            app:layout_constraintBottom_toBottomOf="@id/row_layout_guide_hor1"
-            android:paddingVertical="22dp"
+            android:paddingHorizontal="15dp"
+            android:paddingVertical="20dp"
             android:textAlignment="center"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="@id/row_layout_guide3"
             app:layout_constraintEnd_toEndOf="parent"
-            android:text="Alış/Satış"
+            android:text="Alış"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:id="@+id/satis_fiyat"
+            android:id="@+id/GeAlisOrSatis"
             android:textColor="@color/black"
-            android:textSize="11sp"
-            android:background="@android:color/transparent"
-            android:fontFamily="@font/inter" />
+            android:textSize="14sp" />
 
 
-    <androidx.recyclerview.widget.RecyclerView
-
-            android:id="@+id/ip_emir_recyclerView"
-            android:layout_marginTop="50sp"
+    <LinearLayout
+            app:layout_constraintBottom_toBottomOf="@id/cons3"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content">
+        <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#C3C3C3"
+                app:layout_constraintTop_toTopOf="@id/al_button">
 
-            app:layout_constraintBottom_toBottomOf="parent" />
+        </View>
+    </LinearLayout>
 
-    <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            tools:ignore="MissingConstraints">
-
-    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

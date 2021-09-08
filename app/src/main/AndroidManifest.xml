@@ -12,6 +12,9 @@
             android:theme="@style/Theme.MyApplication">
 
         <activity
+                android:name=".BottomNavigation"
+                android:exported="true" />
+        <activity
                 android:name=".Advisor_agresif"
                 android:exported="true" />
         <activity
