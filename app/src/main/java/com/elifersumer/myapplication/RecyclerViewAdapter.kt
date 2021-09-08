@@ -19,18 +19,23 @@ class RecyclerViewAdapter(var hisse_list : ArrayList<hisseler>):
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view)
     {
-        val tourName: TextView =view.findViewById<TextView>(R.id.title_tv)
-        val shrName: TextView =view.findViewById<TextView>(R.id.exp_tv)
-        val photo: ImageView =view.findViewById<ImageView>(R.id.imagev)
+        val tourName: TextView =view.findViewById(R.id.title_tv)
+        val shrName: TextView =view.findViewById(R.id.exp_tv)
         val cost: TextView = view.findViewById(R.id.cost)
+        val tane: TextView = view.findViewById(R.id.tane)
+        val k_z: TextView = view.findViewById(R.id.k_z)
+
         val expandableView = view.findViewById<ViewGroup>(R.id.expandableView)
 
         fun initialize(item: hisseler)
         {
             tourName.text = item.name
             shrName.text = item.sh_name
-            cost.text = item.cost
-            photo.setImageResource(item.photo)
+            cost.text = item.cost.toString()
+            tane.text = item.tane.toString()
+            k_z.text = item.k_z.toString()
+
+
             itemView.setOnClickListener{
                 if(expandableView.visibility == View.GONE){
                     TransitionManager.beginDelayedTransition(expandableView, AutoTransition())
@@ -54,8 +59,11 @@ class RecyclerViewAdapter(var hisse_list : ArrayList<hisseler>):
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.tourName.text=hisse_list[position].name
         holder.shrName.text = hisse_list[position].sh_name
-        holder.photo.setImageResource(hisse_list[position].photo)
-        holder.cost.text= hisse_list[position].cost
+        holder.cost.text= hisse_list[position].cost.toString()
+        holder.tane.text = hisse_list[position].tane.toString()
+        holder.k_z.text = hisse_list[position].k_z.toString()
+
+
         holder.initialize(hisse_list[position])
     }
 
