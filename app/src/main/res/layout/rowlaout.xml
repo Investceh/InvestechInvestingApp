@@ -68,17 +68,34 @@
                         tools:ignore="MissingConstraints"
                         tools:layout_editor_absoluteY="35dp"
                         app:layout_constraintStart_toEndOf="@+id/exp_tv" />
+                <TextView
+                        android:id="@+id/tane"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="20dp"
+                        android:textStyle="bold"
+                        android:textColor="#000000"
+                        app:layout_constraintStart_toEndOf="@+id/cost"/>
+                <TextView
+                        android:id="@+id/k_z"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="20dp"
+                        android:textStyle="bold"
+                        android:textColor="#000000"
+                        app:layout_constraintStart_toEndOf="@+id/tane"/>
+
 
             </LinearLayout>
             <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
-                    <ImageView
-                            android:id="@+id/imagev"
-                            android:layout_width="40dp"
-                            android:layout_height="60dp"
-                            tools:src="@drawable/euro"
-                            android:layout_alignParentRight="true"/>
+
+                <Button
+                        android:id="@+id/button_id"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:text="SAT" />
             </RelativeLayout>
         </LinearLayout>
         <LinearLayout
@@ -91,7 +108,7 @@
                 <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="16,70	16,72	-0,12	16,84	16,44	113.173	1.885.057"
+                        android:text="Son İşlem Fiyatı  6.47 \nAlış  16.46\n Satış
                         android:textColor="@color/black"
                         android:textSize="10dp"/>
         </LinearLayout>
