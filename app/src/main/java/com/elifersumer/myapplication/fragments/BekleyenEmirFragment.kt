@@ -35,7 +35,6 @@ class BekleyenEmirFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_bekleyen_emir, container, false)
-
         tumu_sil = view.findViewById(R.id.bekleyen_emir) as Button
 
         bekleyenEmirler = mutableListOf(
@@ -65,15 +64,10 @@ class BekleyenEmirFragment : Fragment() {
             BekleyenEmirlerimData("AGHOL","15","24.12","Alış","İptal","Değiş"),
             BekleyenEmirlerimData("AGHOL","15","24.12","Alış","İptal","Değiş"),
         )
-
         return view
     }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-
         super.onViewCreated(view, savedInstanceState)
-
-
         tumu_sil.setOnClickListener(View.OnClickListener {
 
             bekleyenEmirler.clear()
@@ -85,5 +79,6 @@ class BekleyenEmirFragment : Fragment() {
 
         bkl_emir_recyclerView.layoutManager= LinearLayoutManager(context)
         bkl_emir_recyclerView.adapter= RecyclerViewAdapterBekEmirlerim(bekleyenEmirler)
+
     }
 }
