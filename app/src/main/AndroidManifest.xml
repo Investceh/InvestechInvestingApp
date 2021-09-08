@@ -11,7 +11,7 @@
             android:supportsRtl="true"
             android:theme="@style/Theme.MyApplication">
         <activity
-                android:name=".PopUp"
+                android:name=".BottomNavigation"
                 android:exported="true" />
         <activity
                 android:name=".Advisor_agresif"

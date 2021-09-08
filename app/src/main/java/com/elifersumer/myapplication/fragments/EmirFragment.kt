@@ -102,14 +102,14 @@ class EmirFragment : Fragment() {
                 val input_adet = adet.text.toString()
 
                 //database olcak
-               /* BekleyenEmirlerimData(
-                    input_isim,
-                    input_adet,
-                    input_fiyat,
-                    input_islem_tipi,
-                    "İptal",
-                    "Değiş"
-                )*/
+                /* BekleyenEmirlerimData(
+                     input_isim,
+                     input_adet,
+                     input_fiyat,
+                     input_islem_tipi,
+                     "İptal",
+                     "Değiş"
+                 )*/
             }
         })
 
