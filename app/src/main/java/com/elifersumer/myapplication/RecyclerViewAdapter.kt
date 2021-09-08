@@ -13,7 +13,7 @@ import com.elifersumer.myapplication.fragments.hisseler
 import kotlinx.android.synthetic.main.rowlaout.*import kotlinx.android.synthetic.main.rowlaout.*
 
 
-class RecyclerViewAdapter(var hisse_list : ArrayList<hisseler>):
+class RecyclerViewAdapter(var hisse_list : MutableList<hisseler>):
 
     RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>() {
 

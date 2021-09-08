@@ -1,18 +1,18 @@
 package com.elifersumer.myapplication.GetCustomerPortfolio.Response
 
 class GetCustomerPortfolioByDateResponse {
-    var type:String?=null
-    var data: GetCustomerPortfolioByDateData?=null
+    var Type:String?=null
+    var Data: GetCustomerPortfolioByDateData?=null
 
     constructor(type:String,data: GetCustomerPortfolioByDateData):this(){
-        this.type=type
-        this.data=data
+        this.Type=type
+        this.Data=data
 
     }
 
     constructor()
 
     fun GetData(): GetCustomerPortfolioByDateData?{
-        return data
+        return Data
     }
 }
