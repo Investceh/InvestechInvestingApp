@@ -8,20 +8,18 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.EditText
 import android.widget.TableRow
 import android.widget.TextView
 import androidx.core.content.res.ResourcesCompat
-import androidx.core.view.marginLeft
 import com.elifersumer.myapplication.GetOrderList.Request.GetOrderListParameters
 import com.elifersumer.myapplication.GetOrderList.Request.GetOrderListRequest
 import com.elifersumer.myapplication.GetOrderList.Response.GetOrderListResponse
 import com.elifersumer.myapplication.GetOrderList.Response.Order
-import com.elifersumer.myapplication.GetOrderList.Retrofit.RetroInstance
+import com.elifersumer.myapplication.RetroInstance
 import com.elifersumer.myapplication.GetOrderList.Retrofit.RetroService
+import com.elifersumer.myapplication.Header
 import com.elifersumer.myapplication.R
-import kotlinx.android.synthetic.main.fragment_emirgiris.*
 import kotlinx.android.synthetic.main.fragment_gerceklesen_emir.view.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -41,7 +39,7 @@ class GerceklesenEmirFragment : Fragment() {
 
         var instances: RetroInstance?=null
 
-        var header = com.elifersumer.myapplication.GetOrderList.Request.Header("c1c2a508fdf64c14a7b44edc9241c9cd","API","331eb5f529c74df2b800926b5f34b874","5252012362481156055")
+        var header = Header("c1c2a508fdf64c14a7b44edc9241c9cd","API","331eb5f529c74df2b800926b5f34b874","5252012362481156055")
 
         var getOrderListParameters= GetOrderListParameters(customerNo,0)
 

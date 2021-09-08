@@ -1,4 +1,4 @@
-package com.elifersumer.myapplication.GetOrderList.Retrofit
+package com.elifersumer.myapplication
 
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory

@@ -1,4 +1,4 @@
-package com.elifersumer.myapplication.GetOrderList.Request
+package com.elifersumer.myapplication
 
 class Header {
 
