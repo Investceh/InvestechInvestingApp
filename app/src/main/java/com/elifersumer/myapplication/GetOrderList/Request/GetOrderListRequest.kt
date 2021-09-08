@@ -4,9 +4,9 @@ import com.elifersumer.myapplication.Header
 
 class GetOrderListRequest {
     var header: Header?=null
-    var parameters:GetOrderListParameters?=null
+    var parameters:List<GetOrderListParameters>?=null
 
-        constructor(header: Header, parameters: GetOrderListParameters):this(){
+        constructor(header: Header, parameters: List<GetOrderListParameters>):this(){
             this.header=header
             this.parameters=parameters
         }

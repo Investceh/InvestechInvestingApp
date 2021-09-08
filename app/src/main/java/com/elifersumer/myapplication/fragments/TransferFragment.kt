@@ -10,11 +10,28 @@ import com.elifersumer.myapplication.R
 import androidx.appcompat.app.AppCompatActivity
 import android.widget.*
 import androidx.core.content.res.ResourcesCompat
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.elifersumer.myapplication.GetAccountList.Request.GetAccountListParameters
+import com.elifersumer.myapplication.GetAccountList.Request.GetAccountListRequest
+import com.elifersumer.myapplication.GetAccountList.Response.Account
+import com.elifersumer.myapplication.GetAccountList.Response.GetAccountListResponse
+import com.elifersumer.myapplication.GetAccountList.Retrofit.AccountService
+import com.elifersumer.myapplication.GetCustomerPortfolio.Request.GetCustomerPortfolioByDateParameters
+import com.elifersumer.myapplication.GetCustomerPortfolio.Request.GetOrderCustomerPortfolioByDateRequest
+import com.elifersumer.myapplication.GetCustomerPortfolio.Response.GetCustomerPortfolioByDateResponse
+import com.elifersumer.myapplication.GetCustomerPortfolio.Response.Stock
+import com.elifersumer.myapplication.Header
+import com.elifersumer.myapplication.RecyclerViewAdapter
+import com.elifersumer.myapplication.RetroInstance
+import kotlinx.android.synthetic.main.fragment_karsilama.*
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 import java.text.DecimalFormat
 
 class TransferFragment : Fragment() {
-    var cüzdan_yatırım = 1254.0
-    var cüzdan_vadesiz = 5230.3
+
+
     var secilen_miktar_double = 0.0
     val df = DecimalFormat("#,##0.00")
     lateinit var hesap_bilgi: TextView
@@ -34,6 +51,43 @@ class TransferFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
+        var instances= RetroInstance()
+
+        var header = Header("c1c2a508fdf64c14a7b44edc9241c9cd","API","331eb5f529c74df2b800926b5f34b874","5252012362481156055")
+
+        var getAccountListParameters= GetAccountListParameters(4723876)
+
+        //var listParameters=ArrayList<GetOrderListParameters>()
+
+        //listParameters.add(getOrderListParameters)
+
+        var getAccountListRequest= GetAccountListRequest(header,
+            arrayListOf(getAccountListParameters))
+
+        var retrofit= RetroInstance.getRetrofitObject()?.create(AccountService::class.java)
+        var result : Call<GetAccountListResponse> = retrofit!!.GetPostValue(getAccountListRequest)
+        var accountList:List<Account>
+        var vdlAccountList=ArrayList<Account>()
+        var vdszAccountList=ArrayList<Account>()
+
+        result.enqueue(object : Callback<GetAccountListResponse?> {
+            override fun onResponse(call: Call<GetAccountListResponse?>?, response: Response<GetAccountListResponse?>) {
+                var data=response.body()!!.GetData()
+                accountList=data?.AccountList!!
+
+                for(account in accountList){
+                    if(account.OriginalProductCode=="VDLMEVD"){
+                        vdlAccountList.add(account)
+                    }else if(account.OriginalProductCode=="VDSZMVD"){
+                        vdszAccountList.add(account)
+                    }
+                }
+            }
+
+            override fun onFailure(call: Call<GetAccountListResponse?>?, t: Throwable?) {}
+        })
+
         val view =  inflater.inflate(R.layout.fragment_transfer, container, false)
         hesap_bilgi = view.findViewById(R.id.hesap_bilgi) as TextView
         yatırım_bilgi = view.findViewById(R.id.yatırım_bilgi) as TextView
@@ -47,8 +101,15 @@ class TransferFragment : Fragment() {
 
         btn_tamam = view.findViewById(R.id.btn_tamam) as Button
 
+
+
+        var cüzdan_yatırım=vdlAccountList.get(0).AmountOfBalance!!.toDouble()
+        var cüzdan_vadesiz = vdszAccountList.get(0).AmountOfBalance!!.toDouble()
+
         var hesapBilgi = df.format(cüzdan_vadesiz).replace(',','.').reversed().replaceFirst('.',',').reversed()
         var yatirimBilgi = df.format(cüzdan_yatırım).replace(',','.').reversed().replaceFirst('.',',').reversed()
+
+
 
         hesap_bilgi.text = hesapBilgi.toString() + " ₺"
         yatırım_bilgi.text = yatirimBilgi.toString() + " ₺"
