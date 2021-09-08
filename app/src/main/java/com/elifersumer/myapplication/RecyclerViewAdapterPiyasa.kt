@@ -43,9 +43,12 @@ class RecyclerViewAdapterPiyasa(var hisse_list: ArrayList<PiyasaData>) :
 
         }
         if (hisse_list[position].fark.toFloat() >= 0) {
+
             holder.degisim.setImageResource(R.drawable.ic_rise_up_green)
-        } else
+        } else {
+            holder.fark.setTextColor(Color.RED)
             holder.degisim.setImageResource(R.drawable.ic_rise_up_red)
+        }
         holder.isim.text = hisse_list[position].hisse_ismi
         holder.alis.text = hisse_list[position].alis
         holder.satis.text = hisse_list[position].satis
