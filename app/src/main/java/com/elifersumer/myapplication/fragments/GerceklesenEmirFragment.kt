@@ -32,6 +32,7 @@ class GerceklesenEmirFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+/*
 
         val tmpNo= view?.findViewById(R.id.txt_tckn) as EditText
 
@@ -51,6 +52,7 @@ class GerceklesenEmirFragment : Fragment() {
 
         val retrofit = instances!!.getRetroInstance().create(RetroService::class.java)
 
+
         var result : Call<GetOrderListResponse> = retrofit.GetPostValue(getOrderListRequest)
 
         var getOrderListResponse: GetOrderListResponse
@@ -65,6 +67,7 @@ class GerceklesenEmirFragment : Fragment() {
 
             override fun onFailure(call: Call<GetOrderListResponse?>?, t: Throwable?) {}
         })
+*/
 
         val drawable: Drawable?= ResourcesCompat.getDrawable(resources,R.drawable.button_green, null)
         val drawable2: Drawable?= ResourcesCompat.getDrawable(resources,R.drawable.button_red, null)
@@ -74,7 +77,7 @@ class GerceklesenEmirFragment : Fragment() {
         val drawable_sat2: Drawable?= ResourcesCompat.getDrawable(resources,R.drawable.sat_2, null)
 
         val drawable4: Drawable?= ResourcesCompat.getDrawable(resources,R.drawable.bg1, null)
-       // val drawable5: Drawable?= ResourcesCompat.getDrawable(resources,R.drawable.button_gradient, null)
+        // val drawable5: Drawable?= ResourcesCompat.getDrawable(resources,R.drawable.button_gradient, null)
         val view = inflater.inflate(R.layout.fragment_gerceklesen_emir, container, false)
         val tabLay = view.table_layout_g
         var alisOrSatis = "Alis"
