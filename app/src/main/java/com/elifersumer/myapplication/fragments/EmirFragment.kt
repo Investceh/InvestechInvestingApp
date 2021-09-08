@@ -10,7 +10,9 @@ import android.view.ViewGroup
 import android.widget.*
 import androidx.core.content.res.ResourcesCompat
 import androidx.core.view.ViewCompat.setBackground
+import com.elifersumer.myapplication.BekleyenEmirlerimData
 import com.elifersumer.myapplication.R
+import kotlinx.android.synthetic.main.fragment_emirgiris.*
 import kotlinx.android.synthetic.main.fragment_emirgiris.view.*
 import kotlinx.android.synthetic.main.fragment_piyasa.view.*
 
@@ -20,6 +22,11 @@ class EmirFragment : Fragment() {
 
     lateinit var alisbtn : RadioButton
     lateinit var satisbtn: RadioButton
+    lateinit var tamamBtn: Button
+    lateinit var adet: EditText
+    lateinit var hisseler: AutoCompleteTextView
+    lateinit var rg: RadioGroup
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -30,14 +37,20 @@ class EmirFragment : Fragment() {
         alisbtn = view.findViewById(R.id.alisbtn) as RadioButton
         satisbtn = view.findViewById(R.id.satisbtn) as RadioButton
 
-        val tamamBtn = view.findViewById(R.id.emirTamamButton) as Button
+        tamamBtn = view.findViewById(R.id.emirTamamButton) as Button
 
         val incrementBtn = view.findViewById(R.id.incrementFiyat) as Button
         val decrementBtn = view.findViewById(R.id.decrementFiyat) as Button
 
+        adet = view.findViewById(R.id.edtxt_adet) as EditText
+
         val alisFiyat = view.findViewById(R.id.val_alis) as TextView
         val satisFiyat = view.findViewById(R.id.val_satis) as TextView
         val fiyat = view.findViewById(R.id.edtxt_fiyat) as EditText
+
+        rg = view.findViewById(R.id.daily_weekly_button_view) as RadioGroup
+
+        hisseler = view.findViewById(R.id.autoCompleteTextView) as AutoCompleteTextView
 
         fiyat.setText(satisFiyat.text)
 
@@ -51,6 +64,7 @@ class EmirFragment : Fragment() {
 
             fiyat.setText(alisFiyat.text)
         })
+
 
         incrementBtn.setOnClickListener(View.OnClickListener {
             fiyat.setText((fiyat.text.toString().toFloat() + 1).toString())
@@ -67,9 +81,35 @@ class EmirFragment : Fragment() {
             }
         })
 
+
+
+        var input_islem_tipi = "Alış"
+        rg.setOnCheckedChangeListener(RadioGroup.OnCheckedChangeListener{radioGroup, i ->
+            input_islem_tipi = ""
+            when(i) {
+                R.id.alisbtn -> { input_islem_tipi = "Alış" }
+                R.id.satisbtn -> { input_islem_tipi = "Satış" }
+            }
+        })
+
         tamamBtn.setOnClickListener(View.OnClickListener {
             if(view.findViewById<EditText>(R.id.edtxt_adet).text.toString() == ""){
                 Toast.makeText(this@EmirFragment.requireActivity(),"Lütfen adet giriniz!", Toast.LENGTH_SHORT).show()
+            }else {
+
+                val input_isim = hisseler.text.toString()
+                val input_fiyat = fiyat.text.toString()
+                val input_adet = adet.text.toString()
+
+                //database olcak
+               /* BekleyenEmirlerimData(
+                    input_isim,
+                    input_adet,
+                    input_fiyat,
+                    input_islem_tipi,
+                    "İptal",
+                    "Değiş"
+                )*/
             }
         })
 
