@@ -49,8 +49,8 @@
 
 
     <TextView
-            android:paddingHorizontal="6dp"
-            android:paddingVertical="12dp"
+            android:paddingHorizontal="15dp"
+            android:paddingVertical="20dp"
             android:textAlignment="viewStart"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -63,8 +63,8 @@
             android:textSize="14sp" />
 
     <TextView
-            android:paddingHorizontal="6dp"
-            android:paddingVertical="12dp"
+            android:paddingHorizontal="15dp"
+            android:paddingVertical="20dp"
             android:textAlignment="center"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="@id/row_layout_guide1"
@@ -77,8 +77,8 @@
             android:textSize="14sp" />
 
     <TextView
-            android:paddingHorizontal="6dp"
-            android:paddingVertical="12dp"
+            android:paddingHorizontal="15dp"
+            android:paddingVertical="20dp"
             android:textAlignment="center"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="@id/row_layout_guide2"
@@ -91,8 +91,8 @@
             android:textSize="14sp" />
 
     <TextView
-            android:paddingHorizontal="6dp"
-            android:paddingVertical="12dp"
+            android:paddingHorizontal="15dp"
+            android:paddingVertical="20dp"
             android:textAlignment="center"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="@id/row_layout_guide3"
@@ -106,8 +106,8 @@
 
     <TextView
             android:background="#E2FF2525"
-            android:paddingHorizontal="6dp"
-            android:paddingVertical="12dp"
+            android:paddingHorizontal="15dp"
+            android:paddingVertical="20dp"
             android:textAlignment="center"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="@id/row_layout_guide4"
@@ -122,14 +122,14 @@
     <TextView
             android:background="@drawable/alll"
             android:textColor="@color/black"
-            android:paddingHorizontal="6dp"
-            android:paddingVertical="12dp"
+            android:paddingHorizontal="15dp"
+            android:paddingVertical="20dp"
             android:textAlignment="center"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="@id/row_layout_guide5"
             app:layout_constraintEnd_toEndOf="parent"
             android:text="Değiş"
-            android:textSize="14sp"
+            android:textSize="12sp"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:id="@+id/BeDegis"

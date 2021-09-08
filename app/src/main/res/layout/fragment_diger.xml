@@ -14,26 +14,14 @@
             android:orientation="vertical">
 
 
-        <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="İyi Günler, Göksel"
-                android:layout_marginTop="20dp"
-                android:layout_marginLeft="10dp"
-                android:textSize="30dp">
-
-        </TextView>
-
-
-
         <LinearLayout
-                android:layout_marginTop="45dp"
+                android:layout_marginTop="70dp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
             <Button
-                    android:id="@+id/portföyBtn"
+                    android:id="@+id/portföygcsBtn"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Portföyüm"
@@ -45,7 +33,7 @@
 
             </Button>
             <Button
-                    android:id="@+id/piyasaBtn"
+                    android:id="@+id/piyasagcsBtn"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Piyasa"
@@ -57,7 +45,7 @@
             </Button>
 
             <Button
-                    android:id="@+id/transferBtn"
+                    android:id="@+id/transfergcsBtn"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Para Transferi"
@@ -69,7 +57,7 @@
             </Button>
 
             <Button
-                    android:id="@+id/emirGirisBtn"
+                    android:id="@+id/emirGirisgcsBtn"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Emir Giriş"
@@ -81,7 +69,7 @@
             </Button>
 
             <Button
-                    android:id="@+id/emirlerimBtn"
+                    android:id="@+id/emirlerimgcsBtn"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Emirlerim"
@@ -93,7 +81,7 @@
             </Button>
 
             <Button
-                    android:id="@+id/roboadvisorBtn"
+                    android:id="@+id/roboadvisorgcsBtn"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Roboadvisor"
@@ -105,7 +93,7 @@
             </Button>
 
             <Button
-                    android:id="@+id/haberlerBtn"
+                    android:id="@+id/haberlergcsBtn"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Haberler"
@@ -117,7 +105,7 @@
             </Button>
 
             <Button
-                    android:id="@+id/anketbtn"
+                    android:id="@+id/anketgcsbtn"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Uygunluk Testi"
