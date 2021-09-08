@@ -6,6 +6,7 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import com.elifersumer.myapplication.fragments.*
 import kotlinx.android.synthetic.main.activity_navbar.*
+import kotlinx.android.synthetic.main.fragment_diger.*
 
 
 class navbar : AppCompatActivity() {
@@ -16,7 +17,7 @@ class navbar : AppCompatActivity() {
         val piyasaFragment = PiyasaFragment()
         val transferFragment = TransferFragment()
         val emirFragment = EmirFragment()
-
+        val blankFragment = BlankFragment()
         val digerFragment = DigerFragment()
         val emirTablayout = emir_tablayout()
         val intent = Intent(this,emir_tablayout::class.java)
@@ -29,7 +30,8 @@ class navbar : AppCompatActivity() {
                 R.id.piyasa -> makeCurrentFragment(piyasaFragment)
                 R.id.transfer -> makeCurrentFragment(transferFragment)
                 R.id.emir -> makeCurrentFragment(emirFragment)
-                R.id.diger  -> makeCurrentFragment(BlankFragment())
+                R.id.diger  -> makeCurrentFragment(digerFragment)
+
             }
             true
         }

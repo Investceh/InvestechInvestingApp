@@ -27,74 +27,110 @@
                     android:orientation="vertical"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
+                <TextView
+                        android:id="@+id/title_tv"
+                        android:layout_width="183dp"
+                        android:layout_height="23dp"
+                        tools:text="Android Studio Cardview"
+                        android:textSize="11sp"
+                        android:textStyle="bold"
+                        android:textColor="#000000"
+                        app:layout_constraintStart_toStartOf="parent"
+                        tools:ignore="MissingConstraints" />
+                <TextView
+                        android:id="@+id/exp_tv"
+                        android:layout_width="128dp"
+                        android:layout_height="22dp"
+                        android:text="DENEMEDENEMEDENEM"
+                        android:textColor="#000000"
+                        android:textStyle="bold"
+                        android:textSize="11sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/title_tv"
+                        app:layout_constraintVertical_bias="1.0"
+                        tools:ignore="MissingConstraints" />
+                <LinearLayout
+                        android:layout_height="wrap_content"
+                        android:layout_width="fill_parent"
+                        android:orientation="horizontal">
+                    <TextView
+                            android:id="@+id/leftText"
+                            android:layout_height="wrap_content"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:textSize="15sp"
+                            android:ellipsize="end"
+                            android:text="Cost : "
+                            android:textColor="@color/black"/>
+                    <TextView
+                            android:id="@+id/cost"
+                            android:layout_height="wrap_content"
+                            android:layout_width="wrap_content"
+                            android:layout_weight="0"
+                            android:textStyle="bold"
+                            android:layout_gravity="right"/>
+                </LinearLayout>
+                <LinearLayout
+                        android:layout_height="wrap_content"
+                        android:layout_width="fill_parent"
+                        android:orientation="horizontal"
+                        >
+                    <TextView
+                            android:id="@+id/leftText2"
+                            android:layout_height="wrap_content"
+                            android:layout_width="0dp"
+                            android:textSize="15sp"
+                            android:layout_weight="1"
+                            android:ellipsize="end"
+                            android:text="K/Z : "
+                            android:textColor="@color/black"/>
 
-            <TextView
-                    android:id="@+id/title_tv"
-                    android:layout_width="183dp"
-                    android:layout_height="23dp"
-                    tools:text="Android Studio Cardview"
-                    android:textSize="11sp"
-                    android:textStyle="bold"
-                    android:textColor="#000000"
-                    tools:layout_editor_absoluteY="16dp"
-                    app:layout_constraintEnd_toEndOf="@+id/exp_tv"
-                    app:layout_constraintStart_toStartOf="parent"
-                    tools:ignore="MissingConstraints" />
+                    <TextView
+                            android:id="@+id/tane"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="15sp"
+                            android:textStyle="bold"
+                            android:textColor="#000000"
+                            app:layout_constraintStart_toEndOf="@+id/cost"/>
+                </LinearLayout>
+                <LinearLayout
+                        android:layout_height="wrap_content"
+                        android:layout_width="fill_parent"
+                        android:orientation="horizontal"
+                        >
+                    <TextView
+                            android:id="@+id/leftText3"
+                            android:layout_height="wrap_content"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:textSize="15sp"
+                            android:ellipsize="end"
+                            android:text="Adet : "
+                            android:textColor="@color/black"/>
 
-            <TextView
-                    android:id="@+id/exp_tv"
-                    android:layout_width="128dp"
-                    android:layout_height="22dp"
-                    android:text="DENEMEDENEMEDENEM"
-                    android:textColor="#000000"
-                    android:textStyle="bold"
-                    android:textSize="11sp"
-                    android:layout_marginStart="14dp"
-                    android:layout_marginEnd="16dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.023"
-                    app:layout_constraintStart_toEndOf="@+id/imagev"
-                    app:layout_constraintTop_toBottomOf="@+id/title_tv"
-                    app:layout_constraintVertical_bias="1.0"
-                    tools:ignore="MissingConstraints" />
-                <TextView
-                        android:id="@+id/cost"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="20dp"
-                        android:textStyle="bold"
-                        android:textColor="#000000"
-                        tools:ignore="MissingConstraints"
-                        tools:layout_editor_absoluteY="35dp"
-                        app:layout_constraintStart_toEndOf="@+id/exp_tv" />
-                <TextView
-                        android:id="@+id/tane"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="20dp"
-                        android:textStyle="bold"
-                        android:textColor="#000000"
-                        app:layout_constraintStart_toEndOf="@+id/cost"/>
-                <TextView
-                        android:id="@+id/k_z"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="20dp"
-                        android:textStyle="bold"
-                        android:textColor="#000000"
-                        app:layout_constraintStart_toEndOf="@+id/tane"/>
+                    <TextView
+                            android:id="@+id/k_z"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="15sp"
+                            android:textStyle="bold"
+                            android:textColor="#000000"
+                            app:layout_constraintStart_toEndOf="@+id/tane"/>
+                </LinearLayout>
 
 
             </LinearLayout>
             <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical|center_horizontal">
                 <Button
                         android:id="@+id/button_id"
                         android:layout_height="wrap_content"
                         android:layout_width="wrap_content"
+                        android:layout_centerInParent="true"
                         android:text="SAT" />
             </RelativeLayout>
         </LinearLayout>
@@ -108,9 +144,9 @@
                 <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Son İşlem Fiyatı  6.47 \nAlış  16.46\n Satış
+                        android:text="Son İşlem Fiyatı  6.47 \nAlış  16.46\n Satış"
                         android:textColor="@color/black"
-                        android:textSize="10dp"/>
+                        android:textSize="15sp"/>
         </LinearLayout>
 
     </LinearLayout>

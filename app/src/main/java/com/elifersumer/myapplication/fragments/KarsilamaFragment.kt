@@ -29,23 +29,18 @@ import com.github.mikephil.charting.data.PieDataSet
 import com.github.mikephil.charting.data.PieEntry
 import com.github.mikephil.charting.formatter.PercentFormatter
 import kotlinx.android.synthetic.main.fragment_karsilama.*
-import okhttp3.internal.notify
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import kotlin.collections.emptyList as emptyList
 
 class KarsilamaFragment : Fragment()  {
     private lateinit var pieChart: PieChart
-    private lateinit var list1:ArrayList<hisseler>
-    private lateinit var stockList:List<Stock>
+    private var list1 = mutableListOf<hisseler>()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val tmpNo= view?.findViewById(R.id.txt_tckn) as EditText
-
-        val customerNo = tmpNo.toString().toInt()
-
         var instances=RetroInstance()
 
         var header = Header("c1c2a508fdf64c14a7b44edc9241c9cd","API","331eb5f529c74df2b800926b5f34b874","5252012362481156055")
@@ -56,11 +51,12 @@ class KarsilamaFragment : Fragment()  {
 
         //listParameters.add(getOrderListParameters)
 
-        var getOrderCustomerPortfolioByDateRequest= GetOrderCustomerPortfolioByDateRequest(header,getCustomerPortfolioByDateParameters)
+        var getOrderCustomerPortfolioByDateRequest= GetOrderCustomerPortfolioByDateRequest(header,
+            arrayListOf(getCustomerPortfolioByDateParameters))
 
-        val retrofit = instances.getRetroInstance().create(com.elifersumer.myapplication.GetCustomerPortfolio.Retrofit.RetroService::class.java)
-
-        var result : Call<GetCustomerPortfolioByDateResponse> = retrofit.GetPostValue(getOrderCustomerPortfolioByDateRequest)
+        var retrofit= RetroInstance.getRetrofitObject()?.create(com.elifersumer.myapplication.GetCustomerPortfolio.Retrofit.RetroService::class.java)
+        var result : Call<GetCustomerPortfolioByDateResponse> = retrofit!!.GetPostValue(getOrderCustomerPortfolioByDateRequest)
+        var stockList:List<Stock>
 
         result.enqueue(object : Callback<GetCustomerPortfolioByDateResponse?> {
             override fun onResponse(call: Call<GetCustomerPortfolioByDateResponse?>?, response: Response<GetCustomerPortfolioByDateResponse?>) {
@@ -68,14 +64,17 @@ class KarsilamaFragment : Fragment()  {
                 stockList=data?.StockList!!
 
                 for(stock in stockList){
-                    var h1=hisseler(stock.Name!!,R.drawable.header_logo,stock.Cost!!,stock.Amount!!,stock.PotentialBenefitRate!!)
+                    var h1=hisseler("Türk Telekomunikasyon A.Ş.",stock.Name!!,R.drawable.header_logo,stock.Cost!!,stock.Amount!!,stock.PotentialBenefitRate!!)
                     list1.add(h1)
                 }
+                val tourList = list1
+                recyclerview.layoutManager=LinearLayoutManager(context)
+                recyclerview.adapter= RecyclerViewAdapter(tourList)
+
             }
 
             override fun onFailure(call: Call<GetCustomerPortfolioByDateResponse?>?, t: Throwable?) {}
         })
-
 
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_karsilama, container, false)
@@ -86,15 +85,17 @@ class KarsilamaFragment : Fragment()  {
         pieChart = view.findViewById(R.id.pieChart)
         initPieChart()
         setDataToPieChart()
-
-        val tourList = list1
+  //      val tourList = list1
             /*arrayListOf(
             hisseler("YAPI VE KREDİ BANKASI A.Ş", "YKBNK" ,R.drawable.header_logo, 20000.0 , 5 , 20.2),
             hisseler("İHLAS HOLDİNG A.Ş", "IHLAS" ,R.drawable.header_logo, 300000.5 , 7 , 1.3),
             hisseler("TÜRKİYE GARANTİ BANKASI A.Ş\n", "GARAN",R.drawable.header_logo, 200000.0 , 9 , 4.6)
         )*/
+/*
+        println(tourList?.get(0)?.name)
         recyclerview.layoutManager=LinearLayoutManager(context)
-        recyclerview.adapter= RecyclerViewAdapter(tourList)
+        recyclerview.adapter= RecyclerViewAdapter(tourList!!)
+*/
     }
 
 

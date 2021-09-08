@@ -3,8 +3,8 @@
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="412dp"
-        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         tools:ignore="ExtraText"
         android:id="@+id/frameLayout"
         >
@@ -50,7 +50,6 @@
 
     </RelativeLayout>
     <ScrollView
-
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/headerImageView"
@@ -60,10 +59,9 @@
                 android:layout_marginTop="250dp"
                 android:layout_width="match_parent"
                 android:background="@drawable/rounded_bottom_box"
-                android:layout_height="1000dp"
+                android:layout_height="wrap_content"
                 tools:context=".PertanyaanFragment"
                 >
-
             <ImageView
                     android:layout_width="wrap_content"
                     app:layout_constraintTop_toBottomOf="@+id/pieChart"
