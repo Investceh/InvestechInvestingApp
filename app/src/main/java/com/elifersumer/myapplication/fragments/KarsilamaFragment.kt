@@ -1,6 +1,7 @@
 
 package com.elifersumer.myapplication.fragments
 
+import android.R.attr
 import android.graphics.Color
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -35,6 +36,10 @@ import retrofit2.Response
 import java.util.*
 import kotlin.collections.ArrayList
 import kotlin.collections.emptyList as emptyList
+import android.R.attr.label
+
+
+
 
 class KarsilamaFragment : Fragment()  {
     private lateinit var pieChart: PieChart
@@ -45,7 +50,7 @@ class KarsilamaFragment : Fragment()  {
     ): View? {
         var instances=RetroInstance()
 
-        var header = Header("c1c2a508fdf64c14a7b44edc9241c9cd","API","331eb5f529c74df2b800926b5f34b874","5252012362481156055")
+        var header = Header("c05939ecc58a4d5a8fd143bbea49d930","API","331eb5f529c74df2b800926b5f34b874","5252012362481156055")
 
         var getCustomerPortfolioByDateParameters= GetCustomerPortfolioByDateParameters(4723876,1,"2019-07-05T00:00:00")
 
@@ -66,7 +71,7 @@ class KarsilamaFragment : Fragment()  {
                 stockList=data?.StockList!!
 
                 for(stock in stockList){
-                    var h1=hisseler("Türk Telekomunikasyon A.Ş.",stock.Name!!,R.drawable.header_logo,stock.Cost!!,stock.Amount!!,stock.PotentialBenefitRate!!,stock.PotentialBenefit!!)
+                    var h1=hisseler(stock.Name!!,R.drawable.header_logo,stock.Cost!!,stock.Amount!!,stock.PotentialBenefitRate!!,stock.PotentialBenefit!!)
                     list1.add(h1)
                 }
                 val tourList = list1
@@ -110,7 +115,6 @@ class KarsilamaFragment : Fragment()  {
     private fun setDataToPieChart(mutableList: MutableList<hisseler>) {
         pieChart.setUsePercentValues(true)
         val dataEntries = ArrayList<PieEntry>()
-        var total = mutableList.size
         val colors: ArrayList<Int> = ArrayList()
         for(i in mutableList){
             dataEntries.add(PieEntry(i.tane.toFloat(),i.sh_name))
@@ -119,23 +123,21 @@ class KarsilamaFragment : Fragment()  {
         }
         val dataSet = PieDataSet(dataEntries, "Results")
         val data = PieData(dataSet)
-        // In Percentage
         data.setValueFormatter(PercentFormatter())
-        dataSet.sliceSpace = 3f
+        dataSet.sliceSpace = 2f
         dataSet.colors = colors
         pieChart.data = data
         pieChart.invalidate()
-        data.setValueTextSize(15f)
-        pieChart.setExtraOffsets(5f, 10f, 5f, 5f)
-        pieChart.animateY(2000, Easing.EaseInOutQuad)
-        //create hole in center
-        pieChart.holeRadius = 58f
-        pieChart.transparentCircleRadius = 61f
+        data.setValueTextSize(10f)
+        pieChart.setExtraOffsets(10f, 10f, 10f, 10f)
+        pieChart.animateY(2000,Easing.EaseInOutQuad)
+        pieChart.holeRadius = 0f
+        pieChart.transparentCircleRadius = 0f
         pieChart.isDrawHoleEnabled = true
-        pieChart.setHoleColor(Color.WHITE)
         //add text in center
         pieChart.setDrawCenterText(true);
-        pieChart.centerText = "Hisselerim"
+        pieChart.centerText = " "
+
 
     }
 
