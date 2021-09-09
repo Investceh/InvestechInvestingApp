@@ -30,7 +30,8 @@ import retrofit2.Response
 import java.text.DecimalFormat
 
 class TransferFragment : Fragment() {
-
+    var cüzdan_yatırım = 1254.0
+    var cüzdan_vadesiz = 5230.3
 
     var secilen_miktar_double = 0.0
     val df = DecimalFormat("#,##0.00")
@@ -52,7 +53,7 @@ class TransferFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        var instances= RetroInstance()
+        /*var instances= RetroInstance()
 
         var header = Header("c1c2a508fdf64c14a7b44edc9241c9cd","API","331eb5f529c74df2b800926b5f34b874","5252012362481156055")
 
@@ -86,7 +87,7 @@ class TransferFragment : Fragment() {
             }
 
             override fun onFailure(call: Call<GetAccountListResponse?>?, t: Throwable?) {}
-        })
+        })*/
 
         val view =  inflater.inflate(R.layout.fragment_transfer, container, false)
         hesap_bilgi = view.findViewById(R.id.hesap_bilgi) as TextView
@@ -103,8 +104,8 @@ class TransferFragment : Fragment() {
 
 
 
-        var cüzdan_yatırım=vdlAccountList.get(0).AmountOfBalance!!.toDouble()
-        var cüzdan_vadesiz = vdszAccountList.get(0).AmountOfBalance!!.toDouble()
+        //var cüzdan_yatırım=vdlAccountList.get(0).AmountOfBalance!!.toDouble()
+        //var cüzdan_vadesiz = vdszAccountList.get(0).AmountOfBalance!!.toDouble()
 
         var hesapBilgi = df.format(cüzdan_vadesiz).replace(',','.').reversed().replaceFirst('.',',').reversed()
         var yatirimBilgi = df.format(cüzdan_yatırım).replace(',','.').reversed().replaceFirst('.',',').reversed()
