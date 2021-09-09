@@ -21,8 +21,7 @@ class RecyclerViewAdapter(var hisse_list : MutableList<hisseler>):
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view)
     {
-        val tourName: TextView =view.findViewById(R.id.title_tv)
-        val shrName: TextView =view.findViewById(R.id.exp_tv)
+        val sh_name: TextView =view.findViewById(R.id.title_tv)
         val cost: TextView = view.findViewById(R.id.cost)
         val tane: TextView = view.findViewById(R.id.tane)
         val k_z: TextView = view.findViewById(R.id.k_z)
@@ -32,7 +31,7 @@ class RecyclerViewAdapter(var hisse_list : MutableList<hisseler>):
 
         fun initialize(item: hisseler)
         {
-            shrName.text = item.sh_name
+            sh_name.text = item.sh_name.toString()
             cost.text = item.cost.toString()
             tane.text = item.tane.toString()
             k_z.text = item.k_z.toString()
@@ -48,7 +47,7 @@ class RecyclerViewAdapter(var hisse_list : MutableList<hisseler>):
                 }
             }
             but.setOnClickListener{
-                Toast.makeText(shrName.context,"Satıldı",Toast.LENGTH_SHORT)
+                Toast.makeText(sh_name.context,"Satıldı",Toast.LENGTH_SHORT)
             }
         }
     }
@@ -60,7 +59,7 @@ class RecyclerViewAdapter(var hisse_list : MutableList<hisseler>):
         return ViewHolder(view)
     }
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.shrName.text = hisse_list[position].sh_name
+        holder.sh_name.text = hisse_list[position].sh_name
         holder.cost.text= hisse_list[position].cost.toString()
         holder.tane.text = hisse_list[position].tane.toString()
         holder.k_z.text = hisse_list[position].k_z.toString()
