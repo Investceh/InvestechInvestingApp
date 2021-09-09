@@ -11,6 +11,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TableRow
 import android.widget.TextView
+import android.widget.Toast
 import androidx.core.content.res.ResourcesCompat
 import androidx.lifecycle.MutableLiveData
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -70,7 +71,15 @@ class PiyasaFragment : Fragment() {
         val textView = TextView(this.context)
         textView.setBackground(drawable1)
         super.onViewCreated(view, savedInstanceState)
-
+        val all_hisse = arrayListOf(
+            PiyasaData(
+                "deg","ALKIM","15.04","15.03",
+                                            "1.48"),
+            PiyasaData("deg","AKCNS","15.03","15.29",
+                "-0.20")
+        )
+        piyasa_recyclerView.layoutManager= LinearLayoutManager(context)
+        piyasa_recyclerView.adapter= RecyclerViewAdapterPiyasa(all_hisse)
 
     }
 }

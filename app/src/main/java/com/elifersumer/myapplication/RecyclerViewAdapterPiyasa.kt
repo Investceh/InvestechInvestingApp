@@ -1,15 +1,13 @@
 package com.elifersumer.myapplication
 
 import android.graphics.Color
+import android.transition.AutoTransition
+import android.transition.TransitionManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.ImageView
-import android.widget.TextView
+import android.widget.*
 import androidx.recyclerview.widget.RecyclerView
-import com.elifersumer.myapplication.R
-import com.elifersumer.myapplication.fragments.hisseler
 
 class RecyclerViewAdapterPiyasa(var hisse_list: MutableList<PiyasaData>) :
     RecyclerView.Adapter<RecyclerViewAdapterPiyasa.ViewHolder>() {
@@ -19,9 +17,20 @@ class RecyclerViewAdapterPiyasa(var hisse_list: MutableList<PiyasaData>) :
         val alis = view.findViewById<TextView>(R.id.alis_fiyat)
         val satis = view.findViewById<TextView>(R.id.satis_fiyat)
         val fark = view.findViewById<TextView>(R.id.hisse_fark)
-        val sat = view.findViewById<TextView>(R.id.sat_button)
-        val al = view.findViewById<TextView>(R.id.al_button)
+        val sat = view.findViewById<Button>(R.id.sat_button)
+        val al = view.findViewById<Button>(R.id.al_button)
 
+        fun initialize(item:PiyasaData) {
+            isim.text = item.hisse_ismi
+            al.setOnClickListener{
+                Toast.makeText(isim.context,"Alındı",Toast.LENGTH_SHORT).show()
+            }
+            sat.setOnClickListener{
+                Toast.makeText(isim.context,"Satıldı",Toast.LENGTH_SHORT).show()
+            }
+
+
+        }
     }
 
     override fun onCreateViewHolder(
@@ -30,6 +39,7 @@ class RecyclerViewAdapterPiyasa(var hisse_list: MutableList<PiyasaData>) :
     ): ViewHolder {
         val view =
             LayoutInflater.from(parent.context).inflate(R.layout.row_layout_piyasa, parent, false)
+
         return ViewHolder(view)
     }
 
@@ -40,6 +50,7 @@ class RecyclerViewAdapterPiyasa(var hisse_list: MutableList<PiyasaData>) :
             holder.alis.setBackgroundColor(Color.parseColor("#C7D3E1"))
             holder.satis.setBackgroundColor(Color.parseColor("#C7D3E1"))
             holder.fark.setBackgroundColor(Color.parseColor("#C7D3E1"))
+
 
         }
         if (hisse_list[position].fark.toFloat() >= 0) {
@@ -53,15 +64,15 @@ class RecyclerViewAdapterPiyasa(var hisse_list: MutableList<PiyasaData>) :
         holder.alis.text = hisse_list[position].alis
         holder.satis.text = hisse_list[position].satis
         holder.fark.text = hisse_list[position].fark
-        //holder.sat.text = hisse_list[position].sat_button
-        //holder.al.text = hisse_list[position].al_button
 
+        holder.initialize(hisse_list[position])
     }
 
 
     override fun getItemCount(): Int {
         return hisse_list.size
     }
+
 
 }
 
