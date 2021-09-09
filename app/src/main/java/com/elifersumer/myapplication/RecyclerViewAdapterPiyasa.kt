@@ -53,8 +53,8 @@ class RecyclerViewAdapterPiyasa(var hisse_list: MutableList<PiyasaData>) :
         holder.alis.text = hisse_list[position].alis
         holder.satis.text = hisse_list[position].satis
         holder.fark.text = hisse_list[position].fark
-        holder.sat.text = hisse_list[position].sat_button
-        holder.al.text = hisse_list[position].al_button
+        //holder.sat.text = hisse_list[position].sat_button
+        //holder.al.text = hisse_list[position].al_button
 
     }
 

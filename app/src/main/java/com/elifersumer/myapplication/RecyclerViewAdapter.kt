@@ -29,7 +29,6 @@ class RecyclerViewAdapter(var hisse_list : MutableList<hisseler>):
 
         fun initialize(item: hisseler)
         {
-            tourName.text = item.name
             shrName.text = item.sh_name
             cost.text = item.cost.toString()
             tane.text = item.tane.toString()
@@ -57,7 +56,6 @@ class RecyclerViewAdapter(var hisse_list : MutableList<hisseler>):
         return ViewHolder(view)
     }
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.tourName.text=hisse_list[position].name
         holder.shrName.text = hisse_list[position].sh_name
         holder.cost.text= hisse_list[position].cost.toString()
         holder.tane.text = hisse_list[position].tane.toString()
