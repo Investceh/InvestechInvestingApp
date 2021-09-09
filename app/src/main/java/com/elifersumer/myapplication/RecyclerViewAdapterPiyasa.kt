@@ -6,12 +6,8 @@ import android.transition.TransitionManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.ImageView
-import android.widget.TextView
+import android.widget.*
 import androidx.recyclerview.widget.RecyclerView
-import com.elifersumer.myapplication.R
-import com.elifersumer.myapplication.fragments.hisseler
 
 class RecyclerViewAdapterPiyasa(var hisse_list: MutableList<PiyasaData>) :
     RecyclerView.Adapter<RecyclerViewAdapterPiyasa.ViewHolder>() {
@@ -24,6 +20,17 @@ class RecyclerViewAdapterPiyasa(var hisse_list: MutableList<PiyasaData>) :
         val sat = view.findViewById<Button>(R.id.sat_button)
         val al = view.findViewById<Button>(R.id.al_button)
 
+        fun initialize(item:PiyasaData) {
+            isim.text = item.hisse_ismi
+            al.setOnClickListener{
+                Toast.makeText(isim.context,"Alındı",Toast.LENGTH_SHORT).show()
+            }
+            sat.setOnClickListener{
+                Toast.makeText(isim.context,"Satıldı",Toast.LENGTH_SHORT).show()
+            }
+
+
+        }
     }
 
     override fun onCreateViewHolder(
@@ -44,6 +51,7 @@ class RecyclerViewAdapterPiyasa(var hisse_list: MutableList<PiyasaData>) :
             holder.satis.setBackgroundColor(Color.parseColor("#C7D3E1"))
             holder.fark.setBackgroundColor(Color.parseColor("#C7D3E1"))
 
+
         }
         if (hisse_list[position].fark.toFloat() >= 0) {
 
@@ -57,12 +65,14 @@ class RecyclerViewAdapterPiyasa(var hisse_list: MutableList<PiyasaData>) :
         holder.satis.text = hisse_list[position].satis
         holder.fark.text = hisse_list[position].fark
 
+        holder.initialize(hisse_list[position])
     }
 
 
     override fun getItemCount(): Int {
         return hisse_list.size
     }
+
 
 }
 

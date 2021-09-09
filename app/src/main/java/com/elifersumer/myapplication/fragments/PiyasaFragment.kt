@@ -11,14 +11,17 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TableRow
 import android.widget.TextView
+import android.widget.Toast
 import androidx.core.content.res.ResourcesCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.elifersumer.myapplication.*
+
 import com.elifersumer.myapplication.LiveBorsa.Request.Header
 import com.elifersumer.myapplication.LiveBorsa.Request.LiveBorsaRequest
 import com.elifersumer.myapplication.LiveBorsa.Response.LiveBorsaResponse
 import com.elifersumer.myapplication.LiveBorsa.Response.StockInfo
 import com.elifersumer.myapplication.LiveBorsa.Service.CollectApiInstance
+
 import kotlinx.android.synthetic.main.fragment_gerceklesen_emir.view.*
 import kotlinx.android.synthetic.main.fragment_karsilama.*
 import kotlinx.android.synthetic.main.fragment_piyasa.*
@@ -72,6 +75,15 @@ class PiyasaFragment : Fragment() {
         val textView = TextView(this.context)
         textView.setBackground(drawable1)
         super.onViewCreated(view, savedInstanceState)
+        val all_hisse = arrayListOf(
+            PiyasaData(
+                "deg","ALKIM","15.04","15.03",
+                                            "1.48"),
+            PiyasaData("deg","AKCNS","15.03","15.29",
+                "-0.20")
+        )
+        piyasa_recyclerView.layoutManager= LinearLayoutManager(context)
+        piyasa_recyclerView.adapter= RecyclerViewAdapterPiyasa(all_hisse)
 
 
     }
