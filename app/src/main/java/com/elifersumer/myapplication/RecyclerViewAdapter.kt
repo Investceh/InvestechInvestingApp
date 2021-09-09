@@ -32,7 +32,6 @@ class RecyclerViewAdapter(var hisse_list : MutableList<hisseler>):
 
         fun initialize(item: hisseler)
         {
-
             shrName.text = item.sh_name
             cost.text = item.cost.toString()
             tane.text = item.tane.toString()
