@@ -31,7 +31,7 @@ class RecyclerViewAdapterIpEmirlerim(var hisse_list: MutableList<GeEmirlerimData
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        if(hisse_list[position].alisOrsatis == "Alış"){
+        if(position % 2  == 0){
             holder.isim.setBackgroundColor(Color.parseColor("#C7D3E1"))
             holder.adet.setBackgroundColor(Color.parseColor("#C7D3E1"))
             holder.fiyat.setBackgroundColor(Color.parseColor("#C7D3E1"))
@@ -42,6 +42,12 @@ class RecyclerViewAdapterIpEmirlerim(var hisse_list: MutableList<GeEmirlerimData
         holder.adet.text = hisse_list[position].adet
         holder.fiyat.text = hisse_list[position].fiyat
         holder.alisOrSatis.text = hisse_list[position].alisOrsatis
+
+        if(hisse_list[position].alisOrsatis == "Alış"){
+            holder.alisOrSatis.setTextColor(Color.GREEN)
+        }
+        else
+            holder.alisOrSatis.setTextColor(Color.RED)
     }
 
 
