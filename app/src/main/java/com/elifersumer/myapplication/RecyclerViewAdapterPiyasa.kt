@@ -1,6 +1,8 @@
 package com.elifersumer.myapplication
 
 import android.graphics.Color
+import android.transition.AutoTransition
+import android.transition.TransitionManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,7 +13,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.elifersumer.myapplication.R
 import com.elifersumer.myapplication.fragments.hisseler
 
-class RecyclerViewAdapterPiyasa(var hisse_list: ArrayList<PiyasaData>) :
+class RecyclerViewAdapterPiyasa(var hisse_list: MutableList<PiyasaData>) :
     RecyclerView.Adapter<RecyclerViewAdapterPiyasa.ViewHolder>() {
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val degisim = view.findViewById<ImageView>(R.id.greendegisim)
@@ -19,8 +21,8 @@ class RecyclerViewAdapterPiyasa(var hisse_list: ArrayList<PiyasaData>) :
         val alis = view.findViewById<TextView>(R.id.alis_fiyat)
         val satis = view.findViewById<TextView>(R.id.satis_fiyat)
         val fark = view.findViewById<TextView>(R.id.hisse_fark)
-        val sat = view.findViewById<TextView>(R.id.sat_button)
-        val al = view.findViewById<TextView>(R.id.al_button)
+        val sat = view.findViewById<Button>(R.id.sat_button)
+        val al = view.findViewById<Button>(R.id.al_button)
 
     }
 
@@ -30,6 +32,7 @@ class RecyclerViewAdapterPiyasa(var hisse_list: ArrayList<PiyasaData>) :
     ): ViewHolder {
         val view =
             LayoutInflater.from(parent.context).inflate(R.layout.row_layout_piyasa, parent, false)
+
         return ViewHolder(view)
     }
 
@@ -53,8 +56,6 @@ class RecyclerViewAdapterPiyasa(var hisse_list: ArrayList<PiyasaData>) :
         holder.alis.text = hisse_list[position].alis
         holder.satis.text = hisse_list[position].satis
         holder.fark.text = hisse_list[position].fark
-        holder.sat.text = hisse_list[position].sat_button
-        holder.al.text = hisse_list[position].al_button
 
     }
 
