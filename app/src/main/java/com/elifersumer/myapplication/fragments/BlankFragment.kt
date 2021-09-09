@@ -29,17 +29,4 @@ class BlankFragment : Fragment() {
         // Inflate the layout for this fragment
         return view
     }
-    private fun makeCurrentFragment(fragment: Fragment) =
-        childFragmentManager.beginTransaction().apply {
-            replace(R.id.blank_id,fragment)
-            commit()
-        }
-
-    /*override fun onResume() {
-        super.onResume()
-        func()
-    }*/
-    private fun func(){
-        makeCurrentFragment(GerceklesenEmirFragment())
-    }
 }

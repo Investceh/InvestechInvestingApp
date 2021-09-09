@@ -1,98 +1,132 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".fragments.GerceklesenEmirFragment">
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        tools:context=".fragments.GerceklesenEmirFragment"
+        android:background="#F5F5F5">
+
+    <androidx.constraintlayout.widget.Guideline
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/row_layout_guide_hor1"
+            app:layout_constraintGuide_percent="0.08" />
+
+
+    <androidx.constraintlayout.widget.Guideline
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/row_layout_guide1"
+            app:layout_constraintGuide_percent="0.25" />
+
+    <androidx.constraintlayout.widget.Guideline
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/row_layout_guide2"
+            app:layout_constraintGuide_percent="0.50" />
+
+    <androidx.constraintlayout.widget.Guideline
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/row_layout_guide3"
+            app:layout_constraintGuide_percent="0.75" />
+
+
+    <View
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="61dp"
+            android:background="@drawable/bg6"/>
+    <TextView
+            app:layout_constraintBottom_toBottomOf="@id/row_layout_guide_hor1"
+            android:paddingHorizontal="15dp"
+            android:paddingVertical="20dp"
+            android:textAlignment="viewStart"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/row_layout_guide1"
+            android:text="Hisseler"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/hisse_baslik"
+            android:textColor="@color/black"
+            android:textSize="13sp"
+            android:background="@android:color/transparent"
+            android:fontFamily="@font/inter" />
+
+
+    <TextView
+            app:layout_constraintBottom_toBottomOf="@id/row_layout_guide_hor1"
+            android:paddingVertical="20dp"
+            android:paddingHorizontal="6dp"
+            android:textAlignment="center"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="@id/row_layout_guide1"
+            app:layout_constraintEnd_toEndOf="@id/row_layout_guide2"
+            android:text="Adet"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/hisse_ismi"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:background="@android:color/transparent"
+            android:fontFamily="@font/inter" />
+
+    <TextView
+            app:layout_constraintBottom_toBottomOf="@id/row_layout_guide_hor1"
+            android:paddingVertical="20dp"
+            android:paddingHorizontal="6dp"
+            android:textAlignment="center"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="@id/row_layout_guide2"
+            app:layout_constraintEnd_toEndOf="@id/row_layout_guide3"
+            android:text="Fiyat"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/alis_fiyat"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:background="@android:color/transparent"
+            android:fontFamily="@font/inter" />
+
+    <TextView
+            android:paddingHorizontal="6dp"
+            app:layout_constraintBottom_toBottomOf="@id/row_layout_guide_hor1"
+            android:paddingVertical="22dp"
+            android:textAlignment="center"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="@id/row_layout_guide3"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:text="Alış/Satış"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/satis_fiyat"
+            android:textColor="@color/black"
+            android:textSize="11sp"
+            android:background="@android:color/transparent"
+            android:fontFamily="@font/inter" />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+
+            android:id="@+id/ge_emir_recyclerView"
+            android:layout_marginTop="50sp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            app:layout_constraintBottom_toBottomOf="parent" />
 
     <ScrollView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:ignore="MissingConstraints">
 
-        <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:background="#8F1F1F"
-                android:layout_below="@+id/layout_form2">
-
-            <TableLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginEnd="0dp"
-                    android:layout_alignParentBottom="true"
-                    android:background="#F5F5F5"
-                    android:layout_marginTop="0dp"
-                    android:id="@+id/table_layout_g">
-
-                <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:background="@color/black">
-
-                </View>
-
-                <TableRow
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="@drawable/bg6">
-
-                    <TextView
-                            android:id="@+id/hisseler"
-                            android:text="Hisseler"
-                            android:layout_width="100dp"
-                            android:layout_height="match_parent"
-                            android:padding="12sp"
-                            android:textColor="#F20E1927"
-                            android:gravity="center_vertical" />
-
-                    <TextView
-                            android:id="@+id/adet"
-                            android:text="Adet"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textColor="#F20E1927"
-                            android:layout_marginTop="6sp"
-                            android:gravity="center_horizontal|center_vertical"
-                            android:paddingLeft="12sp"
-                            android:padding="12sp"
-                            android:layout_marginLeft="13sp" />
-
-                    <TextView
-                            android:id="@+id/fiyat"
-                            android:text="Fiyat"
-                            android:layout_width="87dp"
-                            android:layout_height="wrap_content"
-                            android:padding="12sp"
-                            android:textColor="#F20E1927"
-                            android:gravity="center_vertical"
-                            android:layout_marginTop="6sp"
-                            android:layout_marginLeft="45sp"
-                            android:paddingLeft="12sp" />
-
-                    <TextView
-                            android:id="@+id/alıs_satıs"
-                            android:text="Alış/Satış"
-                            android:layout_width="71dp"
-                            android:layout_height="wrap_content"
-                            android:textColor="#F20E1927"
-                            android:gravity="center_vertical"
-                            android:padding="12sp"
-                            android:layout_marginLeft="25sp" />
-
-                </TableRow>
-
-                <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:background="@color/black">
-
-                </View>
-
-
-
-            </TableLayout>
-
-        </RelativeLayout>
     </ScrollView>
-</FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

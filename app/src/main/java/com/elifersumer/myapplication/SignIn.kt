@@ -23,7 +23,7 @@ class SignIn : AppCompatActivity() {
 
     fun signInClicked(view: View){
 
-        val intent = Intent(this,navbar::class.java)
+        val intent = Intent(this,BottomNavigation::class.java)
         startActivity(intent)
 
 

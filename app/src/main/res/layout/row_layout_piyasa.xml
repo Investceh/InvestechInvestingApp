@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/cons1"
@@ -117,7 +118,7 @@
             android:textColor="#536DFE"
             android:textSize="14sp" />
 
-    <TextView
+    <Button
             android:textColor="@color/black"
             android:paddingHorizontal="6dp"
             android:paddingVertical="12dp"
@@ -126,13 +127,13 @@
             app:layout_constraintStart_toStartOf="@id/row_layout_guide5"
             app:layout_constraintEnd_toEndOf="@id/row_layout_guide6"
             android:text="Sat"
-            android:textSize="14sp"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:textSize="10sp"
+            android:layout_width="39dp"
+            android:layout_height="42dp"
             android:id="@+id/sat_button"
             android:background="#E2FF2525" />
 
-    <TextView
+    <Button
             android:background="@drawable/alll"
             android:textColor="@color/black"
             android:paddingHorizontal="6dp"
@@ -143,8 +144,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             android:text="Al"
             android:textSize="14sp"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_width="40dp"
+            android:layout_height="43dp"
             android:id="@+id/al_button" />
 
     <LinearLayout

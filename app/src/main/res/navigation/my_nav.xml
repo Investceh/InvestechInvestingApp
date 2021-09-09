@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/my_nav"
+        app:startDestination="@id/karsilamaFragment">
+
+    <fragment
+            android:id="@+id/karsilamaFragment"
+            android:name="com.elifersumer.myapplication.fragments.KarsilamaFragment"
+            android:label="KarsilamaFragment" >
+        <action
+                android:id="@+id/action_karsilamaFragment_to_piyasaFragment"
+                app:destination="@id/piyasaFragment" />
+        <action
+                android:id="@+id/action_karsilamaFragment_to_transferFragment"
+                app:destination="@id/transferFragment" />
+        <action
+                android:id="@+id/action_karsilamaFragment_to_emirFragment"
+                app:destination="@id/emirFragment" />
+        <action
+                android:id="@+id/action_karsilamaFragment_to_digerFragment"
+                app:destination="@id/digerFragment" />
+    </fragment>
+    <fragment
+            android:id="@+id/piyasaFragment"
+            android:name="com.elifersumer.myapplication.fragments.PiyasaFragment"
+            android:label="fragment_piyasa"
+            tools:layout="@layout/fragment_piyasa" />
+    <fragment
+            android:id="@+id/transferFragment"
+            android:name="com.elifersumer.myapplication.fragments.TransferFragment"
+            android:label="fragment_transfer"
+            tools:layout="@layout/fragment_transfer" />
+    <fragment
+            android:id="@+id/emirFragment"
+            android:name="com.elifersumer.myapplication.fragments.EmirFragment"
+            android:label="EmirFragment" >
+        <action
+                android:id="@+id/action_emirFragment_to_blankFragment"
+                app:destination="@id/blankFragment" />
+    </fragment>
+    <fragment
+            android:id="@+id/digerFragment"
+            android:name="com.elifersumer.myapplication.fragments.DigerFragment"
+            android:label="fragment_diger"
+            tools:layout="@layout/fragment_diger" >
+        <action
+                android:id="@+id/action_digerFragment_to_blankFragment"
+                app:destination="@id/blankFragment" />
+        <action
+                android:id="@+id/action_digerFragment_to_karsilamaFragment"
+                app:destination="@id/karsilamaFragment" />
+        <action
+                android:id="@+id/action_digerFragment_to_piyasaFragment"
+                app:destination="@id/piyasaFragment" />
+        <action
+                android:id="@+id/action_digerFragment_to_transferFragment"
+                app:destination="@id/transferFragment" />
+        <action
+                android:id="@+id/action_digerFragment_to_emirFragment"
+                app:destination="@id/emirFragment" />
+        <action
+                android:id="@+id/action_digerFragment_to_sorularFragment"
+                app:destination="@id/sorularFragment" />
+    </fragment>
+    <fragment
+            android:id="@+id/blankFragment"
+            android:name="com.elifersumer.myapplication.fragments.BlankFragment"
+            android:label="fragment_blank"
+            tools:layout="@layout/fragment_blank" />
+    <fragment
+            android:id="@+id/sorularFragment"
+            android:name="com.elifersumer.myapplication.fragments.SorularFragment"
+            android:label="fragment_sorular"
+            tools:layout="@layout/fragment_sorular" />
+</navigation>
