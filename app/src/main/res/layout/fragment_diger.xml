@@ -21,98 +21,115 @@
                 android:orientation="vertical">
 
             <Button
+                    android:fontFamily="@font/inter"
                     android:id="@+id/portföygcsBtn"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Portföyüm"
-                    android:gravity="center"
-                    android:background="@color/ozarspecial"
-                    android:layout_marginBottom="10dp"
+                    android:gravity="left|center_vertical"
+                    android:background="@color/buttonRed"
+                    android:layout_marginBottom="1dp"
                     android:textSize="17dp"
-                    android:layout_marginTop="10dp">
+                    android:layout_marginTop="1dp"
+                    android:textStyle="bold">
 
             </Button>
+
             <Button
+                    android:fontFamily="@font/inter"
                     android:id="@+id/piyasagcsBtn"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Piyasa"
-                    android:gravity="center"
+                    android:gravity="left|center_vertical"
                     android:background="@color/ozarspecial"
-                    android:layout_marginBottom="10dp"
-                    android:textSize="17dp">
+                    android:layout_marginBottom="1dp"
+                    android:textSize="17dp"
+                    android:textStyle="bold">
 
             </Button>
 
             <Button
+                    android:fontFamily="@font/inter"
                     android:id="@+id/transfergcsBtn"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Para Transferi"
-                    android:gravity="center"
-                    android:layout_marginBottom="10dp"
+                    android:gravity="left|center_vertical"
+                    android:layout_marginBottom="1dp"
                     android:background="@color/ozarspecial"
-                    android:textSize="17dp">
+                    android:textSize="17dp"
+                    android:textStyle="bold">
 
             </Button>
 
             <Button
+                    android:fontFamily="@font/inter"
                     android:id="@+id/emirGirisgcsBtn"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Emir Giriş"
-                    android:gravity="center"
-                    android:layout_marginBottom="10dp"
+                    android:layout_marginBottom="1dp"
                     android:background="@color/ozarspecial"
-                    android:textSize="17dp">
+                    android:textSize="17dp"
+                    android:gravity="center_vertical"
+                    android:textStyle="bold">
 
             </Button>
 
             <Button
+                    android:fontFamily="@font/inter"
                     android:id="@+id/emirlerimgcsBtn"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Emirlerim"
-                    android:gravity="center"
-                    android:layout_marginBottom="10dp"
+                    android:layout_marginBottom="1dp"
                     android:background="@color/ozarspecial"
-                    android:textSize="17dp">
+                    android:textSize="17dp"
+                    android:gravity="left|center_vertical"
+                    android:textStyle="bold">
 
             </Button>
 
             <Button
+                    android:fontFamily="@font/inter"
                     android:id="@+id/roboadvisorgcsBtn"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Roboadvisor"
-                    android:gravity="center"
-                    android:layout_marginBottom="10dp"
+                    android:gravity="center|left|center_vertical"
+                    android:layout_marginBottom="1dp"
                     android:background="@color/ozarspecial"
-                    android:textSize="17dp">
+                    android:textSize="17dp"
+                    android:textStyle="bold">
 
             </Button>
 
             <Button
+                    android:fontFamily="@font/inter"
                     android:id="@+id/haberlergcsBtn"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Haberler"
-                    android:gravity="center"
-                    android:layout_marginBottom="10dp"
+                    android:layout_marginBottom="1dp"
                     android:background="@color/ozarspecial"
-                    android:textSize="17dp">
+                    android:textSize="17dp"
+                    android:gravity="left|center_vertical"
+                    android:textStyle="bold">
 
             </Button>
 
             <Button
+                    android:fontFamily="@font/inter"
                     android:id="@+id/anketgcsbtn"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Uygunluk Testi"
-                    android:gravity="center"
+                    android:gravity="left|center_vertical"
                     android:layout_marginBottom="10dp"
                     android:background="@color/ozarspecial"
-                    android:textSize="17dp">
+                    android:textSize="17dp"
+                    android:textStyle="bold">
 
             </Button>
 
@@ -122,7 +139,7 @@
 
     <ImageView
 
-            android:layout_marginTop="610dp"
+            android:layout_marginTop="490dp"
             android:layout_marginLeft="150dp"
             android:src="@drawable/appicon"
             android:layout_width="100dp"

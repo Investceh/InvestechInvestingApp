@@ -1,6 +1,7 @@
 
 package com.elifersumer.myapplication.fragments
 
+import android.R.attr
 import android.graphics.Color
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -35,6 +36,10 @@ import retrofit2.Response
 import java.util.*
 import kotlin.collections.ArrayList
 import kotlin.collections.emptyList as emptyList
+import android.R.attr.label
+import android.graphics.Paint
+import com.github.mikephil.charting.charts.Chart
+
 
 class KarsilamaFragment : Fragment()  {
     private lateinit var pieChart: PieChart
@@ -66,7 +71,7 @@ class KarsilamaFragment : Fragment()  {
                 stockList=data?.StockList!!
 
                 for(stock in stockList){
-                    var h1=hisseler("Türk Telekomunikasyon A.Ş.",stock.Name!!,R.drawable.header_logo,stock.Cost!!,stock.Amount!!,stock.PotentialBenefitRate!!)
+                    var h1=hisseler(stock.Name!!,R.drawable.header_logo,stock.Cost!!,stock.Amount!!,stock.PotentialBenefitRate!!,stock.PotentialBenefit!!)
                     list1.add(h1)
                 }
                 val tourList = list1
@@ -79,7 +84,6 @@ class KarsilamaFragment : Fragment()  {
 
             override fun onFailure(call: Call<GetCustomerPortfolioByDateResponse?>?, t: Throwable?) {}
         })
-
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_karsilama, container, false)
 
@@ -88,18 +92,11 @@ class KarsilamaFragment : Fragment()  {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         pieChart = view.findViewById(R.id.pieChart)
+        pieChart.setNoDataText("Veriler Yükleniyor");
+        val paint: Paint =  pieChart.getPaint(Chart.PAINT_INFO)
+        paint.textSize = 40f
+        pieChart.invalidate()
 
-        //      val tourList = list1
-            /*arrayListOf(
-            hisseler("YAPI VE KREDİ BANKASI A.Ş", "YKBNK" ,R.drawable.header_logo, 20000.0 , 5 , 20.2),
-            hisseler("İHLAS HOLDİNG A.Ş", "IHLAS" ,R.drawable.header_logo, 300000.5 , 7 , 1.3),
-            hisseler("TÜRKİYE GARANTİ BANKASI A.Ş\n", "GARAN",R.drawable.header_logo, 200000.0 , 9 , 4.6)
-        )*/
-/*
-        println(tourList?.get(0)?.name)
-        recyclerview.layoutManager=LinearLayoutManager(context)
-        recyclerview.adapter= RecyclerViewAdapter(tourList!!)
-*/
     }
 
 
@@ -123,44 +120,43 @@ class KarsilamaFragment : Fragment()  {
     private fun setDataToPieChart(mutableList: MutableList<hisseler>) {
         pieChart.setUsePercentValues(true)
         val dataEntries = ArrayList<PieEntry>()
-        var total = mutableList.size
         val colors: ArrayList<Int> = ArrayList()
         for(i in mutableList){
             dataEntries.add(PieEntry(i.tane.toFloat(),i.sh_name))
             val rnd = Random()
             colors.add(Color.argb(255, rnd.nextInt(256), rnd.nextInt(256), rnd.nextInt(256)))
         }
-
-/*
-        dataEntries.add(PieEntry(55f, "THYAO"))
-        dataEntries.add(PieEntry(25f, "TUPRAS"))
-        dataEntries.add(PieEntry(20f, "SASA"))
-        dataEntries.add(PieEntry(5f, "PEGASUS"))
-
-        colors.add(Color.parseColor("#4DD0E1"))
-        colors.add(Color.parseColor("#FFF176"))
-        colors.add(Color.parseColor("#FF8A65"))
-        colors.add(Color.parseColor("#E6E6FA"))
-*/
         val dataSet = PieDataSet(dataEntries, "Results")
         val data = PieData(dataSet)
-        // In Percentage
         data.setValueFormatter(PercentFormatter())
-        dataSet.sliceSpace = 3f
+        dataSet.sliceSpace = 2f
         dataSet.colors = colors
         pieChart.data = data
-        pieChart.invalidate()
-        data.setValueTextSize(15f)
-        pieChart.setExtraOffsets(5f, 10f, 5f, 5f)
-        pieChart.animateY(2000, Easing.EaseInOutQuad)
-        //create hole in center
-        pieChart.holeRadius = 58f
-        pieChart.transparentCircleRadius = 61f
+        data.setValueTextSize(12f)
+        pieChart.setExtraOffsets(15f, 15f, 15f, 15f)
+        pieChart.setEntryLabelTextSize(5f)
+        pieChart.setEntryLabelColor(Color.WHITE);
+
+        pieChart.animateY(2000,Easing.EaseInOutQuad)
+        pieChart.holeRadius = 0f
+        pieChart.transparentCircleRadius = 0f
         pieChart.isDrawHoleEnabled = true
-        pieChart.setHoleColor(Color.WHITE)
         //add text in center
         pieChart.setDrawCenterText(true);
-        pieChart.centerText = "Hisselerim"
+        pieChart.centerText = " "
+        val l = pieChart.legend
+        pieChart.legend.isWordWrapEnabled = true
+        pieChart.legend.isEnabled = true
+        l.verticalAlignment = Legend.LegendVerticalAlignment.BOTTOM
+        l.horizontalAlignment = Legend.LegendHorizontalAlignment.LEFT // position
+        l.formSize = 10f
+        l.formToTextSpace = 0f
+        l.form = Legend.LegendForm.LINE // form type : line, square, circle ..
+        l.textSize = 10f
+        l.orientation = Legend.LegendOrientation.VERTICAL // side by side or bottom to bottom
+        l.isWordWrapEnabled = true
+        pieChart.invalidate()
+
 
     }
 
