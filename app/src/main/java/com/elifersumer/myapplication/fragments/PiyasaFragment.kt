@@ -48,7 +48,7 @@ class PiyasaFragment : Fragment() {
 
                 for(stock in borsaList){
                     var satis = ((stock.prices!!)*(stock.rate!!)).toString()
-                    var h1=PiyasaData("deg", stock.name!!, stock.pricestr!!, satis, (stock.rate).toString(), "Sat", "Al")
+                    var h1=PiyasaData("deg", stock.name!!, stock.pricestr!!, satis, (stock.rate).toString())
                     list1.add(h1)
                 }
                 val all_hisse = list1
