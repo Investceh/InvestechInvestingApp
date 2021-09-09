@@ -11,12 +11,10 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TableRow
 import android.widget.TextView
+import android.widget.Toast
 import androidx.core.content.res.ResourcesCompat
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.elifersumer.myapplication.PiyasaData
-import com.elifersumer.myapplication.R
-import com.elifersumer.myapplication.RecyclerViewAdapter
-import com.elifersumer.myapplication.RecyclerViewAdapterPiyasa
+import com.elifersumer.myapplication.*
 import kotlinx.android.synthetic.main.fragment_gerceklesen_emir.view.*
 import kotlinx.android.synthetic.main.fragment_karsilama.*
 import kotlinx.android.synthetic.main.fragment_piyasa.*
@@ -36,9 +34,9 @@ class PiyasaFragment : Fragment() {
         val all_hisse = arrayListOf(
             PiyasaData(
                 "deg","ALKIM","15.04","15.03",
-                                            "1.48","Sat","Al"),
+                                            "1.48"),
             PiyasaData("deg","AKCNS","15.03","15.29",
-                "-0.20","Sat","Al")
+                "-0.20")
         )
         piyasa_recyclerView.layoutManager= LinearLayoutManager(context)
         piyasa_recyclerView.adapter= RecyclerViewAdapterPiyasa(all_hisse)

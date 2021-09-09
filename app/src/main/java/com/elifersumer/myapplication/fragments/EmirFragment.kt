@@ -1,18 +1,11 @@
 package com.elifersumer.myapplication.fragments
 
-import android.graphics.Typeface
-import android.graphics.drawable.Drawable
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
-import androidx.core.content.res.ResourcesCompat
-import androidx.core.view.ViewCompat.setBackground
-import androidx.navigation.NavController
-import androidx.navigation.Navigation
-import com.elifersumer.myapplication.BekleyenEmirlerimData
 import com.elifersumer.myapplication.R
 import kotlinx.android.synthetic.main.fragment_emirgiris.*
 import kotlinx.android.synthetic.main.fragment_emirgiris.view.*
