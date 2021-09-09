@@ -60,9 +60,11 @@ class RecyclerViewAdapterPiyasa(var hisse_list: MutableList<PiyasaData>) :
             holder.fark.setBackgroundColor(Color.parseColor("#f5f5f5"))
         }
         if (hisse_list[position].fark.toFloat() >= 0.00) {
+            holder.fark.text = "+" +  hisse_list[position].fark + "%"
             holder.fark.setTextColor(Color.GREEN)
             holder.degisim.setImageResource(R.drawable.ic_rise_up_green)
         } else {
+            holder.fark.text =hisse_list[position].fark + "%"
             holder.fark.setTextColor(Color.RED)
             holder.degisim.setImageResource(R.drawable.ic_rise_up_red)
         }
@@ -70,9 +72,6 @@ class RecyclerViewAdapterPiyasa(var hisse_list: MutableList<PiyasaData>) :
         holder.alis.text = hisse_list[position].alis
         holder.satis.text = hisse_list[position].satis
 
-        if (hisse_list[position].fark.toFloat() > 0.00){
-            holder.fark.text = "+" +  hisse_list[position].fark + "%"
-        }
         holder.initialize(hisse_list[position])
     }
 
