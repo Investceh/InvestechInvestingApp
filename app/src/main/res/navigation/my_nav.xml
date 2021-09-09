@@ -26,7 +26,11 @@
             android:id="@+id/piyasaFragment"
             android:name="com.elifersumer.myapplication.fragments.PiyasaFragment"
             android:label="fragment_piyasa"
-            tools:layout="@layout/fragment_piyasa" />
+            tools:layout="@layout/fragment_piyasa" >
+        <action
+                android:id="@+id/action_piyasaFragment_to_emirFragment"
+                app:destination="@id/emirFragment" />
+    </fragment>
     <fragment
             android:id="@+id/transferFragment"
             android:name="com.elifersumer.myapplication.fragments.TransferFragment"

@@ -48,6 +48,8 @@
             android:layout_height="wrap_content"
             android:id="@+id/row_layout_guide6"
             app:layout_constraintGuide_percent="0.9" />
+
+
     <TextView
             android:paddingHorizontal="6dp"
             android:paddingVertical="13dp"
@@ -81,7 +83,6 @@
             android:fontFamily="@font/inter" />
 
     <TextView
-
             android:paddingHorizontal="6dp"
             android:paddingVertical="12dp"
             android:textAlignment="center"
