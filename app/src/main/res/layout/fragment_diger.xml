@@ -139,7 +139,7 @@
 
     <ImageView
 
-            android:layout_marginTop="610dp"
+            android:layout_marginTop="490dp"
             android:layout_marginLeft="150dp"
             android:src="@drawable/appicon"
             android:layout_width="100dp"

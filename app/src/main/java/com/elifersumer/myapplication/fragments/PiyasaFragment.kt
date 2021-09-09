@@ -33,15 +33,14 @@ class PiyasaFragment : Fragment() {
         val textView = TextView(this.context)
         textView.setBackground(drawable1)
         super.onViewCreated(view, savedInstanceState)
-        val all_hisse = arrayListOf(
+        val all_hisse = mutableListOf(
             PiyasaData(
                 "deg","ALKIM","15.04","15.03",
-                                            "1.48","Sat","Al"),
+                                            "1.48"),
             PiyasaData("deg","AKCNS","15.03","15.29",
-                "-0.20","Sat","Al")
+                "-0.20")
         )
         piyasa_recyclerView.layoutManager= LinearLayoutManager(context)
         piyasa_recyclerView.adapter= RecyclerViewAdapterPiyasa(all_hisse)
-
     }
 }
