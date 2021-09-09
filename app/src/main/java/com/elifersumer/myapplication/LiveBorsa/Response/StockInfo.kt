@@ -4,7 +4,7 @@ class StockInfo {
     var currency : String?=null
     var name : String?=null
     var pricestr:String?=null
-    var prices:Double?=null
+    var price:Double?=null
     var rate:Double?=null
     var time:String?=null
 }

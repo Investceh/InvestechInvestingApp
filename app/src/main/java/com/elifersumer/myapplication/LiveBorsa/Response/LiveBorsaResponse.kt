@@ -4,15 +4,15 @@ import com.elifersumer.myapplication.GetCustomerPortfolio.Response.GetCustomerPo
 
 class LiveBorsaResponse {
 
-    var result: LiveBorsaData?=null
-
-    constructor(result: LiveBorsaData):this(){
+    var result: List<StockInfo>?=null
+    var success : Boolean ?= null
+    constructor(result: List<StockInfo>):this(){
         this.result=result
     }
 
     constructor()
 
-    fun GetData(): LiveBorsaData?{
+    fun GetData(): List<StockInfo>?{
         return result
     }
 }
