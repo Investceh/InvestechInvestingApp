@@ -35,7 +35,11 @@
     <fragment
             android:id="@+id/emirFragment"
             android:name="com.elifersumer.myapplication.fragments.EmirFragment"
-            android:label="EmirFragment" />
+            android:label="EmirFragment" >
+        <action
+                android:id="@+id/action_emirFragment_to_blankFragment"
+                app:destination="@id/blankFragment" />
+    </fragment>
     <fragment
             android:id="@+id/digerFragment"
             android:name="com.elifersumer.myapplication.fragments.DigerFragment"
