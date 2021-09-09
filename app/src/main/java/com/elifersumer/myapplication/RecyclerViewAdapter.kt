@@ -34,8 +34,6 @@ class RecyclerViewAdapter(var hisse_list : MutableList<hisseler>):
             cost.text = item.cost.toString()
             tane.text = item.tane.toString()
             k_z.text = item.k_z.toString()
-
-
             itemView.setOnClickListener{
                 if(expandableView.visibility == View.GONE){
                     TransitionManager.beginDelayedTransition(expandableView, AutoTransition())

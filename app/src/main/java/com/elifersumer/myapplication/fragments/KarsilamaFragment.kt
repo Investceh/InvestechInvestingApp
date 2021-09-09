@@ -79,7 +79,6 @@ class KarsilamaFragment : Fragment()  {
 
             override fun onFailure(call: Call<GetCustomerPortfolioByDateResponse?>?, t: Throwable?) {}
         })
-
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_karsilama, container, false)
 
@@ -88,18 +87,6 @@ class KarsilamaFragment : Fragment()  {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         pieChart = view.findViewById(R.id.pieChart)
-
-        //      val tourList = list1
-            /*arrayListOf(
-            hisseler("YAPI VE KREDİ BANKASI A.Ş", "YKBNK" ,R.drawable.header_logo, 20000.0 , 5 , 20.2),
-            hisseler("İHLAS HOLDİNG A.Ş", "IHLAS" ,R.drawable.header_logo, 300000.5 , 7 , 1.3),
-            hisseler("TÜRKİYE GARANTİ BANKASI A.Ş\n", "GARAN",R.drawable.header_logo, 200000.0 , 9 , 4.6)
-        )*/
-/*
-        println(tourList?.get(0)?.name)
-        recyclerview.layoutManager=LinearLayoutManager(context)
-        recyclerview.adapter= RecyclerViewAdapter(tourList!!)
-*/
     }
 
 
@@ -130,18 +117,6 @@ class KarsilamaFragment : Fragment()  {
             val rnd = Random()
             colors.add(Color.argb(255, rnd.nextInt(256), rnd.nextInt(256), rnd.nextInt(256)))
         }
-
-/*
-        dataEntries.add(PieEntry(55f, "THYAO"))
-        dataEntries.add(PieEntry(25f, "TUPRAS"))
-        dataEntries.add(PieEntry(20f, "SASA"))
-        dataEntries.add(PieEntry(5f, "PEGASUS"))
-
-        colors.add(Color.parseColor("#4DD0E1"))
-        colors.add(Color.parseColor("#FFF176"))
-        colors.add(Color.parseColor("#FF8A65"))
-        colors.add(Color.parseColor("#E6E6FA"))
-*/
         val dataSet = PieDataSet(dataEntries, "Results")
         val data = PieData(dataSet)
         // In Percentage
