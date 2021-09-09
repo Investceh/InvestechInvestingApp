@@ -37,8 +37,8 @@ import java.util.*
 import kotlin.collections.ArrayList
 import kotlin.collections.emptyList as emptyList
 import android.R.attr.label
-
-
+import android.graphics.Paint
+import com.github.mikephil.charting.charts.Chart
 
 
 class KarsilamaFragment : Fragment()  {
@@ -50,7 +50,7 @@ class KarsilamaFragment : Fragment()  {
     ): View? {
         var instances=RetroInstance()
 
-        var header = Header("c05939ecc58a4d5a8fd143bbea49d930","API","331eb5f529c74df2b800926b5f34b874","5252012362481156055")
+        var header = Header("c1c2a508fdf64c14a7b44edc9241c9cd","API","331eb5f529c74df2b800926b5f34b874","5252012362481156055")
 
         var getCustomerPortfolioByDateParameters= GetCustomerPortfolioByDateParameters(4723876,1,"2019-07-05T00:00:00")
 
@@ -92,6 +92,11 @@ class KarsilamaFragment : Fragment()  {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         pieChart = view.findViewById(R.id.pieChart)
+        pieChart.setNoDataText("Veriler Yükleniyor");
+        val paint: Paint =  pieChart.getPaint(Chart.PAINT_INFO)
+        paint.textSize = 40f
+        pieChart.invalidate()
+
     }
 
 
@@ -127,9 +132,11 @@ class KarsilamaFragment : Fragment()  {
         dataSet.sliceSpace = 2f
         dataSet.colors = colors
         pieChart.data = data
-        pieChart.invalidate()
-        data.setValueTextSize(10f)
-        pieChart.setExtraOffsets(10f, 10f, 10f, 10f)
+        data.setValueTextSize(12f)
+        pieChart.setExtraOffsets(15f, 15f, 15f, 15f)
+        pieChart.setEntryLabelTextSize(5f)
+        pieChart.setEntryLabelColor(Color.WHITE);
+
         pieChart.animateY(2000,Easing.EaseInOutQuad)
         pieChart.holeRadius = 0f
         pieChart.transparentCircleRadius = 0f
@@ -137,6 +144,18 @@ class KarsilamaFragment : Fragment()  {
         //add text in center
         pieChart.setDrawCenterText(true);
         pieChart.centerText = " "
+        val l = pieChart.legend
+        pieChart.legend.isWordWrapEnabled = true
+        pieChart.legend.isEnabled = true
+        l.verticalAlignment = Legend.LegendVerticalAlignment.BOTTOM
+        l.horizontalAlignment = Legend.LegendHorizontalAlignment.LEFT // position
+        l.formSize = 10f
+        l.formToTextSpace = 0f
+        l.form = Legend.LegendForm.LINE // form type : line, square, circle ..
+        l.textSize = 10f
+        l.orientation = Legend.LegendOrientation.VERTICAL // side by side or bottom to bottom
+        l.isWordWrapEnabled = true
+        pieChart.invalidate()
 
 
     }
