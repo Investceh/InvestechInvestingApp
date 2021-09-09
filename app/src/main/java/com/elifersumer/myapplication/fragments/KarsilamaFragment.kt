@@ -50,7 +50,7 @@ class KarsilamaFragment : Fragment()  {
     ): View? {
         var instances=RetroInstance()
 
-        var header = Header("c05939ecc58a4d5a8fd143bbea49d930","API","331eb5f529c74df2b800926b5f34b874","5252012362481156055")
+        var header = Header("c1c2a508fdf64c14a7b44edc9241c9cd","API","331eb5f529c74df2b800926b5f34b874","5252012362481156055")
 
         var getCustomerPortfolioByDateParameters= GetCustomerPortfolioByDateParameters(4723876,1,"2019-07-05T00:00:00")
 

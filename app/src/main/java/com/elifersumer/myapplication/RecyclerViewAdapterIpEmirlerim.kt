@@ -42,6 +42,12 @@ class RecyclerViewAdapterIpEmirlerim(var hisse_list: MutableList<GeEmirlerimData
         holder.adet.text = hisse_list[position].adet
         holder.fiyat.text = hisse_list[position].fiyat
         holder.alisOrSatis.text = hisse_list[position].alisOrsatis
+
+        if(hisse_list[position].alisOrsatis == "Alış"){
+            holder.alisOrSatis.setTextColor(Color.GREEN)
+        }
+        else
+            holder.alisOrSatis.setTextColor(Color.RED)
     }
 
 

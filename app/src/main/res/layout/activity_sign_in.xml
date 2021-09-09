@@ -135,7 +135,7 @@
         <Button android:layout_width="73dp" android:layout_height="21dp"
                 android:text="@string/kayitol" android:textSize="14sp" android:textAllCaps="false"
                 android:textColor="#B3233E5E" android:textStyle="bold" android:id="@+id/kayitOl"
-                android:background="#00FFFFFF"
+                android:background="@android:color/transparent"
                 app:layout_constraintStart_toEndOf="@+id/donthave" app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintBottom_toBottomOf="@+id/donthave" app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintTop_toTopOf="@+id/donthave" android:fontFamily="@font/inter"
