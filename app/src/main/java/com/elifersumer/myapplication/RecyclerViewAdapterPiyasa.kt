@@ -23,7 +23,6 @@ class RecyclerViewAdapterPiyasa(var hisse_list: ArrayList<PiyasaData>) :
         fun initialize(item:PiyasaData) {
             isim.text = item.hisse_ismi
             al.setOnClickListener{
-                print("Here")
                 Toast.makeText(isim.context,"Alındı",Toast.LENGTH_SHORT).show()
             }
             sat.setOnClickListener{
@@ -65,7 +64,7 @@ class RecyclerViewAdapterPiyasa(var hisse_list: ArrayList<PiyasaData>) :
         holder.alis.text = hisse_list[position].alis
         holder.satis.text = hisse_list[position].satis
         holder.fark.text = hisse_list[position].fark
-        
+
         holder.initialize(hisse_list[position])
     }
 
