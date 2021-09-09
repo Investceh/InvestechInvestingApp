@@ -13,6 +13,7 @@ import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.elifersumer.myapplication.fragments.hisseler
 import kotlinx.android.synthetic.main.rowlaout.*import kotlinx.android.synthetic.main.rowlaout.*
+import java.text.DecimalFormat
 
 
 class RecyclerViewAdapter(var hisse_list : MutableList<hisseler>):
@@ -28,10 +29,11 @@ class RecyclerViewAdapter(var hisse_list : MutableList<hisseler>):
         val p_b : TextView = view.findViewById(R.id.expand_1_1)
         val but : Button = view.findViewById(R.id.button_id)
         val expandableView = view.findViewById<ViewGroup>(R.id.expandableView)
+        val df = DecimalFormat("#,##0.00")
 
         fun initialize(item: hisseler)
         {
-            sh_name.text = item.sh_name.toString()
+            sh_name.text = item.sh_name
             cost.text = item.cost.toString()
             tane.text = item.tane.toString()
             k_z.text = item.k_z.toString()
@@ -47,7 +49,7 @@ class RecyclerViewAdapter(var hisse_list : MutableList<hisseler>):
                 }
             }
             but.setOnClickListener{
-                Toast.makeText(sh_name.context,"Satıldı",Toast.LENGTH_SHORT)
+                Toast.makeText(sh_name.context,"Satıldı",Toast.LENGTH_SHORT).show()
             }
         }
     }
@@ -59,6 +61,8 @@ class RecyclerViewAdapter(var hisse_list : MutableList<hisseler>):
         return ViewHolder(view)
     }
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        val df = DecimalFormat("#,##0.00")
+
         holder.sh_name.text = hisse_list[position].sh_name
         holder.cost.text= hisse_list[position].cost.toString()
         holder.tane.text = hisse_list[position].tane.toString()
