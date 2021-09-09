@@ -305,7 +305,7 @@
                 android:fontFamily="@font/inter"
                 android:layout_gravity="center"
                 android:layout_marginTop="20dp"
-                android:layout_marginLeft="22dp" />
+                android:layout_marginLeft="20dp" />
 
 
     </LinearLayout>
