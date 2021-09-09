@@ -38,7 +38,7 @@ class PiyasaFragment : Fragment() {
         var liveBorsaRequest= LiveBorsaRequest(header)
 
         var retrofit= CollectApiInstance.getRetrofitObject()?.create(com.elifersumer.myapplication.LiveBorsa.Service.BorsaService::class.java)
-        var result : Call<LiveBorsaResponse> = retrofit!!.GetPostValue(liveBorsaRequest)
+        var result : Call<LiveBorsaResponse> = retrofit!!.GetPostValue()
         var borsaList:List<StockInfo>
 
         result.enqueue(object : Callback<LiveBorsaResponse?> {
