@@ -9,7 +9,7 @@ import android.view.ViewGroup
 import android.widget.*
 import androidx.recyclerview.widget.RecyclerView
 
-class RecyclerViewAdapterPiyasa(var hisse_list: ArrayList<PiyasaData>) :
+class RecyclerViewAdapterPiyasa(var hisse_list: MutableList<PiyasaData>) :
     RecyclerView.Adapter<RecyclerViewAdapterPiyasa.ViewHolder>() {
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val degisim = view.findViewById<ImageView>(R.id.greendegisim)
