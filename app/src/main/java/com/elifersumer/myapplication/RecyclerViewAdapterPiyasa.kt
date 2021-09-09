@@ -1,6 +1,7 @@
 package com.elifersumer.myapplication
 
 import android.graphics.Color
+import android.text.Editable
 import android.transition.AutoTransition
 import android.transition.TransitionManager
 import android.view.LayoutInflater
@@ -20,6 +21,7 @@ class RecyclerViewAdapterPiyasa(var hisse_list: MutableList<PiyasaData>) :
         val sat = view.findViewById<Button>(R.id.sat_button)
         val al = view.findViewById<Button>(R.id.al_button)
 
+
         fun initialize(item:PiyasaData) {
             isim.text = item.hisse_ismi
             al.setOnClickListener{
@@ -27,19 +29,18 @@ class RecyclerViewAdapterPiyasa(var hisse_list: MutableList<PiyasaData>) :
             }
             sat.setOnClickListener{
                 Toast.makeText(isim.context,"Satıldı",Toast.LENGTH_SHORT).show()
+                var editText = itemView.findViewById(R.id.edtxt_fiyat) as EditText?
+                editText?.setText("111")
+                println(editText?.text)
             }
-
-
         }
     }
-
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
     ): ViewHolder {
         val view =
             LayoutInflater.from(parent.context).inflate(R.layout.row_layout_piyasa, parent, false)
-
         return ViewHolder(view)
     }
 
