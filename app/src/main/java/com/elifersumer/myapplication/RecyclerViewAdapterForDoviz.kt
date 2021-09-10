@@ -15,12 +15,12 @@ class RecyclerViewAdapterForDoviz(var hisse_list: MutableList<PiyasaData>) :
     RecyclerView.Adapter<RecyclerViewAdapterForDoviz.ViewHolder>() {
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val degisim = view.findViewById<ImageView>(R.id.greendegisim)
-        val isim = view.findViewById<TextView>(R.id.hisse_ismi)
-        val alis = view.findViewById<TextView>(R.id.alis_fiyat)
-        val satis = view.findViewById<TextView>(R.id.satis_fiyat)
-        val fark = view.findViewById<TextView>(R.id.hisse_fark)
-        val sat = view.findViewById<Button>(R.id.sat_button)
-        val al = view.findViewById<Button>(R.id.al_button)
+        val isim = view.findViewById<TextView>(R.id.hisse_ismi_dov)
+        val alis = view.findViewById<TextView>(R.id.alis_fiyat_dov)
+        val satis = view.findViewById<TextView>(R.id.satis_fiyat_dov)
+        val fark = view.findViewById<TextView>(R.id.hisse_fark_dov)
+        val sat = view.findViewById<Button>(R.id.sat_button_dov)
+        val al = view.findViewById<Button>(R.id.al_button_dov)
         fun initialize(item:PiyasaData) {
             isim.text = item.hisse_ismi
             al.setOnClickListener{

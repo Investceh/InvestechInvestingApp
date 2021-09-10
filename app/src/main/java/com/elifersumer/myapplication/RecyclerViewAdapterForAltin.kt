@@ -15,12 +15,12 @@ class RecyclerViewAdapterForAltin(var hisse_list: MutableList<PiyasaData>) :
     RecyclerView.Adapter<RecyclerViewAdapterForAltin.ViewHolder>() {
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val degisim = view.findViewById<ImageView>(R.id.greendegisim)
-        val isim = view.findViewById<TextView>(R.id.hisse_ismi)
-        val alis = view.findViewById<TextView>(R.id.alis_fiyat)
-        val satis = view.findViewById<TextView>(R.id.satis_fiyat)
-        val fark = view.findViewById<TextView>(R.id.hisse_fark)
-        val sat = view.findViewById<Button>(R.id.sat_button)
-        val al = view.findViewById<Button>(R.id.al_button)
+        val isim = view.findViewById<TextView>(R.id.hisse_ismi_alt)
+        val alis = view.findViewById<TextView>(R.id.alis_fiyat_alt)
+        val satis = view.findViewById<TextView>(R.id.satis_fiyat_alt)
+        val fark = view.findViewById<TextView>(R.id.hisse_fark_alt)
+        val sat = view.findViewById<Button>(R.id.sat_button_alt)
+        val al = view.findViewById<Button>(R.id.al_button_alt)
 
 
         fun initialize(item:PiyasaData) {

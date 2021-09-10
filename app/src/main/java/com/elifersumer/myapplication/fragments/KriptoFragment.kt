@@ -18,7 +18,7 @@ import com.elifersumer.myapplication.Parite.Response.PariteResponse
 import com.elifersumer.myapplication.Parite.Service.DövizService
 import com.elifersumer.myapplication.PiyasaData
 import com.elifersumer.myapplication.R
-import com.elifersumer.myapplication.RecyclerViewAdapterForAltin
+import com.elifersumer.myapplication.RecyclerViewAdapterForKripto
 import com.elifersumer.myapplication.RecyclerViewAdapterForDoviz
 import kotlinx.android.synthetic.main.fragment_piyasa.*
 import retrofit2.Call
@@ -56,7 +56,7 @@ class KriptoFragment : Fragment() {
                 // Inflate the layout for this fragment
                 val all_hisse = list1
                 piyasa_recyclerView.layoutManager= LinearLayoutManager(context)
-                piyasa_recyclerView.adapter= RecyclerViewAdapterForAltin(all_hisse)
+                piyasa_recyclerView.adapter= RecyclerViewAdapterForKripto(all_hisse)
             }
             override fun onFailure(call: Call<CriptoResponse?>?, t: Throwable?) {}
         })

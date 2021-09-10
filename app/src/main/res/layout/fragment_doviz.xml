@@ -76,7 +76,7 @@
             android:text="Hisse"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:id="@+id/hisse_ismi_2"
+            android:id="@+id/hisse_ismi_dov"
             android:textColor="@color/white"
             android:textSize="14sp"
             android:background="#293E57"
@@ -92,7 +92,7 @@
             android:text="Alış"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:id="@+id/alis_fiyat_1"
+            android:id="@+id/alis_fiyat_dov"
             android:textColor="@color/white"
             android:textSize="14sp"
             android:background="#293E57"
@@ -108,7 +108,7 @@
             android:text="Satış"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:id="@+id/satis_fiyat_5"
+            android:id="@+id/satis_fiyat_dov"
             android:textColor="@color/white"
             android:textSize="14sp"
             android:background="#293E57"
@@ -125,7 +125,7 @@
             android:text="Fark"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:id="@+id/hisse_fark_6"
+            android:id="@+id/hisse_fark_dov"
             android:textColor="@color/white"
             android:textSize="14sp"
             android:background="#293E57"
@@ -143,7 +143,7 @@
             android:textSize="14sp"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:id="@+id/sat_button_1"
+            android:id="@+id/sat_button_dov"
             android:background="#293E57"
             android:fontFamily="@font/inter" />
 
@@ -159,7 +159,7 @@
             android:textSize="14sp"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:id="@+id/al_button_2"
+            android:id="@+id/al_button_dov"
             android:background="#293E57"
             android:fontFamily="@font/inter" />
 

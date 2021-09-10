@@ -15,12 +15,12 @@ class RecyclerViewAdapterForKripto(var hisse_list: MutableList<PiyasaData>) :
     RecyclerView.Adapter<RecyclerViewAdapterForKripto.ViewHolder>() {
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val degisim = view.findViewById<ImageView>(R.id.greendegisim)
-        val isim = view.findViewById<TextView>(R.id.hisse_ismi)
-        val alis = view.findViewById<TextView>(R.id.alis_fiyat)
-        val satis = view.findViewById<TextView>(R.id.satis_fiyat)
-        val fark = view.findViewById<TextView>(R.id.hisse_fark)
-        val sat = view.findViewById<Button>(R.id.sat_button)
-        val al = view.findViewById<Button>(R.id.al_button)
+        val isim = view.findViewById<TextView>(R.id.hisse_ismi_krip)
+        val alis = view.findViewById<TextView>(R.id.alis_fiyat_krip)
+        val satis = view.findViewById<TextView>(R.id.satis_fiyat_krip)
+        val fark = view.findViewById<TextView>(R.id.hisse_fark_krip)
+        val sat = view.findViewById<Button>(R.id.sat_button_krip)
+        val al = view.findViewById<Button>(R.id.al_button_krip)
 
 
         fun initialize(item:PiyasaData) {
