@@ -20,6 +20,11 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
+            <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@drawable/bg9"/>
+
             <Button
                     android:fontFamily="@font/inter"
                     android:id="@+id/portföygcsBtn"
@@ -35,6 +40,11 @@
 
             </Button>
 
+            <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@drawable/bg9"/>
+
             <Button
                     android:fontFamily="@font/inter"
                     android:id="@+id/piyasagcsBtn"
@@ -48,6 +58,11 @@
                     android:textStyle="bold">
 
             </Button>
+
+            <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@drawable/bg9"/>
 
             <Button
                     android:fontFamily="@font/inter"
@@ -63,6 +78,11 @@
 
             </Button>
 
+            <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@drawable/bg9"/>
+
             <Button
                     android:fontFamily="@font/inter"
                     android:id="@+id/emirGirisgcsBtn"
@@ -76,6 +96,11 @@
                     android:textStyle="bold">
 
             </Button>
+
+            <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@drawable/bg9"/>
 
             <Button
                     android:fontFamily="@font/inter"
@@ -91,12 +116,17 @@
 
             </Button>
 
+            <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@drawable/bg9"/>
+
             <Button
                     android:fontFamily="@font/inter"
                     android:id="@+id/roboadvisorgcsBtn"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Roboadvisor"
+                    android:text="Robo-advisor"
                     android:gravity="center|left|center_vertical"
                     android:layout_marginBottom="1dp"
                     android:background="@color/ozarspecial"
@@ -104,6 +134,11 @@
                     android:textStyle="bold">
 
             </Button>
+
+            <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@drawable/bg9"/>
 
             <Button
                     android:fontFamily="@font/inter"
@@ -119,6 +154,11 @@
 
             </Button>
 
+            <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@drawable/bg9"/>
+
             <Button
                     android:fontFamily="@font/inter"
                     android:id="@+id/anketgcsbtn"
@@ -126,13 +166,18 @@
                     android:layout_height="wrap_content"
                     android:text="Uygunluk Testi"
                     android:gravity="left|center_vertical"
-                    android:layout_marginBottom="10dp"
+                    android:layout_marginBottom="1dp"
                     android:background="@color/ozarspecial"
                     android:textSize="17dp"
                     android:textStyle="bold">
 
             </Button>
 
+            <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@drawable/bg9"
+                    />
         </LinearLayout>
 
     </LinearLayout>
@@ -145,6 +190,5 @@
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:id="@+id/imageView6" />
-
 
 </FrameLayout>

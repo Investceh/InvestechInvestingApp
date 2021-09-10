@@ -6,9 +6,9 @@ import retrofit2.http.*
 
 
 interface BorsaService {
-    @GET("liveBorsa")
+    @GET("economy/liveBorsa")
     @Headers("Content-Type: application/json",
-        "Authorization: apikey 0CvbuAMbduN4SLfrJPRit7:1dysKrpPeZaYvSRjgTaDcH")
+        "Authorization: apikey 1Rz59l3JPvufvbR2WwOXhZ:2fipoIKo3RuYiTnteQDRDK")
 
     fun GetPostValue(): Call<LiveBorsaResponse>
 

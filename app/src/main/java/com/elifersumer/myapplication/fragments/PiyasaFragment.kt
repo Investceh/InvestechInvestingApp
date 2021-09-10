@@ -10,13 +10,9 @@ import android.widget.TextView
 import androidx.core.content.res.ResourcesCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.elifersumer.myapplication.*
-import com.elifersumer.myapplication.LiveBorsa.Request.Header
-import com.elifersumer.myapplication.LiveBorsa.Request.LiveBorsaRequest
 import com.elifersumer.myapplication.LiveBorsa.Response.LiveBorsaResponse
 import com.elifersumer.myapplication.LiveBorsa.Response.StockInfo
-import com.elifersumer.myapplication.LiveBorsa.Service.CollectApiInstance
-import kotlinx.android.synthetic.main.fragment_gerceklesen_emir.view.*
-import kotlinx.android.synthetic.main.fragment_karsilama.*
+import com.elifersumer.myapplication.CollectApi.CollectApiInstance
 import kotlinx.android.synthetic.main.fragment_piyasa.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -27,10 +23,6 @@ class PiyasaFragment : Fragment() {
     private var list1= mutableListOf<PiyasaData>()
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-
-        var header = Header("apikey 2Vu0SR2nyy8UB3MumXXj9z:0CTQqQA6LsVYD0ZGqifhlo")
-
-        var liveBorsaRequest= LiveBorsaRequest(header)
 
         var retrofit= CollectApiInstance.getRetrofitObject()?.create(com.elifersumer.myapplication.LiveBorsa.Service.BorsaService::class.java)
 
