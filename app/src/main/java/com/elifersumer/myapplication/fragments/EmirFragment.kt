@@ -1,5 +1,6 @@
 package com.elifersumer.myapplication.fragments
 
+import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -131,10 +132,6 @@ class EmirFragment : Fragment() {
         return view.rootView
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-    }
-
     override fun onStart() {
         super.onStart()
         EventBus.getDefault().register(this)
@@ -144,9 +141,16 @@ class EmirFragment : Fragment() {
         super.onStop()
         EventBus.getDefault().unregister(this)
     }
+
     @Subscribe(threadMode = ThreadMode.MAIN)
-    fun onMessageEvent(event: MessageEvent){
-       messageToDisplay = event.message!!
-        Log.d("deneme:",event.message)
+    fun onMessageEvent(event:MessageEvent){
+        messageToDisplay = event.message
+        Log.d("deneme1:",event.message)
     }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+    }
+
+
 }
