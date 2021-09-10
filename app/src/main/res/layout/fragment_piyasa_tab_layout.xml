@@ -18,13 +18,13 @@
             android:layout_height="34dp"
             android:background="@drawable/screen_title" />
     <com.google.android.material.tabs.TabLayout
-            android:background="@color/white"
+            android:background="#293E57"
             android:id="@+id/piyasa_tablayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:tabIndicatorColor="@color/purple_500"
-            app:tabSelectedTextColor="@color/purple_700"
-            app:tabTextColor="@color/black"
+            app:tabIndicatorColor="#F84DD3F4"
+            app:tabSelectedTextColor="#F5F5F5"
+            app:tabTextColor="#E2ADB6BF"
             app:tabTextAppearance="@style/TableLayoutTextStyle">
 
         <com.google.android.material.tabs.TabItem

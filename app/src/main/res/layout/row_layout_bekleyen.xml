@@ -104,42 +104,62 @@
             android:textColor="@color/black"
             android:textSize="14sp" />
 
-    <TextView
-            android:background="#E2FF2525"
-            android:paddingHorizontal="15dp"
-            android:paddingVertical="20dp"
-            android:textAlignment="center"
+    <View
+            android:id="@+id/degisimBG"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:adjustViewBounds="true"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="@id/row_layout_guide4"
-            app:layout_constraintEnd_toEndOf="@id/row_layout_guide5"
-            android:text="İptal"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/Beİptal"
-            android:textColor="@color/black"
-            android:textSize="14sp" />
+            app:layout_constraintBottom_toBottomOf="@+id/linearLayout2"
+            app:layout_constraintEnd_toEndOf="@id/row_layout_guide5"/>
 
-    <TextView
-            android:background="@drawable/alll"
-            android:textColor="@color/black"
-            android:paddingHorizontal="15dp"
-            android:paddingVertical="20dp"
-            android:textAlignment="center"
+    <androidx.constraintlayout.utils.widget.ImageFilterButton
+            android:id="@+id/buttonDegisim"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginVertical="10dp"
+            android:layout_marginHorizontal="10dp"
+            android:src="@drawable/ic_change2"
+            android:scaleType="center"
+            android:adjustViewBounds="true"
+            android:background="@android:color/transparent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="@id/row_layout_guide4"
+            app:layout_constraintBottom_toBottomOf="@+id/linearLayout2"
+            app:layout_constraintEnd_toEndOf="@id/row_layout_guide5" />
+
+    <View
+            android:id="@+id/iptalBG"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:adjustViewBounds="true"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="@id/row_layout_guide5"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:text="Değiş"
-            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@+id/linearLayout2"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+    <androidx.constraintlayout.utils.widget.ImageFilterButton
+            android:id="@+id/buttonIptal"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/BeDegis"
-             />
+            android:layout_height="0dp"
+            android:layout_marginVertical="10dp"
+            android:layout_marginHorizontal="10dp"
+            android:src="@drawable/ic_delete"
+            android:scaleType="center"
+            android:adjustViewBounds="true"
+            android:background="@android:color/transparent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="@id/row_layout_guide5"
+            app:layout_constraintBottom_toBottomOf="@+id/linearLayout2"
+            app:layout_constraintEnd_toEndOf="parent" />
 
 
     <LinearLayout
             app:layout_constraintBottom_toBottomOf="@id/cons2"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:id="@+id/linearLayout2">
         <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
