@@ -44,6 +44,7 @@ class RecyclerViewAdapterPiyasa(var hisse_list: MutableList<PiyasaData>) :
                 val messageString:String = satis.text.toString()
                 val newMessageToSend:MessageEvent = MessageEvent(messageString)
                 var navController: NavController? = null
+
                 navController = Navigation.findNavController(itemView)
                 navController!!.navigate(R.id.action_piyasaTabLayout_to_emirFragment)
                 EventBus.getDefault().post(newMessageToSend)
