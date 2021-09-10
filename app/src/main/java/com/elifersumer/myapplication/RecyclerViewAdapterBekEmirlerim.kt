@@ -52,10 +52,11 @@ class RecyclerViewAdapterBekEmirlerim(var hisse_list: MutableList<BekleyenEmirle
             holder.iptal.setBackgroundColor(Color.parseColor("#f5f5f5"))
         }
         if(hisse_list[position].alisOrsatis == "Alış"){
-            holder.alisOrSatis.setTextColor(Color.GREEN)
+            holder.alisOrSatis.setTextColor(Color.parseColor("#2D8326"))
         }
         else
-            holder.alisOrSatis.setTextColor(Color.RED)
+            holder.alisOrSatis.setTextColor(Color.parseColor("#e2523e"))
+
 
         holder.isim.text = hisse_list[position].hisse_ismi
         holder.adet.text = hisse_list[position].adet
