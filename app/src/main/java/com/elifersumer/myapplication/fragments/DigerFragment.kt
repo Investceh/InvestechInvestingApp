@@ -45,5 +45,8 @@ class DigerFragment : Fragment() {
         view.findViewById<Button>(R.id.anketgcsbtn).setOnClickListener{
             navController!!.navigate(R.id.action_digerFragment_to_sorularFragment)
         }
+        view.findViewById<Button>(R.id.haberlergcsBtn).setOnClickListener{
+            navController!!.navigate(R.id.action_digerFragment_to_haberlerFragment)
+        }
     }
 }

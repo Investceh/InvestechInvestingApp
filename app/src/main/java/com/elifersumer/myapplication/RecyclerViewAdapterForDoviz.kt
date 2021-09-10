@@ -47,7 +47,8 @@ class RecyclerViewAdapterForDoviz(var hisse_list: MutableList<PiyasaData>) :
         return hisse_list.size
     }
 
-    override fun onBindViewHolder(holder: RecyclerViewAdapterForDoviz.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+
         if(position % 2 == 0){
             holder.degisim.setBackgroundColor(Color.parseColor("#C7D3E1"))
             holder.isim.setBackgroundColor(Color.parseColor("#C7D3E1"))
@@ -62,6 +63,7 @@ class RecyclerViewAdapterForDoviz(var hisse_list: MutableList<PiyasaData>) :
             holder.satis.setBackgroundColor(Color.parseColor("#f5f5f5"))
             holder.fark.setBackgroundColor(Color.parseColor("#f5f5f5"))
         }
+
         if (hisse_list[position].fark.toFloat() >= 0.00) {
             holder.fark.text = "+" +  hisse_list[position].fark + "%"
             holder.fark.setTextColor(Color.GREEN)

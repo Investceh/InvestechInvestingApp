@@ -70,6 +70,9 @@
         <action
                 android:id="@+id/action_digerFragment_to_sorularFragment"
                 app:destination="@id/sorularFragment" />
+        <action
+                android:id="@+id/action_digerFragment_to_haberlerFragment"
+                app:destination="@id/haberlerFragment" />
     </fragment>
     <fragment
             android:id="@+id/blankFragment"
@@ -84,5 +87,14 @@
     <fragment
             android:id="@+id/piyasaTabLayout"
             android:name="com.elifersumer.myapplication.fragments.PiyasaTabLayout"
-            android:label="PiyasaTabLayout" />
+            android:label="PiyasaTabLayout" >
+        <action
+                android:id="@+id/action_piyasaTabLayout_to_emirFragment"
+                app:destination="@id/emirFragment" />
+    </fragment>
+    <fragment
+            android:id="@+id/haberlerFragment"
+            android:name="com.elifersumer.myapplication.fragments.HaberlerFragment"
+            android:label="fragment_haberler"
+            tools:layout="@layout/fragment_haberler" />
 </navigation>
