@@ -440,7 +440,7 @@
                         android:layout_below="@+id/linlayout_1">
 
                     <TextView
-                            android:id="@+id/fiyat"
+                            android:id="@+id/fiyat_textview"
                             android:layout_width="206dp"
                             android:layout_height="wrap_content"
                             android:text="Fiyat"
