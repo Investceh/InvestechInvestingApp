@@ -164,7 +164,7 @@
             android:fontFamily="@font/inter" />
 
     <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/piyasa_recyclerView"
+            android:id="@+id/kripto_recyclerView"
             android:layout_marginTop="43sp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
