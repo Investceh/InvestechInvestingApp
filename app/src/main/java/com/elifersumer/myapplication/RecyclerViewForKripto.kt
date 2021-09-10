@@ -1,9 +1,6 @@
 package com.elifersumer.myapplication
 
 import android.graphics.Color
-import android.text.Editable
-import android.transition.AutoTransition
-import android.transition.TransitionManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,8 +8,8 @@ import android.widget.*
 import androidx.recyclerview.widget.RecyclerView
 import org.greenrobot.eventbus.EventBus
 
-class RecyclerViewAdapterForDoviz(var hisse_list: MutableList<PiyasaData>) :
-    RecyclerView.Adapter<RecyclerViewAdapterForDoviz.ViewHolder>() {
+class RecyclerViewAdapterForKripto(var hisse_list: MutableList<PiyasaData>) :
+    RecyclerView.Adapter<RecyclerViewAdapterForKripto.ViewHolder>() {
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val degisim = view.findViewById<ImageView>(R.id.greendegisim)
         val isim = view.findViewById<TextView>(R.id.hisse_ismi)
@@ -21,6 +18,8 @@ class RecyclerViewAdapterForDoviz(var hisse_list: MutableList<PiyasaData>) :
         val fark = view.findViewById<TextView>(R.id.hisse_fark)
         val sat = view.findViewById<Button>(R.id.sat_button)
         val al = view.findViewById<Button>(R.id.al_button)
+
+
         fun initialize(item:PiyasaData) {
             isim.text = item.hisse_ismi
             al.setOnClickListener{
@@ -43,12 +42,7 @@ class RecyclerViewAdapterForDoviz(var hisse_list: MutableList<PiyasaData>) :
         return ViewHolder(view)
     }
 
-    override fun getItemCount(): Int {
-        return hisse_list.size
-    }
-
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-
         if(position % 2 == 0){
             holder.degisim.setBackgroundColor(Color.parseColor("#C7D3E1"))
             holder.isim.setBackgroundColor(Color.parseColor("#C7D3E1"))
@@ -63,7 +57,6 @@ class RecyclerViewAdapterForDoviz(var hisse_list: MutableList<PiyasaData>) :
             holder.satis.setBackgroundColor(Color.parseColor("#f5f5f5"))
             holder.fark.setBackgroundColor(Color.parseColor("#f5f5f5"))
         }
-
         if (hisse_list[position].fark.toFloat() >= 0.00) {
             holder.fark.text = "+" +  hisse_list[position].fark + "%"
             holder.fark.setTextColor(Color.GREEN)
@@ -78,6 +71,11 @@ class RecyclerViewAdapterForDoviz(var hisse_list: MutableList<PiyasaData>) :
         holder.satis.text = hisse_list[position].satis
 
         holder.initialize(hisse_list[position])
+    }
+
+
+    override fun getItemCount(): Int {
+        return hisse_list.size
     }
 
 
