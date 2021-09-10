@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import androidx.recyclerview.widget.RecyclerView
+import org.greenrobot.eventbus.EventBus
 
 class RecyclerViewAdapterPiyasa(var hisse_list: MutableList<PiyasaData>) :
     RecyclerView.Adapter<RecyclerViewAdapterPiyasa.ViewHolder>() {
@@ -28,10 +29,10 @@ class RecyclerViewAdapterPiyasa(var hisse_list: MutableList<PiyasaData>) :
                 Toast.makeText(isim.context,"Alındı",Toast.LENGTH_SHORT).show()
             }
             sat.setOnClickListener{
+                val messageString:String = satis.toString()
+                val newMessageToSend:MessageEvent = MessageEvent(messageString)
+                EventBus.getDefault().post(newMessageToSend)
                 Toast.makeText(isim.context,"Satıldı",Toast.LENGTH_SHORT).show()
-                var editText = itemView.findViewById(R.id.edtxt_fiyat) as EditText?
-                editText?.setText("111")
-                println(editText?.text)
             }
         }
     }

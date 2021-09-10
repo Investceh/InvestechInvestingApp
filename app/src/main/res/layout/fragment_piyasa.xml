@@ -12,21 +12,21 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/row_layout_guide1"
-            app:layout_constraintGuide_percent="0.15" />
+            app:layout_constraintGuide_percent="0.09" />
 
     <androidx.constraintlayout.widget.Guideline
             android:orientation="vertical"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/row_layout_guide2"
-            app:layout_constraintGuide_percent="0.35" />
+            app:layout_constraintGuide_percent="0.24" />
 
     <androidx.constraintlayout.widget.Guideline
             android:orientation="vertical"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/row_layout_guide3"
-            app:layout_constraintGuide_percent="0.5" />
+            app:layout_constraintGuide_percent="0.45" />
 
     <androidx.constraintlayout.widget.Guideline
             android:orientation="vertical"
@@ -57,7 +57,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="@id/row_layout_guide1"
-            android:text="Değişim"
+            android:text=""
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:id="@+id/hisse_baslik"

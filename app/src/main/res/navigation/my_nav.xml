@@ -21,6 +21,9 @@
         <action
                 android:id="@+id/action_karsilamaFragment_to_digerFragment"
                 app:destination="@id/digerFragment" />
+        <action
+                android:id="@+id/action_karsilamaFragment_to_piyasaTabLayout"
+                app:destination="@id/piyasaTabLayout" />
     </fragment>
     <fragment
             android:id="@+id/piyasaFragment"
@@ -78,4 +81,8 @@
             android:name="com.elifersumer.myapplication.fragments.SorularFragment"
             android:label="fragment_sorular"
             tools:layout="@layout/fragment_sorular" />
+    <fragment
+            android:id="@+id/piyasaTabLayout"
+            android:name="com.elifersumer.myapplication.fragments.PiyasaTabLayout"
+            android:label="PiyasaTabLayout" />
 </navigation>
