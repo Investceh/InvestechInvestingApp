@@ -46,6 +46,7 @@ class KriptoFragment : Fragment() {
                 var data = response.body()!!.GetData()
                 kriptoList=data!!
                 for(kripto in kriptoList){
+                    //conflict
                     var priceString : String
                     val df = DecimalFormat("#,##0.00")
                     priceString = df.format(kripto.price)
