@@ -7,4 +7,15 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="colorPrimary">#00BCD4</color>
+    <color name="colorPrimaryDark">#293E57</color>
+    <color name="colorAccent">#009688</color>
+    <color name="buttonRed">#C37171</color>
+    <color name="buttonGreen">#87C471</color>
+    <color name="blackText">#BF000000</color>
+    <color name="ozarspecial">#81A9D6</color>
+    <color name="ozgur">#E2FF2525</color>
+
+
+
 </resources>

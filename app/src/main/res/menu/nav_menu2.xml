@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+            android:id="@+id/karsilamaFragment"
+            android:icon="@drawable/logo_nav"
+            android:title="Portföyüm"/>
+    <item
+            android:id="@+id/piyasaTabLayout"
+            android:icon="@drawable/ic_piyasa_logo"
+            android:title="Piyasa"/>
+    <item
+            android:id="@+id/transferFragment"
+            android:icon="@drawable/ic_para_transfer_logo"
+            android:title="Para Transfer"/>
+    <item
+            android:id="@+id/emirFragment"
+            android:icon="@drawable/ic_emir_logo"
+            android:title="Emir"/>
+    <item
+            android:id="@+id/digerFragment"
+            android:icon="@drawable/ic_hesabim_logo"
+            android:title="Tümü"/>
+
+</menu>

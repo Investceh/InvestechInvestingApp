@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".fragments.DigerFragment"
+        android:background="#293E57">
+
+    <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+        <LinearLayout
+                android:layout_marginTop="70dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+            <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@drawable/bg9"/>
+
+            <Button
+                    android:fontFamily="@font/inter"
+                    android:id="@+id/portföygcsBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Portföyüm"
+                    android:gravity="left|center_vertical"
+                    android:background="@color/buttonRed"
+                    android:layout_marginBottom="1dp"
+                    android:textSize="17dp"
+                    android:layout_marginTop="1dp"
+                    android:textStyle="bold">
+
+            </Button>
+
+            <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@drawable/bg9"/>
+
+            <Button
+                    android:fontFamily="@font/inter"
+                    android:id="@+id/piyasagcsBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Piyasa"
+                    android:gravity="left|center_vertical"
+                    android:background="@color/ozarspecial"
+                    android:layout_marginBottom="1dp"
+                    android:textSize="17dp"
+                    android:textStyle="bold">
+
+            </Button>
+
+            <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@drawable/bg9"/>
+
+            <Button
+                    android:fontFamily="@font/inter"
+                    android:id="@+id/transfergcsBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Para Transferi"
+                    android:gravity="left|center_vertical"
+                    android:layout_marginBottom="1dp"
+                    android:background="@color/ozarspecial"
+                    android:textSize="17dp"
+                    android:textStyle="bold">
+
+            </Button>
+
+            <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@drawable/bg9"/>
+
+            <Button
+                    android:fontFamily="@font/inter"
+                    android:id="@+id/emirGirisgcsBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Emir Giriş"
+                    android:layout_marginBottom="1dp"
+                    android:background="@color/ozarspecial"
+                    android:textSize="17dp"
+                    android:gravity="center_vertical"
+                    android:textStyle="bold">
+
+            </Button>
+
+            <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@drawable/bg9"/>
+
+            <Button
+                    android:fontFamily="@font/inter"
+                    android:id="@+id/emirlerimgcsBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Emirlerim"
+                    android:layout_marginBottom="1dp"
+                    android:background="@color/ozarspecial"
+                    android:textSize="17dp"
+                    android:gravity="left|center_vertical"
+                    android:textStyle="bold">
+
+            </Button>
+
+            <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@drawable/bg9"/>
+
+            <Button
+                    android:fontFamily="@font/inter"
+                    android:id="@+id/roboadvisorgcsBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Robo-advisor"
+                    android:gravity="center|left|center_vertical"
+                    android:layout_marginBottom="1dp"
+                    android:background="@color/ozarspecial"
+                    android:textSize="17dp"
+                    android:textStyle="bold">
+
+            </Button>
+
+            <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@drawable/bg9"/>
+
+            <Button
+                    android:fontFamily="@font/inter"
+                    android:id="@+id/haberlergcsBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Haberler"
+                    android:layout_marginBottom="1dp"
+                    android:background="@color/ozarspecial"
+                    android:textSize="17dp"
+                    android:gravity="left|center_vertical"
+                    android:textStyle="bold">
+
+            </Button>
+
+            <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@drawable/bg9"/>
+
+            <Button
+                    android:fontFamily="@font/inter"
+                    android:id="@+id/anketgcsbtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Uygunluk Testi"
+                    android:gravity="left|center_vertical"
+                    android:layout_marginBottom="1dp"
+                    android:background="@color/ozarspecial"
+                    android:textSize="17dp"
+                    android:textStyle="bold">
+
+            </Button>
+
+            <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@drawable/bg9"
+                    />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <ImageView
+
+            android:layout_marginTop="490dp"
+            android:layout_marginLeft="150dp"
+            android:src="@drawable/appicon"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:id="@+id/imageView6" />
+
+</FrameLayout>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="ExtraText"
+        android:id="@+id/frameLayout"
+        >
+        <RelativeLayout
+                android:id="@+id/relativeLayout3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg1"
+                android:orientation="horizontal"
+                tools:ignore="MissingConstraints">
+                <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/rl1"
+                        android:gravity="center_vertical"
+                    >
+                    <TextView
+                            android:textColor="#F5F5F5"
+                            android:id="@+id/portfoyum"
+                            android:text="@string/Portföyüm"
+                            android:gravity="center"
+                            android:textStyle="bold"
+                            android:layout_width="match_parent"
+                            android:layout_height="34dp"
+                            android:background="@drawable/screen_title" />
+                    <com.github.mikephil.charting.charts.PieChart
+                            android:id="@+id/pieChart"
+                            android:layout_below="@+id/portfoyum"
+                            android:layout_width="250dp"
+                            android:layout_height="250dp"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
+                            />
+                </RelativeLayout>
+                <RelativeLayout
+                        android:id="@+id/rl2"
+                        android:layout_below="@+id/rl1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#F5F5F5">
+                        <TextView
+                            android:textColor="#F5F5F5"
+                            android:text="Hisse Senetlerim"
+                            android:gravity="center"
+                            android:textStyle="bold"
+                            android:layout_width="match_parent"
+                            android:layout_height="34dp"
+                            android:background="@drawable/screen_title"
+                            android:id="@+id/hisseImage"
+                            android:contentDescription="@string/image"
+                            />
+                    <androidx.core.widget.NestedScrollView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/hisseImage">
+                        <androidx.recyclerview.widget.RecyclerView
+                                android:layout_below="@+id/hisseImage"
+                                android:id="@+id/recyclerview"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" />
+
+                    </androidx.core.widget.NestedScrollView>
+
+                </RelativeLayout>
+        </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

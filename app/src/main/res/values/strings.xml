@@ -1,4 +1,22 @@
 <resources>
+    <string-array name="hisseler">
+        <item>ACSEL</item>
+        <item>AKBNK</item>
+        <item>EREGL</item>
+    </string-array>
+    <string-array name="nameList">
+
+    </string-array>
+    <string-array name="fiyatTipleri">
+        <item>Limit</item>
+        <item>----</item>
+    </string-array>
+
+    <string-array name="sureTipleri">
+        <item>Günlük</item>
+        <item>Haftalık</item>
+        <item>Aylık</item>
+    </string-array>
     <string name="app_name">My Application</string>
     <string name="textview">TextView</string>
     <string name="image">" "</string>
@@ -15,5 +33,26 @@
     <string name="phone">Telefon</string>
     <string name="password">Şifre</string>
     <string name="register">Register</string>
+    <string name="kayitol">Kayıt Ol</string>
+    <string name="donthaveaccount">Henüz bir hesabın yok mu?</string>
+    <string name="girisYap">Giriş Yap</string>
+    <string name="uploadphoto">upload photo</string>
+    <string name="haveAccount">Zaten bir hesabın var mı?</string>
+    <string name="investech">Investech</string>
+    <string name="vades_z_hesaplarim">VADESİZ HESAPLARIM</string>
+    <string name="yatirim_hesaplarim">YATIRIM HESAPLARIM</string>
+    <string name="Portföyüm">PORTFÖYUM</string>
+    <string name="Grafik">Grafik</string>
+    <string name="Hisse_Senetleri">Hisse Senetleri</string>
+    <string name="Kategori">Kategori</string>
 
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="isi" />
+    <string name="kode" />
+
+    <string-array name="options">
+        <item>Vadeliden Yatırıma</item>
+        <item>Yatırımdan Vadeliye</item>
+    </string-array>
 </resources>

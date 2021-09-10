@@ -1,0 +1,532 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#F5F5F5"
+        tools:context=".fragments.EmirFragment">
+
+
+
+    <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" tools:layout_editor_absoluteY="38dp"
+            tools:layout_editor_absoluteX="0dp">
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="700dp">
+
+            <TextView
+                    android:id="@+id/hisseler_alsat"
+                    android:text="HİSSELER AL/SAT"
+                    android:textColor="#f5f5f5"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:layout_width="match_parent"
+                    android:layout_height="34dp"
+                    android:background="@drawable/screen_title" />
+
+
+            <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp" android:layout_marginTop="0dp"
+                    android:layout_below="@+id/hisseler_alsat" android:id="@+id/layout_button">
+
+
+                <RadioGroup
+                        android:id="@+id/daily_weekly_button_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginEnd="0dp"
+                        android:layout_marginRight="0dp"
+                        android:gravity="center_horizontal"
+                        android:orientation="horizontal"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+
+                    <RadioButton
+                            android:id="@+id/alisbtn"
+                            android:layout_width="206dp"
+                            android:gravity="center"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/radio_flat_selector_alis"
+                            android:button="@android:color/transparent"
+                            android:checked="true"
+                            android:paddingLeft="@dimen/_16sdp"
+                            android:paddingTop="@dimen/_3sdp"
+                            android:paddingRight="@dimen/_16sdp"
+                            android:paddingBottom="@dimen/_3sdp"
+                            android:text="ALIŞ"
+                            android:textColor="@color/black" />
+
+                    <RadioButton
+                            android:id="@+id/satisbtn"
+                            android:gravity="center"
+                            android:layout_width="206dp"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/radio_flat_selector_satis"
+                            android:button="@android:color/transparent"
+                            android:paddingLeft="@dimen/_16sdp"
+                            android:paddingTop="@dimen/_3sdp"
+                            android:paddingRight="@dimen/_16sdp"
+                            android:paddingBottom="@dimen/_3sdp"
+                            android:text="SATIŞ"
+                            android:textColor="@color/black" />
+
+                </RadioGroup>
+
+
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="454dp"
+                    android:background="#80D7E9FF"
+                    android:id="@+id/layout_form"
+                    android:layout_below="@+id/layout_button"
+                    android:layout_marginTop="0dp">
+
+                <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/layout_islem"
+                        android:layout_below="@+id/linlayout_1">
+
+                    <TextView
+                            android:id="@+id/islemlimiti"
+                            android:layout_width="206dp"
+                            android:layout_height="wrap_content"
+                            android:text="İşlem Limiti"
+                            android:textColor="#BF000000"
+                            android:paddingLeft="10dp"
+                            android:paddingBottom="15dp"
+                            android:paddingTop="15dp" />
+
+                    <TextView
+                            android:id="@+id/val_islemlimiti"
+                            android:layout_width="206dp"
+                            android:layout_height="wrap_content"
+                            android:textAlignment="viewEnd"
+                            android:text="200.00"
+                            android:textColor="#BF000000"
+                            android:paddingRight="10dp"
+                            android:paddingBottom="15dp"
+                            android:paddingTop="15dp" />
+
+                </LinearLayout>
+
+                <View
+                        android:id="@+id/line1"
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:background="@drawable/line" />
+
+                <LinearLayout
+                        android:background="@drawable/bg6"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:id="@+id/layout_hisse"
+                        android:layout_below="@+id/linlayout_1">
+
+                    <RelativeLayout
+                            android:layout_width="204dp"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:paddingRight="15dp">
+
+                        <TextView
+                                android:id="@+id/hisse"
+                                android:layout_width="206dp"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="10dp"
+                                android:paddingTop="20dp"
+                                android:paddingBottom="15dp"
+                                android:text="Hisse"
+                                android:textColor="#BF000000" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                            android:layout_width="204dp"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:paddingRight="1dp">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu">
+
+                            <AutoCompleteTextView
+                                    android:text="EREGL"
+                                    android:layout_gravity="end"
+                                    android:layout_width="140dp"
+                                    android:layout_height="match_parent"
+                                    android:id="@+id/autoCompleteTextView"
+                                    android:layout_weight="1"
+                                    android:textColor="@color/black"
+                                    android:textAlignment="textEnd" />
+
+
+                        </com.google.android.material.textfield.TextInputLayout>
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <LinearLayout
+
+                        android:orientation="vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="100dp"
+                        android:background="@drawable/account_info_box"
+                        android:id="@+id/layout_tablo">
+
+                    <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:id="@+id/title_tablo">
+
+                        <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:gravity="center"
+                                android:paddingTop="10dp">
+
+                            <TextView
+                                    android:id="@+id/miktar1"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="MİKTAR"
+                                    android:textColor="#BF000000"
+                                    android:paddingRight="75dp" />
+
+                            <TextView
+                                    android:id="@+id/alis"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="ALIŞ"
+                                    android:textColor="#BF000000"
+                                    android:paddingRight="75dp" />
+
+                            <TextView
+                                    android:id="@+id/satis"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="SATIŞ"
+                                    android:textColor="#BF000000"
+                                    android:paddingRight="75dp" />
+
+                            <TextView
+                                    android:id="@+id/miktar2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="MİKTAR"
+                                    android:textColor="#BF000000" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:gravity="center"
+                                android:paddingTop="20dp">
+
+                            <TextView
+                                    android:id="@+id/val_miktar1"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="10,542"
+                                    android:textColor="#BF000000"
+                                    android:paddingRight="75dp" />
+
+                            <TextView
+                                    android:id="@+id/val_alis"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="18.56"
+                                    android:textColor="#BF000000"
+                                    android:paddingRight="75dp" />
+
+                            <TextView
+                                    android:id="@+id/val_satis"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="18.66"
+                                    android:textColor="#BF000000"
+                                    android:paddingRight="75dp" />
+
+                            <TextView
+                                    android:id="@+id/val_miktar2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="56,088"
+                                    android:textColor="#BF000000" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <View
+                        android:id="@+id/line2"
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:background="@drawable/line" />
+
+                <LinearLayout
+                        android:background="@drawable/bg6"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:id="@+id/layout_fiyattipi"
+                        android:layout_below="@+id/linlayout_1">
+
+                    <TextView
+                            android:id="@+id/fiyattipi"
+                            android:layout_width="206dp"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="10dp"
+                            android:paddingBottom="15dp"
+                            android:paddingTop="15dp"
+                            android:text="Fiyat Tipi"
+                            android:textColor="#BF000000" />
+
+                    <RelativeLayout
+                            android:layout_width="204dp"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:paddingRight="1dp"
+                            android:paddingBottom="1dp">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu">
+
+                            <AutoCompleteTextView
+                                    android:layout_gravity="end"
+                                    android:layout_width="140dp"
+                                    android:text="Limit"
+                                    android:layout_height="match_parent"
+                                    android:id="@+id/autoCompleteTextViewFiyatTipi"
+                                    android:layout_weight="1"
+                                    android:textColor="@color/black"
+                                    android:textAlignment="textEnd"
+                                    android:inputType="none" />
+
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <View
+                        android:id="@+id/line3"
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:background="@drawable/line" />
+
+                <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:id="@+id/layout_adet"
+                        android:layout_below="@+id/linlayout_1">
+
+                    <TextView
+                            android:id="@+id/adet"
+                            android:layout_width="206dp"
+                            android:layout_height="wrap_content"
+                            android:text="Adet"
+                            android:textColor="#BF000000"
+                            android:paddingLeft="10dp"
+                            android:paddingBottom="15dp"
+                            android:paddingTop="15dp" />
+
+                    <RelativeLayout
+                            android:layout_width="204dp"
+                            android:layout_height="match_parent"
+                            android:paddingRight="10dp"
+                            android:gravity="right|center_vertical">
+
+                        <EditText
+                                android:id="@+id/edtxt_adet"
+                                android:layout_width="155dp"
+                                android:layout_height="40dp"
+                                android:background="@drawable/edit_text_view"
+                                android:hint="Adet Giriniz"
+                                android:inputType="number"
+                                android:paddingLeft="15dp"
+                                android:textColor="@color/black"
+                                android:textColorHint="#40000000"
+                                android:textSize="14sp" />
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <View
+                        android:id="@+id/line4"
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:background="@drawable/line" />
+
+                <LinearLayout
+                        android:background="@drawable/bg6"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:id="@+id/layout_suretipi"
+                        android:layout_below="@+id/linlayout_1">
+
+                    <TextView
+                            android:id="@+id/suretipi"
+                            android:layout_width="206dp"
+                            android:layout_height="wrap_content"
+                            android:text="Süre Tipi"
+                            android:textColor="#BF000000"
+                            android:paddingLeft="10dp"
+                            android:paddingBottom="15dp"
+                            android:paddingTop="15dp" />
+
+                    <RelativeLayout
+                            android:layout_width="204dp"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:paddingRight="1dp"
+                            android:paddingBottom="1dp">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu">
+
+                            <AutoCompleteTextView
+                                    android:text="Günlük"
+                                    android:layout_gravity="end"
+                                    android:layout_width="140dp"
+                                    android:layout_height="match_parent"
+                                    android:id="@+id/autoCompleteTextViewSureTipi"
+                                    android:layout_weight="1"
+                                    android:textColor="@color/black"
+                                    android:textAlignment="textEnd"
+                                    android:inputType="none" />
+
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <View
+                        android:id="@+id/line5"
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:background="@drawable/line" />
+
+                <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:id="@+id/layout_fiyat"
+                        android:layout_below="@+id/linlayout_1">
+
+                    <TextView
+                            android:id="@+id/fiyat_textview"
+                            android:layout_width="206dp"
+                            android:layout_height="wrap_content"
+                            android:text="Fiyat"
+                            android:textColor="#BF000000"
+                            android:paddingLeft="10dp"
+                            android:paddingBottom="15dp"
+                            android:paddingTop="15dp" />
+
+                    <RelativeLayout
+                            android:layout_width="204dp"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            >
+
+                        <EditText
+                                android:text="232,00"
+                                android:id="@+id/edtxt_fiyat"
+                                android:layout_width="130dp"
+                                android:layout_height="40dp"
+                                android:inputType="number"
+                                android:hint="Fiyat Giriniz"
+                                android:textColorHint="#40000000"
+                                android:textColor="@color/black"
+                                android:textSize="14sp"
+                                android:paddingLeft="15dp"
+                                android:background="@drawable/edit_text_view" />
+
+                        <Button
+                                android:id="@+id/incrementFiyat"
+                                android:background="@drawable/ic_baseline_add_24"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:textColor="@color/white"
+                                android:layout_toEndOf="@id/edtxt_fiyat"
+                                android:layout_marginLeft="3sp"
+                                android:layout_marginTop="7sp"/>
+
+                        <Button
+                                android:id="@+id/decrementFiyat"
+                                android:background="@drawable/ic_baseline_remove_24"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:layout_toEndOf="@id/incrementFiyat"
+                                android:layout_marginLeft="0sp"
+                                android:layout_marginTop="7sp"/>
+
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <View
+                        android:id="@+id/line6"
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:background="@drawable/line" />
+
+                <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Emir gerçekleştiğinde bilgilendir."
+                        android:textColor="#BF000000"
+                        android:buttonTint="#3E6490"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="15dp"></CheckBox>
+            </LinearLayout>
+
+            <Button
+                    android:id="@+id/emirTamamButton"
+                    android:layout_width="180dp"
+                    android:layout_height="47dp"
+                    android:layout_below="@+id/layout_form"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="false"
+                    android:layout_marginStart="115dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="116dp"
+                    android:layout_marginBottom="71dp"
+                    android:background="@drawable/transfer_button"
+                    android:fontFamily="@font/inter"
+                    android:text="Tamam"
+                    android:textAllCaps="false"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:layout_centerInParent="true" />
+
+        </RelativeLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
