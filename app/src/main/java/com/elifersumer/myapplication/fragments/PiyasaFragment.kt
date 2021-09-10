@@ -2,6 +2,7 @@ package com.elifersumer.myapplication.fragments
 
 import android.graphics.drawable.Drawable
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -14,10 +15,14 @@ import com.elifersumer.myapplication.LiveBorsa.Response.LiveBorsaResponse
 import com.elifersumer.myapplication.LiveBorsa.Response.StockInfo
 import com.elifersumer.myapplication.CollectApi.CollectApiInstance
 import kotlinx.android.synthetic.main.fragment_piyasa.*
+import org.greenrobot.eventbus.EventBus
+import org.greenrobot.eventbus.Subscribe
+import org.greenrobot.eventbus.ThreadMode
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import java.text.DecimalFormat
+
 
 class PiyasaFragment : Fragment() {
     private var list1= mutableListOf<PiyasaData>()
@@ -55,17 +60,32 @@ class PiyasaFragment : Fragment() {
         return view
     }
 
+    override fun onStart() {
+        super.onStart()
+        EventBus.getDefault().register(this)
+    }
+
+    override fun onStop() {
+        super.onStop()
+        EventBus.getDefault().unregister(this)
+    }
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    fun onMessageEvent(event:MessageEvent){
+        Log.d("deneme2:",event.message)
+    }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         val drawable1: Drawable?= ResourcesCompat.getDrawable(resources,R.drawable.ic_rise_up_green, null)
         val textView = TextView(this.context)
         textView.setBackground(drawable1)
         super.onViewCreated(view, savedInstanceState)
-/*
-            PiyasaData(
-                "deg","ALKIM","15.04","15.03",
-                                            "1.48"),
-            PiyasaData("deg","AKCNS","15.03","15.29",
-                "-0.20")
-*/
+
+        /* val all_hisse = mutableListOf(PiyasaData(
+             "deg","ALKIM","15.04","15.03",
+             "1.48"),
+             PiyasaData("deg","AKCNS","15.03","15.29",
+                 "-0.20"))
+
+        piyasa_recyclerView.layoutManager= LinearLayoutManager(context)
+        piyasa_recyclerView.adapter= RecyclerViewAdapterPiyasa(all_hisse)*/
     }
 }
