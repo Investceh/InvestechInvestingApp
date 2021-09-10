@@ -1,14 +1,175 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".fragments.DovizFragment">
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        tools:context=".fragments.DovizFragment"
+        android:background="#F5F5F5">
 
-    <!-- TODO: Update blank fragment layout -->
+    <androidx.constraintlayout.widget.Guideline
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/row_layout_guide_1"
+            app:layout_constraintGuide_percent="0.09" />
+
+    <androidx.constraintlayout.widget.Guideline
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/row_layout_guide_2"
+            app:layout_constraintGuide_percent="0.24" />
+
+    <androidx.constraintlayout.widget.Guideline
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/row_layout_guide_3"
+            app:layout_constraintGuide_percent="0.45" />
+
+    <androidx.constraintlayout.widget.Guideline
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/row_layout_guide_4"
+            app:layout_constraintGuide_percent="0.65" />
+
+    <androidx.constraintlayout.widget.Guideline
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/row_layout_guide_5"
+            app:layout_constraintGuide_percent="0.8" />
+
+    <androidx.constraintlayout.widget.Guideline
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/row_layout_guide_6"
+            app:layout_constraintGuide_percent="0.9" />
+
+
     <TextView
+            android:paddingHorizontal="6dp"
+            android:paddingVertical="13dp"
+            android:textAlignment="viewStart"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/row_layout_guide_1"
+            android:text=""
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/hisse_baslik_1"
+            android:textColor="@color/white"
+            android:textSize="13sp"
+            android:background="#293E57"
+            android:fontFamily="@font/inter" />
+
+    <TextView
+            android:paddingHorizontal="6dp"
+            android:paddingVertical="12dp"
+            android:textAlignment="center"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="@id/row_layout_guide_1"
+            app:layout_constraintEnd_toEndOf="@id/row_layout_guide_2"
+            android:text="Hisse"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/hisse_ismi_2"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:background="#293E57"
+            android:fontFamily="@font/inter" />
+
+    <TextView
+            android:paddingHorizontal="6dp"
+            android:paddingVertical="12dp"
+            android:textAlignment="center"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="@id/row_layout_guide_2"
+            app:layout_constraintEnd_toEndOf="@id/row_layout_guide_3"
+            android:text="Alış"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/alis_fiyat_1"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:background="#293E57"
+            android:fontFamily="@font/inter" />
+
+    <TextView
+            android:paddingHorizontal="6dp"
+            android:paddingVertical="12dp"
+            android:textAlignment="center"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="@id/row_layout_guide_3"
+            app:layout_constraintEnd_toEndOf="@id/row_layout_guide_4"
+            android:text="Satış"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/satis_fiyat_5"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:background="#293E57"
+            android:fontFamily="@font/inter" />
+
+    <TextView
+
+            android:paddingHorizontal="6dp"
+            android:paddingVertical="12dp"
+            android:textAlignment="center"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="@id/row_layout_guide_4"
+            app:layout_constraintEnd_toEndOf="@id/row_layout_guide_5"
+            android:text="Fark"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/hisse_fark_6"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:background="#293E57"
+            android:fontFamily="@font/inter" />
+
+    <TextView
+            android:textColor="@color/white"
+            android:paddingHorizontal="6dp"
+            android:paddingVertical="12dp"
+            android:textAlignment="center"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="@id/row_layout_guide_5"
+            app:layout_constraintEnd_toEndOf="@id/row_layout_guide_6"
+            android:text="Sat"
+            android:textSize="14sp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/sat_button_1"
+            android:background="#293E57"
+            android:fontFamily="@font/inter" />
+
+    <TextView
+            android:textColor="@color/white"
+            android:paddingHorizontal="6dp"
+            android:paddingVertical="12dp"
+            android:textAlignment="center"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="@id/row_layout_guide_6"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:text="Al"
+            android:textSize="14sp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/al_button_2"
+            android:background="#293E57"
+            android:fontFamily="@font/inter" />
+
+    <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/piyasa_recyclerView"
+            android:layout_marginTop="43sp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="@string/hello_blank_fragment" />
+            app:layout_constraintTop_toTopOf="parent" />
 
-</FrameLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
