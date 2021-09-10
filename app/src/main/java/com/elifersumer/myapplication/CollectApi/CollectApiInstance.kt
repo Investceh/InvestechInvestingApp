@@ -1,4 +1,4 @@
-package com.elifersumer.myapplication.LiveBorsa.Service
+package com.elifersumer.myapplication.CollectApi
 
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -15,7 +15,7 @@ class CollectApiInstance {
                 {
                     retrofit =Retrofit.Builder()
                         .addConverterFactory(GsonConverterFactory.create())
-                        .baseUrl("https://api.collectapi.com/economy/").build()
+                        .baseUrl("https://api.collectapi.com/").build()
                 }
             }
             return retrofit
