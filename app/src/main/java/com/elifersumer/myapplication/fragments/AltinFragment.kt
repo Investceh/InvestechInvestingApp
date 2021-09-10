@@ -51,21 +51,6 @@ class AltinFragment : Fragment() {
                     satisString = df.format(gold.selling)
                     alisString = df.format(gold.buying)
 
-                    /*var buy = gold.buy!!.toDouble()
-                    var sell = gold.sell!!.toDouble()
-                    var rate : Double
-
-                    if(gold.name=="Cumhuriyet Altını"){
-                        rate = -0.09
-                    }else if(gold.name=="Yarım Altın"){
-                        rate = -0.19
-                    }else if(gold.name=="Çeyrek Altın"){
-                        rate = -0.12
-                    }else{
-                        rate = (buy-sell)/buy
-                    }
-                    var rateString : String
-                    rateString=df.format(rate) */
 
                     var h1=PiyasaData("deg", gold.name!!, alisString.replace('.',','),satisString.replace('.',','), gold.rate.toString())
                     list1.add(h1)
