@@ -5,7 +5,7 @@
             android:icon="@drawable/logo_nav"
             android:title="Portföyüm"/>
     <item
-            android:id="@+id/piyasaFragment"
+            android:id="@+id/piyasaTabLayout"
             android:icon="@drawable/ic_piyasa_logo"
             android:title="Piyasa"/>
     <item
