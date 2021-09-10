@@ -47,7 +47,7 @@ class RecyclerViewAdapterForDoviz(var hisse_list: MutableList<PiyasaData>) :
         return hisse_list.size
     }
 
-    override fun onBindViewHolder(holder: RecyclerViewAdapterForDoviz.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         if(position % 2 == 0){
             holder.degisim.setBackgroundColor(Color.parseColor("#C7D3E1"))
             holder.isim.setBackgroundColor(Color.parseColor("#C7D3E1"))
