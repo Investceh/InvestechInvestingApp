@@ -4,12 +4,15 @@ import android.graphics.Color
 import android.text.Editable
 import android.transition.AutoTransition
 import android.transition.TransitionManager
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import androidx.recyclerview.widget.RecyclerView
 import org.greenrobot.eventbus.EventBus
+import org.greenrobot.eventbus.Subscribe
+import org.greenrobot.eventbus.ThreadMode
 
 class RecyclerViewAdapterPiyasa(var hisse_list: MutableList<PiyasaData>) :
     RecyclerView.Adapter<RecyclerViewAdapterPiyasa.ViewHolder>() {
@@ -29,12 +32,13 @@ class RecyclerViewAdapterPiyasa(var hisse_list: MutableList<PiyasaData>) :
                 Toast.makeText(isim.context,"Alındı",Toast.LENGTH_SHORT).show()
             }
             sat.setOnClickListener{
-                val messageString:String = satis.toString()
+                val messageString:String = satis.text.toString()
                 val newMessageToSend:MessageEvent = MessageEvent(messageString)
                 EventBus.getDefault().post(newMessageToSend)
                 Toast.makeText(isim.context,"Satıldı",Toast.LENGTH_SHORT).show()
             }
         }
+
     }
     override fun onCreateViewHolder(
         parent: ViewGroup,
@@ -76,11 +80,8 @@ class RecyclerViewAdapterPiyasa(var hisse_list: MutableList<PiyasaData>) :
         holder.initialize(hisse_list[position])
     }
 
-
     override fun getItemCount(): Int {
         return hisse_list.size
     }
 
-
 }
-
