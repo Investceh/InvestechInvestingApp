@@ -4,7 +4,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         xmlns:app="http://schemas.android.com/apk/res-auto"
-        tools:context=".fragments.PiyasaFragment"
+        tools:context=".fragments.DovizFragment"
         android:background="#F5F5F5">
 
     <androidx.constraintlayout.widget.Guideline
@@ -121,7 +121,7 @@
             android:textAlignment="center"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="@id/row_layout_guide_4"
-            app:layout_constraintEnd_toEndOf="@id/row_layout_guide5"
+            app:layout_constraintEnd_toEndOf="@id/row_layout_guide_5"
             android:text="Fark"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
