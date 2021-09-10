@@ -9,10 +9,22 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.core.content.res.ResourcesCompat
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.elifersumer.myapplication.CollectApi.CollectApiInstance
+import com.elifersumer.myapplication.GoldPrice.Response.GoldInfo
+import com.elifersumer.myapplication.GoldPrice.Response.GoldPriceResponse
+import com.elifersumer.myapplication.GoldPrice.Service.GoldService
+import com.elifersumer.myapplication.Parite.Response.PariteInfo
+import com.elifersumer.myapplication.Parite.Response.PariteResponse
+import com.elifersumer.myapplication.Parite.Service.DövizService
 import com.elifersumer.myapplication.PiyasaData
 import com.elifersumer.myapplication.R
 import com.elifersumer.myapplication.RecyclerViewAdapterForAltin
+import com.elifersumer.myapplication.RecyclerViewAdapterForDoviz
 import kotlinx.android.synthetic.main.fragment_piyasa.*
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+import java.text.DecimalFormat
 
 class AltinFragment : Fragment() {
     private var list1= mutableListOf<PiyasaData>()
@@ -21,10 +33,36 @@ class AltinFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        val all_hisse = list1
-        piyasa_recyclerView.layoutManager= LinearLayoutManager(context)
-        piyasa_recyclerView.adapter= RecyclerViewAdapterForAltin(all_hisse)
+
+        var retrofit= CollectApiInstance.getRetrofitObject()?.create(GoldService::class.java)
+
+        var result : Call<GoldPriceResponse> = retrofit!!.GetPostValue()
+
+        var goldList:List<GoldInfo>
+
+        result.enqueue(object : Callback<GoldPriceResponse?> {
+            override fun onResponse(call: Call<GoldPriceResponse?>?, response: Response<GoldPriceResponse?>) {
+                var data = response.body()!!.GetData()
+                goldList=data!!
+                for(gold in goldList){
+                    var satisString : String
+                    var alisString : String
+                    val df = DecimalFormat("#,##0.00")
+                    satisString = df.format(gold.selling)
+                    alisString = df.format(gold.buying)
+
+
+                    var h1=PiyasaData("deg", gold.name!!, alisString.replace('.',','),satisString.replace('.',','), gold.rate.toString())
+                    list1.add(h1)
+                }
+                // Inflate the layout for this fragment
+                val all_hisse = list1
+                piyasa_recyclerView.layoutManager= LinearLayoutManager(context)
+                piyasa_recyclerView.adapter= RecyclerViewAdapterForAltin(all_hisse)
+            }
+            override fun onFailure(call: Call<GoldPriceResponse?>?, t: Throwable?) {}
+        })
+
 
         return inflater.inflate(R.layout.fragment_altin, container, false)
     }
