@@ -1,5 +1,7 @@
 package com.elifersumer.myapplication.fragments
 
+import android.graphics.Color
+import android.graphics.Typeface
 import android.content.Context
 import android.os.Bundle
 import android.util.Log
@@ -56,12 +58,27 @@ class EmirFragment : Fragment() {
         fiyat.setText(satisFiyat.text)
 
         alisbtn.setOnClickListener(View.OnClickListener {
-            //Toast.makeText(this@EmirFragment.requireActivity(),"Lütfen işlem seçiniz!", Toast.LENGTH_SHORT).show()
+            //Toast.makeText(this@EmirFragment.requireActivity(),"AŞKSIN ", Toast.LENGTH_SHORT).show()
+            alisbtn.textSize = 16.toFloat()
+            //alisbtn.setTextColor(Color.parseColor("#f5f5f5"))
+            alisbtn.setTypeface(null, Typeface.BOLD)
+
+
+            satisbtn.textSize = 15.toFloat()
+            satisbtn.setTypeface(null, Typeface.NORMAL)
+
 
             fiyat.setText(satisFiyat.text)
         })
 
         satisbtn.setOnClickListener(View.OnClickListener {
+
+            satisbtn.textSize = 16.toFloat()
+            //alisbtn.setTextColor(Color.parseColor("#f5f5f5"))
+            satisbtn.setTypeface(null, Typeface.BOLD)
+
+            alisbtn.textSize = 15.toFloat()
+            alisbtn.setTypeface(null, Typeface.NORMAL)
 
             fiyat.setText(alisFiyat.text)
         })

@@ -64,7 +64,9 @@
                             android:paddingRight="@dimen/_16sdp"
                             android:paddingBottom="@dimen/_3sdp"
                             android:text="ALIŞ"
-                            android:textColor="@color/black" />
+                            android:textSize="15dp"
+                            android:textStyle="normal"
+                            android:textColor="@color/blackText" />
 
                     <RadioButton
                             android:id="@+id/satisbtn"
@@ -78,7 +80,7 @@
                             android:paddingRight="@dimen/_16sdp"
                             android:paddingBottom="@dimen/_3sdp"
                             android:text="SATIŞ"
-                            android:textColor="@color/black" />
+                            android:textColor="@color/blackText" />
 
                 </RadioGroup>
 
@@ -133,7 +135,7 @@
                         android:background="@drawable/line" />
 
                 <LinearLayout
-                        android:background="@drawable/bg6"
+                        android:background="#C7D3E1"
                         android:orientation="horizontal"
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
@@ -149,10 +151,10 @@
                         <TextView
                                 android:id="@+id/hisse"
                                 android:layout_width="206dp"
-                                android:layout_height="wrap_content"
-                                android:paddingLeft="10dp"
-                                android:paddingTop="20dp"
-                                android:paddingBottom="15dp"
+                                android:layout_height="match_parent"
+                                android:paddingStart="10dp"
+                                android:gravity="center_vertical"
+                                android:textAlignment="textStart"
                                 android:text="Hisse"
                                 android:textColor="#BF000000" />
                     </RelativeLayout>
@@ -284,7 +286,7 @@
                         android:background="@drawable/line" />
 
                 <LinearLayout
-                        android:background="@drawable/bg6"
+                        android:background="#C7D3E1"
                         android:orientation="horizontal"
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
@@ -294,11 +296,11 @@
                     <TextView
                             android:id="@+id/fiyattipi"
                             android:layout_width="206dp"
-                            android:layout_height="wrap_content"
-                            android:paddingLeft="10dp"
-                            android:paddingBottom="15dp"
-                            android:paddingTop="15dp"
+                            android:layout_height="match_parent"
+                            android:paddingStart="10dp"
                             android:text="Fiyat Tipi"
+                            android:gravity="center_vertical"
+                            android:textAlignment="textStart"
                             android:textColor="#BF000000" />
 
                     <RelativeLayout
@@ -380,7 +382,7 @@
                         android:background="@drawable/line" />
 
                 <LinearLayout
-                        android:background="@drawable/bg6"
+                        android:background="#C7D3E1"
                         android:orientation="horizontal"
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
@@ -390,12 +392,12 @@
                     <TextView
                             android:id="@+id/suretipi"
                             android:layout_width="206dp"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical"
                             android:text="Süre Tipi"
                             android:textColor="#BF000000"
-                            android:paddingLeft="10dp"
-                            android:paddingBottom="15dp"
-                            android:paddingTop="15dp" />
+                            android:textAlignment="textStart"
+                            android:paddingStart="10sp" />
 
                     <RelativeLayout
                             android:layout_width="204dp"
@@ -452,8 +454,7 @@
                     <RelativeLayout
                             android:layout_width="204dp"
                             android:layout_height="match_parent"
-                            android:gravity="center"
-                            >
+                            android:gravity="center">
 
                         <EditText
                                 android:text="232,00"
@@ -476,7 +477,7 @@
                                 android:textColor="@color/white"
                                 android:layout_toEndOf="@id/edtxt_fiyat"
                                 android:layout_marginLeft="3sp"
-                                android:layout_marginTop="7sp"/>
+                                android:layout_marginTop="7sp" />
 
                         <Button
                                 android:id="@+id/decrementFiyat"
@@ -485,7 +486,7 @@
                                 android:layout_height="25dp"
                                 android:layout_toEndOf="@id/incrementFiyat"
                                 android:layout_marginLeft="0sp"
-                                android:layout_marginTop="7sp"/>
+                                android:layout_marginTop="7sp" />
 
                     </RelativeLayout>
                 </LinearLayout>
