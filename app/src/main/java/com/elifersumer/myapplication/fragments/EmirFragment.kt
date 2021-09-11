@@ -119,6 +119,20 @@ class EmirFragment : Fragment() {
                 val input_fiyat = fiyat.text.toString()
                 val input_adet = adet.text.toString()
 
+
+                /*
+                // bu alana direkt girildiğinde null yazmayacak o kısımları default olarak bazı bilgilere ayarla,
+                //!!!!! kullanıcının parası yetecek mi kontrolünü de unutma, fiyatı adetle carpmayı unutma(hatta o çarpılmış halinin değerini ekranda gösterirsek iyi olur)
+                // bu miktar zımbırtısı var, o da kullanıcının aldığı adet kadar arttırılabilir
+                //işlem limiti yazan kullanıcının yatırım hesabındaki parası mı??
+                if( miktardayazan fiyat == hissenin şuanki fiyatı){
+                    - bilgileri direkt olarak gerçekleşen emirler kısmına aktar
+                    - kullanıcı profili için yapılacak değişiklikler falan(para miktarının azalması, portföyüne o bilginin gitmesi) ayarla
+                }
+                else{
+                    - aynı işlemler fakat bekleyen emirlerime gitsin
+                }
+                 */
                 //database olcak
                 /* BekleyenEmirlerimData(
                      input_isim,
