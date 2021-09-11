@@ -4,6 +4,9 @@
         <item>AKBNK</item>
         <item>EREGL</item>
     </string-array>
+    <string-array name="nameList">
+
+    </string-array>
     <string-array name="fiyatTipleri">
         <item>Limit</item>
         <item>----</item>

@@ -35,8 +35,12 @@ class EmirFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view =  inflater.inflate(R.layout.fragment_emirgiris, container, false)
-        messageTextView = view.findViewById(R.id.edtxt_fiyat)
-        messageTextView.setText(messageToDisplay)
+        val args = this.arguments
+        val satisData = args?.get("satis")
+        val alisData = args?.get("alis")
+        val isimData = args?.get("isim")
+        val alisOrSatis = args?.get("alisOrSatis")
+        Log.d("satis:",satisData.toString())
 
         alisbtn = view.findViewById(R.id.alisbtn) as RadioButton
         satisbtn = view.findViewById(R.id.satisbtn) as RadioButton
@@ -51,11 +55,21 @@ class EmirFragment : Fragment() {
         val satisFiyat = view.findViewById(R.id.val_satis) as TextView
         val fiyat = view.findViewById(R.id.edtxt_fiyat) as EditText
 
+        alisFiyat.text = alisData.toString()
+        satisFiyat.text = satisData.toString()
+
         rg = view.findViewById(R.id.daily_weekly_button_view) as RadioGroup
 
         hisseler = view.findViewById(R.id.autoCompleteTextView) as AutoCompleteTextView
-
-        fiyat.setText(satisFiyat.text)
+        hisseler.setText(isimData.toString())
+        if (alisOrSatis == "satis"){
+            fiyat.setText(alisData.toString())
+            satisbtn.isChecked = true
+        }
+        else{
+            fiyat.setText(satisData.toString())
+            alisbtn.isChecked = true
+        }
 
         alisbtn.setOnClickListener(View.OnClickListener {
             //Toast.makeText(this@EmirFragment.requireActivity(),"AŞKSIN ", Toast.LENGTH_SHORT).show()
@@ -98,7 +112,6 @@ class EmirFragment : Fragment() {
                 fiyat.setText(x.toString())
             }
         })
-
 
 
         var input_islem_tipi = "Alış"

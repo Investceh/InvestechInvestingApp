@@ -29,7 +29,7 @@ class PiyasaFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
 
-       /* var retrofit= CollectApiInstance.getRetrofitObject()?.create(com.elifersumer.myapplication.LiveBorsa.Service.BorsaService::class.java)
+        /*var retrofit= CollectApiInstance.getRetrofitObject()?.create(com.elifersumer.myapplication.LiveBorsa.Service.BorsaService::class.java)
 
         var result : Call<LiveBorsaResponse> = retrofit!!.GetPostValue()
 
@@ -79,7 +79,7 @@ class PiyasaFragment : Fragment() {
         textView.setBackground(drawable1)
         super.onViewCreated(view, savedInstanceState)
 
-         val all_hisse = mutableListOf(PiyasaData(
+        val all_hisse = mutableListOf(PiyasaData(
              "deg","ALKIM","15.04","15.03",
              "1.48"),
              PiyasaData("deg","AKCNS","15.03","15.29",

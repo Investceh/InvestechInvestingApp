@@ -5,7 +5,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
@@ -19,8 +18,8 @@ class RecyclerViewAdapterBekEmirlerim(var hisse_list: MutableList<BekleyenEmirle
         val adet = view.findViewById<TextView>(R.id.BeAdet)
         val fiyat = view.findViewById<TextView>(R.id.BeFiyat)
         val alisOrSatis = view.findViewById<TextView>(R.id.BeAlisOrSatis)
-        val iptal = view.findViewById<View>(R.id.iptalBG)
-        val degis = view.findViewById<View>(R.id.degisimBG)
+        val iptal = view.findViewById<TextView>(R.id.Beİptal)
+        val degis = view.findViewById<TextView>(R.id.BeDegis)
 
     }
 
@@ -39,8 +38,6 @@ class RecyclerViewAdapterBekEmirlerim(var hisse_list: MutableList<BekleyenEmirle
             holder.adet.setBackgroundColor(Color.parseColor("#C7D3E1"))
             holder.fiyat.setBackgroundColor(Color.parseColor("#C7D3E1"))
             holder.alisOrSatis.setBackgroundColor(Color.parseColor("#C7D3E1"))
-            holder.degis.setBackgroundColor(Color.parseColor("#C7D3E1"))
-            holder.iptal.setBackgroundColor(Color.parseColor("#C7D3E1"))
 
         }
         else{
@@ -48,22 +45,19 @@ class RecyclerViewAdapterBekEmirlerim(var hisse_list: MutableList<BekleyenEmirle
             holder.adet.setBackgroundColor(Color.parseColor("#f5f5f5"))
             holder.fiyat.setBackgroundColor(Color.parseColor("#f5f5f5"))
             holder.alisOrSatis.setBackgroundColor(Color.parseColor("#f5f5f5"))
-            holder.degis.setBackgroundColor(Color.parseColor("#f5f5f5"))
-            holder.iptal.setBackgroundColor(Color.parseColor("#f5f5f5"))
         }
         if(hisse_list[position].alisOrsatis == "Alış"){
-            holder.alisOrSatis.setTextColor(Color.parseColor("#2D8326"))
+            holder.alisOrSatis.setTextColor(Color.GREEN)
         }
         else
-            holder.alisOrSatis.setTextColor(Color.parseColor("#e2523e"))
-
+            holder.alisOrSatis.setTextColor(Color.RED)
 
         holder.isim.text = hisse_list[position].hisse_ismi
         holder.adet.text = hisse_list[position].adet
         holder.fiyat.text = hisse_list[position].fiyat
         holder.alisOrSatis.text = hisse_list[position].alisOrsatis
-        //holder.iptal.text = hisse_list[position].iptal
-        //holder.degis.text = hisse_list[position].degis
+        holder.iptal.text = hisse_list[position].iptal
+        holder.degis.text = hisse_list[position].degis
     }
 
 

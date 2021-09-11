@@ -22,19 +22,13 @@ class RecyclerViewAdapter(var hisse_list : MutableList<hisseler>):
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view)
     {
-
-
-        //Price ve Cost yeri farklı !!!!!
         val sh_name: TextView =view.findViewById(R.id.title_tv)
-        val cost: TextView = view.findViewById(R.id.expand_3_1)
+        val cost: TextView = view.findViewById(R.id.cost)
         val tane: TextView = view.findViewById(R.id.tane)
         val k_z: TextView = view.findViewById(R.id.k_z)
         val p_b : TextView = view.findViewById(R.id.expand_1_1)
         val but : Button = view.findViewById(R.id.button_id)
-        val rate : TextView = view.findViewById(R.id.expand_2_1)
-        val price : TextView = view.findViewById(R.id.price)
         val expandableView = view.findViewById<ViewGroup>(R.id.expandableView)
-
         val df = DecimalFormat("#,##0.00")
 
         fun initialize(item: hisseler)
@@ -44,10 +38,6 @@ class RecyclerViewAdapter(var hisse_list : MutableList<hisseler>):
             tane.text = item.tane.toString()
             k_z.text = item.k_z.toString()
             p_b.text = item.PotentialBenefit.toString()
-            rate.text = item.rate.toString()
-            price.text = item.price.toString()
-
-
             itemView.setOnClickListener{
                 if(expandableView.visibility == View.GONE){
                     TransitionManager.beginDelayedTransition(expandableView, AutoTransition())
@@ -78,9 +68,6 @@ class RecyclerViewAdapter(var hisse_list : MutableList<hisseler>):
         holder.tane.text = hisse_list[position].tane.toString()
         holder.k_z.text = hisse_list[position].k_z.toString()
         holder.p_b.text = hisse_list[position].PotentialBenefit.toString()
-        holder.rate.text = hisse_list[position].rate.toString()
-        holder.price.text = hisse_list[position].price.toString()
-
         holder.initialize(hisse_list[position])
     }
 
