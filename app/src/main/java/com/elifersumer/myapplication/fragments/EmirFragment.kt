@@ -55,21 +55,45 @@ class EmirFragment : Fragment() {
         val satisFiyat = view.findViewById(R.id.val_satis) as TextView
         val fiyat = view.findViewById(R.id.edtxt_fiyat) as EditText
 
-        alisFiyat.text = alisData.toString()
-        satisFiyat.text = satisData.toString()
-
         rg = view.findViewById(R.id.daily_weekly_button_view) as RadioGroup
 
         hisseler = view.findViewById(R.id.autoCompleteTextView) as AutoCompleteTextView
+
         hisseler.setText(isimData.toString())
+
+
+        var input_islem_tipi = "Alış"
+
+        alisFiyat.text = alisData.toString()
+        if(alisData == null){
+            alisFiyat.text = "lalala"
+        }
+        satisFiyat.text = satisData.toString()
+        if(satisData == null){
+            satisFiyat.text = "lololo"
+        }
+
+        if (isimData == null){
+            hisseler.setText("HAŞMET")
+        }
+
         if (alisOrSatis == "satis"){
+            input_islem_tipi = "Satış"
             fiyat.setText(alisData.toString())
+            if(alisData == null){
+                fiyat.setText("lululu")
+            }
             satisbtn.isChecked = true
         }
         else{
+            input_islem_tipi == "Alış"
             fiyat.setText(satisData.toString())
+            if(satisData == null){
+                fiyat.setText("lelele")
+            }
             alisbtn.isChecked = true
         }
+
 
         alisbtn.setOnClickListener(View.OnClickListener {
             //Toast.makeText(this@EmirFragment.requireActivity(),"AŞKSIN ", Toast.LENGTH_SHORT).show()
@@ -114,7 +138,7 @@ class EmirFragment : Fragment() {
         })
 
 
-        var input_islem_tipi = "Alış"
+
         rg.setOnCheckedChangeListener(RadioGroup.OnCheckedChangeListener{radioGroup, i ->
             input_islem_tipi = ""
             when(i) {
@@ -128,24 +152,64 @@ class EmirFragment : Fragment() {
                 Toast.makeText(this@EmirFragment.requireActivity(),"Lütfen adet giriniz!", Toast.LENGTH_SHORT).show()
             }else {
 
-                val input_isim = hisseler.text.toString()
-                val input_fiyat = fiyat.text.toString()
-                val input_adet = adet.text.toString()
+                val input_isim:String
+                val input_fiyat:String
+                val input_adet:String
+
+                if(input_islem_tipi == "Alış"){
+                    input_isim = hisseler.text.toString()
+                    input_fiyat = fiyat.text.toString()
+                    input_adet = adet.text.toString()
+
+                    if(fiyat.text.toString().toDouble() == satisFiyat.text.toString().toDouble()){
+
+                        //profile update
+                        var tot_price = input_adet.toDouble() * input_fiyat.toDouble()
+                        if(tot_price <= /* kullanıcının yatırım hesabındaki para */0.0){
+                            /*
+                                . gerçekleşene yolla bu bilgileri
+                                . transfer sayfasında yatırımdaki parasını azalt
+                                . portföye yeni kart ekle(eğer o hisse için kullanıcının kartı varsa, sadece adedini arttır)
+                            */
+                        }else{
+                            Toast.makeText(this@EmirFragment.requireActivity(),"Yetersiz Bakiye", Toast.LENGTH_SHORT).show()
+                        }
+                    }
+                    else{
+                        var tot_price = input_adet.toDouble() * input_fiyat.toDouble()
+                        if(tot_price <= /* kullanıcının yatırım hesabındaki para */0.0){
+                            /*
+                                . bekleyene yolla bu bilgileri
+                                . transfer sayfasında yatırımdaki parasını azalt
+                             */
+                        }else{
+                            Toast.makeText(this@EmirFragment.requireActivity(),"Yetersiz Bakiye", Toast.LENGTH_SHORT).show()
+                        }
+                    }
+                }
+                else if (input_islem_tipi == "Satış"){
+                    input_isim = hisseler.text.toString()
+                    input_fiyat = fiyat.text.toString()
+                    input_adet = adet.text.toString()
+
+                    if(fiyat.text.toString().toDouble() == alisFiyat.text.toString().toDouble()){
+
+                            /*
+                                . gerçekleşene yolla bu bilgileri
+                                . transfer sayfasında yatırımdaki parasını azalt
+                                . portföye yeni kart ekle(eğer o hisse için kullanıcının kartı varsa, sadece adedini arttır)
+                            */
+
+                    }else{
+                            /*
+                                . bekleyene yolla bu bilgileri
+                                . transfer sayfasında yatırımdaki parasını azalt
+                             */
+                    }
+
+                }
 
 
-                /*
-                // bu alana direkt girildiğinde null yazmayacak o kısımları default olarak bazı bilgilere ayarla,
-                //!!!!! kullanıcının parası yetecek mi kontrolünü de unutma, fiyatı adetle carpmayı unutma(hatta o çarpılmış halinin değerini ekranda gösterirsek iyi olur)
-                // bu miktar zımbırtısı var, o da kullanıcının aldığı adet kadar arttırılabilir
-                //işlem limiti yazan kullanıcının yatırım hesabındaki parası mı??
-                if( miktardayazan fiyat == hissenin şuanki fiyatı){
-                    - bilgileri direkt olarak gerçekleşen emirler kısmına aktar
-                    - kullanıcı profili için yapılacak değişiklikler falan(para miktarının azalması, portföyüne o bilginin gitmesi) ayarla
-                }
-                else{
-                    - aynı işlemler fakat bekleyen emirlerime gitsin
-                }
-                 */
                 //database olcak
                 /* BekleyenEmirlerimData(
                      input_isim,
