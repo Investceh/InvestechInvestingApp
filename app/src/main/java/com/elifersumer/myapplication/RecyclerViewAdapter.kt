@@ -33,7 +33,11 @@ class RecyclerViewAdapter(var hisse_list : MutableList<hisseler>):
         val but : Button = view.findViewById(R.id.button_id)
         val rate : TextView = view.findViewById(R.id.expand_2_1)
         val price : TextView = view.findViewById(R.id.price)
+        val stockItem : TextView = view.findViewById(R.id.expand_4_1)
         val expandableView = view.findViewById<ViewGroup>(R.id.expandableView)
+
+
+
 
         val df = DecimalFormat("#,##0.00")
 
@@ -46,6 +50,7 @@ class RecyclerViewAdapter(var hisse_list : MutableList<hisseler>):
             p_b.text = item.PotentialBenefit.toString()
             rate.text = item.rate.toString()
             price.text = item.price.toString()
+            stockItem.text = item.stockItem.toString()
 
 
             itemView.setOnClickListener{
@@ -80,6 +85,7 @@ class RecyclerViewAdapter(var hisse_list : MutableList<hisseler>):
         holder.p_b.text = hisse_list[position].PotentialBenefit.toString()
         holder.rate.text = hisse_list[position].rate.toString()
         holder.price.text = hisse_list[position].price.toString()
+        holder.stockItem.text = hisse_list[position].stockItem.toString()
 
         holder.initialize(hisse_list[position])
     }
