@@ -1,0 +1,143 @@
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+                                   xmlns:tools="http://schemas.android.com/tools"
+                                   xmlns:app="http://schemas.android.com/apk/res-auto"
+                                   android:orientation="vertical"
+                                   android:layout_width="wrap_content"
+                                   android:layout_height="wrap_content"
+                                   app:cardCornerRadius="15dp"
+                                   android:id="@+id/cardview"
+                                   android:layout_margin="10dp"
+                                   android:elevation="10dp">
+
+    <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg10"
+            android:orientation="vertical"
+            android:padding="5dp">
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" android:gravity="clip_vertical">
+            <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical">
+                <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/haberimage"
+                        tools:srcCompat="@tools:sample/avatars"/>
+            </RelativeLayout>
+            <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="253dp"
+                    android:layout_height="wrap_content" android:paddingLeft="5dp">
+                <TextView
+                        android:id="@+id/baslik"
+                        android:layout_width="wrap_content"
+                        android:text="AİHM adayları elemeyi geçti... Sırada mülakat ve seçim var"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="#0F1F32"
+                        app:layout_constraintStart_toStartOf="parent"
+                        tools:ignore="MissingConstraints"/>
+                <TextView
+                        android:id="@+id/aciklama"
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:textSize="12sp"
+                        android:ellipsize="end"
+                        android:text="AVRUPA İnsan Hakları Mahkemesi’nde (AİHM) görev yapan Işıl Karakaş’ın yerine görev yapmak üzere Türkiye tarafından Avrupa Konseyi’ne bildirilen Prof. Dr. Selami Kuran, Prof. Dr. Necati Polat ve Prof. Dr. Esra Gül Dardağan Kibar elemeyi geçti."
+                        android:textColor="#0F1F32"
+                />
+                <TextView
+                        android:id="@+id/kaynak"
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:textSize="10sp"
+                        android:layout_weight="1"
+                        android:ellipsize="end"
+                        android:text="Kaynak: Hürriyet"
+                        android:textColor="#800F1F32"/>
+                <Button
+                        android:text="Devamı için..."
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp" android:id="@+id/dvmBtn" android:textAllCaps="false"
+                        android:textSize="8sp" android:layout_gravity="right|top"
+                        android:gravity="center_horizontal|fill_vertical" android:onClick="onClick"/>
+
+
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+                android:id="@+id/expandableView2"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+
+                android:orientation="horizontal"
+        >
+            <TableLayout
+                    android:layout_height="wrap_content"
+                    android:layout_width="fill_parent"
+                    android:orientation="horizontal"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="50dp"
+            >
+                <TableRow>
+                    <TextView
+                            android:id="@+id/expand_1"
+                            android:layout_height="wrap_content"
+                            android:layout_width="wrap_content"
+                            android:layout_weight="1"
+                            android:textSize="15sp"
+                            android:ellipsize="end"
+                            android:text="Potential Benefit : "
+                            android:textColor="@color/white"
+                    />
+
+                    <TextView
+                            android:id="@+id/expand_1.1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="15sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/white"
+                            app:layout_constraintStart_toEndOf="@+id/expand_1"/>
+                </TableRow>
+                <TableRow>
+                    <TextView
+                            android:id="@+id/expand_2"
+                            android:layout_height="wrap_content"
+                            android:layout_width="wrap_content"
+                            android:layout_weight="1"
+                            android:textSize="15sp"
+                            android:ellipsize="end"
+                            android:text="NewLine : "
+                            android:textColor="@color/white"
+                    />
+
+                    <TextView
+                            android:id="@+id/expand_2.1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="15sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/white"
+                            app:layout_constraintStart_toEndOf="@+id/expand_2"/>
+
+
+                </TableRow>
+
+            </TableLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
