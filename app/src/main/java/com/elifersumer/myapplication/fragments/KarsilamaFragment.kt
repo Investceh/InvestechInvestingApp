@@ -71,7 +71,7 @@ class KarsilamaFragment : Fragment()  {
                 stockList=data?.StockList!!
 
                 for(stock in stockList){
-                    var h1=hisseler(stock.Name!!,R.drawable.header_logo,stock.Cost!!,stock.Amount!!,stock.PotentialBenefitRate!!,stock.PotentialBenefit!!)
+                    var h1=hisseler(stock.Name!!,R.drawable.header_logo,stock.Cost!!,stock.Amount!!,stock.PotentialBenefitRate!!,stock.PotentialBenefit!!,stock.Rate!!,stock.Price!!,stock.StockItem!!)
                     list1.add(h1)
                 }
                 val tourList = list1

@@ -49,7 +49,6 @@ class KriptoFragment : Fragment() {
                     var priceString : String
                     val df = DecimalFormat("#,##0.00")
                     priceString = df.format(kripto.price)
-
                     var h1=PiyasaData("deg", kripto.code!!, priceString.replace('.',','),kripto.changeHourstr!!, kripto.changeDaystr!!)
                     list1.add(h1)
                 }
