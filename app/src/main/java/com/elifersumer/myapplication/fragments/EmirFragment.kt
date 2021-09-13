@@ -66,22 +66,22 @@ class EmirFragment : Fragment() {
 
         alisFiyat.text = alisData.toString()
         if(alisData == null){
-            alisFiyat.text = "lalala"
+            alisFiyat.text = "20,03"
         }
         satisFiyat.text = satisData.toString()
         if(satisData == null){
-            satisFiyat.text = "lololo"
+            satisFiyat.text = "20,05"
         }
 
         if (isimData == null){
-            hisseler.setText("HAŞMET")
+            hisseler.setText("EREGL")
         }
 
         if (alisOrSatis == "satis"){
             input_islem_tipi = "Satış"
             fiyat.setText(alisData.toString())
             if(alisData == null){
-                fiyat.setText("lululu")
+                fiyat.setText("20,05")
             }
             satisbtn.isChecked = true
         }
@@ -89,7 +89,7 @@ class EmirFragment : Fragment() {
             input_islem_tipi == "Alış"
             fiyat.setText(satisData.toString())
             if(satisData == null){
-                fiyat.setText("lelele")
+                fiyat.setText("20,03")
             }
             alisbtn.isChecked = true
         }
@@ -203,7 +203,7 @@ class EmirFragment : Fragment() {
                     }else{
                             /*
                                 . bekleyene yolla bu bilgileri
-                                . transfer sayfasında yatırımdaki parasını azalt
+                                . transfer sayfasında yatırımdaki parasını arttır
                              */
                     }
 
