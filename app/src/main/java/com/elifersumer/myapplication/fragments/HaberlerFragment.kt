@@ -40,10 +40,13 @@ class HaberlerFragment : Fragment() {
                 var data=response.body()!!
                 haberList=data?.result!!
                 for(haber in haberList){
+/*
                     var url :URL = URL(haber.image)
-                    var bmp = BitmapFactory.decodeStream(url.openConnection().getInputStream())
+*/
+
+                  //  var bmp = BitmapFactory.decodeStream(url.openConnection().getInputStream())
                     var link = URL(haber.url)
-                    var h1=haberler(haber.name!!,haber.description!!,haber.image!!,haber.source!!,haber.url!!,bmp)
+                    var h1=haberler(haber.name!!,haber.description!!,haber.image!!,haber.source!!,haber.url!!)
                     list1.add(h1)
                 }
                 val tourList = list1

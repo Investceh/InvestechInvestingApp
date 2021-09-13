@@ -25,9 +25,10 @@ class RecyclerViewAdapterForHaberler(var haberler_list : MutableList<haberler>):
         val aciklama: TextView = view.findViewById(R.id.aciklama)
         val kaynak: TextView = view.findViewById(R.id.kaynak)
         val devam: Button = view.findViewById(R.id.dvmBtn)
-        val image: ImageView=view.findViewById(R.id.haberimage)
+    //    val image: ImageView=view.findViewById(R.id.haberimage)
+
         val expandableView = view.findViewById<ViewGroup>(R.id.expandableView2)
-        var bmp : Bitmap ?=null
+   //     var bmp : Bitmap ?=null
 
         val df = DecimalFormat("#,##0.00")
 
@@ -36,8 +37,10 @@ class RecyclerViewAdapterForHaberler(var haberler_list : MutableList<haberler>):
             baslik.text=item.baslik
             aciklama.text=item.aciklama
             kaynak.text=item.kaynak
+/*
             bmp=item.bmp
             image.setImageBitmap(bmp)
+*/
 
             devam.setOnClickListener{
                 var link = Uri.parse(item.linkUrl)
@@ -58,7 +61,7 @@ class RecyclerViewAdapterForHaberler(var haberler_list : MutableList<haberler>):
         holder.baslik.text = haberler_list[position].baslik
         holder.aciklama.text= haberler_list[position].aciklama
         holder.kaynak.text = haberler_list[position].kaynak
-        holder.bmp=haberler_list[position].bmp
+       // holder.bmp=haberler_list[position].bmp
 
         holder.initialize(haberler_list[position])
     }
