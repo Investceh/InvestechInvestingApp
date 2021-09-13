@@ -47,7 +47,7 @@ class KarsilamaFragment : Fragment()  {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {/*
+    ): View? {
         var instances=RetroInstance()
 
         var header = Header("c1c2a508fdf64c14a7b44edc9241c9cd","API","331eb5f529c74df2b800926b5f34b874","5252012362481156055")
@@ -71,9 +71,10 @@ class KarsilamaFragment : Fragment()  {
                 stockList=data?.StockList!!
 
                 for(stock in stockList){
-                    var h1=hisseler(stock.Name!!,R.drawable.header_logo,stock.Cost!!,stock.Amount!!,stock.PotentialBenefitRate!!,stock.PotentialBenefit!!,stock.Rate!!,stock.Price!!,stock.StockItem!!)
+                    var h1=hisseler(stock.Name!!,R.drawable.header_logo,stock.Cost!!, stock.StockItem!!.toInt(), stock.Rate!!,stock.PotentialBenefit!!,stock.Price!!)
                     list1.add(h1)
                 }
+
                 val tourList = list1
                 recyclerview.layoutManager=LinearLayoutManager(context)
                 recyclerview.adapter= RecyclerViewAdapter(tourList)
@@ -83,7 +84,7 @@ class KarsilamaFragment : Fragment()  {
             }
 
             override fun onFailure(call: Call<GetCustomerPortfolioByDateResponse?>?, t: Throwable?) {}
-        })*/
+        })
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_karsilama, container, false)
 
