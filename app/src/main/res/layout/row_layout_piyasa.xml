@@ -123,8 +123,8 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="@id/row_layout_guide5"
-            app:layout_constraintEnd_toEndOf="@id/row_layout_guide6"
+            app:layout_constraintStart_toStartOf="@id/row_layout_guide6"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="@id/cons1"
             android:background="@android:color/transparent"/>
 
@@ -133,8 +133,8 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="@id/row_layout_guide5"
-            app:layout_constraintEnd_toEndOf="@id/row_layout_guide6"
+            app:layout_constraintStart_toStartOf="@id/row_layout_guide6"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="@id/cons1"
             android:layout_marginVertical="10dp"
             android:layout_marginHorizontal="10dp"
@@ -143,22 +143,24 @@
             android:adjustViewBounds="true"
             android:background="@android:color/transparent"/>
 
+
     <View
             android:id="@+id/buyBG"
             android:layout_width="0dp"
             android:layout_height="0dp"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="@id/row_layout_guide6"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="@id/cons1"/>
+            app:layout_constraintStart_toStartOf="@id/row_layout_guide5"
+            app:layout_constraintEnd_toEndOf="@id/row_layout_guide6"
+            app:layout_constraintBottom_toBottomOf="@id/cons1"
+            />
 
     <androidx.constraintlayout.utils.widget.ImageFilterButton
             android:id="@+id/buttonAl"
             android:layout_width="0dp"
             android:layout_height="0dp"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="@id/row_layout_guide6"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/row_layout_guide5"
+            app:layout_constraintEnd_toEndOf="@id/row_layout_guide6"
             app:layout_constraintBottom_toBottomOf="@id/cons1"
             android:layout_marginVertical="10dp"
             android:layout_marginHorizontal="10dp"
@@ -166,9 +168,6 @@
             android:scaleType="center"
             android:adjustViewBounds="true"
             android:background="@android:color/transparent"/>
-
-
-
 
 
     <LinearLayout
