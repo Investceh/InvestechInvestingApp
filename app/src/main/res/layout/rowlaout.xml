@@ -47,7 +47,7 @@
                             android:layout_weight="1"
                             android:textSize="15sp"
                             android:ellipsize="end"
-                            android:text="Price : "
+                            android:text="Fiyat: "
                             android:textColor="@color/white"
                             />
                     <TextView

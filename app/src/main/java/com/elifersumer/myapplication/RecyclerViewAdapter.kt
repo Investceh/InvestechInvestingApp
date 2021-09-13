@@ -40,13 +40,16 @@ class RecyclerViewAdapter(var hisse_list : MutableList<hisseler>):
 
         fun initialize(item: hisseler)
         {
+            val df = DecimalFormat("#,##0.00")
             sh_name.text = item.sh_name
             cost.text = item.cost.toString()
             tane.text = item.tane.toString()
             k_z.text = item.k_z.toString()
             p_b.text = item.PotentialBenefit.toString()
             rate.text = item.rate.toString()
-            price.text = item.price.toString()
+
+            val fiyat = df.format(item.price).replace(',','.').reversed().replaceFirst('.',',').reversed()
+            price.text = fiyat
             stockItem.text = item.stockItem.toString()
 
 
