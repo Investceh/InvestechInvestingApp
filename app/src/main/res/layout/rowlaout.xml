@@ -47,11 +47,11 @@
                             android:layout_weight="1"
                             android:textSize="15sp"
                             android:ellipsize="end"
-                            android:text="Cost : "
+                            android:text="Price : "
                             android:textColor="@color/white"
                             />
                     <TextView
-                            android:id="@+id/cost"
+                            android:id="@+id/price"
                             android:layout_height="wrap_content"
                             android:layout_width="wrap_content"
                             android:layout_weight="0"
@@ -167,21 +167,42 @@
                             android:layout_weight="1"
                             android:textSize="15sp"
                             android:ellipsize="end"
-                            android:text="NewLine : "
+                            android:text="Cost : "
                             android:textColor="@color/white"
                             />
-
                     <TextView
-                            android:id="@+id/expand_2.1"
+                            android:id="@+id/cost"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textSize="15sp"
                             android:textStyle="bold"
                             android:textColor="@color/white"
                             app:layout_constraintStart_toEndOf="@+id/expand_2"/>
+                </TableRow>
+                <TableRow>
+                    <TextView
+                            android:id="@+id/expand_3"
+                            android:layout_height="wrap_content"
+                            android:layout_width="wrap_content"
+                            android:layout_weight="1"
+                            android:textSize="15sp"
+                            android:ellipsize="end"
+                            android:text="Cost : "
+                            android:textColor="@color/white"
+                            />
+
+                    <TextView
+                            android:id="@+id/expand_3.1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="15sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/white"
+                            app:layout_constraintStart_toEndOf="@+id/expand_3"/>
 
 
                 </TableRow>
+
                 <TableRow>
                     <TextView
                             android:id="@+id/expand_4"
@@ -201,7 +222,7 @@
                             android:textSize="15sp"
                             android:textStyle="bold"
                             android:textColor="@color/white"
-                            app:layout_constraintStart_toEndOf="@+id/expand_2"/>
+                            app:layout_constraintStart_toEndOf="@+id/expand_4"/>
                 </TableRow>
 
             </TableLayout>

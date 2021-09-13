@@ -28,7 +28,7 @@ class RecyclerViewAdapter(var hisse_list : MutableList<hisseler>):
         val k_z: TextView = view.findViewById(R.id.k_z)
         val p_b : TextView = view.findViewById(R.id.expand_1_1)
         val but : Button = view.findViewById(R.id.button_id)
-        val rate : TextView = view.findViewById(R.id.expand_2_1)
+        val rate : TextView = view.findViewById(R.id.expand_3_1)
         val price : TextView = view.findViewById(R.id.price)
         val stockItem : TextView = view.findViewById(R.id.expand_4_1)
         val expandableView = view.findViewById<ViewGroup>(R.id.expandableView)
