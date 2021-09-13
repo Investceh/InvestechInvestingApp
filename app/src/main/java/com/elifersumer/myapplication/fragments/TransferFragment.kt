@@ -6,11 +6,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.elifersumer.myapplication.R
 import androidx.appcompat.app.AppCompatActivity
 import android.widget.*
 import androidx.core.content.res.ResourcesCompat
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.elifersumer.myapplication.*
 import com.elifersumer.myapplication.GetAccountList.Request.GetAccountListParameters
 import com.elifersumer.myapplication.GetAccountList.Request.GetAccountListRequest
 import com.elifersumer.myapplication.GetAccountList.Response.Account
@@ -20,9 +20,6 @@ import com.elifersumer.myapplication.GetCustomerPortfolio.Request.GetCustomerPor
 import com.elifersumer.myapplication.GetCustomerPortfolio.Request.GetOrderCustomerPortfolioByDateRequest
 import com.elifersumer.myapplication.GetCustomerPortfolio.Response.GetCustomerPortfolioByDateResponse
 import com.elifersumer.myapplication.GetCustomerPortfolio.Response.Stock
-import com.elifersumer.myapplication.Header
-import com.elifersumer.myapplication.RecyclerViewAdapter
-import com.elifersumer.myapplication.RetroInstance
 import kotlinx.android.synthetic.main.fragment_karsilama.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -30,9 +27,8 @@ import retrofit2.Response
 import java.text.DecimalFormat
 
 class TransferFragment : Fragment() {
-    var cüzdan_yatırım = 1254.0
-    var cüzdan_vadesiz = 5230.3
-
+    var cüzdan_yatırım:Double=0.0
+    var cüzdan_vadesiz:Double=0.0
     var secilen_miktar_double = 0.0
     val df = DecimalFormat("#,##0.00")
     lateinit var hesap_bilgi: TextView
@@ -48,16 +44,18 @@ class TransferFragment : Fragment() {
     lateinit var rg_100: RadioButton
 
     lateinit var btn_tamam: Button
+    private var list1 = arrayListOf<hesaplar>()
+    private var list2 = arrayListOf<hesaplar>()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
 
-        /*var instances= RetroInstance()
+        var instances=RetroInstance()
 
-        var header = Header("c1c2a508fdf64c14a7b44edc9241c9cd","API","331eb5f529c74df2b800926b5f34b874","5252012362481156055")
+        var header = Header("c1c2a508fdf64c14a7b44edc9241c9cd","API","fb4de3b2ef414379b294c25a867e405f","5252012362481156055")
 
-        var getAccountListParameters= GetAccountListParameters(4723876)
+        var getAccountListParameters=GetAccountListParameters(2)
 
         //var listParameters=ArrayList<GetOrderListParameters>()
 
@@ -69,8 +67,6 @@ class TransferFragment : Fragment() {
         var retrofit= RetroInstance.getRetrofitObject()?.create(AccountService::class.java)
         var result : Call<GetAccountListResponse> = retrofit!!.GetPostValue(getAccountListRequest)
         var accountList:List<Account>
-        var vdlAccountList=ArrayList<Account>()
-        var vdszAccountList=ArrayList<Account>()
 
         result.enqueue(object : Callback<GetAccountListResponse?> {
             override fun onResponse(call: Call<GetAccountListResponse?>?, response: Response<GetAccountListResponse?>) {
@@ -78,16 +74,22 @@ class TransferFragment : Fragment() {
                 accountList=data?.AccountList!!
 
                 for(account in accountList){
-                    if(account.OriginalProductCode=="VDLMEVD"){
-                        vdlAccountList.add(account)
-                    }else if(account.OriginalProductCode=="VDSZMVD"){
-                        vdszAccountList.add(account)
+
+                    if(account.OriginalProductCode=="VDSZMVD"){
+                        var h1=hesaplar(account.ShortName!!,account.IBANNo!!,account.AmountOfBalance!!)
+                        list1.add(h1)
+                    }else if(account.OriginalProductCode=="VDLMEVD"){
+                        var h2=hesaplar(account.ShortName!!,account.IBANNo!!,account.AmountOfBalance!!)
+                        list2.add(h2)
                     }
+
                 }
+                cüzdan_yatırım = list2[0].balance.toDouble()
+                cüzdan_vadesiz = list1[0].balance.toDouble()
             }
 
             override fun onFailure(call: Call<GetAccountListResponse?>?, t: Throwable?) {}
-        })*/
+        })
 
         val view =  inflater.inflate(R.layout.fragment_transfer, container, false)
         hesap_bilgi = view.findViewById(R.id.hesap_bilgi) as TextView
@@ -181,7 +183,7 @@ class TransferFragment : Fragment() {
                     //secilen_miktar_double += secilen_miktar.toDouble()
                     if(islem.checkedRadioButtonId != -1) {
                         if (vadesiz_yatırım.isChecked) {
-                            if(cüzdan_vadesiz >= secilen_miktar_double){
+                            if(cüzdan_vadesiz!! >= secilen_miktar_double){
                                 cüzdan_vadesiz -= secilen_miktar_double
                                 cüzdan_yatırım += secilen_miktar_double
 
