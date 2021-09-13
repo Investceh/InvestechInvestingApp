@@ -39,7 +39,6 @@ class HaberlerFragment : Fragment() {
             override fun onResponse(call: Call<GetNewsResponse?>?, response: Response<GetNewsResponse?>) {
                 var data=response.body()!!
                 haberList=data?.result!!
-
                 for(haber in haberList){
                     var url :URL = URL(haber.image)
                     var bmp = BitmapFactory.decodeStream(url.openConnection().getInputStream())
@@ -52,7 +51,9 @@ class HaberlerFragment : Fragment() {
                 recyclerview.adapter= RecyclerViewAdapterForHaberler(tourList)
             }
 
-            override fun onFailure(call: Call<GetNewsResponse?>?, t: Throwable?) {}
+            override fun onFailure(call: Call<GetNewsResponse?>?, t: Throwable?) {
+
+            }
         })
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_haberler, container, false)

@@ -10,11 +10,11 @@ class CriptoInfo {
     var circulatingSupply: String? = null
     var code: String? = null
     var currency: String? = null
-    var marketCap: Long? = null
+    var marketCap: Double? = null
     var marketCapstr: String? = null
     var name: String? = null
     var price: Double? = null
     var pricestr: String? = null
-    var volume: Long? = null
+    var volume: Double? = null
     var volumestr: String? = null
 }
