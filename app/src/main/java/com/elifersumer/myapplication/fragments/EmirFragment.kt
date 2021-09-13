@@ -17,6 +17,7 @@ import kotlinx.android.synthetic.main.fragment_piyasa.view.*
 import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe
 import org.greenrobot.eventbus.ThreadMode
+import java.text.DecimalFormat
 
 
 class EmirFragment : Fragment() {
@@ -27,6 +28,7 @@ class EmirFragment : Fragment() {
     lateinit var adet: EditText
     lateinit var hisseler: AutoCompleteTextView
     lateinit var rg: RadioGroup
+    val df = DecimalFormat("#,##0.00")
     var messageToDisplay:String? = null
 
     override fun onCreateView(
@@ -107,6 +109,19 @@ class EmirFragment : Fragment() {
 
             fiyat.setText(satisFiyat.text)
         })
+        fun string_fix(inputstr : String): String {
+            var var1 = ""
+            for (i in inputstr){
+                if (i == ','){
+                    var1 += '.'
+                }
+                else if (i != '.'){
+                    var1 += i
+                }
+            }
+            return var1
+        }
+
 
         satisbtn.setOnClickListener(View.OnClickListener {
 
@@ -122,13 +137,19 @@ class EmirFragment : Fragment() {
 
 
         incrementBtn.setOnClickListener(View.OnClickListener {
-            fiyat.setText((fiyat.text.toString().toFloat() + 1).toString())
+            var fiyat2 = string_fix(fiyat.text.toString())
+            var fiyat3 = fiyat2.toFloat() + 1
+            fiyat2 = df.format(fiyat3).replace(',','.').reversed().replaceFirst('.',',').reversed()
+            fiyat.setText(fiyat2)
         })
 
         decrementBtn.setOnClickListener(View.OnClickListener {
 
-            if(fiyat.text.toString().toFloat() > 1){
-                fiyat.setText((fiyat.text.toString().toFloat() - 1).toString())
+            if(string_fix(fiyat.text.toString()).toFloat() > 1){
+                var fiyat2 = string_fix(fiyat.text.toString())
+                var fiyat3 = fiyat2.toFloat() - 1
+                fiyat2 = df.format(fiyat3).replace(',','.').reversed().replaceFirst('.',',').reversed()
+                fiyat.setText(fiyat2)
             }
             else{
                 val x = 0
@@ -146,6 +167,7 @@ class EmirFragment : Fragment() {
             }
         })
 
+
         tamamBtn.setOnClickListener {
             if(view.findViewById<EditText>(R.id.edtxt_adet).text.toString() == ""){
                 Toast.makeText(this@EmirFragment.requireActivity(),"Lütfen adet giriniz!", Toast.LENGTH_SHORT).show()
@@ -160,10 +182,13 @@ class EmirFragment : Fragment() {
                     input_fiyat = fiyat.text.toString()
                     input_adet = adet.text.toString()
 
-                    if(fiyat.text.toString().toDouble() == satisFiyat.text.toString().toDouble()){
+
+                    var input_fiyat2 = string_fix(input_fiyat)
+
+                    if(fiyat.text.toString() == satisFiyat.text.toString()){
 
                         //profile update
-                        var tot_price = input_adet.toDouble() * input_fiyat.toDouble()
+                        var tot_price = input_adet.toDouble() * input_fiyat2.toDouble()
                         if(/*tot_price <= /* kullanıcının yatırım hesabındaki para */0.0*/1 == 1){
                             Log.d("if:","a")
                             val bundle = Bundle()
@@ -209,7 +234,8 @@ class EmirFragment : Fragment() {
                     input_fiyat = fiyat.text.toString()
                     input_adet = adet.text.toString()
 
-                    if(fiyat.text.toString().toDouble() == alisFiyat.text.toString().toDouble()){
+
+                    if(fiyat.text.toString() == alisFiyat.text.toString()){
                         val bundle = Bundle()
                         bundle.putString("ger_isim",input_isim)
                         bundle.putString("ger_fiyat",input_fiyat)
