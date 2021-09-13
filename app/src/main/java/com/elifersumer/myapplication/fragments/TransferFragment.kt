@@ -94,6 +94,10 @@ class TransferFragment : Fragment() {
 
                 hesap_bilgi.text = hesapBilgi.toString() + " ₺"
                 yatırım_bilgi.text = yatirimBilgi.toString() + " ₺"
+                var vadesiz_isim = view?.findViewById(R.id.vadesiz_isim) as TextView
+                var yatirim_isim = view?.findViewById(R.id.yatirim_isim) as TextView
+                vadesiz_isim.text = list1[0].name
+                yatirim_isim.text = list2[0].name
             }
 
             override fun onFailure(call: Call<GetAccountListResponse?>?, t: Throwable?) {}

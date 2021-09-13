@@ -73,7 +73,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="@id/row_layout_guide__1"
             app:layout_constraintEnd_toEndOf="@id/row_layout_guide__2"
-            android:text="Hisse"
+            android:text="Altın"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:id="@+id/hisse_ismi__2"

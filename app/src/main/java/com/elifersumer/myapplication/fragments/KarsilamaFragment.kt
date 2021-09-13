@@ -47,7 +47,7 @@ class KarsilamaFragment : Fragment()  {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {/*
+    ): View? {
         var instances=RetroInstance()
 
         var header = Header("c1c2a508fdf64c14a7b44edc9241c9cd","API","331eb5f529c74df2b800926b5f34b874","5252012362481156055")
@@ -83,7 +83,7 @@ class KarsilamaFragment : Fragment()  {
             }
 
             override fun onFailure(call: Call<GetCustomerPortfolioByDateResponse?>?, t: Throwable?) {}
-        })*/
+        })
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_karsilama, container, false)
 

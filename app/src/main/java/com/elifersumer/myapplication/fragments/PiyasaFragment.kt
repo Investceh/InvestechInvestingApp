@@ -29,7 +29,7 @@ class PiyasaFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
 
-        /*var retrofit= CollectApiInstance.getRetrofitObject()?.create(com.elifersumer.myapplication.LiveBorsa.Service.BorsaService::class.java)
+        var retrofit= CollectApiInstance.getRetrofitObject()?.create(com.elifersumer.myapplication.LiveBorsa.Service.BorsaService::class.java)
 
         var result : Call<LiveBorsaResponse> = retrofit!!.GetPostValue()
 
@@ -54,7 +54,7 @@ class PiyasaFragment : Fragment() {
             override fun onFailure(call: Call<LiveBorsaResponse?>?, t: Throwable?) {
 
             }
-        })*/
+        })
 
         val view = inflater.inflate(R.layout.fragment_piyasa, container, false)
         return view
@@ -79,13 +79,13 @@ class PiyasaFragment : Fragment() {
         textView.setBackground(drawable1)
         super.onViewCreated(view, savedInstanceState)
 
-        val all_hisse = mutableListOf(PiyasaData(
+      /*  val all_hisse = mutableListOf(PiyasaData(
              "deg","ALKIM","15.04","15.03",
              "1.48"),
              PiyasaData("deg","AKCNS","15.03","15.29",
                  "-0.20"))
 
         piyasa_recyclerView.layoutManager= LinearLayoutManager(context)
-        piyasa_recyclerView.adapter= RecyclerViewAdapterPiyasa(all_hisse)
+        piyasa_recyclerView.adapter= RecyclerViewAdapterPiyasa(all_hisse)*/
     }
 }

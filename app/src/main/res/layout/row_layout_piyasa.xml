@@ -51,7 +51,7 @@
 
     <ImageView
             android:paddingHorizontal="6dp"
-            android:paddingVertical="12dp"
+            android:paddingVertical="20dp"
             app:layout_constraintBottom_toBottomOf="@id/hisse_ismi"
             android:textAlignment="center"
             app:layout_constraintTop_toTopOf="parent"
@@ -63,8 +63,9 @@
             android:textSize="10sp" />
 
     <TextView
+            android:maxLines="1"
             android:paddingHorizontal="6dp"
-            android:paddingVertical="12dp"
+            android:paddingVertical="20dp"
             android:textAlignment="center"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="@id/row_layout_guide1"
@@ -77,8 +78,9 @@
             android:textSize="14sp" />
 
     <TextView
+            android:maxLines="1"
             android:paddingHorizontal="6dp"
-            android:paddingVertical="12dp"
+            android:paddingVertical="20dp"
             android:textAlignment="center"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="@id/row_layout_guide2"
@@ -91,8 +93,9 @@
             android:textSize="14sp" />
 
     <TextView
+            android:maxLines="1"
             android:paddingHorizontal="6dp"
-            android:paddingVertical="12dp"
+            android:paddingVertical="20dp"
             android:textAlignment="center"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="@id/row_layout_guide3"
@@ -105,8 +108,9 @@
             android:textSize="14sp" />
 
     <TextView
+            android:maxLines="1"
             android:paddingHorizontal="6dp"
-            android:paddingVertical="12dp"
+            android:paddingVertical="20dp"
             android:textAlignment="center"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="@id/row_layout_guide4"
