@@ -58,11 +58,6 @@ class RecyclerViewAdapterPiyasa(var hisse_list: MutableList<PiyasaData>) :
                 Toast.makeText(isim.context,"Alındı",Toast.LENGTH_SHORT).show()
             }
             sat.setOnClickListener{
-                /*Bundle().apply {
-                    this.putString("key", "value")
-                    navigation.navigate(fragment, this)
-                }*/
-
                 Toast.makeText(isim.context,"Satıldı",Toast.LENGTH_SHORT).show()
                 val isimString:String = isim.text.toString()
                 val satisString:String = satis.text.toString()
