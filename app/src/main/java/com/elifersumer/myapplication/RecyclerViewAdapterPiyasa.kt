@@ -45,12 +45,14 @@ class RecyclerViewAdapterPiyasa(var hisse_list: MutableList<PiyasaData>) :
                 val isimString:String = isim.text.toString()
                 val satisString:String = satis.text.toString()
                 val alisString:String = alis.text.toString()
+                val farkString:String = fark.text.toString()
                 satisOrAlis ="alis"
                 val bundle = Bundle()
                 bundle.putString("satis",satisString)
                 bundle.putString("isim",isimString)
                 bundle.putString("alis",alisString)
                 bundle.putString("alisOrSatis",satisOrAlis)
+                bundle.putString("fark",farkString)
                 val fragment = EmirFragment()
                 fragment.arguments = bundle
                 val manager: FragmentManager = (itemView.context as AppCompatActivity).supportFragmentManager
@@ -62,12 +64,15 @@ class RecyclerViewAdapterPiyasa(var hisse_list: MutableList<PiyasaData>) :
                 val isimString:String = isim.text.toString()
                 val satisString:String = satis.text.toString()
                 val alisString:String = alis.text.toString()
+                val farkString:String = fark.text.toString()
+
                 satisOrAlis = "satis"
                 val bundle = Bundle()
                 bundle.putString("satis",satisString)
                 bundle.putString("isim",isimString)
                 bundle.putString("alis",alisString)
                 bundle.putString("alisOrSatis",satisOrAlis)
+                bundle.putString("fark",farkString)
                 val fragment = EmirFragment()
                 fragment.arguments = bundle
                 val manager: FragmentManager = (itemView.context as AppCompatActivity).supportFragmentManager

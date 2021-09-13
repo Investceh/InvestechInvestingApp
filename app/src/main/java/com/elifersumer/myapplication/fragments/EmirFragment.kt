@@ -17,6 +17,7 @@ import kotlinx.android.synthetic.main.fragment_piyasa.view.*
 import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe
 import org.greenrobot.eventbus.ThreadMode
+import org.w3c.dom.Text
 import java.text.DecimalFormat
 
 
@@ -41,6 +42,7 @@ class EmirFragment : Fragment() {
         val alisData = args?.get("alis")
         val isimData = args?.get("isim")
         val alisOrSatis = args?.get("alisOrSatis")
+        val farkData = args?.get("fark")
         Log.d("satis:",satisData.toString())
 
         alisbtn = view.findViewById(R.id.alisbtn) as RadioButton
@@ -49,6 +51,7 @@ class EmirFragment : Fragment() {
 
         val incrementBtn = view.findViewById(R.id.incrementFiyat) as Button
         val decrementBtn = view.findViewById(R.id.decrementFiyat) as Button
+        val farkTextView = view.findViewById(R.id.val_miktar2) as TextView
 
         adet = view.findViewById(R.id.edtxt_adet) as EditText
 
@@ -77,7 +80,10 @@ class EmirFragment : Fragment() {
         if (isimData == null){
             hisseler.setText("EREGL")
         }
-
+        farkTextView.text = farkData.toString()
+        if(farkData == null){
+            farkTextView.text = "%0.07"
+        }
         if (alisOrSatis == "satis"){
             input_islem_tipi = "Satış"
             fiyat.setText(alisData.toString())

@@ -153,7 +153,7 @@
                                 android:paddingStart="10dp"
                                 android:gravity="center_vertical"
                                 android:textAlignment="textStart"
-                                android:text="Hisse"
+                                android:text="Varlık"
                                 android:textColor="#BF000000" />
 
                     </RelativeLayout>
@@ -233,7 +233,7 @@
                                     android:id="@+id/miktar2"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="MİKTAR"
+                                    android:text="FARK"
                                     android:textColor="#BF000000" />
                         </LinearLayout>
 
