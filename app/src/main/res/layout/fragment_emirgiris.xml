@@ -133,7 +133,7 @@
                         android:background="@drawable/line" />
 
                 <LinearLayout
-                        android:background="@drawable/bg6"
+                        android:background="#C7D3E1"
                         android:orientation="horizontal"
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
@@ -149,12 +149,13 @@
                         <TextView
                                 android:id="@+id/hisse"
                                 android:layout_width="206dp"
-                                android:layout_height="wrap_content"
-                                android:paddingLeft="10dp"
-                                android:paddingTop="20dp"
-                                android:paddingBottom="15dp"
-                                android:text="Hisse"
+                                android:layout_height="match_parent"
+                                android:paddingStart="10dp"
+                                android:gravity="center_vertical"
+                                android:textAlignment="textStart"
+                                android:text="Varlık"
                                 android:textColor="#BF000000" />
+
                     </RelativeLayout>
 
                     <RelativeLayout
@@ -232,7 +233,7 @@
                                     android:id="@+id/miktar2"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="MİKTAR"
+                                    android:text="FARK"
                                     android:textColor="#BF000000" />
                         </LinearLayout>
 
@@ -284,7 +285,7 @@
                         android:background="@drawable/line" />
 
                 <LinearLayout
-                        android:background="@drawable/bg6"
+                        android:background="#C7D3E1"
                         android:orientation="horizontal"
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
@@ -294,10 +295,9 @@
                     <TextView
                             android:id="@+id/fiyattipi"
                             android:layout_width="206dp"
-                            android:layout_height="wrap_content"
-                            android:paddingLeft="10dp"
-                            android:paddingBottom="15dp"
-                            android:paddingTop="15dp"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical"
+                            android:textAlignment="textStart"
                             android:text="Fiyat Tipi"
                             android:textColor="#BF000000" />
 
@@ -380,7 +380,7 @@
                         android:background="@drawable/line" />
 
                 <LinearLayout
-                        android:background="@drawable/bg6"
+                        android:background="#C7D3E1"
                         android:orientation="horizontal"
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
@@ -390,12 +390,11 @@
                     <TextView
                             android:id="@+id/suretipi"
                             android:layout_width="206dp"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
                             android:text="Süre Tipi"
                             android:textColor="#BF000000"
-                            android:paddingLeft="10dp"
-                            android:paddingBottom="15dp"
-                            android:paddingTop="15dp" />
+                            android:gravity="center_vertical"
+                            android:textAlignment="textStart"/>
 
                     <RelativeLayout
                             android:layout_width="204dp"
@@ -440,7 +439,7 @@
                         android:layout_below="@+id/linlayout_1">
 
                     <TextView
-                            android:id="@+id/fiyat"
+                            android:id="@+id/fiyat_textview"
                             android:layout_width="206dp"
                             android:layout_height="wrap_content"
                             android:text="Fiyat"
