@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import android.widget.*
 import com.elifersumer.myapplication.MessageEvent
 import com.elifersumer.myapplication.R
+import com.elifersumer.myapplication.emir_tablayout
 import kotlinx.android.synthetic.main.fragment_emirgiris.*
 import kotlinx.android.synthetic.main.fragment_emirgiris.view.*
 import kotlinx.android.synthetic.main.fragment_piyasa.view.*
@@ -163,9 +164,18 @@ class EmirFragment : Fragment() {
 
                         //profile update
                         var tot_price = input_adet.toDouble() * input_fiyat.toDouble()
-                        if(tot_price <= /* kullanıcının yatırım hesabındaki para */0.0){
+                        if(/*tot_price <= /* kullanıcının yatırım hesabındaki para */0.0*/1 == 1){
+                            Log.d("if:","a")
+                            val bundle = Bundle()
+                            bundle.putString("ger_isim",input_isim)
+                            bundle.putString("ger_fiyat",input_fiyat)
+                            bundle.putString("ger_adet",input_adet)
+                            bundle.putString("ger_alisOrSatis","Alış")
+                            val fragment = GerceklesenEmirFragment()
+                            fragment.arguments = bundle
+                            fragmentManager?.beginTransaction()?.replace(R.id.fragmentContainerView,fragment)?.commit()
+
                             /*
-                                . gerçekleşene yolla bu bilgileri
                                 . transfer sayfasında yatırımdaki parasını azalt
                                 . portföye yeni kart ekle(eğer o hisse için kullanıcının kartı varsa, sadece adedini arttır)
                             */
@@ -175,7 +185,16 @@ class EmirFragment : Fragment() {
                     }
                     else{
                         var tot_price = input_adet.toDouble() * input_fiyat.toDouble()
-                        if(tot_price <= /* kullanıcının yatırım hesabındaki para */0.0){
+                        if(/*tot_price <=*/ /* kullanıcının yatırım hesabındaki para */true){
+                            Log.d("if2:","a")
+                            val bundle = Bundle()
+                            bundle.putString("bek_isim",input_isim)
+                            bundle.putString("bek_fiyat",input_fiyat)
+                            bundle.putString("bek_adet",input_adet)
+                            bundle.putString("bek_alisOrSatis","Alış")
+                            val fragment = BekleyenEmirFragment()
+                            fragment.arguments = bundle
+                            fragmentManager?.beginTransaction()?.replace(R.id.fragmentContainerView,fragment)?.commit()
                             /*
                                 . bekleyene yolla bu bilgileri
                                 . transfer sayfasında yatırımdaki parasını azalt
@@ -191,16 +210,33 @@ class EmirFragment : Fragment() {
                     input_adet = adet.text.toString()
 
                     if(fiyat.text.toString().toDouble() == alisFiyat.text.toString().toDouble()){
+                        val bundle = Bundle()
+                        bundle.putString("ger_isim",input_isim)
+                        bundle.putString("ger_fiyat",input_fiyat)
+                        bundle.putString("ger_adet",input_adet)
+                        bundle.putString("ger_alisOrSatis","Satış")
+                        val fragment = GerceklesenEmirFragment()
+                        fragment.arguments = bundle
+                        fragmentManager?.beginTransaction()?.replace(R.id.fragmentContainerView,fragment)?.commit()
 
                             /*
-                                . gerçekleşene yolla bu bilgileri
+
                                 . transfer sayfasında yatırımdaki parasını azalt
                                 . portföye yeni kart ekle(eğer o hisse için kullanıcının kartı varsa, sadece adedini arttır)
                             */
 
                     }else{
+                        Log.d("if2:","a")
+                        val bundle = Bundle()
+                        bundle.putString("bek_isim",input_isim)
+                        bundle.putString("bek_fiyat",input_fiyat)
+                        bundle.putString("bek_adet",input_adet)
+                        bundle.putString("bek_alisOrSatis","Satış")
+                        val fragment = BekleyenEmirFragment()
+                        fragment.arguments = bundle
+                        fragmentManager?.beginTransaction()?.replace(R.id.fragmentContainerView,fragment)?.commit()
                             /*
-                                . bekleyene yolla bu bilgileri
+
                                 . transfer sayfasında yatırımdaki parasını arttır
                              */
                     }
