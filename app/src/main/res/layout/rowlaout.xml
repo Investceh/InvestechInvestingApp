@@ -47,7 +47,7 @@
                             android:layout_weight="1"
                             android:textSize="15sp"
                             android:ellipsize="end"
-                            android:text="Fiyat: "
+                            android:text="Güncel Fiyat: "
                             android:textColor="@color/white"
                             />
                     <TextView
@@ -64,6 +64,7 @@
                         android:layout_width="fill_parent"
                         android:orientation="horizontal"
                         >
+
                     <TextView
                             android:id="@+id/leftText2"
                             android:layout_height="wrap_content"
@@ -72,22 +73,23 @@
                             android:layout_weight="1"
                             android:ellipsize="end"
                             android:text="K/Z : "
-                            android:textColor="@color/white"/>
+                            android:textColor="@color/white" />
 
                     <TextView
-                            android:id="@+id/tane"
+                            android:id="@+id/k_z"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textSize="15sp"
                             android:textStyle="bold"
                             android:textColor="@color/white"
-                            app:layout_constraintStart_toEndOf="@+id/cost"/>
+                            app:layout_constraintStart_toEndOf="@+id/tane" />
                 </LinearLayout>
                 <LinearLayout
                         android:layout_height="wrap_content"
                         android:layout_width="fill_parent"
                         android:orientation="horizontal"
                         >
+
                     <TextView
                             android:id="@+id/leftText3"
                             android:layout_height="wrap_content"
@@ -99,13 +101,14 @@
                             android:textColor="@color/white"/>
 
                     <TextView
-                            android:id="@+id/k_z"
+                            android:id="@+id/tane"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textSize="15sp"
                             android:textStyle="bold"
                             android:textColor="@color/white"
-                            app:layout_constraintStart_toEndOf="@+id/tane"/>
+                            app:layout_constraintStart_toEndOf="@+id/cost" />
+
                 </LinearLayout>
 
 
@@ -146,7 +149,7 @@
                             android:layout_weight="1"
                             android:textSize="15sp"
                             android:ellipsize="end"
-                            android:text="Potential Benefit : "
+                            android:text="Maaliyet : "
                             android:textColor="@color/white"
                             />
 
@@ -167,7 +170,7 @@
                             android:layout_weight="1"
                             android:textSize="15sp"
                             android:ellipsize="end"
-                            android:text="Cost : "
+                            android:text="Alış Fiyatı : "
                             android:textColor="@color/white"
                             />
                     <TextView
@@ -178,51 +181,6 @@
                             android:textStyle="bold"
                             android:textColor="@color/white"
                             app:layout_constraintStart_toEndOf="@+id/expand_2"/>
-                </TableRow>
-                <TableRow>
-                    <TextView
-                            android:id="@+id/expand_3"
-                            android:layout_height="wrap_content"
-                            android:layout_width="wrap_content"
-                            android:layout_weight="1"
-                            android:textSize="15sp"
-                            android:ellipsize="end"
-                            android:text="Cost : "
-                            android:textColor="@color/white"
-                            />
-
-                    <TextView
-                            android:id="@+id/expand_3.1"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textSize="15sp"
-                            android:textStyle="bold"
-                            android:textColor="@color/white"
-                            app:layout_constraintStart_toEndOf="@+id/expand_3"/>
-
-
-                </TableRow>
-
-                <TableRow>
-                    <TextView
-                            android:id="@+id/expand_4"
-                            android:layout_height="wrap_content"
-                            android:layout_width="wrap_content"
-                            android:layout_weight="1"
-                            android:textSize="15sp"
-                            android:ellipsize="end"
-                            android:text="StockItem : "
-                            android:textColor="@color/white"
-                            />
-
-                    <TextView
-                            android:id="@+id/expand_4.1"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textSize="15sp"
-                            android:textStyle="bold"
-                            android:textColor="@color/white"
-                            app:layout_constraintStart_toEndOf="@+id/expand_4"/>
                 </TableRow>
 
             </TableLayout>
