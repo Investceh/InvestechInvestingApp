@@ -23,12 +23,13 @@
             android:layout_width="match_parent"
             android:layout_height="32dp"
             app:tabIndicatorColor="#F84DD3F4"
-            app:tabSelectedTextColor="#F84DD3F4"
-            app:tabTextColor="#f5f5f5"
+            app:tabSelectedTextColor="#F5F5F5"
+            app:tabTextColor="#E2ADB6BF"
             app:tabTextAppearance="@style/TableLayoutTextStyle"
             android:background="#293E57">
 
-        <com.google.android.material.tabs.TabItem
+
+    <com.google.android.material.tabs.TabItem
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Monday" />

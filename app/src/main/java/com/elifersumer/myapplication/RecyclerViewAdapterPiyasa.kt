@@ -12,10 +12,16 @@ import android.view.ViewGroup
 import android.widget.*
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
+import androidx.navigation.fragment.FragmentNavigator
 import androidx.recyclerview.widget.RecyclerView
+import com.elifersumer.myapplication.databinding.ActivityAccountsBinding.inflate
+import com.elifersumer.myapplication.fragments.EmirFragment
 import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe
 import org.greenrobot.eventbus.ThreadMode
+import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.FragmentManager
+
 
 class RecyclerViewAdapterPiyasa(var hisse_list: MutableList<PiyasaData>) :
     RecyclerView.Adapter<RecyclerViewAdapterPiyasa.ViewHolder>() {
@@ -31,8 +37,22 @@ class RecyclerViewAdapterPiyasa(var hisse_list: MutableList<PiyasaData>) :
 
 
         fun initialize(item:PiyasaData) {
+            var satisOrAlis = ""
             isim.text = item.hisse_ismi
             al.setOnClickListener{
+                val isimString:String = isim.text.toString()
+                val satisString:String = satis.text.toString()
+                val alisString:String = alis.text.toString()
+                satisOrAlis ="alis"
+                val bundle = Bundle()
+                bundle.putString("satis",satisString)
+                bundle.putString("isim",isimString)
+                bundle.putString("alis",alisString)
+                bundle.putString("alisOrSatis",satisOrAlis)
+                val fragment = EmirFragment()
+                fragment.arguments = bundle
+                val manager: FragmentManager = (itemView.context as AppCompatActivity).supportFragmentManager
+                manager.beginTransaction()?.replace(R.id.fragmentContainerView,fragment).commit()
                 Toast.makeText(isim.context,"Alındı",Toast.LENGTH_SHORT).show()
             }
             sat.setOnClickListener{
@@ -41,12 +61,19 @@ class RecyclerViewAdapterPiyasa(var hisse_list: MutableList<PiyasaData>) :
                     navigation.navigate(fragment, this)
                 }*/
                 Toast.makeText(isim.context,"Satıldı",Toast.LENGTH_SHORT).show()
-                val messageString:String = satis.text.toString()
-                val newMessageToSend:MessageEvent = MessageEvent(messageString)
-                var navController: NavController? = null
-                navController = Navigation.findNavController(itemView)
-                navController!!.navigate(R.id.action_piyasaTabLayout_to_emirFragment)
-                EventBus.getDefault().post(newMessageToSend)
+                val isimString:String = isim.text.toString()
+                val satisString:String = satis.text.toString()
+                val alisString:String = alis.text.toString()
+                satisOrAlis = "satis"
+                val bundle = Bundle()
+                bundle.putString("satis",satisString)
+                bundle.putString("isim",isimString)
+                bundle.putString("alis",alisString)
+                bundle.putString("alisOrSatis",satisOrAlis)
+                val fragment = EmirFragment()
+                fragment.arguments = bundle
+                val manager: FragmentManager = (itemView.context as AppCompatActivity).supportFragmentManager
+                manager.beginTransaction()?.replace(R.id.fragmentContainerView,fragment).commit()
             }
         }
 
