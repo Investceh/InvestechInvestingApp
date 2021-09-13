@@ -1,6 +1,9 @@
 package com.elifersumer.myapplication
 
 import android.graphics.Color
+import android.text.Editable
+import android.transition.AutoTransition
+import android.transition.TransitionManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup

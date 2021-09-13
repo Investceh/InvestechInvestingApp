@@ -47,11 +47,11 @@
                             android:layout_weight="1"
                             android:textSize="15sp"
                             android:ellipsize="end"
-                            android:text="Price : "
+                            android:text="Cost : "
                             android:textColor="@color/white"
                             />
                     <TextView
-                            android:id="@+id/price"
+                            android:id="@+id/cost"
                             android:layout_height="wrap_content"
                             android:layout_width="wrap_content"
                             android:layout_weight="0"
@@ -167,7 +167,7 @@
                             android:layout_weight="1"
                             android:textSize="15sp"
                             android:ellipsize="end"
-                            android:text="Rate : "
+                            android:text="NewLine : "
                             android:textColor="@color/white"
                             />
 
@@ -179,27 +179,8 @@
                             android:textStyle="bold"
                             android:textColor="@color/white"
                             app:layout_constraintStart_toEndOf="@+id/expand_2"/>
-                </TableRow>
-                <TableRow>
-                <TextView
-                        android:id="@+id/expand_3"
-                        android:layout_height="wrap_content"
-                        android:layout_width="wrap_content"
-                        android:layout_weight="1"
-                        android:textSize="15sp"
-                        android:ellipsize="end"
-                        android:text="Cost : "
-                        android:textColor="@color/white"
-                        />
 
-                <TextView
-                        android:id="@+id/expand_3.1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="15sp"
-                        android:textStyle="bold"
-                        android:textColor="@color/white"
-                        app:layout_constraintStart_toEndOf="@+id/expand_2"/>
+
                 </TableRow>
                 <TableRow>
                     <TextView

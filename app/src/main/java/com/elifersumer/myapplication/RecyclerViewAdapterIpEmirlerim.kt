@@ -47,7 +47,7 @@ class RecyclerViewAdapterIpEmirlerim(var hisse_list: MutableList<GeEmirlerimData
             holder.alisOrSatis.setTextColor(Color.parseColor("#2D8326"))
         }
         else
-            holder.alisOrSatis.setTextColor(Color.parseColor("#e2523e"))
+            holder.alisOrSatis.setTextColor(Color.parseColor("#cb4937"))
     }
 
 

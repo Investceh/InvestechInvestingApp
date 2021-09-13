@@ -34,7 +34,7 @@ class DovizFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        var retrofit= CollectApiInstance.getRetrofitObject()?.create(DövizService::class.java)
+        /*var retrofit= CollectApiInstance.getRetrofitObject()?.create(DövizService::class.java)
 
         var result : Call<PariteResponse> = retrofit!!.GetPostValue()
 
@@ -60,7 +60,7 @@ class DovizFragment : Fragment() {
                 piyasa_recyclerView.adapter= RecyclerViewAdapterForDoviz(all_hisse)
             }
             override fun onFailure(call: Call<PariteResponse?>?, t: Throwable?) {}
-        })
+        })*/
 
         return inflater.inflate(R.layout.fragment_doviz, container, false)
     }

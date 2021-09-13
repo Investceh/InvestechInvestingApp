@@ -22,11 +22,8 @@ class RecyclerViewAdapter(var hisse_list : MutableList<hisseler>):
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view)
     {
-
-
-        //Price ve Cost yeri farklı !!!!!
         val sh_name: TextView =view.findViewById(R.id.title_tv)
-        val cost: TextView = view.findViewById(R.id.expand_3_1)
+        val cost: TextView = view.findViewById(R.id.cost)
         val tane: TextView = view.findViewById(R.id.tane)
         val k_z: TextView = view.findViewById(R.id.k_z)
         val p_b : TextView = view.findViewById(R.id.expand_1_1)
