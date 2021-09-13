@@ -9,7 +9,7 @@ import retrofit2.http.Headers
 interface NewsService {
     @GET("news/getNews?country=tr&tag=economy")
     @Headers("Content-Type: application/json",
-        "Authorization: apikey 3kf7ZEXi8EKXKya9CLQw1B:2CRrxJNSir5JixWF4G8M85")
+        "Authorization: apikey 0fjIQHRZBNJw5S2w2oOjHx:0FJeOyjGz7ZdzG1tbQ4PUr")
 
 
     fun GetPostValue(): Call<GetNewsResponse>
