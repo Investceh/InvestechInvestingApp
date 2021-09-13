@@ -2,6 +2,7 @@ package com.elifersumer.myapplication.fragments
 
 import android.graphics.drawable.Drawable
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -84,8 +85,15 @@ class TransferFragment : Fragment() {
                     }
 
                 }
-                cüzdan_yatırım = list2[0].balance.toDouble()
-                cüzdan_vadesiz = list1[0].balance.toDouble()
+                cüzdan_yatırım += list2[0].balance.toDouble()
+                cüzdan_vadesiz += list1[0].balance.toDouble()
+                Log.d("veri:",cüzdan_vadesiz.toString())
+                var hesapBilgi = df.format(cüzdan_vadesiz).replace(',','.').reversed().replaceFirst('.',',').reversed()
+                var yatirimBilgi = df.format(cüzdan_yatırım).replace(',','.').reversed().replaceFirst('.',',').reversed()
+
+
+                hesap_bilgi.text = hesapBilgi.toString() + " ₺"
+                yatırım_bilgi.text = yatirimBilgi.toString() + " ₺"
             }
 
             override fun onFailure(call: Call<GetAccountListResponse?>?, t: Throwable?) {}
@@ -108,14 +116,8 @@ class TransferFragment : Fragment() {
 
         //var cüzdan_yatırım=vdlAccountList.get(0).AmountOfBalance!!.toDouble()
         //var cüzdan_vadesiz = vdszAccountList.get(0).AmountOfBalance!!.toDouble()
+        Log.d("veri2:",cüzdan_vadesiz.toString())
 
-        var hesapBilgi = df.format(cüzdan_vadesiz).replace(',','.').reversed().replaceFirst('.',',').reversed()
-        var yatirimBilgi = df.format(cüzdan_yatırım).replace(',','.').reversed().replaceFirst('.',',').reversed()
-
-
-
-        hesap_bilgi.text = hesapBilgi.toString() + " ₺"
-        yatırım_bilgi.text = yatirimBilgi.toString() + " ₺"
 
         miktar = view.findViewById(R.id.miktar) as EditText
 
