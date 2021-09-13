@@ -57,7 +57,9 @@ class KriptoFragment : Fragment() {
                 piyasa_recyclerView.layoutManager= LinearLayoutManager(context)
                 piyasa_recyclerView.adapter= RecyclerViewAdapterForAltin(all_hisse)
             }
-            override fun onFailure(call: Call<CriptoResponse?>?, t: Throwable?) {}
+            override fun onFailure(call: Call<CriptoResponse?>?, t: Throwable?) {
+
+            }
         })
 
 
