@@ -38,7 +38,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="120dp"
                     android:layout_marginRight="30dp"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="29dp"
                     android:layout_marginLeft="10dp"
                     app:cardCornerRadius="8dp">
 
@@ -46,8 +46,7 @@
                         android:orientation="vertical"
                         android:background="@drawable/bg1"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        >
+                        android:layout_height="match_parent">
 
 
                     <LinearLayout
@@ -182,7 +181,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:textSize="20dp"
-                                android:textColor="#ffff" />
+                                android:textColor="#ffff"/>
                     </LinearLayout>
 
                 </LinearLayout>
@@ -206,7 +205,7 @@
                 android:id="@+id/islem"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="50dp"
+                android:layout_marginBottom="10dp"
                 android:orientation="horizontal"
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="30dp"
@@ -306,7 +305,7 @@
                 android:textSize="16sp"
                 android:fontFamily="@font/inter"
                 android:layout_gravity="center"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="61dp"
                 android:layout_marginLeft="20dp" />
 
 
