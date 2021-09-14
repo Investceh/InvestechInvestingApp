@@ -48,11 +48,11 @@ class AltinFragment : Fragment() {
                     var satisString : String
                     var alisString : String
                     val df = DecimalFormat("#,##0.00")
-                    satisString = df.format(gold.selling)
-                    alisString = df.format(gold.buying)
+                    satisString = df.format(gold.selling).replace(',','.').reversed().replaceFirst('.',',').reversed()
+                    alisString = df.format(gold.buying).replace(',','.').reversed().replaceFirst('.',',').reversed()
 
 
-                    var h1=PiyasaData("deg", gold.name!!, alisString.replace('.',','),satisString.replace('.',','), gold.rate.toString())
+                    var h1=PiyasaData("deg", gold.name!!, alisString,satisString, gold.rate.toString())
                     list1.add(h1)
                 }
                 // Inflate the layout for this fragment
