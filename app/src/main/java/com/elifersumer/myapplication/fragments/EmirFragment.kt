@@ -221,7 +221,8 @@ class EmirFragment : Fragment() {
                         }
                     }
                     else{
-                        var tot_price = input_adet.toDouble() * input_fiyat.toDouble()
+                        var input_fiyat2 = string_fix(input_fiyat)
+                        var tot_price = input_adet.toDouble() * input_fiyat2.toDouble()
                         if(/*tot_price <=*/ /* kullanıcının yatırım hesabındaki para */true){
                             Log.d("if2:","a")
                             val bundle = Bundle()
