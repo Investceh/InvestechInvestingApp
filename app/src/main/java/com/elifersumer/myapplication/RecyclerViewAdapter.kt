@@ -28,16 +28,39 @@ class RecyclerViewAdapter(var hisse_list : MutableList<hisseler>):
         val k_z: TextView = view.findViewById(R.id.k_z)
         val p_b : TextView = view.findViewById(R.id.expand_1_1)
         val but : Button = view.findViewById(R.id.button_id)
+        //val rate : TextView = view.findViewById(R.id.expand_3_1)
+        val price : TextView = view.findViewById(R.id.price)
+        //val stockItem : TextView = view.findViewById(R.id.expand_4_1)
         val expandableView = view.findViewById<ViewGroup>(R.id.expandableView)
+
+
+
         val df = DecimalFormat("#,##0.00")
 
         fun initialize(item: hisseler)
         {
+            val df = DecimalFormat("#,##0.00")
             sh_name.text = item.sh_name
-            cost.text = item.cost.toString()
-            tane.text = item.tane.toString()
-            k_z.text = item.k_z.toString()
-            p_b.text = item.PotentialBenefit.toString()
+
+            val kost = df.format(item.cost).replace(',','.').reversed().replaceFirst('.',',').reversed()
+            cost.text = kost // bu ALIS FİYATI YAZDIGIMIZ YER
+
+            val adet = df.format(item.tane).replace(',','.').reversed().replaceFirst('.',',').reversed()
+            tane.text = adet
+
+            val ka_ze = df.format(item.k_z).replace(',','.').reversed().replaceFirst('.',',').reversed()
+            k_z.text =  ka_ze
+
+            val pot_b = df.format(item.PotentialBenefit).replace(',','.').reversed().replaceFirst('.',',').reversed()
+            p_b.text = pot_b
+
+
+            val fiyat = df.format(item.price).replace(',','.').reversed().replaceFirst('.',',').reversed()
+            price.text = fiyat
+
+            //stockItem.text = item.stockItem.toString()
+
+
             itemView.setOnClickListener{
                 if(expandableView.visibility == View.GONE){
                     TransitionManager.beginDelayedTransition(expandableView, AutoTransition())
@@ -68,6 +91,10 @@ class RecyclerViewAdapter(var hisse_list : MutableList<hisseler>):
         holder.tane.text = hisse_list[position].tane.toString()
         holder.k_z.text = hisse_list[position].k_z.toString()
         holder.p_b.text = hisse_list[position].PotentialBenefit.toString()
+        //holder.rate.text = hisse_list[position].rate.toString()
+        holder.price.text = hisse_list[position].price.toString()
+        //holder.stockItem.text = hisse_list[position].stockItem.toString()
+
         holder.initialize(hisse_list[position])
     }
 
