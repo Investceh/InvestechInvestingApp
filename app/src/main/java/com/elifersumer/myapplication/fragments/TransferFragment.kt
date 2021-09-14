@@ -115,8 +115,7 @@ class TransferFragment : Fragment() {
         rg_100 = view.findViewById(R.id.rg_100) as RadioButton
 
         btn_tamam = view.findViewById(R.id.btn_tamam) as Button
-
-
+        
 
         //var cüzdan_yatırım=vdlAccountList.get(0).AmountOfBalance!!.toDouble()
         //var cüzdan_vadesiz = vdszAccountList.get(0).AmountOfBalance!!.toDouble()
