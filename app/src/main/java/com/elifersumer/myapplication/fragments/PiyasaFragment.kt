@@ -43,8 +43,9 @@ class PiyasaFragment : Fragment() {
                     var satis = ((stock.price!!)*(stock.rate!! / 100)) + stock.price!!
                     var satisString : String
                     val df = DecimalFormat("#,##0.00")
-                    satisString = df.format(satis)
-                    var h1=PiyasaData("deg", stock.name!!, stock.pricestr!!,satisString.replace('.',','), stock.rate.toString())
+                    satisString = df.format(satis).replace(',','.').reversed().replaceFirst('.',',').reversed()
+
+                    var h1=PiyasaData("deg", stock.name!!, stock.pricestr!!,satisString, stock.rate.toString())
                     list1.add(h1)
                 }
                 val all_hisse = list1

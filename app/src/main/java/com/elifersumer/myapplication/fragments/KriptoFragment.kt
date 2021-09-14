@@ -46,12 +46,10 @@ class KriptoFragment : Fragment() {
                 var data = response.body()!!.GetData()
                 kriptoList=data!!
                 for(kripto in kriptoList){
-                    //conflict
                     var priceString : String
                     val df = DecimalFormat("#,##0.00")
-                    priceString = df.format(kripto.price)
-
-                    var h1=PiyasaData("deg", kripto.code!!, priceString.replace('.',','),kripto.changeHourstr!!, kripto.changeDaystr!!)
+                    priceString = df.format(kripto.price).replace(',','.').reversed().replaceFirst('.',',').reversed()
+                    var h1=PiyasaData("deg", kripto.code!!, priceString, kripto.changeHourstr!!, kripto.changeDaystr!!)
                     list1.add(h1)
                 }
                 // Inflate the layout for this fragment
@@ -59,7 +57,9 @@ class KriptoFragment : Fragment() {
                 piyasa_recyclerView.layoutManager= LinearLayoutManager(context)
                 piyasa_recyclerView.adapter= RecyclerViewAdapterForAltin(all_hisse)
             }
-            override fun onFailure(call: Call<CriptoResponse?>?, t: Throwable?) {}
+            override fun onFailure(call: Call<CriptoResponse?>?, t: Throwable?) {
+
+            }
         })
 
 
