@@ -26,10 +26,11 @@
                     android:id="@+id/rl1"
                     android:gravity="center_vertical"
             >
+
                 <TextView
                         android:textColor="#F5F5F5"
-                        android:id="@+id/portfoyum"
-                        android:text="@string/Portföyüm"
+                        android:id="@+id/haberler"
+                        android:text="HABERLER"
                         android:gravity="center"
                         android:textStyle="bold"
                         android:layout_width="match_parent"
