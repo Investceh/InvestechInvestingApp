@@ -30,14 +30,13 @@
                             android:layout_width="match_parent"
                             android:layout_height="34dp"
                             android:background="@drawable/screen_title" />
+
                     <com.github.mikephil.charting.charts.PieChart
                             android:id="@+id/pieChart"
                             android:layout_below="@+id/portfoyum"
                             android:layout_width="250dp"
                             android:layout_height="250dp"
-                            android:layout_centerHorizontal="true"
-                            android:layout_centerVertical="true"
-                            />
+                            android:layout_centerInParent="true" />
                 </RelativeLayout>
                 <RelativeLayout
                         android:id="@+id/rl2"
