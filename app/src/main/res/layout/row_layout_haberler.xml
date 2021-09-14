@@ -19,7 +19,8 @@
         <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal" android:gravity="clip_vertical">
+                android:orientation="horizontal"
+                android:gravity="clip_vertical">
 
             <RelativeLayout
                     android:layout_width="150dp"
@@ -68,9 +69,10 @@
                 <Button
                         android:text="Devamı için..."
                         android:layout_width="wrap_content"
-                        android:layout_height="30dp" android:id="@+id/dvmBtn" android:textAllCaps="false"
+                        android:layout_height="35dp" android:id="@+id/dvmBtn" android:textAllCaps="false"
                         android:textSize="8sp" android:layout_gravity="right|top"
-                        android:gravity="center_horizontal|fill_vertical" android:onClick="onClick"/>
+                        android:gravity="center_horizontal|fill_vertical" android:onClick="onClick"
+                        android:layout_marginRight="30dp"/>
 
 
             </LinearLayout>
