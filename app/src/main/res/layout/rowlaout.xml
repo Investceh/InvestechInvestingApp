@@ -114,6 +114,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center_vertical|center_horizontal">
+
                 <Button
                         android:id="@+id/button_id"
                         android:layout_height="wrap_content"
@@ -124,11 +125,10 @@
         </LinearLayout>
         <LinearLayout
                 android:id="@+id/expandableView"
-                android:visibility="gone"
+                android:visibility="visible"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-
                 android:orientation="horizontal"
                 >
             <TableLayout
@@ -155,9 +155,11 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textSize="15sp"
+                            tools:text="Android Studio Cardview"
+
                             android:textStyle="bold"
                             android:textColor="@color/white"
-                            app:layout_constraintStart_toEndOf="@+id/expand_1"/>
+                            app:layout_constraintStart_toEndOf="@+id/button_id"/>
                 </TableRow>
                 <TableRow>
                     <TextView
@@ -177,7 +179,7 @@
                             android:textSize="15sp"
                             android:textStyle="bold"
                             android:textColor="@color/white"
-                            app:layout_constraintStart_toEndOf="@+id/expand_2"/>
+                            app:layout_constraintStart_toEndOf="@+id/button_id"/>
                 </TableRow>
                 <TableRow>
                     <TextView
@@ -198,7 +200,7 @@
                             android:textSize="15sp"
                             android:textStyle="bold"
                             android:textColor="@color/white"
-                            app:layout_constraintStart_toEndOf="@+id/expand_3"/>
+                            app:layout_constraintStart_toEndOf="@+id/button_id"/>
 
 
                 </TableRow>
@@ -222,7 +224,7 @@
                             android:textSize="15sp"
                             android:textStyle="bold"
                             android:textColor="@color/white"
-                            app:layout_constraintStart_toEndOf="@+id/expand_4"/>
+                            app:layout_constraintStart_toEndOf="@+id/button_id"/>
                 </TableRow>
 
             </TableLayout>
