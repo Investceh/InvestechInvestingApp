@@ -38,6 +38,7 @@ class RoboAdvisor : Fragment() {
         val risk2Data = args?.get("risk2")
         val risk3Data = args?.get("risk3")
         val risk4Data = args?.get("risk4")
+        val risk5Data = args?.get("risk5")
         val profile = args?.get("profile")
 
         //Toast.makeText(this@RoboAdvisor.requireActivity(),profile.toString(), Toast.LENGTH_SHORT).show()
@@ -50,15 +51,29 @@ class RoboAdvisor : Fragment() {
             riskP += "Muhafazakar"
             acıklamaP += "Risk almaktan çekinmeyen yapınız ve yüksek getiri motivasyonunuz olduğu için size önerimiz"
             sonuc += risk1Data.toString()
-
+        }
+        else if(profile == "Korumacı"){
+            riskP += "Korumacı"
+            acıklamaP += "Risk almaktan çekinmeyen yapınız ve yüksek getiri motivasyonunuz olduğu için size önerimiz"
+            sonuc += risk2Data.toString()
+        }
+        else if(profile == "Dengeli") {
+            riskP += "Dengeli"
+            acıklamaP += "Risk almaktan çekinmeyen yapınız ve yüksek getiri motivasyonunuz olduğu için size önerimiz"
+            sonuc = risk3Data.toString()
 
         }
-        else if(profile == "")
-            sonuc = risk2Data.toString()
-        else if(profile == "")
-            sonuc = risk3Data.toString()
-        else if(profile == "")
+        else if(profile == "RiskSever"){
+            riskP += "RiskSever"
+            acıklamaP += "Risk almaktan çekinmeyen yapınız ve yüksek getiri motivasyonunuz olduğu için size önerimiz"
             sonuc = risk4Data.toString()
+        }
+
+        else if(profile == "Agresif"){
+            riskP += "Agresif"
+            acıklamaP += "Risk almaktan çekinmeyen yapınız ve yüksek getiri motivasyonunuz olduğu için size önerimiz"
+            sonuc = risk5Data.toString()
+        }
 
 
 

@@ -766,7 +766,7 @@ class SorularFragment : Fragment() {
 
 
 
-                bundle.putString("Agresif","10% DIBS\n" +
+                bundle.putString("risk5","10% DIBS\n" +
                         "75% BIST100\n" +
                         "15% Altın")
 
