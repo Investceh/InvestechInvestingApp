@@ -49,29 +49,29 @@ class RoboAdvisor : Fragment() {
 
         if(profile == "Muhafazakar"){
             riskP += "Muhafazakar"
-            acıklamaP += "Risk almaktan çekinmeyen yapınız ve yüksek getiri motivasyonunuz olduğu için size önerimiz"
+            acıklamaP += "Anaparanızı kaybetmeye olan endişenizden dolayı size önerimiz"
             sonuc += risk1Data.toString()
         }
         else if(profile == "Korumacı"){
             riskP += "Korumacı"
-            acıklamaP += "Risk almaktan çekinmeyen yapınız ve yüksek getiri motivasyonunuz olduğu için size önerimiz"
+            acıklamaP += "Risk almadan yatırım yapma isteğinizden dolayı size önerimiz"
             sonuc += risk2Data.toString()
         }
         else if(profile == "Dengeli") {
             riskP += "Dengeli"
-            acıklamaP += "Risk almaktan çekinmeyen yapınız ve yüksek getiri motivasyonunuz olduğu için size önerimiz"
+            acıklamaP += "Risk ve kazanç kavramlarına eşit uzaklıkta olduğunuz için size önerimiz"
             sonuc = risk3Data.toString()
 
         }
         else if(profile == "RiskSever"){
             riskP += "RiskSever"
-            acıklamaP += "Risk almaktan çekinmeyen yapınız ve yüksek getiri motivasyonunuz olduğu için size önerimiz"
+            acıklamaP += "Risk almaktan çekinmeyen yapınız ve yüksek getiri motivasyonunuz olduğu için size önerimizz"
             sonuc = risk4Data.toString()
         }
 
         else if(profile == "Agresif"){
             riskP += "Agresif"
-            acıklamaP += "Risk almaktan çekinmeyen yapınız ve yüksek getiri motivasyonunuz olduğu için size önerimiz"
+            acıklamaP += "Yüksek risk yüksek getiridir diyenlerden olduğunuz için size önerimiz"
             sonuc = risk5Data.toString()
         }
 
