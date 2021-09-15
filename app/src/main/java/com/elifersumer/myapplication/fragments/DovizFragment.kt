@@ -34,7 +34,7 @@ class DovizFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        /*var retrofit= CollectApiInstance.getRetrofitObject()?.create(DövizService::class.java)
+        var retrofit= CollectApiInstance.getRetrofitObject()?.create(DövizService::class.java)
 
         var result : Call<PariteResponse> = retrofit!!.GetPostValue()
 
@@ -48,10 +48,10 @@ class DovizFragment : Fragment() {
                     var satisString : String
                     var alisString : String
                     val df = DecimalFormat("#,##0.00")
-                    satisString = df.format(parite.selling)
-                    alisString = df.format(parite.buying)
+                    satisString = df.format(parite.selling).replace(',','.').reversed().replaceFirst('.',',').reversed()
+                    alisString = df.format(parite.buying).replace(',','.').reversed().replaceFirst('.',',').reversed()
 
-                    var h1=PiyasaData("deg", parite.name!!, alisString.replace('.',','),satisString.replace('.',','), parite.rate!!.toString())
+                    var h1=PiyasaData("deg", parite.name!!, alisString, satisString, parite.rate!!.toString())
                     list1.add(h1)
                 }
                 // Inflate the layout for this fragment
@@ -60,7 +60,7 @@ class DovizFragment : Fragment() {
                 piyasa_recyclerView.adapter= RecyclerViewAdapterForDoviz(all_hisse)
             }
             override fun onFailure(call: Call<PariteResponse?>?, t: Throwable?) {}
-        })*/
+        })
 
         return inflater.inflate(R.layout.fragment_doviz, container, false)
     }

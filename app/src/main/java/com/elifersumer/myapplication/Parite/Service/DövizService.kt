@@ -8,7 +8,7 @@ import retrofit2.http.Headers
 interface DövizService {
     @GET("economy/parite")
     @Headers("Content-Type: application/json",
-        "Authorization: apikey 25sP2i4nwsIxz5VmfaUAx5:3FW29xqWj2YLYdWAHXw2mJ")
+        "Authorization: apikey 7aOuAn84sQ7KiY9WXjCBxY:7pzgyw2To8aJO5EwfeeB7H")
 
     fun GetPostValue(): Call<PariteResponse>
 }

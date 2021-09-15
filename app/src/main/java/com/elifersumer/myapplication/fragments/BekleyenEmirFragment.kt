@@ -10,24 +10,26 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.res.ResourcesCompat
-import com.elifersumer.myapplication.R
 import kotlinx.android.synthetic.main.fragment_gerceklesen_emir.view.*
 import android.R.attr.button
 import android.app.ActionBar
+import android.util.Log
 import android.widget.*
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.elifersumer.myapplication.BekleyenEmirlerimData
-import com.elifersumer.myapplication.RecyclerViewAdapterBekEmirlerim
-import com.elifersumer.myapplication.RecyclerViewAdapterPiyasa
+import com.elifersumer.myapplication.*
+import com.elifersumer.myapplication.Database.Helper.DbHelper
+import com.elifersumer.myapplication.Database.Managers.WaitingDbManager
+import com.elifersumer.myapplication.Database.WaitingOrder
 import kotlinx.android.synthetic.main.fragment_bekleyen_emir.*
 import kotlinx.android.synthetic.main.fragment_piyasa.*
 import kotlinx.coroutines.delay
 
 
 class BekleyenEmirFragment : Fragment() {
-
+    val db by lazy { DbHelper(this@BekleyenEmirFragment.requireActivity()) }
+    var waitingDbManager = WaitingDbManager(this@BekleyenEmirFragment.requireActivity(),db.readableDatabase)
     lateinit var tumu_sil: Button
-    lateinit var bekleyenEmirler: MutableList<BekleyenEmirlerimData>
+    lateinit var bekleyenEmirler: MutableList<WaitingOrder>
 
 
     override fun onCreateView(
@@ -37,40 +39,15 @@ class BekleyenEmirFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_bekleyen_emir, container, false)
         tumu_sil = view.findViewById(R.id.bekleyen_emir) as Button
 
-        bekleyenEmirler = mutableListOf(
-            BekleyenEmirlerimData("AGHOL","15","24.12","Alış","İptal","Değiş"),
-            BekleyenEmirlerimData("ALKIM","20","15.04","Satış","İptal","Değiş"),
-            BekleyenEmirlerimData("AGHOL","15","24.12","Alış","İptal","Değiş"),
-            BekleyenEmirlerimData("AGHOL","15","24.12","Alış","İptal","Değiş"),
-            BekleyenEmirlerimData("AGHOL","15","24.12","Alış","İptal","Değiş"),
-            BekleyenEmirlerimData("ALKIM","20","15.04","Satış","İptal","Değiş"),
-            BekleyenEmirlerimData("AGHOL","15","24.12","Alış","İptal","Değiş"),
-            BekleyenEmirlerimData("AGHOL","15","24.12","Alış","İptal","Değiş"),
-            BekleyenEmirlerimData("ALKIM","20","15.04","Satış","İptal","Değiş"),
-            BekleyenEmirlerimData("AGHOL","15","24.12","Alış","İptal","Değiş"),
-            BekleyenEmirlerimData("ALKIM","20","15.04","Satış","İptal","Değiş"),
-            BekleyenEmirlerimData("AGHOL","15","24.12","Alış","İptal","Değiş"),
-            BekleyenEmirlerimData("AGHOL","15","24.12","Alış","İptal","Değiş"),
-            BekleyenEmirlerimData("ALKIM","20","15.04","Satış","İptal","Değiş"),
-            BekleyenEmirlerimData("AGHOL","15","24.12","Alış","İptal","Değiş"),
-            BekleyenEmirlerimData("AGHOL","15","24.12","Alış","İptal","Değiş"),
-            BekleyenEmirlerimData("AGHOL","15","24.12","Alış","İptal","Değiş"),
-            BekleyenEmirlerimData("ALKIM","20","15.04","Satış","İptal","Değiş"),
-            BekleyenEmirlerimData("AGHOL","15","24.12","Alış","İptal","Değiş"),
-            BekleyenEmirlerimData("AGHOL","15","24.12","Alış","İptal","Değiş"),
-            BekleyenEmirlerimData("ALKIM","20","15.04","Satış","İptal","Değiş"),
-            BekleyenEmirlerimData("AGHOL","15","24.12","Alış","İptal","Değiş"),
-            BekleyenEmirlerimData("ALKIM","20","15.04","Satış","İptal","Değiş"),
-            BekleyenEmirlerimData("AGHOL","15","24.12","Alış","İptal","Değiş"),
-            BekleyenEmirlerimData("AGHOL","15","24.12","Alış","İptal","Değiş"),
-        )
+
         return view
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        bekleyenEmirler = waitingDbManager.readData()
         tumu_sil.setOnClickListener(View.OnClickListener {
 
-            bekleyenEmirler.clear()
+            waitingDbManager.deleteAllData()
 
             bkl_emir_recyclerView.layoutManager= LinearLayoutManager(context)
             bkl_emir_recyclerView.adapter= RecyclerViewAdapterBekEmirlerim(bekleyenEmirler)

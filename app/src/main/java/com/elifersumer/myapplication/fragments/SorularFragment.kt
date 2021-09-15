@@ -8,6 +8,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import androidx.core.content.res.ResourcesCompat
+import androidx.navigation.NavController
+import androidx.navigation.Navigation
 import com.elifersumer.myapplication.R
 
 class SorularFragment : Fragment() {
@@ -727,6 +729,7 @@ class SorularFragment : Fragment() {
                     toplam_deger += sıklar_degerler[i]!!
                 }
 
+
                 if(toplam_deger >= 0.0 && toplam_deger <= 40.0){
                     kullanıcı_profili = "RiskSevmez"
                 }else if(toplam_deger >= 40.1 && toplam_deger <= 60.0){
@@ -734,10 +737,12 @@ class SorularFragment : Fragment() {
                 }else if(toplam_deger >= 60.1 && toplam_deger <= 80.0){
                     kullanıcı_profili = "RiskSever"
                 }else if(toplam_deger >= 80.1 && toplam_deger <= 100.0){
-                    kullanıcı_profili = "Korkusuz"
+                    kullanıcı_profili = "Agresif"
                 }
+                var navController: NavController? = null
+                navController = Navigation.findNavController(view)
+                navController!!.navigate(R.id.action_sorularFragment_to_roboAdvisor)
 
-                lalala.text = kullanıcı_profili
             }
 
 

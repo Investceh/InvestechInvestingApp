@@ -9,7 +9,7 @@ import retrofit2.http.Headers
 interface GoldService {
     @GET("economy/goldPrice")
     @Headers("Content-Type: application/json",
-        "Authorization: apikey 3kf7ZEXi8EKXKya9CLQw1B:2CRrxJNSir5JixWF4G8M85")
+        "Authorization: apikey 7aOuAn84sQ7KiY9WXjCBxY:7pzgyw2To8aJO5EwfeeB7H")
 
     fun GetPostValue(): Call<GoldPriceResponse>
 }

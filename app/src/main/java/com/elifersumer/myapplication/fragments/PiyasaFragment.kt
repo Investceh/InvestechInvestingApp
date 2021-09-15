@@ -29,7 +29,7 @@ class PiyasaFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
 
-        /*var retrofit= CollectApiInstance.getRetrofitObject()?.create(com.elifersumer.myapplication.LiveBorsa.Service.BorsaService::class.java)
+        var retrofit= CollectApiInstance.getRetrofitObject()?.create(com.elifersumer.myapplication.LiveBorsa.Service.BorsaService::class.java)
 
         var result : Call<LiveBorsaResponse> = retrofit!!.GetPostValue()
 
@@ -43,8 +43,9 @@ class PiyasaFragment : Fragment() {
                     var satis = ((stock.price!!)*(stock.rate!! / 100)) + stock.price!!
                     var satisString : String
                     val df = DecimalFormat("#,##0.00")
-                    satisString = df.format(satis)
-                    var h1=PiyasaData("deg", stock.name!!, stock.pricestr!!,satisString.replace('.',','), stock.rate.toString())
+                    satisString = df.format(satis).replace(',','.').reversed().replaceFirst('.',',').reversed()
+
+                    var h1=PiyasaData("deg", stock.name!!, stock.pricestr!!,satisString, stock.rate.toString())
                     list1.add(h1)
                 }
                 val all_hisse = list1
@@ -54,7 +55,7 @@ class PiyasaFragment : Fragment() {
             override fun onFailure(call: Call<LiveBorsaResponse?>?, t: Throwable?) {
 
             }
-        })*/
+        })
 
         val view = inflater.inflate(R.layout.fragment_piyasa, container, false)
         return view
@@ -79,13 +80,13 @@ class PiyasaFragment : Fragment() {
         textView.setBackground(drawable1)
         super.onViewCreated(view, savedInstanceState)
 
-        val all_hisse = mutableListOf(PiyasaData(
+      /*  val all_hisse = mutableListOf(PiyasaData(
              "deg","ALKIM","15.04","15.03",
              "1.48"),
              PiyasaData("deg","AKCNS","15.03","15.29",
                  "-0.20"))
 
         piyasa_recyclerView.layoutManager= LinearLayoutManager(context)
-        piyasa_recyclerView.adapter= RecyclerViewAdapterPiyasa(all_hisse)
+        piyasa_recyclerView.adapter= RecyclerViewAdapterPiyasa(all_hisse)*/
     }
 }

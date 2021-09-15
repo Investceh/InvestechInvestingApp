@@ -144,7 +144,7 @@
                             android:layout_width="204dp"
                             android:layout_height="match_parent"
                             android:gravity="center"
-                            android:paddingRight="15dp">
+                            >
 
                         <TextView
                                 android:id="@+id/hisse"
@@ -153,7 +153,7 @@
                                 android:paddingStart="10dp"
                                 android:gravity="center_vertical"
                                 android:textAlignment="textStart"
-                                android:text="Hisse"
+                                android:text="Varlık"
                                 android:textColor="#BF000000" />
 
                     </RelativeLayout>
@@ -233,7 +233,7 @@
                                     android:id="@+id/miktar2"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="MİKTAR"
+                                    android:text="FARK"
                                     android:textColor="#BF000000" />
                         </LinearLayout>
 
@@ -296,6 +296,7 @@
                             android:id="@+id/fiyattipi"
                             android:layout_width="206dp"
                             android:layout_height="match_parent"
+                            android:paddingStart="10dp"
                             android:gravity="center_vertical"
                             android:textAlignment="textStart"
                             android:text="Fiyat Tipi"
@@ -391,6 +392,7 @@
                             android:id="@+id/suretipi"
                             android:layout_width="206dp"
                             android:layout_height="match_parent"
+                            android:paddingStart="10dp"
                             android:text="Süre Tipi"
                             android:textColor="#BF000000"
                             android:gravity="center_vertical"

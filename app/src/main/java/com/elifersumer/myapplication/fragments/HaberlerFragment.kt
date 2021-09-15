@@ -40,7 +40,6 @@ class HaberlerFragment : Fragment() {
                 var data=response.body()!!
                 haberList=data?.result!!
                 for(haber in haberList){
-
 /*
                     var url :URL = URL(haber.image)
 */
