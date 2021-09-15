@@ -49,7 +49,7 @@ class RecyclerViewAdapter(var hisse_list : MutableList<hisseler>):
             val kost = df.format(item.cost).replace(',','.').reversed().replaceFirst('.',',').reversed()
             cost.text = kost // bu ALIS FİYATI YAZDIGIMIZ YER
 
-            val adet = df2.format(item.tane).replace(',','.').reversed().replaceFirst('.',',').reversed()
+            val adet = df2.format(item.tane).replace(',','.')
             tane.text = adet
 
             val ka_ze = df.format(item.k_z).replace(',','.').reversed().replaceFirst('.',',').reversed()
