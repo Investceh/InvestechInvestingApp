@@ -17,15 +17,18 @@ import android.util.Log
 import android.widget.*
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.elifersumer.myapplication.*
+import com.elifersumer.myapplication.Database.Helper.DbHelper
+import com.elifersumer.myapplication.Database.Managers.WaitingDbManager
+import com.elifersumer.myapplication.Database.WaitingOrder
 import kotlinx.android.synthetic.main.fragment_bekleyen_emir.*
 import kotlinx.android.synthetic.main.fragment_piyasa.*
 import kotlinx.coroutines.delay
 
 
 class BekleyenEmirFragment : Fragment() {
-
+    val db by lazy { DbHelper(this@BekleyenEmirFragment.requireActivity()) }
     lateinit var tumu_sil: Button
-    lateinit var bekleyenEmirler: MutableList<BekleyenEmirlerimData>
+    lateinit var bekleyenEmirler: MutableList<WaitingOrder>
 
 
     override fun onCreateView(
@@ -40,25 +43,8 @@ class BekleyenEmirFragment : Fragment() {
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        bekleyenEmirler = mutableListOf(
-            BekleyenEmirlerimData("AGHOL","15","24.12","Alış","İptal","Değiş"),
-        )
-        val args = this.arguments
-        val fiyatData = args?.get("bek_fiyat")
-        val isimData = args?.get("bek_isim")
-        val adetData = args?.get("bek_adet")
-        val alisOrSatisData = args?.get("bek_alisOrSatis")
-        Log.d("Bekleyen Fiyat:", fiyatData.toString())
-        if (isimData != null) {
-            bekleyenEmirler.add(
-                BekleyenEmirlerimData(
-                    isimData.toString(),
-                    adetData.toString(),
-                    fiyatData.toString(),
-                    alisOrSatisData.toString(), "İptal", "Değiş"
-                )
-            )
-        }
+        var waitingDbManager = WaitingDbManager(this@BekleyenEmirFragment.requireActivity(),db.readableDatabase)
+        bekleyenEmirler = waitingDbManager.readData()
         tumu_sil.setOnClickListener(View.OnClickListener {
 
             bekleyenEmirler.clear()

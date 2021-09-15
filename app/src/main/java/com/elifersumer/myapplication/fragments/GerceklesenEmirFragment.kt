@@ -24,6 +24,9 @@ import com.elifersumer.myapplication.R
 import androidx.core.view.marginLeft
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.elifersumer.myapplication.*
+import com.elifersumer.myapplication.Database.Helper.DbHelper
+import com.elifersumer.myapplication.Database.Managers.DoneDbManager
+import com.elifersumer.myapplication.Database.Managers.WaitingDbManager
 import kotlinx.android.synthetic.main.fragment_bekleyen_emir.*
 import kotlinx.android.synthetic.main.fragment_emirgiris.*
 import kotlinx.android.synthetic.main.fragment_gerceklesen_emir.*
@@ -34,6 +37,7 @@ import retrofit2.Response
 
 
 class GerceklesenEmirFragment : Fragment() {
+    val db by lazy { DbHelper(this@GerceklesenEmirFragment.requireActivity()) }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -82,26 +86,8 @@ class GerceklesenEmirFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        var geEmirler = mutableListOf(
-            GeEmirlerimData("AGHOL", "15", "24.12", "Alış"),
-            GeEmirlerimData("ALKIM", "20", "15.04", "Satış"),
-        )
-        val args = this.arguments
-        val fiyatData = args?.get("ger_fiyat")
-        val isimData = args?.get("ger_isim")
-        val adetData = args?.get("ger_adet")
-        val alisOrSatisData = args?.get("ger_alisOrSatis")
-        Log.d("Gerçeklesen Fiyat:", fiyatData.toString())
-        if (isimData != null){
-            geEmirler.add(
-                GeEmirlerimData(
-                    isimData.toString(),
-                    adetData.toString(),
-                    fiyatData.toString(),
-                    alisOrSatisData.toString()
-                )
-            )
-    }
+        var doneDbManager = DoneDbManager(this@GerceklesenEmirFragment.requireActivity(),db.readableDatabase)
+        var geEmirler = doneDbManager.readData()
         ge_emir_recyclerView.layoutManager= LinearLayoutManager(context)
         ge_emir_recyclerView.adapter= RecyclerViewAdapterGeEmirlerim(geEmirler)
     }

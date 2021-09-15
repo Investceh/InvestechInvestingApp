@@ -8,10 +8,11 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.elifersumer.myapplication.Database.WaitingOrder
 import com.elifersumer.myapplication.R
 import com.elifersumer.myapplication.fragments.hisseler
 
-class RecyclerViewAdapterBekEmirlerim(var hisse_list: MutableList<BekleyenEmirlerimData>) :
+class RecyclerViewAdapterBekEmirlerim(var hisse_list: MutableList<WaitingOrder>) :
     RecyclerView.Adapter<RecyclerViewAdapterBekEmirlerim.ViewHolder>() {
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val isim = view.findViewById<TextView>(R.id.BeHisse)
@@ -49,19 +50,16 @@ class RecyclerViewAdapterBekEmirlerim(var hisse_list: MutableList<BekleyenEmirle
             holder.degis.setBackgroundColor(Color.parseColor("#f5f5f5"))
             holder.iptal.setBackgroundColor(Color.parseColor("#f5f5f5"))
         }
-        if(hisse_list[position].alisOrsatis == "Alış"){
+        if(hisse_list[position].IslemTipi == "Alış"){
             holder.alisOrSatis.setTextColor(Color.parseColor("#2D8326"))
         }
         else
             holder.alisOrSatis.setTextColor(Color.parseColor("#e2523e"))
 
-
-        holder.isim.text = hisse_list[position].hisse_ismi
-        holder.adet.text = hisse_list[position].adet
-        holder.fiyat.text = hisse_list[position].fiyat
-        holder.alisOrSatis.text = hisse_list[position].alisOrsatis
-        //holder.iptal.text = hisse_list[position].iptal
-        //holder.degis.text = hisse_list[position].degis
+        holder.isim.text = hisse_list[position].Hisse
+        holder.adet.text = hisse_list[position].Adet
+        holder.fiyat.text = hisse_list[position].Fiyat
+        holder.alisOrSatis.text = hisse_list[position].IslemTipi
     }
 
 

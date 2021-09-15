@@ -1,34 +1,26 @@
-package com.elifersumer.myapplication.Database.Helpers
+package com.elifersumer.myapplication.Database.Managers
 
 import android.content.ContentValues
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
-import android.database.sqlite.SQLiteOpenHelper
 import android.widget.Toast
+import com.elifersumer.myapplication.Database.Helper.DbHelper
 import com.elifersumer.myapplication.Database.WaitingOrder
 
-class WaitingDbHelper(val context: Context) : SQLiteOpenHelper(context, DATABASE_NAME,null, DATABASE_VERSION) {
+class WaitingDbManager(val context: Context, val dbase: SQLiteDatabase){
     private val TABLE_NAME="WaitingOrder"
     private val COL_ID = "id"
-    private val COL_HISSE = "hisse"
-    private val COL_ADET = "adet"
-    private val COL_FIYAT = "fiyat"
-    private val COL_ISLEMTIPI = "islemtipi"
-    companion object {
-        private val DATABASE_NAME = "INVESTECH"//database adı
-        private val DATABASE_VERSION = 1
-    }
+    private val COL_HISSE = "Hisse"
+    private val COL_ADET = "Adet"
+    private val COL_FIYAT = "Fiyat"
+    private val COL_ISLEMTIPI = "Islemtipi"
 
-    override fun onCreate(db: SQLiteDatabase?) {
-        val createTable = "CREATE TABLE $TABLE_NAME ($COL_ID INTEGER PRIMARY KEY AUTOINCREMENT, $COL_HISSE  VARCHAR(256),$COL_ADET  INTEGER,$COL_FIYAT  FLOAT,$COL_ISLEMTIPI VARCHAR(256))"
-        db?.execSQL(createTable)
-    }
-
-    override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
+    fun delete(){
+        val deleteDatabase=""
     }
 
     fun insertData(waitingOrder: WaitingOrder){
-        val sqliteDB = this.writableDatabase
+        val sqliteDB = dbase
         val contentValues = ContentValues()
         contentValues.put(COL_HISSE , waitingOrder.Hisse)
         contentValues.put(COL_ADET, waitingOrder.Adet)
@@ -42,16 +34,16 @@ class WaitingDbHelper(val context: Context) : SQLiteOpenHelper(context, DATABASE
 
     fun readData():MutableList<WaitingOrder>{
         val orderList = mutableListOf<WaitingOrder>()
-        val sqliteDB = this.readableDatabase
+        val sqliteDB = dbase
         val query = "SELECT * FROM $TABLE_NAME"
-        val result = sqliteDB.rawQuery(query,null)
+        var result = sqliteDB.rawQuery(query,null)
         if(result.moveToFirst()){
             do {
                 val waitingOrder = WaitingOrder()
                 waitingOrder.Id = result.getString(result.getColumnIndex(COL_ID)).toInt()
                 waitingOrder.Hisse = result.getString(result.getColumnIndex(COL_HISSE))
-                waitingOrder.Adet = result.getString(result.getColumnIndex(COL_ADET)).toInt()
-                waitingOrder.Fiyat = result.getString(result.getColumnIndex(COL_FIYAT)).toDouble()
+                waitingOrder.Adet = result.getString(result.getColumnIndex(COL_ADET))
+                waitingOrder.Fiyat = result.getString(result.getColumnIndex(COL_FIYAT))
                 waitingOrder.IslemTipi=result.getString(result.getColumnIndex(COL_ISLEMTIPI))
                 orderList.add(waitingOrder)
             }while (result.moveToNext())
@@ -62,14 +54,13 @@ class WaitingDbHelper(val context: Context) : SQLiteOpenHelper(context, DATABASE
     }
 
     fun deleteAllData(){
-        val sqliteDB = this.writableDatabase
+        val sqliteDB = dbase
         sqliteDB.delete(TABLE_NAME,null,null)
         sqliteDB.close()
-
     }
 
     fun deletDataByName(name:String){
-        val sqliteDB=this.writableDatabase
+        val sqliteDB= dbase
         sqliteDB.delete(TABLE_NAME,COL_HISSE+"="+name,null)
         sqliteDB.close()
     }

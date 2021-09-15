@@ -12,8 +12,11 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.elifersumer.myapplication.*
 import com.elifersumer.myapplication.CollectApi.CollectApiInstance
 import com.elifersumer.myapplication.Database.DoneOrder
-import com.elifersumer.myapplication.Database.Helpers.DoneDbHelper
-import com.elifersumer.myapplication.Database.Helpers.WaitingDbHelper
+import com.elifersumer.myapplication.Database.Helper.DbHelper
+
+import com.elifersumer.myapplication.Database.Managers.DoneDbManager
+import com.elifersumer.myapplication.Database.Managers.WaitingDbManager
+import com.elifersumer.myapplication.Database.WaitingOrder
 import com.elifersumer.myapplication.LiveBorsa.Response.LiveBorsaResponse
 import com.elifersumer.myapplication.LiveBorsa.Response.StockInfo
 import kotlinx.android.synthetic.main.fragment_emirgiris.*
@@ -31,7 +34,7 @@ import java.text.DecimalFormat
 
 
 class EmirFragment : Fragment() {
-    val db by lazy { DoneDbHelper(this@EmirFragment.requireContext()) }
+    val db by lazy { DbHelper(this@EmirFragment.requireActivity()) }
     lateinit var messageTextView: EditText
     lateinit var alisbtn : RadioButton
     lateinit var satisbtn: RadioButton
@@ -205,14 +208,10 @@ class EmirFragment : Fragment() {
                         //profile update
                         var tot_price = input_adet.toDouble() * input_fiyat2.toDouble()
                         if(/*tot_price <= /* kullanıcının yatırım hesabındaki para */0.0*/1 == 1){
-                            Log.d("if:","a")
-                            val bundle = Bundle()
-                            bundle.putString("ger_isim",input_isim)
-                            bundle.putString("ger_fiyat",input_fiyat)
-                            bundle.putString("ger_adet",input_adet)
-                            bundle.putString("ger_alisOrSatis","Alış")
-                            var doneOrder = DoneOrder(input_isim,input_adet,input_fiyat,"Alış")
-                            db.insertData(doneOrder)
+
+                            var doneOrder= DoneOrder(input_isim,input_adet,input_fiyat,"Alış")
+                            var doneDbManager= DoneDbManager(this@EmirFragment.requireActivity(),db.writableDatabase)
+                            doneDbManager.insertData(doneOrder)
                             /*val fragment = GerceklesenEmirFragment()
                             fragment.arguments = bundle
                             fragmentManager?.beginTransaction()?.replace(R.id.fragmentContainerView,fragment)?.commit()*/
@@ -230,15 +229,9 @@ class EmirFragment : Fragment() {
                         var input_fiyat2 = string_fix(input_fiyat)
                         var tot_price = input_adet.toDouble() * input_fiyat2.toDouble()
                         if(/*tot_price <=*/ /* kullanıcının yatırım hesabındaki para */true){
-                            Log.d("if2:","a")
-                            val bundle = Bundle()
-                            bundle.putString("bek_isim",input_isim)
-                            bundle.putString("bek_fiyat",input_fiyat)
-                            bundle.putString("bek_adet",input_adet)
-                            bundle.putString("bek_alisOrSatis","Alış")
-                            val fragment = BekleyenEmirFragment()
-                            fragment.arguments = bundle
-                            fragmentManager?.beginTransaction()?.replace(R.id.fragmentContainerView,fragment)?.commit()
+                            var waitingOrder= WaitingOrder(input_isim,input_adet,input_fiyat,"Alış")
+                            var waitDbManager= WaitingDbManager(this@EmirFragment.requireActivity(),db.writableDatabase)
+                            waitDbManager.insertData(waitingOrder)
                             /*
                                 . bekleyene yolla bu bilgileri
                                 . transfer sayfasında yatırımdaki parasını azalt
@@ -255,11 +248,9 @@ class EmirFragment : Fragment() {
 
 
                     if(fiyat.text.toString() == alisFiyat.text.toString()){
-                        val bundle = Bundle()
-                        bundle.putString("ger_isim",input_isim)
-                        bundle.putString("ger_fiyat",input_fiyat)
-                        bundle.putString("ger_adet",input_adet)
-                        bundle.putString("ger_alisOrSatis","Satış")
+                        var doneOrder= DoneOrder(input_isim,input_adet,input_fiyat,"Satış")
+                        var doneDbManager= DoneDbManager(this@EmirFragment.requireActivity(),db.writableDatabase)
+                        doneDbManager.insertData(doneOrder)
 
 
                             /*
@@ -269,15 +260,9 @@ class EmirFragment : Fragment() {
                             */
 
                     }else{
-                        Log.d("if2:","a")
-                        val bundle = Bundle()
-                        bundle.putString("bek_isim",input_isim)
-                        bundle.putString("bek_fiyat",input_fiyat)
-                        bundle.putString("bek_adet",input_adet)
-                        bundle.putString("bek_alisOrSatis","Satış")
-                        val fragment = BekleyenEmirFragment()
-                        fragment.arguments = bundle
-                        fragmentManager?.beginTransaction()?.replace(R.id.fragmentContainerView,fragment)?.commit()
+                        var waitingOrder= WaitingOrder(input_isim,input_adet,input_fiyat,"Satış")
+                        var waitDbManager= WaitingDbManager(this@EmirFragment.requireActivity(),db.writableDatabase)
+                        waitDbManager.insertData(waitingOrder)
                             /*
 
                                 . transfer sayfasında yatırımdaki parasını arttır
