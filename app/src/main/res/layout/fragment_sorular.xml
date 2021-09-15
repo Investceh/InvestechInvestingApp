@@ -837,15 +837,6 @@
                     android:layout_marginTop="15dp">
             </Button>
 
-            <TextView
-                    android:id="@+id/lalala"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Bitire bastıktan sonra görebilersin"
-                    android:gravity="center"
-                    android:textColor="@color/black">
-            </TextView>
-
 
 
         </LinearLayout>
