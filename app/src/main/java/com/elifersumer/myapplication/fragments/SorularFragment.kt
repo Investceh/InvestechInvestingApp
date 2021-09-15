@@ -109,7 +109,6 @@ class SorularFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_sorular, container, false)
-        lalala = view.findViewById(R.id.lalala) as TextView
 
         soru1 = view.findViewById(R.id.soru1) as TextView
         soru1.text = "Yatırımlarınızın ana amacı nedir ?"

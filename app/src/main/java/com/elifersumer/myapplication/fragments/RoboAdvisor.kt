@@ -9,10 +9,12 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
+import androidx.navigation.NavController
+import androidx.navigation.Navigation
 import com.elifersumer.myapplication.R
 
 class RoboAdvisor : Fragment() {
-
+    var navController: NavController? = null
     lateinit var risk_p: TextView
     lateinit var acklm: TextView
     lateinit var önri: TextView
@@ -64,9 +66,10 @@ class RoboAdvisor : Fragment() {
         acklm.text = acıklamaP
         önri.text = sonuc
 
-        devamke.setOnClickListener(View.OnClickListener {
-            //....
-        })
+        devamke.setOnClickListener{
+
+            fragmentManager?.beginTransaction()?.replace(R.id.fragmentContainerView,DigerFragment())?.commit()
+        }
 
 
         return view
