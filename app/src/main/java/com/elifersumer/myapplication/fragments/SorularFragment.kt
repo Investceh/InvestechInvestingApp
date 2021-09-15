@@ -7,7 +7,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.res.ResourcesCompat
+import androidx.fragment.app.FragmentManager
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.elifersumer.myapplication.R
@@ -731,21 +733,50 @@ class SorularFragment : Fragment() {
 
 
                 if(toplam_deger >= 0.0 && toplam_deger <= 40.0){
-                    kullanıcı_profili = "RiskSevmez"
-                }else if(toplam_deger >= 40.1 && toplam_deger <= 60.0){
-                    kullanıcı_profili = "Temkinli"
-                }else if(toplam_deger >= 60.1 && toplam_deger <= 80.0){
+                    kullanıcı_profili = "Muhafazakar"
+                }else if(toplam_deger >= 40.1 && toplam_deger <= 50.0){
+                    kullanıcı_profili = "Korumacı"
+                }else if(toplam_deger >= 50.0 && toplam_deger <= 62.0){
+                    kullanıcı_profili = "Dengeli"
+                }else if(toplam_deger >= 62.1 && toplam_deger <= 80.0){
                     kullanıcı_profili = "RiskSever"
                 }else if(toplam_deger >= 80.1 && toplam_deger <= 100.0){
                     kullanıcı_profili = "Agresif"
                 }
-                var navController: NavController? = null
-                navController = Navigation.findNavController(view)
-                navController!!.navigate(R.id.action_sorularFragment_to_roboAdvisor)
+
+                val bundle = Bundle()
+                bundle.putString("profile", kullanıcı_profili)
+
+                bundle.putString("risk1","50% DIBS\n" +
+                                               "50% Sepet Döviz")
+
+                bundle.putString("risk2","65% DIBS\n" +
+                        "25% Sepet Döviz\n" +
+                        "5% BIST100\n" +
+                        "5% Altın")
+
+                bundle.putString("risk3","30% DIBS\n" +
+                        "15% Sepet Döviz\n" +
+                        "30% BIST100\n" +
+                        "25% Altın")
+
+                bundle.putString("risk4","30% DIBS\n" +
+                        "15% Sepet Döviz\n" +
+                        "30% BIST100\n" +
+                        "25% Altın")
+
+
+
+                bundle.putString("Agresif","10% DIBS\n" +
+                        "75% BIST100\n" +
+                        "15% Altın")
+
+                val fragment = RoboAdvisor()
+                fragment.arguments = bundle
+
+                fragmentManager?.beginTransaction()?.replace(R.id.fragmentContainerView,fragment)?.commit()
 
             }
-
-
         })
 
         return view
