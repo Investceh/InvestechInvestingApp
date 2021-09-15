@@ -43,43 +43,6 @@ class GerceklesenEmirFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
-/*
-
-        val tmpNo= view?.findViewById(R.id.txt_tckn) as EditText
-
-        val customerNo = tmpNo.toString().toInt()
-
-        var instances: RetroInstance?=null
-
-        var header = Header("c1c2a508fdf64c14a7b44edc9241c9cd","API","331eb5f529c74df2b800926b5f34b874","5252012362481156055")
-
-        var getOrderListParameters= GetOrderListParameters(customerNo,0)
-
-        //var listParameters=ArrayList<GetOrderListParameters>()
-
-        //listParameters.add(getOrderListParameters)
-
-        var getOrderListRequest= GetOrderListRequest(header,getOrderListParameters)
-
-        val retrofit = instances!!.getRetroInstance().create(RetroService::class.java)
-
-
-        var result : Call<GetOrderListResponse> = retrofit.GetPostValue(getOrderListRequest)
-
-        var getOrderListResponse: GetOrderListResponse
-
-        var waitingOrderList:List<Order>?=null
-
-        result.enqueue(object : Callback<GetOrderListResponse?> {
-            override fun onResponse(call: Call<GetOrderListResponse?>?, response: Response<GetOrderListResponse?>) {
-                var data=response.body()!!.GetData()
-                waitingOrderList=data?.WaitingOrders
-            }
-
-            override fun onFailure(call: Call<GetOrderListResponse?>?, t: Throwable?) {}
-        })
-*/
         val view = inflater.inflate(R.layout.fragment_gerceklesen_emir, container, false)
         return view
     }
