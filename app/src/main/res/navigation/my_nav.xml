@@ -105,5 +105,9 @@
             android:id="@+id/roboAdvisor"
             android:name="com.elifersumer.myapplication.fragments.RoboAdvisor"
             android:label="fragment_robo_advisor"
-            tools:layout="@layout/fragment_robo_advisor" />
+            tools:layout="@layout/fragment_robo_advisor" >
+        <action
+                android:id="@+id/action_roboAdvisor_to_karsilamaFragment"
+                app:destination="@id/karsilamaFragment" />
+    </fragment>
 </navigation>
