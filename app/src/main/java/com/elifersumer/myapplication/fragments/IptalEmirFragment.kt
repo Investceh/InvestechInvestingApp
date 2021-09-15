@@ -12,6 +12,9 @@ import android.widget.TableRow
 import android.widget.TextView
 import androidx.core.content.res.ResourcesCompat
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.elifersumer.myapplication.Database.Helper.DbHelper
+import com.elifersumer.myapplication.Database.Managers.CanceledDbManager
+import com.elifersumer.myapplication.Database.Managers.DoneDbManager
 import com.elifersumer.myapplication.GeEmirlerimData
 import com.elifersumer.myapplication.R
 import com.elifersumer.myapplication.RecyclerViewAdapterGeEmirlerim
@@ -22,7 +25,7 @@ import kotlinx.android.synthetic.main.fragment_iptal_emir.*
 
 
 class IptalEmirFragment : Fragment() {
-
+    val db by lazy { DbHelper(this@IptalEmirFragment.requireActivity()) }
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -33,10 +36,8 @@ class IptalEmirFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        var ipEmirler = mutableListOf(
-            GeEmirlerimData("AGHOL","15","24.12","Alış"),
-            GeEmirlerimData("AKCNS","20","15.04","Satış")
-        )
+        var canceledDbManager = CanceledDbManager(this@IptalEmirFragment.requireActivity(),db.readableDatabase)
+        var ipEmirler = canceledDbManager.readData()
         ip_emir_recyclerView.layoutManager= LinearLayoutManager(context)
         ip_emir_recyclerView.adapter= RecyclerViewAdapterIpEmirlerim(ipEmirler)
     }

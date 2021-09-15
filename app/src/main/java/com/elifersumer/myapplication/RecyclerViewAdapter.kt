@@ -6,10 +6,12 @@ import android.transition.TransitionManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AnimationUtils
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.elifersumer.myapplication.fragments.hisseler
 import kotlinx.android.synthetic.main.rowlaout.*import kotlinx.android.synthetic.main.rowlaout.*
@@ -32,10 +34,12 @@ class RecyclerViewAdapter(var hisse_list : MutableList<hisseler>):
         val price : TextView = view.findViewById(R.id.price)
         //val stockItem : TextView = view.findViewById(R.id.expand_4_1)
         val expandableView = view.findViewById<ViewGroup>(R.id.expandableView)
+        val cv_animation = view.findViewById<CardView>(R.id.cardview)
 
 
 
         val df = DecimalFormat("#,##0.00")
+        val df2 = DecimalFormat("#,##0")
 
         fun initialize(item: hisseler)
         {
@@ -45,7 +49,7 @@ class RecyclerViewAdapter(var hisse_list : MutableList<hisseler>):
             val kost = df.format(item.cost).replace(',','.').reversed().replaceFirst('.',',').reversed()
             cost.text = kost // bu ALIS FİYATI YAZDIGIMIZ YER
 
-            val adet = df.format(item.tane).replace(',','.').reversed().replaceFirst('.',',').reversed()
+            val adet = df2.format(item.tane).replace(',','.')
             tane.text = adet
 
             val ka_ze = df.format(item.k_z).replace(',','.').reversed().replaceFirst('.',',').reversed()
@@ -71,6 +75,8 @@ class RecyclerViewAdapter(var hisse_list : MutableList<hisseler>):
                     expandableView.visibility = View.GONE
                 }
             }
+
+            //!!!!!!!!!!!!!!!!!
             but.setOnClickListener{
                 Toast.makeText(sh_name.context,"Satıldı",Toast.LENGTH_SHORT).show()
             }
@@ -94,8 +100,10 @@ class RecyclerViewAdapter(var hisse_list : MutableList<hisseler>):
         //holder.rate.text = hisse_list[position].rate.toString()
         holder.price.text = hisse_list[position].price.toString()
         //holder.stockItem.text = hisse_list[position].stockItem.toString()
-
+        holder.cv_animation.animation = AnimationUtils.loadAnimation(holder.itemView.context, R.anim.rv_anim)
         holder.initialize(hisse_list[position])
+
+
     }
 
     override fun getItemCount(): Int {

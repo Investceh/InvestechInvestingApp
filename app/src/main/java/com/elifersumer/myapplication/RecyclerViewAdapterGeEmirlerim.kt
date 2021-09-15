@@ -8,10 +8,11 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.elifersumer.myapplication.Database.DoneOrder
 import com.elifersumer.myapplication.R
 import com.elifersumer.myapplication.fragments.hisseler
 
-class RecyclerViewAdapterGeEmirlerim(var hisse_list: MutableList<GeEmirlerimData>) :
+class RecyclerViewAdapterGeEmirlerim(var hisse_list: MutableList<DoneOrder>) :
     RecyclerView.Adapter<RecyclerViewAdapterGeEmirlerim.ViewHolder>() {
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val isim = view.findViewById<TextView>(R.id.GeHisse)
@@ -38,12 +39,12 @@ class RecyclerViewAdapterGeEmirlerim(var hisse_list: MutableList<GeEmirlerimData
             holder.alisOrSatis.setBackgroundColor(Color.parseColor("#C7D3E1"))
 
         }
-        holder.isim.text = hisse_list[position].hisse_ismi
-        holder.adet.text = hisse_list[position].adet
-        holder.fiyat.text = hisse_list[position].fiyat
-        holder.alisOrSatis.text = hisse_list[position].alisOrsatis
+        holder.isim.text = hisse_list[position].Hisse
+        holder.adet.text = hisse_list[position].Adet
+        holder.fiyat.text = hisse_list[position].Fiyat
+        holder.alisOrSatis.text = hisse_list[position].IslemTipi
 
-        if(hisse_list[position].alisOrsatis == "Alış"){
+        if(hisse_list[position].IslemTipi == "Alış"){
             holder.alisOrSatis.setTextColor(Color.parseColor("#2D8326"))
         }
         else

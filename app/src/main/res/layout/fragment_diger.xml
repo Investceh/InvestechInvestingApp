@@ -66,6 +66,25 @@
 
             <Button
                     android:fontFamily="@font/inter"
+                    android:id="@+id/haberlergcsBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Haberler"
+                    android:layout_marginBottom="1dp"
+                    android:background="@color/ozarspecial"
+                    android:textSize="17dp"
+                    android:gravity="left|center_vertical"
+                    android:textStyle="bold">
+
+            </Button>
+
+            <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@drawable/bg9" />
+
+            <Button
+                    android:fontFamily="@font/inter"
                     android:id="@+id/transfergcsBtn"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -123,7 +142,7 @@
 
             <Button
                     android:fontFamily="@font/inter"
-                    android:id="@+id/roboadvisorgcsBtn"
+                    android:id="@+id/anketgcsbtn"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Robo-advisor"
@@ -140,44 +159,6 @@
                     android:layout_height="2dp"
                     android:background="@drawable/bg9"/>
 
-            <Button
-                    android:fontFamily="@font/inter"
-                    android:id="@+id/haberlergcsBtn"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Haberler"
-                    android:layout_marginBottom="1dp"
-                    android:background="@color/ozarspecial"
-                    android:textSize="17dp"
-                    android:gravity="left|center_vertical"
-                    android:textStyle="bold">
-
-            </Button>
-
-            <View
-                    android:layout_width="match_parent"
-                    android:layout_height="2dp"
-                    android:background="@drawable/bg9"/>
-
-            <Button
-                    android:fontFamily="@font/inter"
-                    android:id="@+id/anketgcsbtn"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Uygunluk Testi"
-                    android:gravity="left|center_vertical"
-                    android:layout_marginBottom="1dp"
-                    android:background="@color/ozarspecial"
-                    android:textSize="17dp"
-                    android:textStyle="bold">
-
-            </Button>
-
-            <View
-                    android:layout_width="match_parent"
-                    android:layout_height="2dp"
-                    android:background="@drawable/bg9"
-                    />
         </LinearLayout>
 
     </LinearLayout>

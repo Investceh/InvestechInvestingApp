@@ -7,9 +7,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AnimationUtils
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.cardview.widget.CardView
 import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
@@ -27,6 +29,7 @@ class RecyclerViewAdapterForHaberler(var haberler_list : MutableList<haberler>):
         val kaynak: TextView = view.findViewById(R.id.kaynak)
         val devam: Button = view.findViewById(R.id.dvmBtn)
         val imageView:ImageView=view.findViewById(R.id.haberimage)
+        val haber_animation = view.findViewById<CardView>(R.id.cardview)
 
     //    val image: ImageView=view.findViewById(R.id.haberimage)
 
@@ -67,7 +70,7 @@ class RecyclerViewAdapterForHaberler(var haberler_list : MutableList<haberler>):
         holder.kaynak.text = haberler_list[position].kaynak
         var uri:String=haberler_list[position].imgUrl
         Glide.with(holder.imageView.getContext()).load(uri).into(holder.imageView)
-
+        holder.haber_animation.animation = AnimationUtils.loadAnimation(holder.itemView.context, R.anim.rv_anim)
         holder.initialize(haberler_list[position])
     }
 

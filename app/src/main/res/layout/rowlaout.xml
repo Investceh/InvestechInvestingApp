@@ -72,7 +72,7 @@
                             android:textSize="15sp"
                             android:layout_weight="1"
                             android:ellipsize="end"
-                            android:text="K/Z : "
+                            android:text="K/Z: "
                             android:textColor="@color/white" />
 
                     <TextView
@@ -97,7 +97,7 @@
                             android:layout_weight="1"
                             android:textSize="15sp"
                             android:ellipsize="end"
-                            android:text="Adet : "
+                            android:text="Adet: "
                             android:textColor="@color/white"/>
 
                     <TextView
@@ -149,7 +149,7 @@
                             android:layout_weight="1"
                             android:textSize="15sp"
                             android:ellipsize="end"
-                            android:text="Maaliyet : "
+                            android:text="Maliyet: "
                             android:textColor="@color/white"
                             />
 
@@ -170,7 +170,7 @@
                             android:layout_weight="1"
                             android:textSize="15sp"
                             android:ellipsize="end"
-                            android:text="Alış Fiyatı : "
+                            android:text="Alış Fiyatı: "
                             android:textColor="@color/white"
                             />
                     <TextView
