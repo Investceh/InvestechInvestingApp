@@ -4,9 +4,7 @@ import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.ImageView
-import android.widget.TextView
+import android.widget.*
 import androidx.recyclerview.widget.RecyclerView
 import com.elifersumer.myapplication.Database.WaitingOrder
 import com.elifersumer.myapplication.R
@@ -21,6 +19,18 @@ class RecyclerViewAdapterBekEmirlerim(var hisse_list: MutableList<WaitingOrder>)
         val alisOrSatis = view.findViewById<TextView>(R.id.BeAlisOrSatis)
         val iptal = view.findViewById<View>(R.id.iptalBG)
         val degis = view.findViewById<View>(R.id.degisimBG)
+        val iptalButton = view.findViewById<ImageButton>(R.id.buttonIptal)
+        val degisButton = view.findViewById<ImageButton>(R.id.buttonDegisim)
+        fun initialize(item:WaitingOrder) {
+            iptalButton.setOnClickListener {
+
+                Toast.makeText(isim.context,"İptal", Toast.LENGTH_SHORT).show()
+            }
+            degisButton.setOnClickListener {
+
+                Toast.makeText(isim.context,"Degis", Toast.LENGTH_SHORT).show()
+            }
+        }
     }
 
     override fun onCreateViewHolder(
@@ -60,6 +70,7 @@ class RecyclerViewAdapterBekEmirlerim(var hisse_list: MutableList<WaitingOrder>)
         holder.adet.text = hisse_list[position].Adet
         holder.fiyat.text = hisse_list[position].Fiyat
         holder.alisOrSatis.text = hisse_list[position].IslemTipi
+        holder.initialize(hisse_list[position])
     }
 
 
