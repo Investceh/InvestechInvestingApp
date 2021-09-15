@@ -20,7 +20,7 @@ class DoneDbHelper(val context: Context) : SQLiteOpenHelper(context, DATABASE_NA
     }
 
     override fun onCreate(db: SQLiteDatabase?) {
-        val createTable = "CREATE TABLE $TABLE_NAME ($COL_ID INTEGER PRIMARY KEY AUTOINCREMENT, $COL_HISSE  VARCHAR(256),$COL_ADET  INTEGER,$COL_FIYAT  FLOAT,$COL_ISLEMTIPI VARCHAR(256))"
+        val createTable = "CREATE TABLE $TABLE_NAME ($COL_ID INTEGER PRIMARY KEY AUTOINCREMENT, $COL_HISSE  VARCHAR(256),$COL_ADET  VARCHAR(256),$COL_FIYAT  VARCHAR(256),$COL_ISLEMTIPI VARCHAR(256))"
         db?.execSQL(createTable)
     }
 
@@ -50,8 +50,8 @@ class DoneDbHelper(val context: Context) : SQLiteOpenHelper(context, DATABASE_NA
                 val doneOrder = DoneOrder()
                 doneOrder.Id = result.getString(result.getColumnIndex(COL_ID)).toInt()
                 doneOrder.Hisse = result.getString(result.getColumnIndex(COL_HISSE))
-                doneOrder.Adet = result.getString(result.getColumnIndex(COL_ADET)).toInt()
-                doneOrder.Fiyat = result.getString(result.getColumnIndex(COL_FIYAT)).toDouble()
+                doneOrder.Adet = result.getString(result.getColumnIndex(COL_ADET))
+                doneOrder.Fiyat = result.getString(result.getColumnIndex(COL_FIYAT))
                 doneOrder.IslemTipi=result.getString(result.getColumnIndex(COL_ISLEMTIPI))
                 orderList.add(doneOrder)
             }while (result.moveToNext())

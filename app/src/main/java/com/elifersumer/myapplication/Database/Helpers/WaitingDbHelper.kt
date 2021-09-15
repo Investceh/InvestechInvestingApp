@@ -65,6 +65,7 @@ class WaitingDbHelper(val context: Context) : SQLiteOpenHelper(context, DATABASE
         val sqliteDB = this.writableDatabase
         sqliteDB.delete(TABLE_NAME,null,null)
         sqliteDB.close()
+
     }
 
     fun deletDataByName(name:String){
