@@ -46,7 +46,7 @@
                         android:background="#F5F5F5">
                         <TextView
                             android:textColor="#F5F5F5"
-                            android:text="Varlıklarım"
+                            android:text="Hisse Senetlerim"
                             android:gravity="center"
                             android:textStyle="bold"
                             android:layout_width="match_parent"
