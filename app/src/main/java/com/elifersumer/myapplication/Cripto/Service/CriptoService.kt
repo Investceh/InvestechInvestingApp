@@ -8,7 +8,7 @@ import retrofit2.http.Headers
 interface CriptoService {
     @GET("economy/cripto")
     @Headers("Content-Type: application/json",
-        "Authorization: apikey 6eA35Vhd0GQudHYdc0O7Mb:0xyjo6Y7bUdJiOUissbaE7")
+        "Authorization: apikey 3LlZtUPIgvJK86FZqJ1FSU:1MCpf8Yh8O33slepO2Uc80")
 
     fun GetPostValue(): Call<CriptoResponse>
 }
