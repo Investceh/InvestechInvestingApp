@@ -11,7 +11,7 @@ import com.elifersumer.myapplication.databinding.ActivitySignInBinding
 
 
 class SignIn : AppCompatActivity() {
-    val db by lazy { DbHelper(this) }
+
     lateinit var waitingManager:WaitingDbManager
     private lateinit var binding:ActivitySignInBinding
 
@@ -23,7 +23,7 @@ class SignIn : AppCompatActivity() {
     }
 
     fun signInClicked(view: View){
-        db.onCreate(db.writableDatabase)
+
         val intent = Intent(this,BottomNavigation::class.java)
         startActivity(intent)
 
