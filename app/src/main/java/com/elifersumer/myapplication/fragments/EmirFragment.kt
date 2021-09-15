@@ -11,6 +11,9 @@ import android.widget.*
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.elifersumer.myapplication.*
 import com.elifersumer.myapplication.CollectApi.CollectApiInstance
+import com.elifersumer.myapplication.Database.DoneOrder
+import com.elifersumer.myapplication.Database.Helpers.DoneDbHelper
+import com.elifersumer.myapplication.Database.Helpers.WaitingDbHelper
 import com.elifersumer.myapplication.LiveBorsa.Response.LiveBorsaResponse
 import com.elifersumer.myapplication.LiveBorsa.Response.StockInfo
 import kotlinx.android.synthetic.main.fragment_emirgiris.*
@@ -28,6 +31,7 @@ import java.text.DecimalFormat
 
 
 class EmirFragment : Fragment() {
+    val db by lazy { DoneDbHelper(this@EmirFragment.requireContext()) }
     lateinit var messageTextView: EditText
     lateinit var alisbtn : RadioButton
     lateinit var satisbtn: RadioButton
@@ -207,9 +211,11 @@ class EmirFragment : Fragment() {
                             bundle.putString("ger_fiyat",input_fiyat)
                             bundle.putString("ger_adet",input_adet)
                             bundle.putString("ger_alisOrSatis","Alış")
-                            val fragment = GerceklesenEmirFragment()
+                            var doneOrder = DoneOrder(input_isim,input_adet,input_fiyat,"Alış")
+                            db.insertData(doneOrder)
+                            /*val fragment = GerceklesenEmirFragment()
                             fragment.arguments = bundle
-                            fragmentManager?.beginTransaction()?.replace(R.id.fragmentContainerView,fragment)?.commit()
+                            fragmentManager?.beginTransaction()?.replace(R.id.fragmentContainerView,fragment)?.commit()*/
 
                             /*
                                 . transfer sayfasında yatırımdaki parasını azalt
@@ -254,9 +260,7 @@ class EmirFragment : Fragment() {
                         bundle.putString("ger_fiyat",input_fiyat)
                         bundle.putString("ger_adet",input_adet)
                         bundle.putString("ger_alisOrSatis","Satış")
-                        val fragment = GerceklesenEmirFragment()
-                        fragment.arguments = bundle
-                        fragmentManager?.beginTransaction()?.replace(R.id.fragmentContainerView,fragment)?.commit()
+
 
                             /*
 

@@ -1,7 +1,7 @@
 package com.elifersumer.myapplication.Database
 
-class WaitingOrder {
-    var Id:Int? = null
+class CanceledOrder {
+    var Id:Int?=null
     var Hisse:String?=null
     var Adet:Int?=null
     var Fiyat:Double?=null

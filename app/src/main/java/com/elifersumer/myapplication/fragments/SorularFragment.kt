@@ -8,6 +8,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import androidx.core.content.res.ResourcesCompat
+import androidx.navigation.NavController
+import androidx.navigation.Navigation
 import com.elifersumer.myapplication.R
 
 class SorularFragment : Fragment() {
@@ -737,8 +739,10 @@ class SorularFragment : Fragment() {
                 }else if(toplam_deger >= 80.1 && toplam_deger <= 100.0){
                     kullanıcı_profili = "Agresif"
                 }
+                var navController: NavController? = null
+                navController = Navigation.findNavController(view)
+                navController!!.navigate(R.id.action_sorularFragment_to_roboAdvisor)
 
-                lalala.text = kullanıcı_profili
             }
 
 
