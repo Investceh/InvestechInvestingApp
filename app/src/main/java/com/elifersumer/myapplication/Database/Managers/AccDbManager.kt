@@ -48,8 +48,8 @@ class AccDbManager(val context: Context, val dbase:SQLiteDatabase) {
         val result = db.rawQuery(query,null)
         if(result.moveToFirst()){
             val cv = ContentValues()
-            cv.put(COL_YATIRIM,(result.getInt(result.getColumnIndex(COL_YATIRIM))+yatirim))
-            cv.put(COL_VADESIZ,(result.getInt(result.getColumnIndex(COL_VADESIZ))+vadesiz))
+            cv.put(COL_YATIRIM,(yatirim))
+            cv.put(COL_VADESIZ,(vadesiz))
             db.update(TABLE_NAME,cv, null, null)
         }
         result.close()
