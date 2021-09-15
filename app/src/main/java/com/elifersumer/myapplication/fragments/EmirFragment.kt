@@ -8,6 +8,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
+import com.elifersumer.myapplication.Database.Helper.DbHelper
+import com.elifersumer.myapplication.Database.Managers.WaitingDbManager
+import com.elifersumer.myapplication.Database.WaitingOrder
 import com.elifersumer.myapplication.MessageEvent
 import com.elifersumer.myapplication.R
 import com.elifersumer.myapplication.emir_tablayout
@@ -22,6 +25,7 @@ import java.text.DecimalFormat
 
 
 class EmirFragment : Fragment() {
+    val db by lazy { DbHelper(this@EmirFragment.requireActivity()) }
     lateinit var messageTextView: EditText
     lateinit var alisbtn : RadioButton
     lateinit var satisbtn: RadioButton
@@ -202,10 +206,15 @@ class EmirFragment : Fragment() {
                             bundle.putString("ger_fiyat",input_fiyat)
                             bundle.putString("ger_adet",input_adet)
                             bundle.putString("ger_alisOrSatis","Alış")
-                            val fragment = GerceklesenEmirFragment()
+
+                            var waitingOrder=WaitingOrder(input_isim,input_adet.toInt(),input_fiyat.toDouble(),"Alis")
+                            var waitingDbManager=WaitingDbManager(this@EmirFragment.requireActivity(),db.writableDatabase)
+                            waitingDbManager.insertData(waitingOrder)
+
+                            /*val fragment = GerceklesenEmirFragment()
                             fragment.arguments = bundle
                             fragmentManager?.beginTransaction()?.replace(R.id.fragmentContainerView,fragment)?.commit()
-
+*/
                             /*
                                 . transfer sayfasında yatırımdaki parasını azalt
                                 . portföye yeni kart ekle(eğer o hisse için kullanıcının kartı varsa, sadece adedini arttır)
