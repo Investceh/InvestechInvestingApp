@@ -11,8 +11,8 @@ import com.elifersumer.myapplication.Database.Helper.DbHelper
 class AccDbManager(val context: Context, val dbase:SQLiteDatabase) {
     private val TABLE_NAME="AccountInfo"
     private val COL_ID = "id"
-    private val COL_YATIRIM = "Yatirim"
-    private val COL_VADESIZ = "Bakiye"
+    private val COL_YATIRIM = "YatirimBakiye"
+    private val COL_VADESIZ = "VadesizBakiye"
 
     fun insertData(accountInfo: AccountInfo){
         val sqliteDB = dbase
@@ -25,32 +25,21 @@ class AccDbManager(val context: Context, val dbase:SQLiteDatabase) {
         Toast.makeText(context,if(result != -1L) "Emir Girişi Başarılı" else "Emir girişi yapılamadı.", Toast.LENGTH_SHORT).show()
     }
 
-    fun readVadesiz():Double{
+    fun readData():MutableList<AccountInfo>{
+        val accList = mutableListOf<AccountInfo>()
         val sqliteDB = dbase
-        val query = "SELECT Yatirim FROM $TABLE_NAME"
+        val query = "SELECT * FROM $TABLE_NAME"
         val result = sqliteDB.rawQuery(query,null)
-
-        val accountInfo = AccountInfo()
-        accountInfo.VadesizBakiye = result.getDouble(result.getColumnIndex(COL_VADESIZ))
-        var bakiye_vadesiz:Double=accountInfo.VadesizBakiye!!
-
+        if(result.moveToFirst()){
+            do {
+                val accountInfo = AccountInfo()
+                accountInfo.VadesizBakiye = result.getDouble(result.getColumnIndex(COL_VADESIZ))
+                accountInfo.YatirimBakiye = result.getDouble(result.getColumnIndex(COL_YATIRIM))
+                accList.add(accountInfo)
+            }while (result.moveToNext())
+        }
         result.close()
-        sqliteDB.close()
-        return bakiye_vadesiz
-    }
-
-    fun readYatirim():Double{
-        val sqliteDB = dbase
-        val query = "SELECT Bakiye FROM $TABLE_NAME"
-        val result = sqliteDB.rawQuery(query,null)
-
-        val accountInfo = AccountInfo()
-        accountInfo.YatirimBakiye = result.getDouble(result.getColumnIndex(COL_YATIRIM))
-        var bakiye_yatirim:Double=accountInfo.YatirimBakiye!!
-
-        result.close()
-        sqliteDB.close()
-        return bakiye_yatirim
+        return accList
     }
 
     fun updateBalance(yatirim:Double,vadesiz:Double) {
@@ -63,8 +52,6 @@ class AccDbManager(val context: Context, val dbase:SQLiteDatabase) {
             cv.put(COL_VADESIZ,(result.getInt(result.getColumnIndex(COL_VADESIZ))+vadesiz))
             db.update(TABLE_NAME,cv, null, null)
         }
-
         result.close()
-        db.close()
     }
 }
