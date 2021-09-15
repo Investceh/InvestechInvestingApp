@@ -58,10 +58,10 @@ class TransferFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-                var accountInfo = AccountInfo(18131.0,0.0)
-                accDbManager.insertData(accountInfo)
-                cüzdan_vadesiz+= accDbManager.readVadesiz()
-                cüzdan_yatırım += accDbManager.readYatirim()
+                var accList=accDbManager.readData()
+
+                cüzdan_vadesiz+= accList[0].VadesizBakiye!!
+                cüzdan_yatırım += accList[0].YatirimBakiye!!
 
                 Log.d("veri:",cüzdan_vadesiz.toString())
                 var hesapBilgi = df.format(cüzdan_vadesiz).replace(',','.').reversed().replaceFirst('.',',').reversed()
