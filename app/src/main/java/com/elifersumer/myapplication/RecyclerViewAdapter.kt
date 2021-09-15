@@ -39,6 +39,7 @@ class RecyclerViewAdapter(var hisse_list : MutableList<hisseler>):
 
 
         val df = DecimalFormat("#,##0.00")
+        val df2 = DecimalFormat("#,##0")
 
         fun initialize(item: hisseler)
         {
@@ -48,7 +49,7 @@ class RecyclerViewAdapter(var hisse_list : MutableList<hisseler>):
             val kost = df.format(item.cost).replace(',','.').reversed().replaceFirst('.',',').reversed()
             cost.text = kost // bu ALIS FİYATI YAZDIGIMIZ YER
 
-            val adet = df.format(item.tane).replace(',','.').reversed().replaceFirst('.',',').reversed()
+            val adet = df2.format(item.tane).replace(',','.').reversed().replaceFirst('.',',').reversed()
             tane.text = adet
 
             val ka_ze = df.format(item.k_z).replace(',','.').reversed().replaceFirst('.',',').reversed()
@@ -74,6 +75,8 @@ class RecyclerViewAdapter(var hisse_list : MutableList<hisseler>):
                     expandableView.visibility = View.GONE
                 }
             }
+
+            //!!!!!!!!!!!!!!!!!
             but.setOnClickListener{
                 Toast.makeText(sh_name.context,"Satıldı",Toast.LENGTH_SHORT).show()
             }
