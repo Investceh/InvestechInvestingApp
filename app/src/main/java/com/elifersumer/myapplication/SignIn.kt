@@ -4,18 +4,16 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import com.elifersumer.myapplication.Database.CanceledOrder
-import com.elifersumer.myapplication.Database.DoneOrder
-import com.elifersumer.myapplication.Database.Helpers.CanceledDbHelper
-import com.elifersumer.myapplication.Database.Helpers.DoneDbHelper
-import com.elifersumer.myapplication.Database.Helpers.WaitingDbHelper
+import com.elifersumer.myapplication.Database.Helper.DbHelper
+import com.elifersumer.myapplication.Database.Managers.WaitingDbManager
 import com.elifersumer.myapplication.Database.WaitingOrder
 import com.elifersumer.myapplication.databinding.ActivitySignInBinding
 
 
 class SignIn : AppCompatActivity() {
+
+    lateinit var waitingManager:WaitingDbManager
     private lateinit var binding:ActivitySignInBinding
-    val db by lazy { WaitingDbHelper(this) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,9 +23,7 @@ class SignIn : AppCompatActivity() {
     }
 
     fun signInClicked(view: View){
-       /* this.deleteDatabase(db.databaseName)*/
-       /*var doneOrder = WaitingOrder("a",5,12.40,"a")
-        db.insertData(doneOrder)*/
+
         val intent = Intent(this,BottomNavigation::class.java)
         startActivity(intent)
 
