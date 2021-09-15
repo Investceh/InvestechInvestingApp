@@ -1,14 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".fragments.RoboAdvisor">
+        tools:context=".fragments.RoboAdvisor"
+        android:orientation="vertical">
 
-    <!-- TODO: Update blank fragment layout -->
+
     <TextView
+            android:text="YATIRIMCI PROFİLİ"
+            android:textColor="#f5f5f5"
+            android:gravity="center"
+            android:textStyle="bold"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="@string/hello_blank_fragment" />
+            android:layout_height="34dp"
+            android:background="@drawable/screen_title"
+            />
 
-</FrameLayout>
+    <TextView
+            android:id="@+id/risk_p"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:text="aadf"
+            android:textStyle="bold"
+            android:layout_marginTop="100dp"
+            android:gravity="center"
+            android:fontFamily="@font/inter"
+            android:textSize="20sp"/>
+
+
+    <TextView
+            android:id="@+id/acklm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:text="aadf"
+            android:layout_marginTop="30dp"
+            android:gravity="center"
+            android:fontFamily="@font/inter"
+            android:textSize="16sp"
+            android:padding="30dp"/>
+
+
+    <TextView
+            android:id="@+id/önri"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:fontFamily="@font/inter"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:text="aadf"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"/>
+
+    <Button
+            android:id="@+id/devamke"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="Devam"
+            android:background="@drawable/button"
+            android:layout_gravity="center"
+            android:layout_marginTop="100dp"/>
+
+
+
+</LinearLayout>
