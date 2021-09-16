@@ -1,14 +1,232 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".fragments.investrade">
-
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+        android:layout_height="wrap_content"
+        tools:ignore="ExtraText"
+        android:id="@+id/frameLayout"
+        >
+    <RelativeLayout
+            android:id="@+id/relativeLayout3"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="@string/hello_blank_fragment" />
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg1"
+            android:orientation="horizontal"
+            tools:ignore="MissingConstraints">
 
-</FrameLayout>
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="433dp"
+                android:id="@+id/rl1">
+
+            <TextView
+                    android:textColor="#F5F5F5"
+                    android:id="@+id/investrade"
+                    android:text="Investrade"
+                    android:gravity="center"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:layout_width="match_parent"
+                    android:layout_height="79dp"
+                    android:background="@drawable/screen_title" />
+
+            <ImageView
+                    android:translationZ="120dp"
+                    android:layout_width="74dp"
+                    android:layout_height="80dp"
+                    app:srcCompat="@drawable/appicon"
+                    android:id="@+id/imageView3"
+                    android:contentDescription="@string/image"
+                    app:layout_constraintVertical_bias="0.229" />
+
+        </RelativeLayout>
+        <RelativeLayout
+                android:id="@+id/rl2"
+                android:layout_below="@+id/rl1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#F5F5F5">
+
+            <TextView
+                    android:textColor="#F5F5F5"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:layout_width="match_parent"
+                    android:layout_height="34dp"
+                    android:background="@drawable/screen_title"
+                    android:id="@+id/hisseImage"
+                    android:contentDescription="@string/image" />
+
+            <androidx.core.widget.NestedScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/hisseImage">
+
+                <TableLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                    <TableRow>
+
+                        <TextView
+                                android:id="@+id/detail_2"
+                                android:layout_height="match_parent"
+                                android:layout_width="148dp"
+                                android:layout_weight="1"
+                                android:textSize="15sp"
+                                android:ellipsize="end"
+                                android:text="Enstrüman: "
+                                android:gravity="center"
+                                android:textColor="@color/black" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu">
+                            <AutoCompleteTextView
+                                    android:layout_gravity="end"
+                                    android:layout_width="140dp"
+                                    android:text="Limit"
+                                    android:layout_height="match_parent"
+                                    android:id="@+id/Enstruman"
+                                    android:layout_weight="1"
+                                    android:textColor="@color/black"
+                                    android:textAlignment="textEnd"
+                                    android:inputType="none" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                    </TableRow>
+
+                    <TableRow>
+
+                        <TextView
+                                android:id="@+id/detail_3"
+                                android:layout_height="match_parent"
+                                android:layout_width="210dp"
+                                android:layout_weight="1"
+                                android:textSize="15sp"
+                                android:ellipsize="end"
+                                android:text="Model: "
+                                android:gravity="center"
+                                android:textColor="@color/black" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu">
+
+                            <AutoCompleteTextView
+                                    android:layout_gravity="end"
+                                    android:layout_width="140dp"
+                                    android:text="Limit"
+                                    android:layout_height="match_parent"
+                                    android:id="@+id/Model"
+                                    android:layout_weight="1"
+                                    android:textColor="@color/black"
+                                    android:textAlignment="textEnd"
+                                    android:inputType="none" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                    </TableRow>
+
+                    <TableRow>
+
+                        <TextView
+                                android:id="@+id/detail_4"
+                                android:layout_height="match_parent"
+                                android:layout_width="match_parent"
+                                android:layout_weight="1"
+                                android:textSize="15sp"
+                                android:ellipsize="end"
+                                android:text="Kısa Vade Günlük A/S "
+                                android:gravity="center"
+                                android:textColor="@color/black" />
+                    </TableRow>
+
+                    <TableRow>
+
+                        <TextView
+                                android:id="@+id/detail_5"
+                                android:layout_height="match_parent"
+                                android:layout_width="wrap_content"
+                                android:layout_weight="1"
+                                android:textSize="15sp"
+                                android:ellipsize="end"
+                                android:text="BIST 100 "
+                                android:gravity="center"
+                                android:textColor="@color/black" />
+                    </TableRow>
+
+                    <TableRow>
+
+                        <TextView
+                                android:id="@+id/detail_6"
+                                android:layout_height="match_parent"
+                                android:layout_width="210dp"
+                                android:layout_weight="1"
+                                android:textSize="15sp"
+                                android:ellipsize="end"
+                                android:text="Portföy Ağr: "
+                                android:textColor="@color/black"
+                                android:gravity="center"
+                                />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu">
+
+                            <AutoCompleteTextView
+                                    android:layout_gravity="end"
+                                    android:layout_width="140dp"
+                                    android:text="Limit"
+                                    android:layout_height="match_parent"
+                                    android:id="@+id/portfoyAgr"
+                                    android:layout_weight="1"
+                                    android:textColor="@color/black"
+                                    android:textAlignment="textEnd"
+                                    android:inputType="none" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                    </TableRow>
+
+                    <TableRow>
+
+                        <TextView
+                                android:id="@+id/detail_7"
+                                android:layout_height="match_parent"
+                                android:layout_width="210dp"
+                                android:layout_weight="1"
+                                android:textSize="15sp"
+                                android:ellipsize="end"
+                                android:text="Sinyal: "
+                                android:gravity="center"
+                                android:textColor="@color/black" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu">
+
+                            <AutoCompleteTextView
+                                    android:layout_gravity="end"
+                                    android:layout_width="140dp"
+                                    android:text="Limit"
+                                    android:layout_height="match_parent"
+                                    android:id="@+id/SinyalLink"
+                                    android:layout_weight="1"
+                                    android:textColor="@color/black"
+                                    android:textAlignment="textEnd"
+                                    android:inputType="none" />
+                        </com.google.android.material.textfield.TextInputLayout>
+                    </TableRow>
+
+                </TableLayout>
+
+
+            </androidx.core.widget.NestedScrollView>
+
+        </RelativeLayout>
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

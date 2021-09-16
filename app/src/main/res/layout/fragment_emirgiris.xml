@@ -154,7 +154,8 @@
                                 android:gravity="center_vertical"
                                 android:textAlignment="textStart"
                                 android:text="Varlık"
-                                android:textColor="#BF000000" />
+                                android:textColor="#BF000000"
+                                tools:ignore="RtlCompat" />
 
                     </RelativeLayout>
 
