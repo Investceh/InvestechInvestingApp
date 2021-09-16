@@ -32,6 +32,7 @@
                 android:layout_height="49dp"
                 android:translationZ="140dp"
                 android:background="@drawable/button"
+                app:backgroundTint="@null"
                 app:rippleColor="#FFFFFF"
                 android:text="@string/girisYap"
                 android:textAllCaps="false"
