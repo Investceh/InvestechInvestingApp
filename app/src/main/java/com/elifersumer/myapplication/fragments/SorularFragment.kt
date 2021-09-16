@@ -109,7 +109,6 @@ class SorularFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_sorular, container, false)
-        lalala = view.findViewById(R.id.lalala) as TextView
 
         soru1 = view.findViewById(R.id.soru1) as TextView
         soru1.text = "Yatırımlarınızın ana amacı nedir ?"
@@ -767,7 +766,7 @@ class SorularFragment : Fragment() {
 
 
 
-                bundle.putString("Agresif","10% DIBS\n" +
+                bundle.putString("risk5","10% DIBS\n" +
                         "75% BIST100\n" +
                         "15% Altın")
 

@@ -53,28 +53,15 @@ class TransferFragment : Fragment() {
     private var list2 = arrayListOf<hesaplar>()
 
     val db by lazy { DbHelper(this@TransferFragment.requireActivity()) }
-    var accDbManager = AccDbManager(this@TransferFragment.requireActivity(),db.readableDatabase)
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+                var accDbManager = AccDbManager(this@TransferFragment.requireActivity(),db.readableDatabase)
                 var accList=accDbManager.readData()
-
-                cüzdan_vadesiz+= accList[0].VadesizBakiye!!
-                cüzdan_yatırım += accList[0].YatirimBakiye!!
-
-                Log.d("veri:",cüzdan_vadesiz.toString())
-                var hesapBilgi = df.format(cüzdan_vadesiz).replace(',','.').reversed().replaceFirst('.',',').reversed()
-                var yatirimBilgi = df.format(cüzdan_yatırım).replace(',','.').reversed().replaceFirst('.',',').reversed()
-
-
-                hesap_bilgi.text = hesapBilgi.toString() + " ₺"
-                yatırım_bilgi.text = yatirimBilgi.toString() + " ₺"
-                var vadesiz_isim = view?.findViewById(R.id.vadesiz_isim) as TextView
-                var yatirim_isim = view?.findViewById(R.id.yatirim_isim) as TextView
-                vadesiz_isim.text = "Hürol ULUÖZ"
-                yatirim_isim.text = "Hürol ULUÖZ"
-
+                cüzdan_vadesiz= accList[0].VadesizBakiye!!
+                cüzdan_yatırım = accList[0].YatirimBakiye!!
 
         val view =  inflater.inflate(R.layout.fragment_transfer, container, false)
         hesap_bilgi = view.findViewById(R.id.hesap_bilgi) as TextView
@@ -94,6 +81,17 @@ class TransferFragment : Fragment() {
 
         miktar = view.findViewById(R.id.miktar) as EditText
 
+        Log.d("veri:",cüzdan_vadesiz.toString())
+        var hesapBilgi = df.format(cüzdan_vadesiz).replace(',','.').reversed().replaceFirst('.',',').reversed()
+        var yatirimBilgi = df.format(cüzdan_yatırım).replace(',','.').reversed().replaceFirst('.',',').reversed()
+
+
+        hesap_bilgi.text = hesapBilgi.toString() + " ₺"
+        yatırım_bilgi.text = yatirimBilgi.toString() + " ₺"
+        var vadesiz_isim = view?.findViewById(R.id.vadesiz_isim) as TextView
+        var yatirim_isim = view?.findViewById(R.id.yatirim_isim) as TextView
+        vadesiz_isim.text = "Hürol ULUÖZ"
+        yatirim_isim.text = "Hürol ULUÖZ"
         fun string_fix(inputstr : String): String {
             var var1 = ""
             for (i in inputstr){
@@ -186,8 +184,6 @@ class TransferFragment : Fragment() {
             }
             secilen_miktar_double = 0.0
         })
-
-        // Inflate the layout for this fragment
         return view
     }
 

@@ -9,10 +9,12 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
+import androidx.navigation.NavController
+import androidx.navigation.Navigation
 import com.elifersumer.myapplication.R
 
 class RoboAdvisor : Fragment() {
-
+    var navController: NavController? = null
     lateinit var risk_p: TextView
     lateinit var acklm: TextView
     lateinit var önri: TextView
@@ -36,6 +38,7 @@ class RoboAdvisor : Fragment() {
         val risk2Data = args?.get("risk2")
         val risk3Data = args?.get("risk3")
         val risk4Data = args?.get("risk4")
+        val risk5Data = args?.get("risk5")
         val profile = args?.get("profile")
 
         //Toast.makeText(this@RoboAdvisor.requireActivity(),profile.toString(), Toast.LENGTH_SHORT).show()
@@ -46,17 +49,31 @@ class RoboAdvisor : Fragment() {
 
         if(profile == "Muhafazakar"){
             riskP += "Muhafazakar"
-            acıklamaP += "Risk almaktan çekinmeyen yapınız ve yüksek getiri motivasyonunuz olduğu için size önerimiz"
+            acıklamaP += "Anaparanızı kaybetmeye olan endişenizden dolayı size önerimiz"
             sonuc += risk1Data.toString()
-
+        }
+        else if(profile == "Korumacı"){
+            riskP += "Korumacı"
+            acıklamaP += "Risk almadan yatırım yapma isteğinizden dolayı size önerimiz"
+            sonuc += risk2Data.toString()
+        }
+        else if(profile == "Dengeli") {
+            riskP += "Dengeli"
+            acıklamaP += "Risk ve kazanç kavramlarına eşit uzaklıkta olduğunuz için size önerimiz"
+            sonuc = risk3Data.toString()
 
         }
-        else if(profile == "")
-            sonuc = risk2Data.toString()
-        else if(profile == "")
-            sonuc = risk3Data.toString()
-        else if(profile == "")
+        else if(profile == "RiskSever"){
+            riskP += "RiskSever"
+            acıklamaP += "Risk almaktan çekinmeyen yapınız ve yüksek getiri motivasyonunuz olduğu için size önerimizz"
             sonuc = risk4Data.toString()
+        }
+
+        else if(profile == "Agresif"){
+            riskP += "Agresif"
+            acıklamaP += "Yüksek risk yüksek getiridir diyenlerden olduğunuz için size önerimiz"
+            sonuc = risk5Data.toString()
+        }
 
 
 
@@ -64,9 +81,10 @@ class RoboAdvisor : Fragment() {
         acklm.text = acıklamaP
         önri.text = sonuc
 
-        devamke.setOnClickListener(View.OnClickListener {
-            //....
-        })
+        devamke.setOnClickListener{
+
+            fragmentManager?.beginTransaction()?.replace(R.id.fragmentContainerView,DigerFragment())?.commit()
+        }
 
 
         return view

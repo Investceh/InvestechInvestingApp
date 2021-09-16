@@ -11,8 +11,8 @@ import com.elifersumer.myapplication.Database.Helper.DbHelper
 class AccDbManager(val context: Context, val dbase:SQLiteDatabase) {
     private val TABLE_NAME="AccountInfo"
     private val COL_ID = "id"
-    private val COL_YATIRIM = "Yatirim"
-    private val COL_VADESIZ = "Bakiye"
+    private val COL_YATIRIM = "YatirimBakiye"
+    private val COL_VADESIZ = "VadesizBakiye"
 
     fun insertData(accountInfo: AccountInfo){
         val sqliteDB = dbase
@@ -28,7 +28,7 @@ class AccDbManager(val context: Context, val dbase:SQLiteDatabase) {
     fun readData():MutableList<AccountInfo>{
         val accList = mutableListOf<AccountInfo>()
         val sqliteDB = dbase
-        val query = "SELECT Yatirim FROM $TABLE_NAME"
+        val query = "SELECT * FROM $TABLE_NAME"
         val result = sqliteDB.rawQuery(query,null)
         if(result.moveToFirst()){
             do {
@@ -39,7 +39,6 @@ class AccDbManager(val context: Context, val dbase:SQLiteDatabase) {
             }while (result.moveToNext())
         }
         result.close()
-        sqliteDB.close()
         return accList
     }
 
@@ -49,12 +48,10 @@ class AccDbManager(val context: Context, val dbase:SQLiteDatabase) {
         val result = db.rawQuery(query,null)
         if(result.moveToFirst()){
             val cv = ContentValues()
-            cv.put(COL_YATIRIM,(result.getInt(result.getColumnIndex(COL_YATIRIM))+yatirim))
-            cv.put(COL_VADESIZ,(result.getInt(result.getColumnIndex(COL_VADESIZ))+vadesiz))
+            cv.put(COL_YATIRIM,(yatirim))
+            cv.put(COL_VADESIZ,(vadesiz))
             db.update(TABLE_NAME,cv, null, null)
         }
-
         result.close()
-        db.close()
     }
 }
