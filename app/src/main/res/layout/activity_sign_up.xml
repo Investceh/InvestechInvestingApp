@@ -81,7 +81,7 @@
                 android:layout_height="57dp"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
-                android:background="@drawable/button"
+                android:background="@drawable/button_signin"
                 app:backgroundTint="@null"
                 android:text="@string/kayitol"
                 android:textColor="#F5F5F5"

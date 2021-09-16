@@ -31,7 +31,7 @@
                 android:layout_width="337dp"
                 android:layout_height="49dp"
                 android:translationZ="140dp"
-                android:background="@drawable/button"
+                android:background="@drawable/button_signin"
                 app:backgroundTint="@null"
                 app:rippleColor="#FFFFFF"
                 android:text="@string/girisYap"
@@ -41,7 +41,8 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 android:textStyle="bold"
-                android:fontFamily="@font/inter" android:onClick="signInClicked"/>
+                android:fontFamily="@font/inter"
+                android:onClick="signInClicked" />
     </RelativeLayout>
     <EditText
             android:id="@+id/textViewPassw"
