@@ -22,6 +22,7 @@ import com.elifersumer.myapplication.Database.Managers.WaitingDbManager
 import com.elifersumer.myapplication.Database.WaitingOrder
 import com.elifersumer.myapplication.LiveBorsa.Response.LiveBorsaResponse
 import com.elifersumer.myapplication.LiveBorsa.Response.StockInfo
+import kotlinx.android.synthetic.main.activity_emirlerim.*
 import kotlinx.android.synthetic.main.fragment_emirgiris.*
 import kotlinx.android.synthetic.main.fragment_emirgiris.view.*
 import kotlinx.android.synthetic.main.fragment_piyasa.*
@@ -77,6 +78,11 @@ class EmirFragment : Fragment() {
         val farkTextView = view.findViewById(R.id.val_miktar2) as TextView
 
         adet = view.findViewById(R.id.edtxt_adet) as EditText
+
+        fun clear(){
+            adet.setText("")
+            fiyat.text = " "
+        }
 
         val alisFiyat = view.findViewById(R.id.val_alis) as TextView
         val satisFiyat = view.findViewById(R.id.val_satis) as TextView
@@ -226,6 +232,8 @@ class EmirFragment : Fragment() {
                             var doneDbManager= DoneDbManager(this@EmirFragment.requireActivity(),db.writableDatabase)
                             doneDbManager.insertData(doneOrder)
                             accDbManager.updateBalance(yatirim,cüzdan_vadesiz!!)
+
+                            clear()
                         }
                         else{
                             Toast.makeText(this@EmirFragment.requireActivity(),"Yetersiz Bakiye", Toast.LENGTH_SHORT).show()
@@ -238,6 +246,7 @@ class EmirFragment : Fragment() {
                             var waitingOrder= WaitingOrder(input_isim,input_adet,input_fiyat,"Alış")
                             var waitDbManager= WaitingDbManager(this@EmirFragment.requireActivity(),db.writableDatabase)
                             waitDbManager.insertData(waitingOrder)
+                            clear()
                         }else{
                             Toast.makeText(this@EmirFragment.requireActivity(),"Yetersiz Bakiye", Toast.LENGTH_SHORT).show()
                         }
@@ -258,11 +267,13 @@ class EmirFragment : Fragment() {
                         doneDbManager.insertData(doneOrder)
 
                         accDbManager.updateBalance(yatirim2,cüzdan_vadesiz!!)
+                        clear()
 
                     }else{
                         var waitingOrder= WaitingOrder(input_isim,input_adet,input_fiyat,"Satış")
                         var waitDbManager= WaitingDbManager(this@EmirFragment.requireActivity(),db.writableDatabase)
                         waitDbManager.insertData(waitingOrder)
+                        clear()
                     }
 
                 }
