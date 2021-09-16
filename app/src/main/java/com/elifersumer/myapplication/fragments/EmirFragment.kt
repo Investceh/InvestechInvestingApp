@@ -212,9 +212,6 @@ class EmirFragment : Fragment() {
                             var doneOrder= DoneOrder(input_isim,input_adet,input_fiyat,"Alış")
                             var doneDbManager= DoneDbManager(this@EmirFragment.requireActivity(),db.writableDatabase)
                             doneDbManager.insertData(doneOrder)
-                            /*val fragment = GerceklesenEmirFragment()
-                            fragment.arguments = bundle
-                            fragmentManager?.beginTransaction()?.replace(R.id.fragmentContainerView,fragment)?.commit()*/
 
                             /*
                                 . transfer sayfasında yatırımdaki parasını azalt
