@@ -18,19 +18,20 @@
 
         <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="433dp"
+                android:layout_height="270dp"
                 android:id="@+id/rl1">
 
             <TextView
                     android:textColor="#F5F5F5"
                     android:id="@+id/investrade"
-                    android:text="InvestTrade"
+                    android:text="INVESTRADE"
                     android:fontFamily="@font/inter"
                     android:gravity="center"
-                    android:textSize="20sp"
+                    android:textSize="14sp"
                     android:textStyle="bold"
                     android:layout_width="match_parent"
                     android:layout_height="79dp"
+                    android:paddingTop="5dp"
                     android:background="@drawable/screen_title" />
 
             <ImageView
@@ -41,11 +42,12 @@
                     android:id="@+id/imageView3"
                     android:contentDescription="@string/image"
                     app:layout_constraintVertical_bias="0.229" />
+
             <com.github.mikephil.charting.charts.LineChart
                     android:id="@+id/lineChart"
                     android:layout_width="match_parent"
                     android:layout_height="270dp"
-                    android:layout_centerInParent="true" />
+                    android:layout_marginTop="80dp"/>
 
 
         </RelativeLayout>
