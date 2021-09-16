@@ -55,15 +55,19 @@ class WaitingDbManager(val context: Context, val dbase: SQLiteDatabase){
 
     fun deleteAllData(){
         val sqliteDB = dbase
-        sqliteDB.delete(TABLE_NAME,null,null)
-        sqliteDB.close()
+        if(sqliteDB.isOpen==true) {
+            sqliteDB.delete(TABLE_NAME, null, null)
+            sqliteDB.close()
+        }
     }
 
     fun deletDataByName(name:String){
         val sqliteDB= dbase
-        var query="DELETE FROM $TABLE_NAME WHERE $COL_HISSE=$name;"
-        sqliteDB.execSQL(query)
-
+        if(sqliteDB.isOpen==true) {
+            val query="DELETE FROM " + TABLE_NAME+ " WHERE "+COL_HISSE+"='"+name+"'"
+            sqliteDB.execSQL(query)
+            sqliteDB.close()
+        }
     }
 
 }
