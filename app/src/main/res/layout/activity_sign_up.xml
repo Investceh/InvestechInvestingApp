@@ -97,14 +97,24 @@
               app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"
               android:id="@+id/textView2" app:layout_constraintHorizontal_bias="0.324"
               app:layout_constraintVertical_bias="0.495" android:fontFamily="@font/inter"/>
-    <Button android:layout_width="73dp" android:layout_height="21dp"
-            android:text="@string/girisYap" android:textSize="14sp" android:textAllCaps="false"
-            android:textColor="#B3233E5E" android:textStyle="bold" android:id="@+id/girisYap"
+
+    <Button
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:text="@string/girisYap"
+            android:textSize="14sp"
+            android:textAllCaps="false"
+            android:textColor="#B3233E5E"
+            android:textStyle="bold"
+            android:id="@+id/girisYap"
             android:background="#00FFFFFF"
-            app:layout_constraintStart_toEndOf="@+id/textView2" app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="@+id/textView2" app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintTop_toTopOf="@+id/textView2" android:fontFamily="@font/inter"
-            android:onClick="signin_OnClick"/>
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="@+id/textView2"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintTop_toTopOf="@+id/textView2"
+            android:fontFamily="@font/inter"
+            android:layout_marginEnd="90dp"
+            android:onClick="signin_OnClick" />
     <ImageView
             android:layout_width="241dp"
             android:layout_height="160dp" app:srcCompat="@drawable/header_logo" android:id="@+id/imageView"

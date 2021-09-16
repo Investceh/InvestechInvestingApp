@@ -135,8 +135,8 @@
                     app:layout_constraintHorizontal_bias="1.0" app:layout_constraintVertical_bias="0.218">
 
         <Button
-                android:layout_width="73dp"
-                android:layout_height="21dp"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
                 android:text="@string/kayitol"
                 android:textSize="14sp"
                 android:textAllCaps="false"
@@ -144,27 +144,37 @@
                 android:textStyle="bold"
                 android:id="@+id/kayitOl"
                 android:background="@android:color/transparent"
+                app:backgroundTint="@null"
                 app:layout_constraintStart_toEndOf="@+id/donthave"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintBottom_toBottomOf="@+id/donthave"
-                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintTop_toTopOf="@+id/donthave"
                 android:fontFamily="@font/inter"
                 android:onClick="signup_OnClick"
                 android:layout_alignParentEnd="true"
-                android:layout_marginEnd="75dp"
+                android:layout_marginEnd="55dp"
                 android:layout_alignParentBottom="true"
-                android:layout_marginBottom="11dp" />
-        <TextView android:layout_width="198dp" android:layout_height="20dp"
-                  android:text="@string/donthaveaccount" android:textSize="14sp"
-                  android:textColor="#B3000000" android:translationZ="130dp"
-                  android:id="@+id/donthave"
-                  android:fontFamily="@font/inter"
-                  tools:layout_editor_absoluteY="602dp" tools:layout_editor_absoluteX="38dp"
-                  android:layout_marginTop="16dp" android:layout_alignParentTop="true"
-                  android:layout_alignParentBottom="true" android:layout_marginBottom="12dp"
-                  android:layout_alignParentStart="true" android:layout_marginStart="51dp"
-                  android:layout_alignParentEnd="true" android:layout_marginEnd="128dp"/>
+                android:layout_marginTop="4.5dp" />
+
+        <TextView
+                android:layout_width="198dp"
+                android:layout_height="20dp"
+                android:text="@string/donthaveaccount"
+                android:textSize="14sp"
+                android:textColor="#B3000000"
+                android:translationZ="130dp"
+                android:id="@+id/donthave"
+                android:fontFamily="@font/inter"
+                tools:layout_editor_absoluteY="602dp"
+                tools:layout_editor_absoluteX="38dp"
+                android:layout_marginTop="16dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="12dp"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="51dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="128dp" />
     </RelativeLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
