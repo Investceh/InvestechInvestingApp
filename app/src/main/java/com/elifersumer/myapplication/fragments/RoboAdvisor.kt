@@ -48,7 +48,7 @@ class RoboAdvisor : Fragment() {
         var sonuc: String = ""
 
         if(profile == "Muhafazakar"){
-            riskP += "Muhafazakar"
+            riskP += "Muhafazakâr"
             acıklamaP += "Anaparanızı kaybetmeye olan endişenizden dolayı size önerimiz"
             sonuc += risk1Data.toString()
         }
