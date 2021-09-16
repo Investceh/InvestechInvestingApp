@@ -747,23 +747,22 @@ class SorularFragment : Fragment() {
                 bundle.putString("profile", kullanıcı_profili)
 
                 bundle.putString("risk1","50% DIBS\n" +
-                                               "50% Sepet Döviz")
+                                               "50% Döviz(50% $ 50% €)")
 
                 bundle.putString("risk2","65% DIBS\n" +
-                        "25% Sepet Döviz\n" +
+                        "25% Döviz(50% $ 50% €)\n" +
                         "5% BIST100\n" +
                         "5% Altın")
 
                 bundle.putString("risk3","30% DIBS\n" +
-                        "15% Sepet Döviz\n" +
+                        "15% Döviz(50% $ 50% €)\n" +
                         "30% BIST100\n" +
                         "25% Altın")
 
                 bundle.putString("risk4","30% DIBS\n" +
-                        "15% Sepet Döviz\n" +
+                        "15% Döviz(50% $ 50% €)\n" +
                         "30% BIST100\n" +
                         "25% Altın")
-
 
 
                 bundle.putString("risk5","10% DIBS\n" +
