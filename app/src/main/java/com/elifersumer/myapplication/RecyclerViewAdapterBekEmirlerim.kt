@@ -5,14 +5,26 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
+import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentTransaction
+import androidx.navigation.NavController
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
+import com.elifersumer.myapplication.Database.CanceledOrder
+import com.elifersumer.myapplication.Database.Helper.DbHelper
+import com.elifersumer.myapplication.Database.Managers.CanceledDbManager
+import com.elifersumer.myapplication.Database.Managers.WaitingDbManager
 import com.elifersumer.myapplication.Database.WaitingOrder
 import com.elifersumer.myapplication.R
+import com.elifersumer.myapplication.fragments.BekleyenEmirFragment
 import com.elifersumer.myapplication.fragments.hisseler
 
 class RecyclerViewAdapterBekEmirlerim(var hisse_list: MutableList<WaitingOrder>) :
     RecyclerView.Adapter<RecyclerViewAdapterBekEmirlerim.ViewHolder>() {
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+        var navController: NavController? = null
+        val db by lazy { DbHelper(view.context) }
         val isim = view.findViewById<TextView>(R.id.BeHisse)
         val adet = view.findViewById<TextView>(R.id.BeAdet)
         val fiyat = view.findViewById<TextView>(R.id.BeFiyat)
@@ -23,11 +35,18 @@ class RecyclerViewAdapterBekEmirlerim(var hisse_list: MutableList<WaitingOrder>)
         val degisButton = view.findViewById<ImageButton>(R.id.buttonDegisim)
         fun initialize(item:WaitingOrder) {
             iptalButton.setOnClickListener {
-
+                var waitingDbManager = WaitingDbManager(iptalButton.context,db.writableDatabase)
+                var canceledOrder = CanceledOrder(item.Hisse!!,item.Adet!!,item.Fiyat!!,item.IslemTipi!!)
+                var canceledDbManager= CanceledDbManager(iptalButton.context,db.writableDatabase)
+                canceledDbManager.insertData(canceledOrder)
+                waitingDbManager.deletDataByName(item.Hisse.toString())
+                navController = Navigation.findNavController(itemView)
+                navController!!.navigate(R.id.action_blankFragment_self)
                 Toast.makeText(isim.context,"İptal", Toast.LENGTH_SHORT).show()
             }
             degisButton.setOnClickListener {
-
+                var waitingDbManager = WaitingDbManager(iptalButton.context,db.writableDatabase)
+                waitingDbManager.deletDataByName(item.Hisse.toString())
                 Toast.makeText(isim.context,"Degis", Toast.LENGTH_SHORT).show()
             }
         }
@@ -79,4 +98,3 @@ class RecyclerViewAdapterBekEmirlerim(var hisse_list: MutableList<WaitingOrder>)
     }
 
 }
-

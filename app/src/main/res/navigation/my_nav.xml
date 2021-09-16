@@ -11,19 +11,42 @@
             android:label="KarsilamaFragment" >
         <action
                 android:id="@+id/action_karsilamaFragment_to_piyasaFragment"
-                app:destination="@id/piyasaFragment" />
+                app:destination="@id/piyasaFragment"
+                app:enterAnim="@anim/anim_enter"
+                app:exitAnim="@anim/anim_exit"
+                app:popEnterAnim="@anim/anim_enter"
+                app:popExitAnim="@anim/anim_exit"/>
         <action
                 android:id="@+id/action_karsilamaFragment_to_transferFragment"
-                app:destination="@id/transferFragment" />
+                app:destination="@id/transferFragment"
+                app:enterAnim="@anim/anim_enter"
+                app:exitAnim="@anim/anim_exit"
+                app:popEnterAnim="@anim/anim_enter"
+                app:popExitAnim="@anim/anim_exit"/>
         <action
                 android:id="@+id/action_karsilamaFragment_to_emirFragment"
-                app:destination="@id/emirFragment" />
+                app:destination="@id/emirFragment"
+                app:enterAnim="@anim/anim_enter"
+                app:exitAnim="@anim/anim_exit"
+                app:popEnterAnim="@anim/anim_enter"
+                app:popExitAnim="@anim/anim_exit"/>
         <action
                 android:id="@+id/action_karsilamaFragment_to_digerFragment"
-                app:destination="@id/digerFragment" />
+                app:destination="@id/digerFragment"
+                app:enterAnim="@anim/anim_enter"
+                app:exitAnim="@anim/anim_exit"
+                app:popEnterAnim="@anim/anim_enter"
+                app:popExitAnim="@anim/anim_exit"/>
         <action
                 android:id="@+id/action_karsilamaFragment_to_piyasaTabLayout"
-                app:destination="@id/piyasaTabLayout" />
+                app:destination="@id/piyasaTabLayout"
+                app:enterAnim="@anim/anim_enter"
+                app:exitAnim="@anim/anim_exit"
+                app:popEnterAnim="@anim/anim_enter"
+                app:popExitAnim="@anim/anim_exit"/>
+        <action
+                android:id="@+id/action_karsilamaFragment_self"
+                app:destination="@id/karsilamaFragment" />
     </fragment>
     <fragment
             android:id="@+id/piyasaFragment"
@@ -32,7 +55,11 @@
             tools:layout="@layout/fragment_piyasa" >
         <action
                 android:id="@+id/action_piyasaFragment_to_emirFragment"
-                app:destination="@id/emirFragment" />
+                app:destination="@id/emirFragment"
+                app:enterAnim="@anim/anim_enter"
+                app:exitAnim="@anim/anim_exit"
+                app:popEnterAnim="@anim/anim_enter"
+                app:popExitAnim="@anim/anim_exit"/>
     </fragment>
     <fragment
             android:id="@+id/transferFragment"
@@ -45,7 +72,11 @@
             android:label="EmirFragment" >
         <action
                 android:id="@+id/action_emirFragment_to_blankFragment"
-                app:destination="@id/blankFragment" />
+                app:destination="@id/blankFragment"
+                app:enterAnim="@anim/anim_enter"
+                app:exitAnim="@anim/anim_exit"
+                app:popEnterAnim="@anim/anim_enter"
+                app:popExitAnim="@anim/anim_exit"/>
     </fragment>
     <fragment
             android:id="@+id/digerFragment"
@@ -54,31 +85,66 @@
             tools:layout="@layout/fragment_diger" >
         <action
                 android:id="@+id/action_digerFragment_to_blankFragment"
-                app:destination="@id/blankFragment" />
+                app:destination="@id/blankFragment"
+                app:enterAnim="@anim/anim_enter"
+                app:exitAnim="@anim/anim_exit"
+                app:popEnterAnim="@anim/anim_enter"
+                app:popExitAnim="@anim/anim_exit"/>
         <action
                 android:id="@+id/action_digerFragment_to_karsilamaFragment"
-                app:destination="@id/karsilamaFragment" />
+                app:destination="@id/karsilamaFragment"
+                app:enterAnim="@anim/anim_enter"
+                app:exitAnim="@anim/anim_exit"
+                app:popEnterAnim="@anim/anim_enter"
+                app:popExitAnim="@anim/anim_exit"/>
         <action
                 android:id="@+id/action_digerFragment_to_piyasaFragment"
-                app:destination="@id/piyasaFragment" />
+                app:destination="@id/piyasaFragment"
+                app:enterAnim="@anim/anim_enter"
+                app:exitAnim="@anim/anim_exit"
+                app:popEnterAnim="@anim/anim_enter"
+                app:popExitAnim="@anim/anim_exit"/>
         <action
                 android:id="@+id/action_digerFragment_to_transferFragment"
-                app:destination="@id/transferFragment" />
+                app:destination="@id/transferFragment"
+                app:enterAnim="@anim/anim_enter"
+                app:exitAnim="@anim/anim_exit"
+                app:popEnterAnim="@anim/anim_enter"
+                app:popExitAnim="@anim/anim_exit"/>
         <action
                 android:id="@+id/action_digerFragment_to_emirFragment"
-                app:destination="@id/emirFragment" />
+                app:destination="@id/emirFragment"
+                app:enterAnim="@anim/anim_enter"
+                app:exitAnim="@anim/anim_exit"
+                app:popEnterAnim="@anim/anim_enter"
+                app:popExitAnim="@anim/anim_exit"/>
         <action
                 android:id="@+id/action_digerFragment_to_sorularFragment"
-                app:destination="@id/sorularFragment" />
+                app:destination="@id/sorularFragment"
+                app:enterAnim="@anim/anim_enter"
+                app:exitAnim="@anim/anim_exit"
+                app:popEnterAnim="@anim/anim_enter"
+                app:popExitAnim="@anim/anim_exit"/>
         <action
                 android:id="@+id/action_digerFragment_to_haberlerFragment"
-                app:destination="@id/haberlerFragment" />
+                app:destination="@id/haberlerFragment"
+                app:enterAnim="@anim/anim_enter"
+                app:exitAnim="@anim/anim_exit"
+                app:popEnterAnim="@anim/anim_enter"
+                app:popExitAnim="@anim/anim_exit"/>
+        <action
+                android:id="@+id/action_digerFragment_to_investrade2"
+                app:destination="@id/investrade2" />
     </fragment>
     <fragment
             android:id="@+id/blankFragment"
             android:name="com.elifersumer.myapplication.fragments.BlankFragment"
             android:label="fragment_blank"
-            tools:layout="@layout/fragment_blank" />
+            tools:layout="@layout/fragment_blank" >
+        <action
+                android:id="@+id/action_blankFragment_self"
+                app:destination="@id/blankFragment" />
+    </fragment>
     <fragment
             android:id="@+id/sorularFragment"
             android:name="com.elifersumer.myapplication.fragments.SorularFragment"
@@ -94,7 +160,11 @@
             android:label="PiyasaTabLayout" >
         <action
                 android:id="@+id/action_piyasaTabLayout_to_emirFragment"
-                app:destination="@id/emirFragment" />
+                app:destination="@id/emirFragment"
+                app:enterAnim="@anim/anim_enter"
+                app:exitAnim="@anim/anim_exit"
+                app:popEnterAnim="@anim/anim_enter"
+                app:popExitAnim="@anim/anim_exit"/>
     </fragment>
     <fragment
             android:id="@+id/haberlerFragment"
@@ -110,4 +180,9 @@
                 android:id="@+id/action_roboAdvisor_to_karsilamaFragment"
                 app:destination="@id/karsilamaFragment" />
     </fragment>
+    <fragment
+            android:id="@+id/investrade2"
+            android:name="com.elifersumer.myapplication.fragments.investrade"
+            android:label="fragment_investrade"
+            tools:layout="@layout/fragment_investrade" />
 </navigation>

@@ -48,7 +48,7 @@ class RoboAdvisor : Fragment() {
         var sonuc: String = ""
 
         if(profile == "Muhafazakar"){
-            riskP += "Muhafazakar"
+            riskP += "Muhafazakâr"
             acıklamaP += "Anaparanızı kaybetmeye olan endişenizden dolayı size önerimiz"
             sonuc += risk1Data.toString()
         }
@@ -82,10 +82,9 @@ class RoboAdvisor : Fragment() {
         önri.text = sonuc
 
         devamke.setOnClickListener{
-
-            fragmentManager?.beginTransaction()?.replace(R.id.fragmentContainerView,DigerFragment())?.commit()
+            navController = Navigation.findNavController(requireView())
+            navController!!.navigate(R.id.action_roboAdvisor_to_karsilamaFragment)
         }
-
 
         return view
     }

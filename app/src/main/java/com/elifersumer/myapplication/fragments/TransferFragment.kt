@@ -62,7 +62,7 @@ class TransferFragment : Fragment() {
                 var accList=accDbManager.readData()
                 cüzdan_vadesiz= accList[0].VadesizBakiye!!
                 cüzdan_yatırım = accList[0].YatirimBakiye!!
-        
+
         val view =  inflater.inflate(R.layout.fragment_transfer, container, false)
         hesap_bilgi = view.findViewById(R.id.hesap_bilgi) as TextView
         yatırım_bilgi = view.findViewById(R.id.yatırım_bilgi) as TextView
@@ -184,8 +184,6 @@ class TransferFragment : Fragment() {
             }
             secilen_miktar_double = 0.0
         })
-
-        // Inflate the layout for this fragment
         return view
     }
 
