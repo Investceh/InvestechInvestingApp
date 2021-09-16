@@ -539,7 +539,12 @@
 
             </RadioGroup>
 
-
+            <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@drawable/button"
+                    android:layout_marginTop="50dp">
+            </Button>
 
 
 
@@ -636,6 +641,13 @@
             </RadioGroup>
 
 
+            <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@drawable/button"
+                    android:layout_marginTop="50dp">
+            </Button>
+
 
             <TextView
                     android:id="@+id/soru7"
@@ -729,6 +741,13 @@
 
             </RadioGroup>
 
+
+            <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@drawable/button"
+                    android:layout_marginTop="50dp">
+            </Button>
 
 
 
@@ -824,7 +843,7 @@
 
             </RadioGroup>
 
-
+            
 
             <Button
                     android:layout_width="230dp"
