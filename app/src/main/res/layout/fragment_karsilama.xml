@@ -44,17 +44,17 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="#F5F5F5">
-                        <TextView
+
+                    <TextView
                             android:textColor="#F5F5F5"
-                            android:text="Hisse Senetlerim"
+                            android:text="Varlıklarım"
                             android:gravity="center"
                             android:textStyle="bold"
                             android:layout_width="match_parent"
                             android:layout_height="34dp"
                             android:background="@drawable/screen_title"
                             android:id="@+id/hisseImage"
-                            android:contentDescription="@string/image"
-                            />
+                            android:contentDescription="@string/image" />
                     <androidx.core.widget.NestedScrollView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
