@@ -4,21 +4,22 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.Toast
+import com.elifersumer.myapplication.Database.Helper.DbHelper
+import com.elifersumer.myapplication.Database.Managers.WaitingDbManager
+import com.elifersumer.myapplication.Database.WaitingOrder
 import com.elifersumer.myapplication.databinding.ActivitySignInBinding
 
 
 class SignIn : AppCompatActivity() {
-    private lateinit var binding:ActivitySignInBinding
 
+    lateinit var waitingManager:WaitingDbManager
+    private lateinit var binding:ActivitySignInBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding=ActivitySignInBinding.inflate(layoutInflater)
         val view=binding.root
         setContentView(view)
-
-
     }
 
     fun signInClicked(view: View){

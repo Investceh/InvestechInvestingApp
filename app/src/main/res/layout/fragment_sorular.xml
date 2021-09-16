@@ -31,6 +31,27 @@
 
 
             <TextView
+                    android:id="@+id/acıklama"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:text="Testin sonucunda risk davranışlarınıza  göre size uygun risk profilini öğrenecek ve robo-danışmanımızı kullanabileceksiniz."
+                    android:textColor="@color/black"
+                    android:gravity="center"
+                    android:layout_marginTop="25dp"
+                    android:fontFamily="@font/inter"
+                    android:textSize="16sp"
+                    android:padding="10dp"
+                    >
+            </TextView>
+
+            <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@drawable/button"
+                    android:layout_marginTop="50dp">
+            </Button>
+
+            <TextView
                     android:id="@+id/soru1"
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
@@ -518,7 +539,12 @@
 
             </RadioGroup>
 
-
+            <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@drawable/button"
+                    android:layout_marginTop="50dp">
+            </Button>
 
 
 
@@ -615,6 +641,13 @@
             </RadioGroup>
 
 
+            <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@drawable/button"
+                    android:layout_marginTop="50dp">
+            </Button>
+
 
             <TextView
                     android:id="@+id/soru7"
@@ -705,9 +738,15 @@
                         android:button="@android:color/transparent"
                         android:layout_marginTop="4dp">
                 </RadioButton>
-
             </RadioGroup>
 
+
+            <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@drawable/button"
+                    android:layout_marginTop="50dp">
+            </Button>
 
 
 
@@ -800,9 +839,7 @@
                         android:button="@android:color/transparent"
                         android:layout_marginTop="4dp">
                 </RadioButton>
-
             </RadioGroup>
-
 
 
             <Button
@@ -815,16 +852,6 @@
                     android:layout_margin="25dp"
                     android:layout_marginTop="15dp">
             </Button>
-
-            <TextView
-                    android:id="@+id/lalala"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Bitire bastıktan sonra görebilersin"
-                    android:gravity="center"
-                    android:textColor="@color/black">
-            </TextView>
-
 
 
         </LinearLayout>

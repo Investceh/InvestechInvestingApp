@@ -8,20 +8,33 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
-import com.elifersumer.myapplication.MessageEvent
-import com.elifersumer.myapplication.R
-import com.elifersumer.myapplication.emir_tablayout
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.elifersumer.myapplication.*
+import com.elifersumer.myapplication.CollectApi.CollectApiInstance
+import com.elifersumer.myapplication.Database.DoneOrder
+import com.elifersumer.myapplication.Database.Helper.DbHelper
+
+import com.elifersumer.myapplication.Database.Managers.DoneDbManager
+import com.elifersumer.myapplication.Database.Managers.WaitingDbManager
+import com.elifersumer.myapplication.Database.WaitingOrder
+import com.elifersumer.myapplication.LiveBorsa.Response.LiveBorsaResponse
+import com.elifersumer.myapplication.LiveBorsa.Response.StockInfo
 import kotlinx.android.synthetic.main.fragment_emirgiris.*
 import kotlinx.android.synthetic.main.fragment_emirgiris.view.*
+import kotlinx.android.synthetic.main.fragment_piyasa.*
 import kotlinx.android.synthetic.main.fragment_piyasa.view.*
 import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe
 import org.greenrobot.eventbus.ThreadMode
 import org.w3c.dom.Text
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 import java.text.DecimalFormat
 
 
 class EmirFragment : Fragment() {
+    val db by lazy { DbHelper(this@EmirFragment.requireActivity()) }
     lateinit var messageTextView: EditText
     lateinit var alisbtn : RadioButton
     lateinit var satisbtn: RadioButton
@@ -188,7 +201,6 @@ class EmirFragment : Fragment() {
                     input_fiyat = fiyat.text.toString()
                     input_adet = adet.text.toString()
 
-
                     var input_fiyat2 = string_fix(input_fiyat)
 
                     if(fiyat.text.toString() == satisFiyat.text.toString()){
@@ -196,36 +208,30 @@ class EmirFragment : Fragment() {
                         //profile update
                         var tot_price = input_adet.toDouble() * input_fiyat2.toDouble()
                         if(/*tot_price <= /* kullanıcının yatırım hesabındaki para */0.0*/1 == 1){
-                            Log.d("if:","a")
-                            val bundle = Bundle()
-                            bundle.putString("ger_isim",input_isim)
-                            bundle.putString("ger_fiyat",input_fiyat)
-                            bundle.putString("ger_adet",input_adet)
-                            bundle.putString("ger_alisOrSatis","Alış")
-                            val fragment = GerceklesenEmirFragment()
+
+                            var doneOrder= DoneOrder(input_isim,input_adet,input_fiyat,"Alış")
+                            var doneDbManager= DoneDbManager(this@EmirFragment.requireActivity(),db.writableDatabase)
+                            doneDbManager.insertData(doneOrder)
+                            /*val fragment = GerceklesenEmirFragment()
                             fragment.arguments = bundle
-                            fragmentManager?.beginTransaction()?.replace(R.id.fragmentContainerView,fragment)?.commit()
+                            fragmentManager?.beginTransaction()?.replace(R.id.fragmentContainerView,fragment)?.commit()*/
 
                             /*
                                 . transfer sayfasında yatırımdaki parasını azalt
                                 . portföye yeni kart ekle(eğer o hisse için kullanıcının kartı varsa, sadece adedini arttır)
                             */
-                        }else{
+                        }
+                        else{
                             Toast.makeText(this@EmirFragment.requireActivity(),"Yetersiz Bakiye", Toast.LENGTH_SHORT).show()
                         }
                     }
                     else{
-                        var tot_price = input_adet.toDouble() * input_fiyat.toDouble()
+                        var input_fiyat2 = string_fix(input_fiyat)
+                        var tot_price = input_adet.toDouble() * input_fiyat2.toDouble()
                         if(/*tot_price <=*/ /* kullanıcının yatırım hesabındaki para */true){
-                            Log.d("if2:","a")
-                            val bundle = Bundle()
-                            bundle.putString("bek_isim",input_isim)
-                            bundle.putString("bek_fiyat",input_fiyat)
-                            bundle.putString("bek_adet",input_adet)
-                            bundle.putString("bek_alisOrSatis","Alış")
-                            val fragment = BekleyenEmirFragment()
-                            fragment.arguments = bundle
-                            fragmentManager?.beginTransaction()?.replace(R.id.fragmentContainerView,fragment)?.commit()
+                            var waitingOrder= WaitingOrder(input_isim,input_adet,input_fiyat,"Alış")
+                            var waitDbManager= WaitingDbManager(this@EmirFragment.requireActivity(),db.writableDatabase)
+                            waitDbManager.insertData(waitingOrder)
                             /*
                                 . bekleyene yolla bu bilgileri
                                 . transfer sayfasında yatırımdaki parasını azalt
@@ -242,14 +248,10 @@ class EmirFragment : Fragment() {
 
 
                     if(fiyat.text.toString() == alisFiyat.text.toString()){
-                        val bundle = Bundle()
-                        bundle.putString("ger_isim",input_isim)
-                        bundle.putString("ger_fiyat",input_fiyat)
-                        bundle.putString("ger_adet",input_adet)
-                        bundle.putString("ger_alisOrSatis","Satış")
-                        val fragment = GerceklesenEmirFragment()
-                        fragment.arguments = bundle
-                        fragmentManager?.beginTransaction()?.replace(R.id.fragmentContainerView,fragment)?.commit()
+                        var doneOrder= DoneOrder(input_isim,input_adet,input_fiyat,"Satış")
+                        var doneDbManager= DoneDbManager(this@EmirFragment.requireActivity(),db.writableDatabase)
+                        doneDbManager.insertData(doneOrder)
+
 
                             /*
 
@@ -258,15 +260,9 @@ class EmirFragment : Fragment() {
                             */
 
                     }else{
-                        Log.d("if2:","a")
-                        val bundle = Bundle()
-                        bundle.putString("bek_isim",input_isim)
-                        bundle.putString("bek_fiyat",input_fiyat)
-                        bundle.putString("bek_adet",input_adet)
-                        bundle.putString("bek_alisOrSatis","Satış")
-                        val fragment = BekleyenEmirFragment()
-                        fragment.arguments = bundle
-                        fragmentManager?.beginTransaction()?.replace(R.id.fragmentContainerView,fragment)?.commit()
+                        var waitingOrder= WaitingOrder(input_isim,input_adet,input_fiyat,"Satış")
+                        var waitDbManager= WaitingDbManager(this@EmirFragment.requireActivity(),db.writableDatabase)
+                        waitDbManager.insertData(waitingOrder)
                             /*
 
                                 . transfer sayfasında yatırımdaki parasını arttır
@@ -288,20 +284,57 @@ class EmirFragment : Fragment() {
 
             }
         }
+        var list1= mutableListOf<PiyasaData>()
+        var isimList= mutableListOf<String>()
+        var retrofit= CollectApiInstance.getRetrofitObject()?.create(com.elifersumer.myapplication.LiveBorsa.Service.BorsaService::class.java)
 
+        var result : Call<LiveBorsaResponse> = retrofit!!.GetPostValue()
 
+        var borsaList:List<StockInfo>
+
+        result.enqueue(object : Callback<LiveBorsaResponse?> {
+            override fun onResponse(call: Call<LiveBorsaResponse?>?, response: Response<LiveBorsaResponse?>) {
+                var data = response.body()!!.GetData()
+                borsaList=data!!
+                for(stock in borsaList){
+                    var satis = ((stock.price!!)*(stock.rate!! / 100)) + stock.price!!
+                    var satisString : String
+                    val df = DecimalFormat("#,##0.00")
+                    satisString = df.format(satis).replace(',','.').reversed().replaceFirst('.',',').reversed()
+
+                    var h1= PiyasaData("deg", stock.name!!, stock.pricestr!!,satisString, stock.rate.toString())
+                    list1.add(h1)
+                    isimList.add(stock.name!!)
+                }
+            }
+            override fun onFailure(call: Call<LiveBorsaResponse?>?, t: Throwable?) {
+            }
+        })
         val hisseler = resources.getStringArray(R.array.hisseler)
         val fiyatTipleri = resources.getStringArray(R.array.fiyatTipleri)
         val sureTipleri = resources.getStringArray(R.array.sureTipleri)
-        var arrayAdapter = ArrayAdapter(requireContext(),R.layout.dropdown_item, hisseler)
+        var arrayAdapter = ArrayAdapter(requireContext(),R.layout.dropdown_item, isimList)
         var arrayAdapter2 = ArrayAdapter(requireContext(),R.layout.dropdown_item, fiyatTipleri)
         var arrayAdapter3 = ArrayAdapter(requireContext(), R.layout.dropdown_item, sureTipleri)
 
         view.autoCompleteTextView.setAdapter(arrayAdapter)
+        view.autoCompleteTextView.setOnClickListener {
+            Log.d("baslik:","a")
+        }
         view.autoCompleteTextViewFiyatTipi.setAdapter(arrayAdapter2)
         view.autoCompleteTextViewSureTipi.setAdapter(arrayAdapter3)
-
-
+        Log.d("baslik2:",view.autoCompleteTextView.text.toString())
+        view.autoCompleteTextView.setOnItemClickListener { parent, view, position, id ->
+            alisFiyat.text = list1.get(position).alis
+            satisFiyat.text = list1.get(position).satis
+            farkTextView.text = list1.get(position).fark
+            if (input_islem_tipi == "Alış"){
+             fiyat.setText(list1.get(position).satis)
+            }
+            if (input_islem_tipi == "Satış"){
+                fiyat.setText(list1.get(position).alis)
+            }
+        }
         // Inflate the layout for this fragment
         return view.rootView
     }

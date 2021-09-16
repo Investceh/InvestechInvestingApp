@@ -139,7 +139,11 @@
             android:id="@+id/sorularFragment"
             android:name="com.elifersumer.myapplication.fragments.SorularFragment"
             android:label="fragment_sorular"
-            tools:layout="@layout/fragment_sorular" />
+            tools:layout="@layout/fragment_sorular" >
+        <action
+                android:id="@+id/action_sorularFragment_to_roboAdvisor"
+                app:destination="@id/roboAdvisor" />
+    </fragment>
     <fragment
             android:id="@+id/piyasaTabLayout"
             android:name="com.elifersumer.myapplication.fragments.PiyasaTabLayout"
@@ -157,4 +161,13 @@
             android:name="com.elifersumer.myapplication.fragments.HaberlerFragment"
             android:label="fragment_haberler"
             tools:layout="@layout/fragment_haberler" />
+    <fragment
+            android:id="@+id/roboAdvisor"
+            android:name="com.elifersumer.myapplication.fragments.RoboAdvisor"
+            android:label="fragment_robo_advisor"
+            tools:layout="@layout/fragment_robo_advisor" >
+        <action
+                android:id="@+id/action_roboAdvisor_to_karsilamaFragment"
+                app:destination="@id/karsilamaFragment" />
+    </fragment>
 </navigation>

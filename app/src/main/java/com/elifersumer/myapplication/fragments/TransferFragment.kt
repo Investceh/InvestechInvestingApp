@@ -12,6 +12,10 @@ import android.widget.*
 import androidx.core.content.res.ResourcesCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.elifersumer.myapplication.*
+import com.elifersumer.myapplication.Database.AccountInfo
+import com.elifersumer.myapplication.Database.Helper.DbHelper
+import com.elifersumer.myapplication.Database.Managers.AccDbManager
+import com.elifersumer.myapplication.Database.Managers.DoneDbManager
 import com.elifersumer.myapplication.GetAccountList.Request.GetAccountListParameters
 import com.elifersumer.myapplication.GetAccountList.Request.GetAccountListRequest
 import com.elifersumer.myapplication.GetAccountList.Response.Account
@@ -47,61 +51,17 @@ class TransferFragment : Fragment() {
     lateinit var btn_tamam: Button
     private var list1 = arrayListOf<hesaplar>()
     private var list2 = arrayListOf<hesaplar>()
+
+    val db by lazy { DbHelper(this@TransferFragment.requireActivity()) }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
-        var instances=RetroInstance()
-
-        var header = Header("c1c2a508fdf64c14a7b44edc9241c9cd","API","fb4de3b2ef414379b294c25a867e405f","5252012362481156055")
-
-        var getAccountListParameters=GetAccountListParameters(2)
-
-        //var listParameters=ArrayList<GetOrderListParameters>()
-
-        //listParameters.add(getOrderListParameters)
-
-        var getAccountListRequest= GetAccountListRequest(header,
-            arrayListOf(getAccountListParameters))
-
-        var retrofit= RetroInstance.getRetrofitObject()?.create(AccountService::class.java)
-        var result : Call<GetAccountListResponse> = retrofit!!.GetPostValue(getAccountListRequest)
-        var accountList:List<Account>
-
-        result.enqueue(object : Callback<GetAccountListResponse?> {
-            override fun onResponse(call: Call<GetAccountListResponse?>?, response: Response<GetAccountListResponse?>) {
-                var data=response.body()!!.GetData()
-                accountList=data?.AccountList!!
-
-                for(account in accountList){
-
-                    if(account.OriginalProductCode=="VDSZMVD"){
-                        var h1=hesaplar(account.ShortName!!,account.IBANNo!!,account.AmountOfBalance!!)
-                        list1.add(h1)
-                    }else if(account.OriginalProductCode=="VDLMEVD"){
-                        var h2=hesaplar(account.ShortName!!,account.IBANNo!!,account.AmountOfBalance!!)
-                        list2.add(h2)
-                    }
-
-                }
-                cüzdan_yatırım += list2[0].balance.toDouble()
-                cüzdan_vadesiz += list1[0].balance.toDouble()
-                Log.d("veri:",cüzdan_vadesiz.toString())
-                var hesapBilgi = df.format(cüzdan_vadesiz).replace(',','.').reversed().replaceFirst('.',',').reversed()
-                var yatirimBilgi = df.format(cüzdan_yatırım).replace(',','.').reversed().replaceFirst('.',',').reversed()
-
-
-                hesap_bilgi.text = hesapBilgi.toString() + " ₺"
-                yatırım_bilgi.text = yatirimBilgi.toString() + " ₺"
-                var vadesiz_isim = view?.findViewById(R.id.vadesiz_isim) as TextView
-                var yatirim_isim = view?.findViewById(R.id.yatirim_isim) as TextView
-                vadesiz_isim.text = list1[0].name
-                yatirim_isim.text = list2[0].name
-            }
-
-            override fun onFailure(call: Call<GetAccountListResponse?>?, t: Throwable?) {}
-        })
+                var accDbManager = AccDbManager(this@TransferFragment.requireActivity(),db.readableDatabase)
+                var accList=accDbManager.readData()
+                cüzdan_vadesiz= accList[0].VadesizBakiye!!
+                cüzdan_yatırım = accList[0].YatirimBakiye!!
 
         val view =  inflater.inflate(R.layout.fragment_transfer, container, false)
         hesap_bilgi = view.findViewById(R.id.hesap_bilgi) as TextView
@@ -116,15 +76,22 @@ class TransferFragment : Fragment() {
 
         btn_tamam = view.findViewById(R.id.btn_tamam) as Button
 
-
-
-        //var cüzdan_yatırım=vdlAccountList.get(0).AmountOfBalance!!.toDouble()
-        //var cüzdan_vadesiz = vdszAccountList.get(0).AmountOfBalance!!.toDouble()
         Log.d("veri2:",cüzdan_vadesiz.toString())
 
 
         miktar = view.findViewById(R.id.miktar) as EditText
 
+        Log.d("veri:",cüzdan_vadesiz.toString())
+        var hesapBilgi = df.format(cüzdan_vadesiz).replace(',','.').reversed().replaceFirst('.',',').reversed()
+        var yatirimBilgi = df.format(cüzdan_yatırım).replace(',','.').reversed().replaceFirst('.',',').reversed()
+
+
+        hesap_bilgi.text = hesapBilgi.toString() + " ₺"
+        yatırım_bilgi.text = yatirimBilgi.toString() + " ₺"
+        var vadesiz_isim = view?.findViewById(R.id.vadesiz_isim) as TextView
+        var yatirim_isim = view?.findViewById(R.id.yatirim_isim) as TextView
+        vadesiz_isim.text = "Hürol ULUÖZ"
+        yatirim_isim.text = "Hürol ULUÖZ"
         fun string_fix(inputstr : String): String {
             var var1 = ""
             for (i in inputstr){
@@ -169,14 +136,7 @@ class TransferFragment : Fragment() {
         })
 
         btn_tamam.setOnClickListener(View.OnClickListener {
-            //Toast.makeText(this@TransferFragment.requireActivity(),"ahahahahahaha",Toast.LENGTH_SHORT).show()
-            //val drawable: Drawable?= ResourcesCompat.getDrawable(resources,R.drawable.button, null)
-            //val drawable_selected: Drawable?= ResourcesCompat.getDrawable(resources,R.drawable.button_selected, null)
 
-            //btn_tamam.setBackground(drawable_selected)
-
-            //
-            //btn_tamam.setBackgroundResource(android.R.drawable.btn_default)
             if(!vadesiz_yatırım.isChecked && !yatırım_vadesiz.isChecked)
                 Toast.makeText(this@TransferFragment.requireActivity(),"Lütfen işlem seçiniz!",Toast.LENGTH_SHORT).show()
             else{
@@ -192,7 +152,7 @@ class TransferFragment : Fragment() {
                             if(cüzdan_vadesiz!! >= secilen_miktar_double){
                                 cüzdan_vadesiz -= secilen_miktar_double
                                 cüzdan_yatırım += secilen_miktar_double
-
+                                accDbManager.updateBalance(cüzdan_yatırım,cüzdan_vadesiz)
                                 hesap_bilgi.setText(df.format(cüzdan_vadesiz).toString().replace(',','.').reversed().replaceFirst('.',',').reversed() + " ₺")
                                 yatırım_bilgi.setText(df.format(cüzdan_yatırım).toString().replace(',','.').reversed().replaceFirst('.',',').reversed() + " ₺")
                                 //btn_tamam.setBackground(drawable)
@@ -207,6 +167,7 @@ class TransferFragment : Fragment() {
                             if(cüzdan_yatırım >= secilen_miktar_double){
                                 cüzdan_vadesiz += secilen_miktar_double
                                 cüzdan_yatırım -= secilen_miktar_double
+                                accDbManager.updateBalance(cüzdan_yatırım,cüzdan_vadesiz)
                                 //buraa
                                 hesap_bilgi.setText(df.format(cüzdan_vadesiz).toString().replace(',','.').reversed().replaceFirst('.',',').reversed() + " ₺")
                                 yatırım_bilgi.setText(df.format(cüzdan_yatırım).toString().replace(',','.').reversed().replaceFirst('.',',').reversed() + " ₺")
@@ -223,8 +184,6 @@ class TransferFragment : Fragment() {
             }
             secilen_miktar_double = 0.0
         })
-
-        // Inflate the layout for this fragment
         return view
     }
 
