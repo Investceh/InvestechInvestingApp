@@ -59,8 +59,8 @@
 
     <Button
             android:id="@+id/devamke"
-            android:layout_width="150dp"
-            android:layout_height="45dp"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
             android:text="Devam"
             android:background="@drawable/button"
             android:layout_gravity="center"

@@ -97,3 +97,4 @@ class RecyclerViewAdapterBekEmirlerim(var hisse_list: MutableList<WaitingOrder>)
     }
 
 }
+

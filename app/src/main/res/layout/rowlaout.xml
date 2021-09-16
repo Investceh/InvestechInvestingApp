@@ -110,6 +110,8 @@
                             app:layout_constraintStart_toEndOf="@+id/cost" />
 
                 </LinearLayout>
+
+
             </LinearLayout>
             <RelativeLayout
                     android:layout_width="match_parent"
@@ -123,32 +125,33 @@
                         android:layout_centerInParent="true" />
             </RelativeLayout>
         </LinearLayout>
-
         <LinearLayout
                 android:id="@+id/expandableView"
                 android:visibility="gone"
-                android:layout_width="233dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:orientation="horizontal">
+                android:gravity="center"
 
+                android:orientation="horizontal"
+                >
             <TableLayout
                     android:layout_height="wrap_content"
                     android:layout_width="fill_parent"
                     android:orientation="horizontal"
-                    android:layout_marginEnd="50dp">
-
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="50dp"
+                    >
                 <TableRow>
-
                     <TextView
                             android:id="@+id/expand_1"
-                            android:layout_height="match_parent"
-                            android:layout_width="177dp"
+                            android:layout_height="wrap_content"
+                            android:layout_width="wrap_content"
                             android:layout_weight="1"
                             android:textSize="15sp"
                             android:ellipsize="end"
                             android:text="Maliyet: "
-                            android:textColor="@color/white" />
+                            android:textColor="@color/white"
+                            />
 
                     <TextView
                             android:id="@+id/expand_1.1"
@@ -157,23 +160,19 @@
                             android:textSize="15sp"
                             android:textStyle="bold"
                             android:textColor="@color/white"
-                            app:layout_constraintStart_toEndOf="@+id/k_z"
-                            android:gravity="right"
-                            />
+                            app:layout_constraintStart_toEndOf="@+id/expand_1"/>
                 </TableRow>
-
                 <TableRow>
-
                     <TextView
                             android:id="@+id/expand_2"
                             android:layout_height="wrap_content"
-                            android:layout_width="0dp"
+                            android:layout_width="wrap_content"
                             android:layout_weight="1"
                             android:textSize="15sp"
                             android:ellipsize="end"
                             android:text="Alış Fiyatı: "
-                            android:textColor="@color/white" />
-
+                            android:textColor="@color/white"
+                            />
                     <TextView
                             android:id="@+id/cost"
                             android:layout_width="wrap_content"
@@ -181,14 +180,13 @@
                             android:textSize="15sp"
                             android:textStyle="bold"
                             android:textColor="@color/white"
-                            app:layout_constraintStart_toEndOf="@+id/k_z"
-                            android:gravity="right"
-                            />
+                            app:layout_constraintStart_toEndOf="@+id/expand_2"/>
                 </TableRow>
 
             </TableLayout>
 
         </LinearLayout>
+
     </LinearLayout>
 
 </androidx.cardview.widget.CardView >
