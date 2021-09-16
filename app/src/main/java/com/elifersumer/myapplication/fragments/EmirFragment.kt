@@ -290,14 +290,36 @@ class EmirFragment : Fragment() {
             override fun onFailure(call: Call<LiveBorsaResponse?>?, t: Throwable?) {
             }
         })
+        var isimList2 = mutableListOf<String>()
+        var doneDbManager = DoneDbManager(this@EmirFragment.requireActivity(),db.readableDatabase)
+        var doneList=doneDbManager.readData()
+        for(done in doneList){
+            if(done.IslemTipi=="Satış"){
+                isimList2.add(done.Hisse!!)
+            }
+        }
         val hisseler = resources.getStringArray(R.array.hisseler)
         val fiyatTipleri = resources.getStringArray(R.array.fiyatTipleri)
         val sureTipleri = resources.getStringArray(R.array.sureTipleri)
         var arrayAdapter = ArrayAdapter(requireContext(),R.layout.dropdown_item, isimList)
+        view.autoCompleteTextView.setAdapter(arrayAdapter)
+        rg.setOnCheckedChangeListener(RadioGroup.OnCheckedChangeListener{ radioGroup, i ->
+            when(i){
+                R.id.alisbtn -> {
+                    arrayAdapter = ArrayAdapter(requireContext(),R.layout.dropdown_item, isimList)
+                    view.autoCompleteTextView.setAdapter(arrayAdapter)
+                }
+                R.id.satisbtn-> {
+                    Log.d("a","a")
+                    arrayAdapter = ArrayAdapter(requireContext(),R.layout.dropdown_item, isimList2)
+                    view.autoCompleteTextView.setAdapter(arrayAdapter)
+                }
+            }
+        })
+
         var arrayAdapter2 = ArrayAdapter(requireContext(),R.layout.dropdown_item, fiyatTipleri)
         var arrayAdapter3 = ArrayAdapter(requireContext(), R.layout.dropdown_item, sureTipleri)
 
-        view.autoCompleteTextView.setAdapter(arrayAdapter)
         view.autoCompleteTextView.setOnClickListener {
             Log.d("baslik:","a")
         }
