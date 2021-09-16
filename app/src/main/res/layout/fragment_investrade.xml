@@ -6,7 +6,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:ignore="ExtraText"
-        android:id="@+id/frameLayout"
+        android:id="@+id/investradeLayout"
         >
     <RelativeLayout
             android:id="@+id/relativeLayout3"
@@ -24,7 +24,7 @@
             <TextView
                     android:textColor="#F5F5F5"
                     android:id="@+id/investrade"
-                    android:text="Investrade"
+                    android:text="InvestTrade"
                     android:gravity="center"
                     android:textSize="20sp"
                     android:textStyle="bold"
@@ -67,6 +67,7 @@
                 <TableLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
+
                     <TableRow>
 
                         <TextView
@@ -84,6 +85,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu">
+
                             <AutoCompleteTextView
                                     android:layout_gravity="end"
                                     android:layout_width="140dp"
@@ -169,8 +171,7 @@
                                 android:ellipsize="end"
                                 android:text="Portföy Ağr: "
                                 android:textColor="@color/black"
-                                android:gravity="center"
-                                />
+                                android:gravity="center" />
 
                         <com.google.android.material.textfield.TextInputLayout
                                 android:layout_width="match_parent"
@@ -196,7 +197,7 @@
                         <TextView
                                 android:id="@+id/detail_7"
                                 android:layout_height="match_parent"
-                                android:layout_width="210dp"
+                                android:layout_width="198dp"
                                 android:layout_weight="1"
                                 android:textSize="15sp"
                                 android:ellipsize="end"
@@ -204,22 +205,18 @@
                                 android:gravity="center"
                                 android:textColor="@color/black" />
 
-                        <com.google.android.material.textfield.TextInputLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu">
+                        <TextView
+                                android:id="@+id/detail_7.1"
+                                android:layout_height="match_parent"
+                                android:layout_width="210dp"
+                                android:layout_weight="1"
+                                android:textSize="20sp"
+                                android:ellipsize="end"
+                                android:text="SAT "
+                                android:gravity="center"
+                                android:textColor="@color/black" />
 
-                            <AutoCompleteTextView
-                                    android:layout_gravity="end"
-                                    android:layout_width="140dp"
-                                    android:text="Limit"
-                                    android:layout_height="match_parent"
-                                    android:id="@+id/SinyalLink"
-                                    android:layout_weight="1"
-                                    android:textColor="@color/black"
-                                    android:textAlignment="textEnd"
-                                    android:inputType="none" />
-                        </com.google.android.material.textfield.TextInputLayout>
+
                     </TableRow>
 
                 </TableLayout>
