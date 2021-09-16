@@ -14,11 +14,14 @@
             android:orientation="vertical">
 
 
+
+
         <LinearLayout
                 android:layout_marginTop="70dp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
+
 
             <View
                     android:layout_width="match_parent"
@@ -94,7 +97,6 @@
                     android:background="@color/ozarspecial"
                     android:textSize="17dp"
                     android:textStyle="bold">
-
             </Button>
 
             <View
@@ -146,6 +148,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Robo-Invest"
+                    android:textColor="#FA8072"
                     android:gravity="center|left|center_vertical"
                     android:layout_marginBottom="1dp"
                     android:background="@color/ozarspecial"
@@ -153,6 +156,8 @@
                     android:textStyle="bold">
 
             </Button>
+
+
 
             <View
                     android:layout_width="match_parent"
@@ -166,6 +171,7 @@
                     android:text="InvesTrade"
                     android:gravity="center|left|center_vertical"
                     android:layout_marginBottom="1dp"
+                    android:textColor="#FA8072"
                     android:background="@color/ozarspecial"
                     android:textSize="17dp"
                     android:textStyle="bold">
@@ -177,13 +183,23 @@
                     android:layout_height="2dp"
                     android:background="@drawable/bg9"/>
 
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="PRO"
+                    android:textSize="17dp"
+                    android:textColor="#FA8072"
+                    android:textAlignment="textEnd"
+                    android:layout_marginRight="10dp"
+                />
+
         </LinearLayout>
 
     </LinearLayout>
 
     <ImageView
 
-            android:layout_marginTop="490dp"
+            android:layout_marginTop="510dp"
             android:layout_marginLeft="150dp"
             android:src="@drawable/appicon"
             android:layout_width="100dp"
