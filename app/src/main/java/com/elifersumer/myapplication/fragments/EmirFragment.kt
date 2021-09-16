@@ -61,9 +61,11 @@ class EmirFragment : Fragment() {
         val args = this.arguments
         val satisData = args?.get("satis")
         val alisData = args?.get("alis")
-        val isimData = args?.get("isim")
+        var isimData = args?.get("isim")
         val alisOrSatis = args?.get("alisOrSatis")
         val farkData = args?.get("fark")
+        var degisimIsim = args?.get("degisimIsim")
+        var alisOrSatisDegisim = args?.get("alisOrSatisDegisim")
         Log.d("satis:",satisData.toString())
 
         alisbtn = view.findViewById(R.id.alisbtn) as RadioButton
@@ -84,32 +86,35 @@ class EmirFragment : Fragment() {
 
         hisseler = view.findViewById(R.id.autoCompleteTextView) as AutoCompleteTextView
 
-        hisseler.setText(isimData.toString())
 
 
         var input_islem_tipi = "Alış"
 
         alisFiyat.text = alisData.toString()
-        if(alisData == null){
-            alisFiyat.text = "20,03"
+        if(alisData == null ){
+            alisFiyat.text = "5,54"
         }
         satisFiyat.text = satisData.toString()
         if(satisData == null){
-            satisFiyat.text = "20,05"
+            satisFiyat.text = "5,52"
         }
+        if (degisimIsim != null){
 
+            isimData = degisimIsim
+        }
+        hisseler.setText(isimData.toString())
         if (isimData == null){
             hisseler.setText("EREGL")
         }
         farkTextView.text = farkData.toString()
         if(farkData == null){
-            farkTextView.text = "%0.07"
+            farkTextView.text = "%0.36"
         }
         if (alisOrSatis == "satis"){
             input_islem_tipi = "Satış"
             fiyat.setText(alisData.toString())
             if(alisData == null){
-                fiyat.setText("20,05")
+                fiyat.setText("5,54")
             }
             satisbtn.isChecked = true
         }
@@ -117,7 +122,7 @@ class EmirFragment : Fragment() {
             input_islem_tipi == "Alış"
             fiyat.setText(satisData.toString())
             if(satisData == null){
-                fiyat.setText("20,03")
+                fiyat.setText("5,52")
             }
             alisbtn.isChecked = true
         }
