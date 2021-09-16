@@ -738,7 +738,6 @@
                         android:button="@android:color/transparent"
                         android:layout_marginTop="4dp">
                 </RadioButton>
-
             </RadioGroup>
 
 
@@ -840,10 +839,8 @@
                         android:button="@android:color/transparent"
                         android:layout_marginTop="4dp">
                 </RadioButton>
-
             </RadioGroup>
 
-            
 
             <Button
                     android:layout_width="230dp"
@@ -855,7 +852,6 @@
                     android:layout_margin="25dp"
                     android:layout_marginTop="15dp">
             </Button>
-
 
 
         </LinearLayout>
