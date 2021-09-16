@@ -96,7 +96,6 @@ class KarsilamaFragment : Fragment()  {
                     }else{
                         h2 = hisseler(done.Hisse!!,R.drawable.header_logo,fiyat,adet,1.75,potben,fiyat)
                     }
-
                     list1.add(h2)
                 }
 
