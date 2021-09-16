@@ -70,7 +70,7 @@ class RecyclerViewAdapterForHaberler(var haberler_list : MutableList<haberler>):
         holder.kaynak.text = haberler_list[position].kaynak
         var uri:String=haberler_list[position].imgUrl
         Glide.with(holder.imageView.getContext()).load(uri).into(holder.imageView)
-        holder.haber_animation.animation = AnimationUtils.loadAnimation(holder.itemView.context, R.anim.rv_anim)
+        holder.haber_animation.animation = AnimationUtils.loadAnimation(holder.itemView.context, R.anim.haber_rv_anim)
         holder.initialize(haberler_list[position])
     }
 
