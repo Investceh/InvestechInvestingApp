@@ -298,6 +298,7 @@
                 android:layout_width="180dp"
                 android:layout_height="47dp"
                 android:background="@drawable/transfer_button"
+                app:backgroundTint="@null"
                 android:text="Tamam"
                 android:textColor="#F5F5F5"
                 android:textAllCaps="false"
