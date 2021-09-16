@@ -1,6 +1,7 @@
 package com.elifersumer.myapplication.fragments
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -10,6 +11,8 @@ import com.elifersumer.myapplication.R
 import com.github.mikephil.charting.charts.LineChart
 import com.github.mikephil.charting.charts.PieChart
 import com.github.mikephil.charting.data.Entry
+import com.github.mikephil.charting.data.LineData
+import com.github.mikephil.charting.data.LineDataSet
 import com.github.mikephil.charting.data.PieEntry
 import kotlinx.android.synthetic.main.fragment_emirgiris.view.*
 import kotlinx.android.synthetic.main.fragment_investrade.view.*
@@ -35,8 +38,7 @@ class investrade : Fragment() {
         var arrayAdapter3 = ArrayAdapter(requireContext(),R.layout.dropdown_item, arrayname3)
         view.portfoyAgr.setAdapter(arrayAdapter3)
 
-        setDataToLine()
-        lineChart.invalidate()
+
 
 
         // Inflate the layout for this fragment
@@ -45,9 +47,10 @@ class investrade : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        lineChart = view.findViewById(R.id.lineChart)
+        lineChart = view.findViewById(R.id.lineChart) as LineChart
         lineChart.setNoDataText("Veriler Yükleniyor");
-
+        lineChart.invalidate()
+        setDataToLine()
 
     }
 
@@ -347,11 +350,16 @@ class investrade : Fragment() {
             1468.67 , 1474.72 , 1454.74 ,
             1433.85 , 1452.67 ,
             1438.72 , 1438.28 , 1434.43 , 1435.82 )
-        val i = 0
+        var i = 0
         for(a in arrayname3){
             dataEntries.add(Entry(i.toFloat(),a.toFloat()))
+            i += 1
         }
+        var lineDataSet1 = LineDataSet(dataEntries,"Data Set")
+        var data = LineData(lineDataSet1)
 
+        lineChart.setData(data)
+        lineChart.invalidate()
     }
 
 }
