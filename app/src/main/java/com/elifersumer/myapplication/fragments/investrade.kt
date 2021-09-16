@@ -42,7 +42,7 @@ class investrade : Fragment() {
 
 
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_investrade, container, false)
+        return view.rootView
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

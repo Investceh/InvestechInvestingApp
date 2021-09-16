@@ -75,7 +75,8 @@
 
                 <TableLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:id="@+id/tblyt">
 
                     <TableRow android:background="#C7D3E1">
 
@@ -100,7 +101,7 @@
                             <AutoCompleteTextView
                                     android:layout_gravity="end"
                                     android:layout_width="140dp"
-                                    android:text="Limit"
+                                    android:text="BIST100"
                                     android:layout_height="match_parent"
                                     android:id="@+id/Enstruman"
                                     android:layout_weight="1"
@@ -134,7 +135,7 @@
                             <AutoCompleteTextView
                                     android:layout_gravity="end"
                                     android:layout_width="140dp"
-                                    android:text="Limit"
+                                    android:text="KV G."
                                     android:layout_height="match_parent"
                                     android:id="@+id/Model"
                                     android:layout_weight="1"
@@ -200,7 +201,7 @@
                             <AutoCompleteTextView
                                     android:layout_gravity="end"
                                     android:layout_width="140dp"
-                                    android:text="Limit"
+                                    android:text="%0"
                                     android:layout_height="match_parent"
                                     android:id="@+id/portfoyAgr"
                                     android:layout_weight="1"
@@ -242,9 +243,10 @@
 
 
                     </TableRow>
-
+                    <Button android:text="Kendi Modelini oluştur"
+                            android:layout_marginTop="10dp"
+                        />
                 </TableLayout>
-
 
             </androidx.core.widget.NestedScrollView>
 

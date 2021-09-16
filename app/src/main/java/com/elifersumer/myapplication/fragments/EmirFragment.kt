@@ -79,14 +79,14 @@ class EmirFragment : Fragment() {
 
         adet = view.findViewById(R.id.edtxt_adet) as EditText
 
-        fun clear(){
-            adet.setText("")
-            fiyat.text = " "
-        }
-
         val alisFiyat = view.findViewById(R.id.val_alis) as TextView
         val satisFiyat = view.findViewById(R.id.val_satis) as TextView
         val fiyat = view.findViewById(R.id.edtxt_fiyat) as EditText
+
+        fun clear(){
+            adet.setText("")
+            fiyat.setText("")
+        }
 
         rg = view.findViewById(R.id.daily_weekly_button_view) as RadioGroup
 
