@@ -13,6 +13,7 @@ import com.elifersumer.myapplication.*
 import com.elifersumer.myapplication.CollectApi.CollectApiInstance
 import com.elifersumer.myapplication.Database.DoneOrder
 import com.elifersumer.myapplication.Database.Helper.DbHelper
+import com.elifersumer.myapplication.Database.Managers.AccDbManager
 
 import com.elifersumer.myapplication.Database.Managers.DoneDbManager
 import com.elifersumer.myapplication.Database.Managers.WaitingDbManager
@@ -50,6 +51,11 @@ class EmirFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view =  inflater.inflate(R.layout.fragment_emirgiris, container, false)
+        var accDbManager=AccDbManager(this@EmirFragment.requireActivity(),db.readableDatabase)
+        var balanceList=accDbManager.readData()
+        var cüzdan_yatırım=balanceList[0].YatirimBakiye
+        var cüzdan_vadesiz=balanceList[0].VadesizBakiye
+
         val args = this.arguments
         val satisData = args?.get("satis")
         val alisData = args?.get("alis")
@@ -207,6 +213,7 @@ class EmirFragment : Fragment() {
 
                         //profile update
                         var tot_price = input_adet.toDouble() * input_fiyat2.toDouble()
+                        var yatirim = cüzdan_yatırım!!-tot_price
                         if(/*tot_price <= /* kullanıcının yatırım hesabındaki para */0.0*/1 == 1){
 
                             var doneOrder= DoneOrder(input_isim,input_adet,input_fiyat,"Alış")
@@ -215,7 +222,7 @@ class EmirFragment : Fragment() {
                             /*val fragment = GerceklesenEmirFragment()
                             fragment.arguments = bundle
                             fragmentManager?.beginTransaction()?.replace(R.id.fragmentContainerView,fragment)?.commit()*/
-
+                            accDbManager.updateBalance(yatirim,cüzdan_vadesiz!!)
                             /*
                                 . transfer sayfasında yatırımdaki parasını azalt
                                 . portföye yeni kart ekle(eğer o hisse için kullanıcının kartı varsa, sadece adedini arttır)
@@ -245,13 +252,15 @@ class EmirFragment : Fragment() {
                     input_isim = hisseler.text.toString()
                     input_fiyat = fiyat.text.toString()
                     input_adet = adet.text.toString()
-
+                    var tot_price = input_adet.toDouble() * input_fiyat.toDouble()
+                    var yatirim2 = cüzdan_yatırım!!-tot_price
 
                     if(fiyat.text.toString() == alisFiyat.text.toString()){
                         var doneOrder= DoneOrder(input_isim,input_adet,input_fiyat,"Satış")
                         var doneDbManager= DoneDbManager(this@EmirFragment.requireActivity(),db.writableDatabase)
                         doneDbManager.insertData(doneOrder)
 
+                        accDbManager.updateBalance(yatirim2,cüzdan_vadesiz!!)
 
                             /*
 

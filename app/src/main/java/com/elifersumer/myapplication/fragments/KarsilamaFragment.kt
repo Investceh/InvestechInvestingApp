@@ -38,16 +38,22 @@ import kotlin.collections.ArrayList
 import kotlin.collections.emptyList as emptyList
 import android.R.attr.label
 import android.graphics.Paint
+import com.elifersumer.myapplication.Database.DoneOrder
+import com.elifersumer.myapplication.Database.Helper.DbHelper
+import com.elifersumer.myapplication.Database.Managers.DoneDbManager
 import com.github.mikephil.charting.charts.Chart
 
 
 class KarsilamaFragment : Fragment()  {
     private lateinit var pieChart: PieChart
     private var list1 = mutableListOf<hisseler>()
+    lateinit var doneList:MutableList<DoneOrder>
+    val db by lazy { DbHelper(this@KarsilamaFragment.requireActivity()) }
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        var doneDbManager=DoneDbManager(this@KarsilamaFragment.requireActivity(),db.readableDatabase)
 
         var instances=RetroInstance()
 
@@ -75,6 +81,25 @@ class KarsilamaFragment : Fragment()  {
                     var h1=hisseler(stock.Name!!,R.drawable.header_logo,stock.Cost!!, stock.StockItem!!.toInt(), stock.Rate!!,stock.PotentialBenefit!!,stock.Price!!)
                     list1.add(h1)
                 }
+
+                doneList=doneDbManager.readData()
+
+                for(done in doneList){
+                    var fiyat=done.Fiyat!!.toDouble()
+                    var adet=done.Adet!!.toInt()
+                    var potben=fiyat*adet
+                    var h2 : hisseler
+                    if(done.Hisse!!.startsWith("A")){
+                        h2=hisseler(done.Hisse!!,R.drawable.header_logo,fiyat,adet,2.23,potben,fiyat)
+                    }else if(done.Hisse!!.startsWith("B")){
+                        h2 = hisseler(done.Hisse!!,R.drawable.header_logo,fiyat,adet,0.41,potben,fiyat)
+                    }else{
+                        h2 = hisseler(done.Hisse!!,R.drawable.header_logo,fiyat,adet,1.75,potben,fiyat)
+                    }
+
+                    list1.add(h2)
+                }
+
 
                 val tourList = list1
                 recyclerview.layoutManager=LinearLayoutManager(context)
