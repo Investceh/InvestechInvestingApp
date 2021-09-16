@@ -134,7 +134,11 @@
             android:id="@+id/blankFragment"
             android:name="com.elifersumer.myapplication.fragments.BlankFragment"
             android:label="fragment_blank"
-            tools:layout="@layout/fragment_blank" />
+            tools:layout="@layout/fragment_blank" >
+        <action
+                android:id="@+id/action_blankFragment_self"
+                app:destination="@id/blankFragment" />
+    </fragment>
     <fragment
             android:id="@+id/sorularFragment"
             android:name="com.elifersumer.myapplication.fragments.SorularFragment"

@@ -13,6 +13,7 @@ import com.elifersumer.myapplication.*
 import com.elifersumer.myapplication.CollectApi.CollectApiInstance
 import com.elifersumer.myapplication.Database.DoneOrder
 import com.elifersumer.myapplication.Database.Helper.DbHelper
+import com.elifersumer.myapplication.Database.Managers.AccDbManager
 
 import com.elifersumer.myapplication.Database.Managers.DoneDbManager
 import com.elifersumer.myapplication.Database.Managers.WaitingDbManager
@@ -50,6 +51,11 @@ class EmirFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view =  inflater.inflate(R.layout.fragment_emirgiris, container, false)
+        var accDbManager=AccDbManager(this@EmirFragment.requireActivity(),db.readableDatabase)
+        var balanceList=accDbManager.readData()
+        var cüzdan_yatırım=balanceList[0].YatirimBakiye
+        var cüzdan_vadesiz=balanceList[0].VadesizBakiye
+
         val args = this.arguments
         val satisData = args?.get("satis")
         val alisData = args?.get("alis")
@@ -116,7 +122,6 @@ class EmirFragment : Fragment() {
 
 
         alisbtn.setOnClickListener(View.OnClickListener {
-            //Toast.makeText(this@EmirFragment.requireActivity(),"AŞKSIN ", Toast.LENGTH_SHORT).show()
             alisbtn.textSize = 16.toFloat()
             //alisbtn.setTextColor(Color.parseColor("#f5f5f5"))
             alisbtn.setTypeface(null, Typeface.BOLD)
@@ -207,19 +212,13 @@ class EmirFragment : Fragment() {
 
                         //profile update
                         var tot_price = input_adet.toDouble() * input_fiyat2.toDouble()
-                        if(/*tot_price <= /* kullanıcının yatırım hesabındaki para */0.0*/1 == 1){
 
+                        if(tot_price <= cüzdan_yatırım!!){
+                            var yatirim = cüzdan_yatırım!!-tot_price
                             var doneOrder= DoneOrder(input_isim,input_adet,input_fiyat,"Alış")
                             var doneDbManager= DoneDbManager(this@EmirFragment.requireActivity(),db.writableDatabase)
                             doneDbManager.insertData(doneOrder)
-                            /*val fragment = GerceklesenEmirFragment()
-                            fragment.arguments = bundle
-                            fragmentManager?.beginTransaction()?.replace(R.id.fragmentContainerView,fragment)?.commit()*/
-
-                            /*
-                                . transfer sayfasında yatırımdaki parasını azalt
-                                . portföye yeni kart ekle(eğer o hisse için kullanıcının kartı varsa, sadece adedini arttır)
-                            */
+                            accDbManager.updateBalance(yatirim,cüzdan_vadesiz!!)
                         }
                         else{
                             Toast.makeText(this@EmirFragment.requireActivity(),"Yetersiz Bakiye", Toast.LENGTH_SHORT).show()
@@ -228,14 +227,10 @@ class EmirFragment : Fragment() {
                     else{
                         var input_fiyat2 = string_fix(input_fiyat)
                         var tot_price = input_adet.toDouble() * input_fiyat2.toDouble()
-                        if(/*tot_price <=*/ /* kullanıcının yatırım hesabındaki para */true){
+                        if(tot_price <=cüzdan_yatırım!!){
                             var waitingOrder= WaitingOrder(input_isim,input_adet,input_fiyat,"Alış")
                             var waitDbManager= WaitingDbManager(this@EmirFragment.requireActivity(),db.writableDatabase)
                             waitDbManager.insertData(waitingOrder)
-                            /*
-                                . bekleyene yolla bu bilgileri
-                                . transfer sayfasında yatırımdaki parasını azalt
-                             */
                         }else{
                             Toast.makeText(this@EmirFragment.requireActivity(),"Yetersiz Bakiye", Toast.LENGTH_SHORT).show()
                         }
@@ -245,43 +240,24 @@ class EmirFragment : Fragment() {
                     input_isim = hisseler.text.toString()
                     input_fiyat = fiyat.text.toString()
                     input_adet = adet.text.toString()
-
+                    var tot_price = input_adet.toDouble() * input_fiyat.toDouble()
+                    var yatirim2 = cüzdan_yatırım!!+tot_price
 
                     if(fiyat.text.toString() == alisFiyat.text.toString()){
                         var doneOrder= DoneOrder(input_isim,input_adet,input_fiyat,"Satış")
                         var doneDbManager= DoneDbManager(this@EmirFragment.requireActivity(),db.writableDatabase)
                         doneDbManager.insertData(doneOrder)
 
-
-                            /*
-
-                                . transfer sayfasında yatırımdaki parasını azalt
-                                . portföye yeni kart ekle(eğer o hisse için kullanıcının kartı varsa, sadece adedini arttır)
-                            */
+                        accDbManager.updateBalance(yatirim2,cüzdan_vadesiz!!)
 
                     }else{
                         var waitingOrder= WaitingOrder(input_isim,input_adet,input_fiyat,"Satış")
                         var waitDbManager= WaitingDbManager(this@EmirFragment.requireActivity(),db.writableDatabase)
                         waitDbManager.insertData(waitingOrder)
-                            /*
-
-                                . transfer sayfasında yatırımdaki parasını arttır
-                             */
                     }
 
                 }
-
-
-                //database olcak
-                /* BekleyenEmirlerimData(
-                     input_isim,
-                     input_adet,
-                     input_fiyat,
-                     input_islem_tipi,
-                     "İptal",
-                     "Değiş"
-                 )*/
-
+            //database oldu
             }
         }
         var list1= mutableListOf<PiyasaData>()

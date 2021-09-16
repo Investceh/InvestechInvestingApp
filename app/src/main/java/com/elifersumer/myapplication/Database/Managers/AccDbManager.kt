@@ -21,8 +21,6 @@ class AccDbManager(val context: Context, val dbase:SQLiteDatabase) {
         contentValues.put(COL_YATIRIM, accountInfo.YatirimBakiye)
 
         val result = sqliteDB.insert(TABLE_NAME,null,contentValues)
-
-        Toast.makeText(context,if(result != -1L) "Emir Girişi Başarılı" else "Emir girişi yapılamadı.", Toast.LENGTH_SHORT).show()
     }
 
     fun readData():MutableList<AccountInfo>{

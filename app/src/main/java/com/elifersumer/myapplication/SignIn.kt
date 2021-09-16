@@ -20,6 +20,7 @@ class SignIn : AppCompatActivity() {
         binding=ActivitySignInBinding.inflate(layoutInflater)
         val view=binding.root
         setContentView(view)
+        //hehee
     }
 
     fun signInClicked(view: View){

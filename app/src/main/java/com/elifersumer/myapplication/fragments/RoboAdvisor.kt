@@ -82,10 +82,9 @@ class RoboAdvisor : Fragment() {
         önri.text = sonuc
 
         devamke.setOnClickListener{
-
-            fragmentManager?.beginTransaction()?.replace(R.id.fragmentContainerView,DigerFragment())?.commit()
+            navController = Navigation.findNavController(requireView())
+            navController!!.navigate(R.id.action_roboAdvisor_to_karsilamaFragment)
         }
-
 
         return view
     }
