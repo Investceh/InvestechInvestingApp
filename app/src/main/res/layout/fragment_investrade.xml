@@ -40,6 +40,12 @@
                     android:id="@+id/imageView3"
                     android:contentDescription="@string/image"
                     app:layout_constraintVertical_bias="0.229" />
+            <com.github.mikephil.charting.charts.LineChart
+                    android:id="@+id/lineChart"
+                    android:layout_width="250dp"
+                    android:layout_height="250dp"
+                    android:layout_centerInParent="true" />
+
 
         </RelativeLayout>
         <RelativeLayout
