@@ -1,6 +1,7 @@
 package com.elifersumer.myapplication.fragments
 
 import android.graphics.Typeface
+import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -8,6 +9,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
+import androidx.core.content.res.ResourcesCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.elifersumer.myapplication.*
 import com.elifersumer.myapplication.CollectApi.CollectApiInstance
@@ -240,10 +242,12 @@ class EmirFragment : Fragment() {
                     input_isim = hisseler.text.toString()
                     input_fiyat = fiyat.text.toString()
                     input_adet = adet.text.toString()
-                    var tot_price = input_adet.toDouble() * input_fiyat.toDouble()
+                    var input_fiyat2 = string_fix(input_fiyat)
+                    var tot_price = input_adet.toDouble() * input_fiyat2.toDouble()
                     var yatirim2 = cüzdan_yatırım!!+tot_price
 
                     if(fiyat.text.toString() == alisFiyat.text.toString()){
+
                         var doneOrder= DoneOrder(input_isim,input_adet,input_fiyat,"Satış")
                         var doneDbManager= DoneDbManager(this@EmirFragment.requireActivity(),db.writableDatabase)
                         doneDbManager.insertData(doneOrder)

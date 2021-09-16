@@ -46,7 +46,6 @@ class DoneDbManager(val context: Context, val dbase: SQLiteDatabase) {
             }while (result.moveToNext())
         }
         result.close()
-        sqliteDB.close()
         return orderList
     }
 
@@ -58,8 +57,11 @@ class DoneDbManager(val context: Context, val dbase: SQLiteDatabase) {
 
     fun deletDataByName(name:String){
         val sqliteDB= dbase
-        sqliteDB.delete(TABLE_NAME,COL_HISSE+"="+name,null)
-        sqliteDB.close()
+        if(sqliteDB.isOpen==true) {
+            val query="DELETE FROM " + TABLE_NAME+ " WHERE "+COL_HISSE+"='"+name+"'"
+            sqliteDB.execSQL(query)
+            sqliteDB.close()
+        }
     }
 
 }

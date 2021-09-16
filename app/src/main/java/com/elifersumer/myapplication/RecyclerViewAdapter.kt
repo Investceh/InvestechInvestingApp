@@ -12,7 +12,12 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.cardview.widget.CardView
+import androidx.navigation.NavController
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
+import com.elifersumer.myapplication.Database.DoneOrder
+import com.elifersumer.myapplication.Database.Helper.DbHelper
+import com.elifersumer.myapplication.Database.Managers.DoneDbManager
 import com.elifersumer.myapplication.fragments.hisseler
 import kotlinx.android.synthetic.main.rowlaout.*import kotlinx.android.synthetic.main.rowlaout.*
 import java.text.DecimalFormat
@@ -24,6 +29,8 @@ class RecyclerViewAdapter(var hisse_list : MutableList<hisseler>):
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view)
     {
+        val db by lazy { DbHelper(itemView.context) }
+        var navController: NavController? = null
         val sh_name: TextView =view.findViewById(R.id.title_tv)
         val cost: TextView = view.findViewById(R.id.cost)
         val tane: TextView = view.findViewById(R.id.tane)
@@ -76,8 +83,18 @@ class RecyclerViewAdapter(var hisse_list : MutableList<hisseler>):
                 }
             }
 
-            //!!!!!!!!!!!!!!!!!
+
             but.setOnClickListener{
+
+                var doneDbManager = DoneDbManager(itemView.context,db.writableDatabase)
+               var all_list = doneDbManager.readData()
+                for(index in all_list){
+                    if(index.Hisse==item.sh_name){
+                        doneDbManager.deletDataByName(index.Hisse!!)
+                    }
+                }
+                navController = Navigation.findNavController(itemView)
+                navController!!.navigate(R.id.action_karsilamaFragment_self)
                 Toast.makeText(sh_name.context,"Satıldı",Toast.LENGTH_SHORT).show()
             }
         }
@@ -102,8 +119,6 @@ class RecyclerViewAdapter(var hisse_list : MutableList<hisseler>):
         //holder.stockItem.text = hisse_list[position].stockItem.toString()
         holder.cv_animation.animation = AnimationUtils.loadAnimation(holder.itemView.context, R.anim.rv_anim)
         holder.initialize(hisse_list[position])
-
-
     }
 
     override fun getItemCount(): Int {

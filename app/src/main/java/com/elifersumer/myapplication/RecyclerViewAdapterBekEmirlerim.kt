@@ -45,7 +45,8 @@ class RecyclerViewAdapterBekEmirlerim(var hisse_list: MutableList<WaitingOrder>)
                 Toast.makeText(isim.context,"İptal", Toast.LENGTH_SHORT).show()
             }
             degisButton.setOnClickListener {
-
+                var waitingDbManager = WaitingDbManager(iptalButton.context,db.writableDatabase)
+                waitingDbManager.deletDataByName(item.Hisse.toString())
                 Toast.makeText(isim.context,"Degis", Toast.LENGTH_SHORT).show()
             }
         }

@@ -44,6 +44,9 @@
                 app:exitAnim="@anim/anim_exit"
                 app:popEnterAnim="@anim/anim_enter"
                 app:popExitAnim="@anim/anim_exit"/>
+        <action
+                android:id="@+id/action_karsilamaFragment_self"
+                app:destination="@id/karsilamaFragment" />
     </fragment>
     <fragment
             android:id="@+id/piyasaFragment"
