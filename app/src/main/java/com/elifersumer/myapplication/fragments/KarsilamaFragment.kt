@@ -53,6 +53,18 @@ class KarsilamaFragment : Fragment()  {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        fun string_fix(inputstr : String): String {
+            var var1 = ""
+            for (i in inputstr){
+                if (i == ','){
+                    var1 += '.'
+                }
+                else if (i != '.'){
+                    var1 += i
+                }
+            }
+            return var1
+        }
         var doneDbManager=DoneDbManager(this@KarsilamaFragment.requireActivity(),db.readableDatabase)
 
         var instances=RetroInstance()
@@ -85,6 +97,7 @@ class KarsilamaFragment : Fragment()  {
                 doneList=doneDbManager.readData()
 
                 for(done in doneList){
+                    done.Fiyat = done.Fiyat?.let { string_fix(it) }
                     var fiyat=done.Fiyat!!.toDouble()
                     var adet=done.Adet!!.toInt()
                     var potben=fiyat*adet
