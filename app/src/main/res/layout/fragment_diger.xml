@@ -145,7 +145,7 @@
                     android:id="@+id/anketgcsbtn"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Robo-advisor"
+                    android:text="Robo-Invest"
                     android:gravity="center|left|center_vertical"
                     android:layout_marginBottom="1dp"
                     android:background="@color/ozarspecial"

@@ -1,6 +1,7 @@
 package com.elifersumer.myapplication
 
 import android.graphics.Color
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -18,6 +19,7 @@ import com.elifersumer.myapplication.Database.Managers.WaitingDbManager
 import com.elifersumer.myapplication.Database.WaitingOrder
 import com.elifersumer.myapplication.R
 import com.elifersumer.myapplication.fragments.BekleyenEmirFragment
+import com.elifersumer.myapplication.fragments.EmirFragment
 import com.elifersumer.myapplication.fragments.hisseler
 
 class RecyclerViewAdapterBekEmirlerim(var hisse_list: MutableList<WaitingOrder>) :
@@ -46,7 +48,17 @@ class RecyclerViewAdapterBekEmirlerim(var hisse_list: MutableList<WaitingOrder>)
             }
             degisButton.setOnClickListener {
                 var waitingDbManager = WaitingDbManager(iptalButton.context,db.writableDatabase)
+                val bundle = Bundle()
+                bundle.putString("degisimIsim",item.Hisse)
+                bundle.putString("satisDegisim",item.Fiyat)
+                bundle.putString("alisOrSatisDegisim",item.IslemTipi)
+                bundle.putString("fark",farkString)
+                val fragment = EmirFragment()
+                fragment.arguments = bundle
+                val manager: FragmentManager = (itemView.context as AppCompatActivity).supportFragmentManager
+                manager.beginTransaction()?.replace(R.id.fragmentContainerView,fragment).commit()
                 waitingDbManager.deletDataByName(item.Hisse.toString())
+
                 Toast.makeText(isim.context,"Degis", Toast.LENGTH_SHORT).show()
             }
         }
