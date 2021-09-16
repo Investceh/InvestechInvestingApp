@@ -27,7 +27,7 @@ import kotlinx.coroutines.delay
 
 class BekleyenEmirFragment : Fragment() {
     val db by lazy { DbHelper(this@BekleyenEmirFragment.requireActivity()) }
-    var waitingDbManager = WaitingDbManager(this@BekleyenEmirFragment.requireActivity(),db.readableDatabase)
+
     lateinit var tumu_sil: Button
     lateinit var bekleyenEmirler: MutableList<WaitingOrder>
 
@@ -36,6 +36,7 @@ class BekleyenEmirFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
         val view = inflater.inflate(R.layout.fragment_bekleyen_emir, container, false)
         tumu_sil = view.findViewById(R.id.bekleyen_emir) as Button
 
@@ -44,6 +45,7 @@ class BekleyenEmirFragment : Fragment() {
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        var waitingDbManager = WaitingDbManager(this@BekleyenEmirFragment.requireActivity(),db.readableDatabase)
         bekleyenEmirler = waitingDbManager.readData()
         tumu_sil.setOnClickListener(View.OnClickListener {
 

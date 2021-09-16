@@ -22,9 +22,7 @@ class CanceledDbManager(val context: Context,val dbase: SQLiteDatabase){
         contentValues.put(COL_ADET, canceledOrder.Adet)
         contentValues.put(COL_FIYAT, canceledOrder.Fiyat)
         contentValues.put(COL_ISLEMTIPI,canceledOrder.IslemTipi)
-
         val result = sqliteDB.insert(TABLE_NAME,null,contentValues)
-
         Toast.makeText(context,if(result != -1L) "Emir Girişi Başarılı" else "Emir girişi yapılamadı.", Toast.LENGTH_SHORT).show()
     }
 
