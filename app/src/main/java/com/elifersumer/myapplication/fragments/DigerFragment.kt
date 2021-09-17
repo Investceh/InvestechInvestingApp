@@ -48,5 +48,8 @@ class DigerFragment : Fragment() {
         view.findViewById<Button>(R.id.haberlergcsBtn).setOnClickListener{
             navController!!.navigate(R.id.action_digerFragment_to_haberlerFragment)
         }
+        view.findViewById<Button>(R.id.investrade).setOnClickListener{
+            navController!!.navigate(R.id.action_digerFragment_to_investrade2)
+        }
     }
 }

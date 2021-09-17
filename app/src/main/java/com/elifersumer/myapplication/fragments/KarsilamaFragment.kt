@@ -97,19 +97,21 @@ class KarsilamaFragment : Fragment()  {
                 doneList=doneDbManager.readData()
 
                 for(done in doneList){
-                    done.Fiyat = done.Fiyat?.let { string_fix(it) }
-                    var fiyat=done.Fiyat!!.toDouble()
-                    var adet=done.Adet!!.toInt()
-                    var potben=fiyat*adet
-                    var h2 : hisseler
-                    if(done.Hisse!!.startsWith("A")){
-                        h2=hisseler(done.Hisse!!,R.drawable.header_logo,fiyat,adet,2.23,potben,fiyat)
-                    }else if(done.Hisse!!.startsWith("B")){
-                        h2 = hisseler(done.Hisse!!,R.drawable.header_logo,fiyat,adet,0.41,potben,fiyat)
-                    }else{
-                        h2 = hisseler(done.Hisse!!,R.drawable.header_logo,fiyat,adet,1.75,potben,fiyat)
+                    if(done.IslemTipi == "Alış"){
+                        done.Fiyat = done.Fiyat?.let { string_fix(it) }
+                        var fiyat=done.Fiyat!!.toDouble()
+                        var adet=done.Adet!!.toInt()
+                        var potben=fiyat*adet
+                        var h2 : hisseler
+                        if(done.Hisse!!.startsWith("A")){
+                            h2=hisseler(done.Hisse!!,R.drawable.header_logo,fiyat,adet,2.23,potben,fiyat)
+                        }else if(done.Hisse!!.startsWith("B")){
+                            h2 = hisseler(done.Hisse!!,R.drawable.header_logo,fiyat,adet,0.41,potben,fiyat)
+                        }else{
+                            h2 = hisseler(done.Hisse!!,R.drawable.header_logo,fiyat,adet,1.75,potben,fiyat)
+                        }
+                        list1.add(h2)
                     }
-                    list1.add(h2)
                 }
 
 

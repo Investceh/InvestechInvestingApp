@@ -4,7 +4,11 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import com.elifersumer.myapplication.Database.AccountInfo
 import com.elifersumer.myapplication.Database.Helper.DbHelper
+import com.elifersumer.myapplication.Database.Managers.AccDbManager
+import com.elifersumer.myapplication.Database.Managers.CanceledDbManager
+import com.elifersumer.myapplication.Database.Managers.DoneDbManager
 import com.elifersumer.myapplication.Database.Managers.WaitingDbManager
 import com.elifersumer.myapplication.Database.WaitingOrder
 import com.elifersumer.myapplication.databinding.ActivitySignInBinding
@@ -12,7 +16,8 @@ import com.elifersumer.myapplication.databinding.ActivitySignInBinding
 
 class SignIn : AppCompatActivity() {
 
-    lateinit var waitingManager:WaitingDbManager
+
+    val db by lazy { DbHelper(this) }
     private lateinit var binding:ActivitySignInBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,11 +29,8 @@ class SignIn : AppCompatActivity() {
     }
 
     fun signInClicked(view: View){
-
         val intent = Intent(this,BottomNavigation::class.java)
         startActivity(intent)
-
-
     }
     fun signup_OnClick(view:View){
         val intent = Intent(this,SignUp::class.java)

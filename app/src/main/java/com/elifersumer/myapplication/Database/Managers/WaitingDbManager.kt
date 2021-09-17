@@ -49,16 +49,13 @@ class WaitingDbManager(val context: Context, val dbase: SQLiteDatabase){
             }while (result.moveToNext())
         }
         result.close()
-        sqliteDB.close()
         return orderList
     }
 
     fun deleteAllData(){
         val sqliteDB = dbase
-        if(sqliteDB.isOpen==true) {
             sqliteDB.delete(TABLE_NAME, null, null)
             sqliteDB.close()
-        }
     }
 
     fun deletDataByName(name:String){

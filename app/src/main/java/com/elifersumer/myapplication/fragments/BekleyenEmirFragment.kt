@@ -15,9 +15,13 @@ import android.R.attr.button
 import android.app.ActionBar
 import android.util.Log
 import android.widget.*
+import androidx.navigation.NavController
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.elifersumer.myapplication.*
+import com.elifersumer.myapplication.Database.CanceledOrder
 import com.elifersumer.myapplication.Database.Helper.DbHelper
+import com.elifersumer.myapplication.Database.Managers.CanceledDbManager
 import com.elifersumer.myapplication.Database.Managers.WaitingDbManager
 import com.elifersumer.myapplication.Database.WaitingOrder
 import kotlinx.android.synthetic.main.fragment_bekleyen_emir.*
@@ -27,7 +31,7 @@ import kotlinx.coroutines.delay
 
 class BekleyenEmirFragment : Fragment() {
     val db by lazy { DbHelper(this@BekleyenEmirFragment.requireActivity()) }
-
+    var navController: NavController? = null
     lateinit var tumu_sil: Button
     lateinit var bekleyenEmirler: MutableList<WaitingOrder>
 
@@ -45,14 +49,20 @@ class BekleyenEmirFragment : Fragment() {
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        var waitingDbManager = WaitingDbManager(this@BekleyenEmirFragment.requireActivity(),db.readableDatabase)
+        var waitingDbManager = WaitingDbManager(this@BekleyenEmirFragment.requireActivity(),db.writableDatabase)
+        var canceledDbManager= CanceledDbManager(this@BekleyenEmirFragment.requireActivity(),db.writableDatabase)
         bekleyenEmirler = waitingDbManager.readData()
         tumu_sil.setOnClickListener(View.OnClickListener {
-
+            var cList = waitingDbManager.readData()
+            for(c in cList){
+                var canceledOrder= CanceledOrder(c.Hisse!!,c.Adet!!,c.Fiyat!!,c.IslemTipi!!)
+                canceledDbManager.insertData(canceledOrder)
+            }
             waitingDbManager.deleteAllData()
-
             bkl_emir_recyclerView.layoutManager= LinearLayoutManager(context)
             bkl_emir_recyclerView.adapter= RecyclerViewAdapterBekEmirlerim(bekleyenEmirler)
+            navController = Navigation.findNavController(view)
+            navController!!.navigate(R.id.action_blankFragment_self)
         })
 
 

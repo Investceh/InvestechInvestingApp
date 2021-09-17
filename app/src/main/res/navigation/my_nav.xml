@@ -44,6 +44,9 @@
                 app:exitAnim="@anim/anim_exit"
                 app:popEnterAnim="@anim/anim_enter"
                 app:popExitAnim="@anim/anim_exit"/>
+        <action
+                android:id="@+id/action_karsilamaFragment_self"
+                app:destination="@id/karsilamaFragment" />
     </fragment>
     <fragment
             android:id="@+id/piyasaFragment"
@@ -129,6 +132,13 @@
                 app:exitAnim="@anim/anim_exit"
                 app:popEnterAnim="@anim/anim_enter"
                 app:popExitAnim="@anim/anim_exit"/>
+        <action
+                android:id="@+id/action_digerFragment_to_investrade2"
+                app:destination="@id/investrade2"
+                app:enterAnim="@anim/anim_enter"
+                app:exitAnim="@anim/anim_exit"
+                app:popEnterAnim="@anim/anim_enter"
+                app:popExitAnim="@anim/anim_exit"/>
     </fragment>
     <fragment
             android:id="@+id/blankFragment"
@@ -174,4 +184,9 @@
                 android:id="@+id/action_roboAdvisor_to_karsilamaFragment"
                 app:destination="@id/karsilamaFragment" />
     </fragment>
+    <fragment
+            android:id="@+id/investrade2"
+            android:name="com.elifersumer.myapplication.fragments.investrade"
+            android:label="fragment_investrade"
+            tools:layout="@layout/fragment_investrade" />
 </navigation>

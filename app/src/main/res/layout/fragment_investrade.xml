@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="ExtraText"
+        android:id="@+id/investradeLayout"
+        >
+    <RelativeLayout
+            android:id="@+id/relativeLayout3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg1"
+            android:orientation="horizontal"
+            tools:ignore="MissingConstraints">
+
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="270dp"
+                android:id="@+id/rl1">
+
+            <TextView
+                    android:textColor="#F5F5F5"
+                    android:id="@+id/investrade"
+                    android:text="INVESTRADE"
+                    android:fontFamily="@font/inter"
+                    android:gravity="center"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:layout_width="match_parent"
+                    android:layout_height="79dp"
+                    android:paddingTop="5dp"
+                    android:background="@drawable/screen_title" />
+
+            <ImageView
+                    android:translationZ="120dp"
+                    android:layout_width="74dp"
+                    android:layout_height="80dp"
+                    app:srcCompat="@drawable/appicon"
+                    android:id="@+id/imageView3"
+                    android:contentDescription="@string/image"
+                    app:layout_constraintVertical_bias="0.229" />
+
+            <com.github.mikephil.charting.charts.LineChart
+                    android:id="@+id/lineChart"
+                    android:layout_width="match_parent"
+                    android:layout_height="270dp"
+                    android:layout_marginTop="80dp"/>
+
+
+        </RelativeLayout>
+        <RelativeLayout
+                android:id="@+id/rl2"
+                android:layout_below="@+id/rl1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#F5F5F5">
+
+            <TextView
+                    android:textColor="#F5F5F5"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:layout_width="match_parent"
+                    android:layout_height="34dp"
+                    android:background="@drawable/screen_title"
+                    android:id="@+id/hisseImage"
+                    android:contentDescription="@string/image" />
+
+            <androidx.core.widget.NestedScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/hisseImage">
+
+                <TableLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/tblyt">
+
+                    <TableRow android:background="#C7D3E1">
+
+                        <TextView
+                                android:id="@+id/detail_2"
+                                android:layout_height="match_parent"
+                                android:layout_width="148dp"
+                                android:layout_weight="1"
+                                android:textSize="15sp"
+                                android:ellipsize="end"
+                                android:text="Enstrüman: "
+                                android:textColor="@color/black"
+                                android:paddingStart="10dp"
+                                android:gravity="center_vertical"
+                                android:textAlignment="textStart"/>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu">
+
+                            <AutoCompleteTextView
+                                    android:layout_gravity="end"
+                                    android:layout_width="140dp"
+                                    android:text="BIST100"
+                                    android:layout_height="match_parent"
+                                    android:id="@+id/Enstruman"
+                                    android:layout_weight="1"
+                                    android:textColor="@color/black"
+                                    android:textAlignment="textEnd"
+                                    android:inputType="none" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                    </TableRow>
+
+                    <TableRow android:background="#C7D3E1">
+
+                        <TextView
+                                android:id="@+id/detail_3"
+                                android:layout_height="match_parent"
+                                android:layout_width="210dp"
+                                android:layout_weight="1"
+                                android:textSize="15sp"
+                                android:ellipsize="end"
+                                android:text="Model:"
+                                android:textColor="@color/black"
+                                android:paddingStart="10dp"
+                                android:gravity="center_vertical"
+                                android:textAlignment="textStart"/>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu">
+
+                            <AutoCompleteTextView
+                                    android:layout_gravity="end"
+                                    android:layout_width="140dp"
+                                    android:text="KV G."
+                                    android:layout_height="match_parent"
+                                    android:id="@+id/Model"
+                                    android:layout_weight="1"
+                                    android:textColor="@color/black"
+                                    android:textAlignment="textEnd"
+                                    android:inputType="none" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                    </TableRow>
+
+                    <TableRow android:background="#80D7E9FF">
+
+                        <TextView
+                                android:id="@+id/detail_4"
+                                android:layout_height="match_parent"
+                                android:layout_width="match_parent"
+                                android:layout_weight="1"
+                                android:textSize="15sp"
+                                android:ellipsize="end"
+                                android:text="Kısa Vade Günlük A/S "
+                                android:gravity="center"
+                                android:textColor="@color/black" />
+                    </TableRow>
+
+                    <TableRow android:background="#80D7E9FF">
+
+                        <TextView
+                                android:id="@+id/detail_5"
+                                android:layout_height="match_parent"
+                                android:layout_width="wrap_content"
+                                android:layout_weight="1"
+                                android:textSize="15sp"
+                                android:ellipsize="end"
+                                android:text="BIST 100 "
+                                android:gravity="center"
+                                android:textColor="@color/black" />
+                    </TableRow>
+
+                    <TableRow android:background="#C7D3E1">
+
+
+
+                        <TextView
+                                android:id="@+id/detail_6"
+                                android:layout_height="match_parent"
+                                android:layout_width="210dp"
+                                android:layout_weight="1"
+                                android:textSize="15sp"
+                                android:ellipsize="end"
+                                android:background="#C7D3E1"
+                                android:text="Portföy Ağr:"
+                                android:textColor="@color/black"
+                                android:paddingStart="10dp"
+                                android:gravity="center_vertical"
+                                android:textAlignment="textStart" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="#C7D3E1"
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu">
+
+                            <AutoCompleteTextView
+                                    android:layout_gravity="end"
+                                    android:layout_width="140dp"
+                                    android:text="%0"
+                                    android:layout_height="match_parent"
+                                    android:id="@+id/portfoyAgr"
+                                    android:layout_weight="1"
+                                    android:textColor="@color/black"
+                                    android:textAlignment="textEnd"
+                                    android:inputType="none" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                    </TableRow>
+
+                    <TableRow android:background="#80D7E9FF">
+
+                        <TextView
+                                android:id="@+id/detail_7"
+                                android:layout_height="match_parent"
+                                android:layout_width="198dp"
+                                android:layout_weight="1"
+                                android:textSize="15sp"
+                                android:ellipsize="end"
+                                android:text="Sinyal: "
+                                android:textColor="@color/black"
+                                android:paddingStart="10dp"
+                                android:gravity="center_vertical"
+                                android:textAlignment="textStart"/>
+
+                        <TextView
+                                android:id="@+id/detail_7.1"
+                                android:layout_height="match_parent"
+                                android:layout_width="210dp"
+                                android:layout_weight="1"
+                                android:textSize="20sp"
+                                android:ellipsize="end"
+                                android:text="SAT "
+                                android:fontFamily="@font/inter"
+                                android:textColor="@color/black"
+                                android:paddingEnd="45dp"
+                                android:gravity="center_vertical"
+                                android:textAlignment="textEnd"/>
+
+
+                    </TableRow>
+                    <Button android:text="Kendi Modelini oluştur"
+                            android:layout_marginTop="10dp"
+                        />
+                </TableLayout>
+
+            </androidx.core.widget.NestedScrollView>
+
+        </RelativeLayout>
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

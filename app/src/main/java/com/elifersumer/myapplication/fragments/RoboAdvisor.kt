@@ -41,7 +41,6 @@ class RoboAdvisor : Fragment() {
         val risk5Data = args?.get("risk5")
         val profile = args?.get("profile")
 
-        //Toast.makeText(this@RoboAdvisor.requireActivity(),profile.toString(), Toast.LENGTH_SHORT).show()
 
         var riskP: String = ""
         var acıklamaP : String = ""
@@ -49,29 +48,29 @@ class RoboAdvisor : Fragment() {
 
         if(profile == "Muhafazakar"){
             riskP += "Muhafazakâr"
-            acıklamaP += "Anaparanızı kaybetmeye olan endişenizden dolayı size önerimiz"
+            acıklamaP += "Tamamladığınız anket sonucuna göre tahmini Risk/Getiri Profiliniz için önerilen KISTAS PORTFÖY Varlık Grubu Dağılımı aşağıdadır"
             sonuc += risk1Data.toString()
         }
         else if(profile == "Korumacı"){
             riskP += "Korumacı"
-            acıklamaP += "Risk almadan yatırım yapma isteğinizden dolayı size önerimiz"
+            acıklamaP += "Tamamladığınız anket sonucuna göre tahmini Risk/Getiri Profiliniz için önerilen KISTAS PORTFÖY Varlık Grubu Dağılımı aşağıdadır"
             sonuc += risk2Data.toString()
         }
         else if(profile == "Dengeli") {
             riskP += "Dengeli"
-            acıklamaP += "Risk ve kazanç kavramlarına eşit uzaklıkta olduğunuz için size önerimiz"
+            acıklamaP += "Tamamladığınız anket sonucuna göre tahmini Risk/Getiri Profiliniz için önerilen KISTAS PORTFÖY Varlık Grubu Dağılımı aşağıdadır"
             sonuc = risk3Data.toString()
 
         }
         else if(profile == "RiskSever"){
             riskP += "RiskSever"
-            acıklamaP += "Risk almaktan çekinmeyen yapınız ve yüksek getiri motivasyonunuz olduğu için size önerimizz"
+            acıklamaP += "Tamamladığınız anket sonucuna göre tahmini Risk/Getiri Profiliniz için önerilen KISTAS PORTFÖY Varlık Grubu Dağılımı aşağıdadır"
             sonuc = risk4Data.toString()
         }
 
         else if(profile == "Agresif"){
             riskP += "Agresif"
-            acıklamaP += "Yüksek risk yüksek getiridir diyenlerden olduğunuz için size önerimiz"
+            acıklamaP += "Tamamladığınız anket sonucuna göre tahmini Risk/Getiri Profiliniz için önerilen KISTAS PORTFÖY Varlık Grubu Dağılımı aşağıdadır"
             sonuc = risk5Data.toString()
         }
 

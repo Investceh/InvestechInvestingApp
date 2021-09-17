@@ -19,13 +19,25 @@
             />
 
     <TextView
-            android:id="@+id/risk_p"
+            android:id="@+id/asdfa"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@color/black"
-            android:text="aadf"
+            android:text="Risk Profili"
             android:textStyle="bold"
             android:layout_marginTop="100dp"
+            android:gravity="center"
+            android:fontFamily="@font/inter"
+            android:textSize="20sp"/>
+
+    <TextView
+            android:id="@+id/risk_p"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#22354C"
+            android:text="aadf"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"
             android:gravity="center"
             android:fontFamily="@font/inter"
             android:textSize="20sp"/>

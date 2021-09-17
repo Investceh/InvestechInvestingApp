@@ -1,6 +1,7 @@
 package com.elifersumer.myapplication.fragments
 
 import android.graphics.Typeface
+import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -8,6 +9,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
+import androidx.core.content.res.ResourcesCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.elifersumer.myapplication.*
 import com.elifersumer.myapplication.CollectApi.CollectApiInstance
@@ -20,6 +22,7 @@ import com.elifersumer.myapplication.Database.Managers.WaitingDbManager
 import com.elifersumer.myapplication.Database.WaitingOrder
 import com.elifersumer.myapplication.LiveBorsa.Response.LiveBorsaResponse
 import com.elifersumer.myapplication.LiveBorsa.Response.StockInfo
+import kotlinx.android.synthetic.main.activity_emirlerim.*
 import kotlinx.android.synthetic.main.fragment_emirgiris.*
 import kotlinx.android.synthetic.main.fragment_emirgiris.view.*
 import kotlinx.android.synthetic.main.fragment_piyasa.*
@@ -59,9 +62,11 @@ class EmirFragment : Fragment() {
         val args = this.arguments
         val satisData = args?.get("satis")
         val alisData = args?.get("alis")
-        val isimData = args?.get("isim")
+        var isimData = args?.get("isim")
         val alisOrSatis = args?.get("alisOrSatis")
         val farkData = args?.get("fark")
+        var degisimIsim = args?.get("degisimIsim")
+        var alisOrSatisDegisim = args?.get("alisOrSatisDegisim")
         Log.d("satis:",satisData.toString())
 
         alisbtn = view.findViewById(R.id.alisbtn) as RadioButton
@@ -78,36 +83,44 @@ class EmirFragment : Fragment() {
         val satisFiyat = view.findViewById(R.id.val_satis) as TextView
         val fiyat = view.findViewById(R.id.edtxt_fiyat) as EditText
 
+        fun clear(){
+            adet.setText("")
+            fiyat.setText("")
+        }
+
         rg = view.findViewById(R.id.daily_weekly_button_view) as RadioGroup
 
         hisseler = view.findViewById(R.id.autoCompleteTextView) as AutoCompleteTextView
 
-        hisseler.setText(isimData.toString())
 
 
         var input_islem_tipi = "Alış"
 
         alisFiyat.text = alisData.toString()
-        if(alisData == null){
-            alisFiyat.text = "20,03"
+        if(alisData == null ){
+            alisFiyat.text = "5,54"
         }
         satisFiyat.text = satisData.toString()
         if(satisData == null){
-            satisFiyat.text = "20,05"
+            satisFiyat.text = "5,52"
         }
+        if (degisimIsim != null){
 
+            isimData = degisimIsim
+        }
+        hisseler.setText(isimData.toString())
         if (isimData == null){
             hisseler.setText("EREGL")
         }
         farkTextView.text = farkData.toString()
         if(farkData == null){
-            farkTextView.text = "%0.07"
+            farkTextView.text = "%0.36"
         }
         if (alisOrSatis == "satis"){
             input_islem_tipi = "Satış"
             fiyat.setText(alisData.toString())
             if(alisData == null){
-                fiyat.setText("20,05")
+                fiyat.setText("5,54")
             }
             satisbtn.isChecked = true
         }
@@ -115,7 +128,7 @@ class EmirFragment : Fragment() {
             input_islem_tipi == "Alış"
             fiyat.setText(satisData.toString())
             if(satisData == null){
-                fiyat.setText("20,03")
+                fiyat.setText("5,52")
             }
             alisbtn.isChecked = true
         }
@@ -219,6 +232,8 @@ class EmirFragment : Fragment() {
                             var doneDbManager= DoneDbManager(this@EmirFragment.requireActivity(),db.writableDatabase)
                             doneDbManager.insertData(doneOrder)
                             accDbManager.updateBalance(yatirim,cüzdan_vadesiz!!)
+
+                            clear()
                         }
                         else{
                             Toast.makeText(this@EmirFragment.requireActivity(),"Yetersiz Bakiye", Toast.LENGTH_SHORT).show()
@@ -231,6 +246,7 @@ class EmirFragment : Fragment() {
                             var waitingOrder= WaitingOrder(input_isim,input_adet,input_fiyat,"Alış")
                             var waitDbManager= WaitingDbManager(this@EmirFragment.requireActivity(),db.writableDatabase)
                             waitDbManager.insertData(waitingOrder)
+                            clear()
                         }else{
                             Toast.makeText(this@EmirFragment.requireActivity(),"Yetersiz Bakiye", Toast.LENGTH_SHORT).show()
                         }
@@ -240,20 +256,24 @@ class EmirFragment : Fragment() {
                     input_isim = hisseler.text.toString()
                     input_fiyat = fiyat.text.toString()
                     input_adet = adet.text.toString()
-                    var tot_price = input_adet.toDouble() * input_fiyat.toDouble()
+                    var input_fiyat2 = string_fix(input_fiyat)
+                    var tot_price = input_adet.toDouble() * input_fiyat2.toDouble()
                     var yatirim2 = cüzdan_yatırım!!+tot_price
 
                     if(fiyat.text.toString() == alisFiyat.text.toString()){
+
                         var doneOrder= DoneOrder(input_isim,input_adet,input_fiyat,"Satış")
                         var doneDbManager= DoneDbManager(this@EmirFragment.requireActivity(),db.writableDatabase)
                         doneDbManager.insertData(doneOrder)
 
                         accDbManager.updateBalance(yatirim2,cüzdan_vadesiz!!)
+                        clear()
 
                     }else{
                         var waitingOrder= WaitingOrder(input_isim,input_adet,input_fiyat,"Satış")
                         var waitDbManager= WaitingDbManager(this@EmirFragment.requireActivity(),db.writableDatabase)
                         waitDbManager.insertData(waitingOrder)
+                        clear()
                     }
 
                 }
@@ -286,14 +306,36 @@ class EmirFragment : Fragment() {
             override fun onFailure(call: Call<LiveBorsaResponse?>?, t: Throwable?) {
             }
         })
+        var isimList2 = mutableListOf<String>()
+        var doneDbManager = DoneDbManager(this@EmirFragment.requireActivity(),db.readableDatabase)
+        var doneList=doneDbManager.readData()
+        for(done in doneList){
+            if(done.IslemTipi=="Satış"){
+                isimList2.add(done.Hisse!!)
+            }
+        }
         val hisseler = resources.getStringArray(R.array.hisseler)
         val fiyatTipleri = resources.getStringArray(R.array.fiyatTipleri)
         val sureTipleri = resources.getStringArray(R.array.sureTipleri)
         var arrayAdapter = ArrayAdapter(requireContext(),R.layout.dropdown_item, isimList)
+        view.autoCompleteTextView.setAdapter(arrayAdapter)
+        rg.setOnCheckedChangeListener(RadioGroup.OnCheckedChangeListener{ radioGroup, i ->
+            when(i){
+                R.id.alisbtn -> {
+                    arrayAdapter = ArrayAdapter(requireContext(),R.layout.dropdown_item, isimList)
+                    view.autoCompleteTextView.setAdapter(arrayAdapter)
+                }
+                R.id.satisbtn-> {
+                    Log.d("a","a")
+                    arrayAdapter = ArrayAdapter(requireContext(),R.layout.dropdown_item, isimList2)
+                    view.autoCompleteTextView.setAdapter(arrayAdapter)
+                }
+            }
+        })
+
         var arrayAdapter2 = ArrayAdapter(requireContext(),R.layout.dropdown_item, fiyatTipleri)
         var arrayAdapter3 = ArrayAdapter(requireContext(), R.layout.dropdown_item, sureTipleri)
 
-        view.autoCompleteTextView.setAdapter(arrayAdapter)
         view.autoCompleteTextView.setOnClickListener {
             Log.d("baslik:","a")
         }
