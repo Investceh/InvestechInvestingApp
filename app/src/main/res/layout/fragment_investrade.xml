@@ -18,18 +18,20 @@
 
         <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="433dp"
+                android:layout_height="270dp"
                 android:id="@+id/rl1">
 
             <TextView
                     android:textColor="#F5F5F5"
                     android:id="@+id/investrade"
-                    android:text="InvestTrade"
+                    android:text="INVESTRADE"
+                    android:fontFamily="@font/inter"
                     android:gravity="center"
-                    android:textSize="20sp"
+                    android:textSize="14sp"
                     android:textStyle="bold"
                     android:layout_width="match_parent"
                     android:layout_height="79dp"
+                    android:paddingTop="5dp"
                     android:background="@drawable/screen_title" />
 
             <ImageView
@@ -40,11 +42,12 @@
                     android:id="@+id/imageView3"
                     android:contentDescription="@string/image"
                     app:layout_constraintVertical_bias="0.229" />
+
             <com.github.mikephil.charting.charts.LineChart
                     android:id="@+id/lineChart"
-                    android:layout_width="250dp"
-                    android:layout_height="250dp"
-                    android:layout_centerInParent="true" />
+                    android:layout_width="match_parent"
+                    android:layout_height="270dp"
+                    android:layout_marginTop="80dp"/>
 
 
         </RelativeLayout>
@@ -72,9 +75,10 @@
 
                 <TableLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:id="@+id/tblyt">
 
-                    <TableRow>
+                    <TableRow android:background="#C7D3E1">
 
                         <TextView
                                 android:id="@+id/detail_2"
@@ -84,8 +88,10 @@
                                 android:textSize="15sp"
                                 android:ellipsize="end"
                                 android:text="Enstrüman: "
-                                android:gravity="center"
-                                android:textColor="@color/black" />
+                                android:textColor="@color/black"
+                                android:paddingStart="10dp"
+                                android:gravity="center_vertical"
+                                android:textAlignment="textStart"/>
 
                         <com.google.android.material.textfield.TextInputLayout
                                 android:layout_width="match_parent"
@@ -95,7 +101,7 @@
                             <AutoCompleteTextView
                                     android:layout_gravity="end"
                                     android:layout_width="140dp"
-                                    android:text="Limit"
+                                    android:text="BIST100"
                                     android:layout_height="match_parent"
                                     android:id="@+id/Enstruman"
                                     android:layout_weight="1"
@@ -106,7 +112,7 @@
 
                     </TableRow>
 
-                    <TableRow>
+                    <TableRow android:background="#C7D3E1">
 
                         <TextView
                                 android:id="@+id/detail_3"
@@ -115,9 +121,11 @@
                                 android:layout_weight="1"
                                 android:textSize="15sp"
                                 android:ellipsize="end"
-                                android:text="Model: "
-                                android:gravity="center"
-                                android:textColor="@color/black" />
+                                android:text="Model:"
+                                android:textColor="@color/black"
+                                android:paddingStart="10dp"
+                                android:gravity="center_vertical"
+                                android:textAlignment="textStart"/>
 
                         <com.google.android.material.textfield.TextInputLayout
                                 android:layout_width="match_parent"
@@ -127,7 +135,7 @@
                             <AutoCompleteTextView
                                     android:layout_gravity="end"
                                     android:layout_width="140dp"
-                                    android:text="Limit"
+                                    android:text="KV G."
                                     android:layout_height="match_parent"
                                     android:id="@+id/Model"
                                     android:layout_weight="1"
@@ -138,7 +146,7 @@
 
                     </TableRow>
 
-                    <TableRow>
+                    <TableRow android:background="#80D7E9FF">
 
                         <TextView
                                 android:id="@+id/detail_4"
@@ -152,7 +160,7 @@
                                 android:textColor="@color/black" />
                     </TableRow>
 
-                    <TableRow>
+                    <TableRow android:background="#80D7E9FF">
 
                         <TextView
                                 android:id="@+id/detail_5"
@@ -166,7 +174,9 @@
                                 android:textColor="@color/black" />
                     </TableRow>
 
-                    <TableRow>
+                    <TableRow android:background="#C7D3E1">
+
+
 
                         <TextView
                                 android:id="@+id/detail_6"
@@ -175,19 +185,23 @@
                                 android:layout_weight="1"
                                 android:textSize="15sp"
                                 android:ellipsize="end"
-                                android:text="Portföy Ağr: "
+                                android:background="#C7D3E1"
+                                android:text="Portföy Ağr:"
                                 android:textColor="@color/black"
-                                android:gravity="center" />
+                                android:paddingStart="10dp"
+                                android:gravity="center_vertical"
+                                android:textAlignment="textStart" />
 
                         <com.google.android.material.textfield.TextInputLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:background="#C7D3E1"
                                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu">
 
                             <AutoCompleteTextView
                                     android:layout_gravity="end"
                                     android:layout_width="140dp"
-                                    android:text="Limit"
+                                    android:text="%0"
                                     android:layout_height="match_parent"
                                     android:id="@+id/portfoyAgr"
                                     android:layout_weight="1"
@@ -198,7 +212,7 @@
 
                     </TableRow>
 
-                    <TableRow>
+                    <TableRow android:background="#80D7E9FF">
 
                         <TextView
                                 android:id="@+id/detail_7"
@@ -208,8 +222,10 @@
                                 android:textSize="15sp"
                                 android:ellipsize="end"
                                 android:text="Sinyal: "
-                                android:gravity="center"
-                                android:textColor="@color/black" />
+                                android:textColor="@color/black"
+                                android:paddingStart="10dp"
+                                android:gravity="center_vertical"
+                                android:textAlignment="textStart"/>
 
                         <TextView
                                 android:id="@+id/detail_7.1"
@@ -219,14 +235,18 @@
                                 android:textSize="20sp"
                                 android:ellipsize="end"
                                 android:text="SAT "
-                                android:gravity="center"
-                                android:textColor="@color/black" />
+                                android:fontFamily="@font/inter"
+                                android:textColor="@color/black"
+                                android:paddingEnd="45dp"
+                                android:gravity="center_vertical"
+                                android:textAlignment="textEnd"/>
 
 
                     </TableRow>
-
+                    <Button android:text="Kendi Modelini oluştur"
+                            android:layout_marginTop="10dp"
+                        />
                 </TableLayout>
-
 
             </androidx.core.widget.NestedScrollView>
 

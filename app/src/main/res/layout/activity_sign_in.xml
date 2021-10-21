@@ -13,7 +13,7 @@
             android:layout_height="49dp"
             android:background="@drawable/edit_text_view"
             android:translationZ="120dp"
-            android:hint="Email" android:gravity="center|left"
+            android:hint="TCKN / Müşteri Numarası" android:gravity="center|left"
             android:textColorHint="#80000000" tools:ignore="RtlHardcoded,RtlSymmetry"
             android:shadowDx="0"
             app:layout_constraintTop_toTopOf="@+id/bottomBox" android:layout_marginTop="160dp"

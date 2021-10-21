@@ -134,7 +134,11 @@
                 app:popExitAnim="@anim/anim_exit"/>
         <action
                 android:id="@+id/action_digerFragment_to_investrade2"
-                app:destination="@id/investrade2" />
+                app:destination="@id/investrade2"
+                app:enterAnim="@anim/anim_enter"
+                app:exitAnim="@anim/anim_exit"
+                app:popEnterAnim="@anim/anim_enter"
+                app:popExitAnim="@anim/anim_exit"/>
     </fragment>
     <fragment
             android:id="@+id/blankFragment"

@@ -52,4 +52,10 @@ class AccDbManager(val context: Context, val dbase:SQLiteDatabase) {
         }
         result.close()
     }
+
+    fun deleteAllData(){
+        val sqliteDB = dbase
+        sqliteDB.delete(TABLE_NAME,null,null)
+        sqliteDB.close()
+    }
 }
